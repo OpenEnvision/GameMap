@@ -155,6 +155,11 @@ export const systemRoutes = [
     path: "/search-index.json",
     module: "routes/search-index.ts",
   },
+  {
+    id: "docs-search-index",
+    path: "/docs-search-index.json",
+    module: "routes/search-index.ts",
+  },
   { id: "not-found", path: "*", module: "routes/not-found.tsx" },
 ] as const;
 export const navigation = Object.entries(pages)

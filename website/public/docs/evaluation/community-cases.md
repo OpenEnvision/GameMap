@@ -1,6 +1,8 @@
 # Community AI game case review
 
-Trace game cases back to creator build notes, playable releases, and source projects. Use the candidate records below for discovery, or open [Game examples](../../tutorials-and-demos.md) to study a complete project.
+If you want to try a small AI-built game before opening a toolchain, Dinosaur Game Offline has an author-hosted build. Use its keyboard start, jump, and retry loop. If you want to study how a creator gave a coding agent a series of tasks, Cloud Crush has a step-by-step codelab and a Go project. Both used Gemini CLI. Each answers a different question, and the original review records below say which one was played and which one was inspected from source.
+
+For a new comparison, check the author's disclosure for the client and model, the game's source revision for the implementation, and the release for the build you can launch. Keep unknowns in the corresponding field. Open [Game examples](../../tutorials-and-demos.md) for the current collection. The case counts and test notes on this page belong to the dated review batches.
 
 ## Gemini CLI case addition
 
@@ -59,25 +61,25 @@ This is a dated research snapshot, not an exhaustive inventory of every communit
 
 ## Source-tree checks
 
-Public GitHub tree JSON snapshots are saved as `/tmp/gamemap-2d-<owner>-<repo>-tree.json` (Garden is `/tmp/gamemap-2d-gameai-tree`). They contain source paths and pinned HEAD SHA values, not downloaded repository code. Verified file counts: GothicVania 40; Pixel Princess 176; tower defense 89; Cursor platformer 81; Gravity Birds 89; Agent Arcade 368; Mini Snake 3; Flux 22; Bash Fighter 385; Quasar Saz 1076; John Dilig collection 171; GameAI collection 1122; Dunkirk 212. Counts include supporting docs, assets and tests, not just game code.
+The audit used public GitHub tree snapshots to check files at specific commits. Verified file counts: GothicVania 40; Pixel Princess 176; tower defense 89; Cursor platformer 81; Gravity Birds 89; Agent Arcade 368; Mini Snake 3; Flux 22; Bash Fighter 385; Quasar Saz 1076; John Dilig collection 171; GameAI collection 1122; Dunkirk 212. The totals include supporting docs, assets, and tests. To decide whether a tree contains a complete game, find its launch entry and the files needed by that entry. The count alone tells you little about what will run.
 
-Additional fetched primary material: Cursor conversation summary (`/tmp/gamemap-2d-cursor-conversation`), Gravity Birds README and full journey HTML (`/tmp/gamemap-2d-gravity-readme`, `/tmp/gamemap-2d-gravity-journey`), and Mini Snake's complete HTML (`/tmp/gamemap-2d-minisnake.html`). GitHub HTML/raw pages and the Copilot creator article were also opened with web research tools. Cache-miss errors were not treated as a verified dead site; direct public fetches/browser navigation were used to resolve important cases.
+The review also read the Cursor conversation summary, Gravity Birds README and development diary, Mini Snake's complete HTML, and the Copilot creator article linked in the table. When a link failed to open in the source reader, it was checked by direct retrieval or browser navigation before recording its availability.
 
 ## Creator gameplay images for downloadable projects
 
-- Gravity Birds: https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png — visually checked; actual Stairway puzzle with bird, fruit, exit and undo/restart UI. README captions it "After polish". Local `/tmp/gamemap-2d-gravity-game2.png`.
-- Quasar Saz: https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png — visually checked; actual Dissonance King phase-3 combat, player, attacks, energy/score HUD. Local `/tmp/gamemap-2d-quasar-game-complete.png`.
-- Agent Arcade: https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif — creator gameplay GIF. Same recording is explicitly captioned "Ninja Runner Gameplay" in the creator's linked article. Local `/tmp/gamemap-2d-previews/agent-arcade-copilot.gif`.
+- Gravity Birds: https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png — the bird, fruit, exit, and undo/restart controls are visible in the Stairway puzzle. The README captions it “After polish”.
+- Quasar Saz: https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png — the Dissonance King phase-3 screen shows the player, attacks, and energy and score counters.
+- Agent Arcade: https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif — the creator's article captions the recording “Ninja Runner Gameplay”.
 
-These are creator-provided gameplay media, not captures made during our own playtests. Root integration is preserving that provenance.
+The gallery credits these three captures to their creators.
 
 ## Browser verification
 
-Browser plugin unavailable; used bundled Playwright and Chromium 1208. All 10 browser-entry URLs returned HTTP 200 and correct page titles in the initial navigation run. Initial title/loading screenshots are intentionally excluded from accepted gallery media. Captures and per-case console/request/action metadata live under `/tmp/gamemap-2d-previews/`. Metal rendering and one foreground page are used for follow-up captures where asset loading or animation is slow.
+The first navigation check used Playwright with Chromium 1208. All 10 browser entry URLs returned HTTP 200 and displayed the expected titles. Reviewers then looked for game interaction and saved images after the title or loading screen. Games with slow asset loading or animation were retried with Metal rendering and one foreground page.
 
 Verified active interactions: tower-defense Damage upgrade changes Lv0→Lv1 and gold25→5; Cursor platformer moves/jumps and score increases; Mini Snake is played with arrows to collect two food items (score0→2; length1→3), then paused for capture; Flux enters its running state and flips gravity; Bash Fighter creates a private lobby, starts with bots, enters Timed Brawl and responds to movement/jump/attack; Running Man starts, jumps and reaches 19m; GothicVania moves from its exported `title` state to `level`, with a moving/jumping player, health4 and live enemies. GothicVania's Enter input must be held across a rendered frame because its title checks Phaser `JustDown`.
 
-The verified preview manifest is `/tmp/gamemap-2d-previews/verified-manifest.json`: seven actual browser gameplay captures plus one creator gameplay screenshot for Pixel Princess. The latter's public build reached a working menu, but variable first-load asset timing made the creator's existing gameplay screenshot the more reliable preview: https://raw.githubusercontent.com/VTvito/pixel-princess-platformer/main/assets/screenshot.png (local `/tmp/gamemap-2d-pixel-creator.png`). It was visually checked as actual forest-level gameplay with heroine, enemy, pickups and lives/score HUD. Garden Match diagnosis/capture was handed to the 3D research agent and Dunkirk capture to the root agent, so their final results are recorded by those agents rather than claimed here.
+This pass retained seven browser gameplay captures and one creator gameplay screenshot for Pixel Princess. Its public build reached a working menu, but first-load asset timing varied. The creator screenshot shows the forest level, heroine, enemy, pickups, and lives and score HUD: https://raw.githubusercontent.com/VTvito/pixel-princess-platformer/main/assets/screenshot.png. Garden Match and Dunkirk were checked in separate passes.
 
 ## Rejected or deferred prospects
 

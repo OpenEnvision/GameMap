@@ -342,6 +342,10 @@ export const testingEnvironments: TestingResource[] = [
         "url": "https://github.com/openai/procgen#readme"
       },
       {
+        "label": "Native action space, seed options and state interface",
+        "url": "https://github.com/openai/procgen/blob/master/procgen/env.py"
+      },
+      {
         "label": "Benchmark paper",
         "url": "https://arxiv.org/abs/1912.01588"
       },
@@ -350,18 +354,19 @@ export const testingEnvironments: TestingResource[] = [
         "url": "https://github.com/openai/procgen/blob/master/LICENSE"
       }
     ],
-    "aiUseNote": "Separate train and test level distributions and fix the number of training levels, seed and distribution mode before comparing agents. Fast step rates do not remove the need to report wall-clock and sample budgets.",
+    "aiUseNote": "Separate train and test level distributions and fix the package version, wrapper, level selection, seed settings and distribution mode before comparing agents. Record the action sequence and episode boundaries; fast step rates do not remove the need to report wall-clock and sample budgets.",
     "testTasks": [
       "Compare an agent trained on a small level set against one trained on the full distribution, evaluated on held-out seeds.",
-      "Replay a fixed seed across package versions and assert identical initial observations and action masks.",
+      "Within one pinned version and wrapper, replay recorded actions from the same initial state and seed settings; compare observations, rewards and episode boundaries.",
       "Measure steps per second for one environment and record the hardware and thread count."
     ],
     "setup": [
-      "Create a Python environment and install procgen with a compatible Gym or Gymnasium wrapper.",
-      "Create one environment with a fixed seed and distribution mode, then log observations, rewards and done signals."
+      "Create a Python environment and pin procgen, its native Gym or Gym3 interface, and any additional wrapper dependencies.",
+      "Fix num_envs, num_levels, start_level, rand_seed, distribution_mode and thread count; retain the initial state or reset/episode order and a recorded action sequence.",
+      "Log observations, rewards and episode boundaries using the chosen interface; document any wrapper that converts these into terminated and truncated signals."
     ],
-    "limitations": "The repository states it is in maintenance mode with bug fixes and minor updates only. CoinRun differs from the original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.",
-    "reviewed": "2026-11-22"
+    "limitations": "The native interface exposes a discrete action space without an action_masks field. Any added mask or Gymnasium adaptation belongs to a separately documented wrapper. Identical seeds do not guarantee identical trajectories across dependency upgrades. The repository is in maintenance mode; CoinRun differs from its original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.",
+    "reviewed": "2026-11-24"
   },
   {
     "id": "google-research-football",

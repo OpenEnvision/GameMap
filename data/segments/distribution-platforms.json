@@ -19,7 +19,7 @@
         "url": "https://docs.crazygames.com/"
       }
     },
-    "category": "production",
+    "category": "publishing",
     "detail": "CrazyGames hosts browser games, with a separate developer portal and documentation for submission, technical requirements, SDK integration, and testing. Submissions receive QA review; Basic Launch and Full Launch have different requirements and availability. Supported web technologies span multiple engines. A playable portal build is a distribution artifact, not evidence that the complete game project is public or that AI developed it.",
     "dimensions": [
       "2d",
@@ -50,7 +50,8 @@
       "Game discovery",
       "Browser games"
     ],
-    "type": "community",
+    "type": "platform",
+    "collection": "tools",
     "url": "https://developer.crazygames.com/",
     "verified": "2026-10-20"
   },
@@ -74,7 +75,7 @@
         "url": "https://store.epicgames.com/en-US/distribution"
       }
     },
-    "category": "production",
+    "category": "publishing",
     "detail": "Epic Games Store offers a player storefront and publishing tools in the Epic Developer Portal for product pages, builds, offers, and updates. Distribution is engine-agnostic; using Unreal Engine is not a prerequisite. Developers still need account onboarding and must meet the store's content and product requirements. A store listing is distinct from a browser demo, an AI-development claim, or complete source code.",
     "dimensions": [
       "2d",
@@ -101,7 +102,8 @@
       "Game discovery",
       "Desktop games"
     ],
-    "type": "community",
+    "type": "platform",
+    "collection": "tools",
     "url": "https://store.epicgames.com/en-US/distribution",
     "verified": "2026-10-20"
   },
@@ -125,7 +127,7 @@
         "url": "https://www.gog.com/submit-your-game"
       }
     },
-    "category": "production",
+    "category": "publishing",
     "detail": "GOG is a curated digital game store with DRM-free releases and an optional desktop client. The official submission form is the developer entry point for proposing a game; submitting it does not guarantee acceptance or immediate publication. Verify each game's supported operating systems, edition, and release status. DRM-free distribution is different from publishing the game's source code.",
     "dimensions": [
       "2d",
@@ -152,7 +154,8 @@
       "Game discovery",
       "Desktop games"
     ],
-    "type": "community",
+    "type": "platform",
+    "collection": "tools",
     "url": "https://www.gog.com/submit-your-game",
     "verified": "2026-10-20"
   },
@@ -176,7 +179,7 @@
         "url": "https://itch.io/docs/creators/getting-started"
       }
     },
-    "category": "production",
+    "category": "publishing",
     "detail": "itch.io lets creators manage game pages, screenshots, files, development logs, and updates. HTML5 builds can run in the browser; other releases can be provided as downloads with platform labels. A project's page can also contain a demo or work in development, so inspect the actual uploads and instructions. Publishing a playable build does not automatically make its source public.",
     "dimensions": [
       "2d",
@@ -204,7 +207,8 @@
       "Browser games",
       "Desktop games"
     ],
-    "type": "community",
+    "type": "platform",
+    "collection": "tools",
     "url": "https://itch.io/developers",
     "verified": "2026-10-20"
   },
@@ -228,7 +232,7 @@
         "url": "https://partner.steamgames.com/doc/gettingstarted"
       }
     },
-    "category": "production",
+    "category": "publishing",
     "detail": "Valve's Steam storefront distributes released games; Steamworks is the developer portal for onboarding, store presence, build uploads, testing, and updates. Publishing requires partner setup and review of the store page and build. A Coming Soon page, a demo, and a released game are different states. Steam availability does not establish AI authorship or public game source.",
     "dimensions": [
       "2d",
@@ -255,7 +259,8 @@
       "Game discovery",
       "Desktop games"
     ],
-    "type": "community",
+    "type": "platform",
+    "collection": "tools",
     "url": "https://partner.steamgames.com/",
     "verified": "2026-10-20"
   }

@@ -42,6 +42,7 @@ export const agentResourceKinds = {
   bridge: 'Engine bridges',
   framework: 'Development frameworks',
   evaluation: 'Development evaluations',
+  'gameplay-evaluation': 'Gameplay & reasoning evaluations',
   workflow: 'Build workflows',
   'code-example': 'Runnable game code',
   client: 'Clients & harnesses',

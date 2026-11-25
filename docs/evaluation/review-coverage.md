@@ -1,6 +1,8 @@
 # Catalog review coverage
 
-Track corrections to resource descriptions, artifact availability, and usage terms. Each entry records the claim examined, the supporting source, and any remaining question.
+When a catalog entry and an old integration note disagree, search this log for the product name and read forward from the first review. For Wwise, the [completion notification correction](#wwise-generation-completion-notification-correction-2026-10-19) explains why an authoring notification is insufficient to mark a SoundBank generation call complete. For Play2Code, the [demo-source follow-up](#focused-play2code-demo-source-follow-up-2026-10-18) identifies which files are sample games and which evaluation artifacts still need a release link.
+
+Use each finding for the version and action it covers. Follow its source before applying it to another version or filing a correction. The baseline below identifies the starting batch for this log.
 
 Review baseline: `5b4735422f7eb22b405f49f6e4b124a9e9bb2143`; 109 resource cards.
 

@@ -476,7 +476,7 @@ export const agentGameResources: AgentGameResource[] = [
     "evidenceUrl": "https://github.com/summerengine/summer/blob/main/integrations/gemini/README.md",
     "codeScope": "CLI/MCP integration source, not the engine source. Verified src/mcp/server.ts, src/cli/commands/setup.ts, src/installer/setup.ts, gemini-extension.json, integrations/gemini/README.md, scripts/build-gemini-extension.ts, and library/skills/. The Gemini packaging document explains the actual extension skills layout rather than assuming an arbitrary manifest skills key works.",
     "limitations": "Requires the separate Summer Engine desktop application for editor operations; the repository explicitly says it is not the engine itself. Hosted asset generation and publishing require a Summer account, and generation/paid builds consume credits. Gemini is a legacy setup target alongside current Antigravity guidance. No install or end-to-end compatibility test was performed here. This is not a Google-provided integration.",
-    "official": false,
+    "official": true,
     "codeType": "implementation",
     "publisher": "summerengine",
     "reviewed": "2026-10-18"
@@ -614,7 +614,7 @@ export const agentGameResources: AgentGameResource[] = [
     "codeScope": "Router and engine/discipline/genre/workflow SKILL.md files. Verified skills/godot/godot-gdscript-headless-testing/SKILL.md contains a SceneTree test-runner recipe and explicit failure exit handling; scripts/validate-skills.py validates the collection; skills/disciplines/create-game-assets/scripts/ includes asset_report.py and build_preview_sheet.py. README names native Gemini CLI support.",
     "limitations": "Primarily a version-targeted instruction/example library rather than an engine-control runtime. Current Godot testing guidance targets 4.7; other engine groups have their own baselines. Install compatibility statements are the maintainer’s claims, and this research did not execute cross-agent smoke tests.",
     "official": false,
-    "codeType": "instructions",
+    "codeType": "mixed",
     "publisher": "gamedev-skills",
     "reviewed": "2026-10-18"
   },
@@ -645,18 +645,19 @@ export const agentGameResources: AgentGameResource[] = [
     "agents": [
       "agent-neutral",
       "claude-code",
+      "codex",
       "cursor",
       "copilot",
       "windsurf",
       "gemini-cli"
     ],
     "engine": "Unity 6.0 LTS+ · Unity Editor · Unity Pipeline package",
-    "summary": "Unity deprecated the in-editor MCP server shipped in com.unity.ai.assistant and replaced it with the Unity CLI's own unity mcp server; the CLI also drives the Editor directly through unity command and unity eval, while the separate Unity AI beta provides an in-editor Assistant and AI Gateway.",
+    "summary": "Unity deprecated the in-editor MCP server shipped in com.unity.ai.assistant and replaced it with the Unity CLI's own unity mcp server; the CLI also drives the Editor directly through unity command and unity eval, while the separate Unity AI beta provides an in-editor Assistant and AI Gateway. Codex is explicitly supported through Unity's official plugin and CLI configuration.",
     "sourceUrl": "https://docs.unity.com/en-us/unity-cli/replace-mcp-server-unity-cli",
     "codeUrl": "https://github.com/Unity-Technologies/unity-agent-plugin",
     "evidenceUrl": "https://docs.unity3d.com/Packages/com.unity.ai.assistant@2.19/manual/integration/mcp-configure.html",
     "codeType": "mixed",
-    "codeScope": "The official migration page states that com.unity.ai.assistant's in-editor MCP server is deprecated, that unity mcp in the Unity CLI replaces it using the same protocol, and that MCP mode itself remains fully supported. It documents unity pipeline install, unity mcp configure, unity mcp configure --list, unity skill install, and the direct unity command / unity eval paths. The CLI can manage Editor versions, run headless builds, and run test suites without an AI agent; official skills cover Claude Code, Codex, Cursor, Copilot, Windsurf, and other clients. Third-party MCP packages are unaffected.",
+    "codeScope": "The official migration page states that com.unity.ai.assistant's in-editor MCP server is deprecated, that unity mcp in the Unity CLI replaces it using the same protocol, and that MCP mode itself remains fully supported. It documents unity pipeline install, unity mcp configure, unity mcp configure --list, unity skill install, and the direct unity command / unity eval paths. The CLI can manage Editor versions, run headless builds, and run test suites without an AI agent; official skills cover Claude Code, Codex, Cursor, Copilot, Windsurf, and other clients. Unity's dedicated Codex guide documents installing unity@unity-agent-plugin from the Unity-Technologies/unity-agent-plugin marketplace and verifying that its skills load; the official CLI release notes also document unity mcp configure codex. Third-party MCP packages are unaffected.",
     "limitations": "The CLI is free and separate from Unity AI, but driving a running Editor through the Pipeline package requires Unity 6.0 LTS or later; the local pipeline server accepts localhost connections only. The separate Unity AI Assistant and AI Gateway remain beta, linked to Unity Cloud, and subject to trial or subscription terms; Unity Muse is deprecated. Assistant package versions before 2.13 conflict with the CLI. This entry separates the deprecated in-editor server from the supported CLI MCP mode; no local installation, engine run, or game-quality evaluation was performed.",
     "publisher": "Unity Technologies",
     "official": true,
@@ -883,7 +884,7 @@ export const agentGameResources: AgentGameResource[] = [
   {
     "id": "orak-game-agent-benchmark",
     "title": "Orak: MCP-grounded LLM game-agent benchmark and trajectories",
-    "kind": "evaluation",
+    "kind": "gameplay-evaluation",
     "agents": [
       "agent-neutral"
     ],
@@ -902,7 +903,7 @@ export const agentGameResources: AgentGameResource[] = [
   {
     "id": "balrog-game-agent-benchmark",
     "title": "BALROG: LLM and VLM reasoning across text and visual games",
-    "kind": "evaluation",
+    "kind": "gameplay-evaluation",
     "agents": [
       "agent-neutral"
     ],
@@ -921,7 +922,7 @@ export const agentGameResources: AgentGameResource[] = [
   {
     "id": "videogamebench-vlm-benchmark",
     "title": "VideoGameBench: real-time VLM completion of 1990s video games",
-    "kind": "evaluation",
+    "kind": "gameplay-evaluation",
     "agents": [
       "agent-neutral"
     ],
@@ -1083,5 +1084,29 @@ export const agentGameResources: AgentGameResource[] = [
     "publisher": "FlamxGames (community)",
     "official": false,
     "reviewed": "2026-11-22"
+  },
+  {
+    "id": "gdevelop-official-mcp-bridge",
+    "catalogResourceId": "gdevelop-ai-mcp",
+    "title": "GDevelop: official live-editor MCP bridge",
+    "kind": "bridge",
+    "agents": [
+      "claude-code",
+      "cursor",
+      "copilot",
+      "codex",
+      "gemini-cli"
+    ],
+    "engine": "GDevelop 5 · 2D / 3D · desktop editor",
+    "summary": "GDevelop's built-in MCP server lets Claude Code, Cursor, Codex, VS Code Copilot and Gemini CLI inspect and edit the open game, create scenes and objects, write events, run gameplay tests, and save changes.",
+    "sourceUrl": "https://wiki.gdevelop.io/gdevelop5/interface/ai/mcp/",
+    "codeUrl": "https://github.com/4ian/GDevelop/blob/dc6b3b39c2147d944a9aca609504e2ec9dc121be/newIDE/electron-app/app/LiveMcpServer.js",
+    "evidenceUrl": "https://github.com/4ian/GDevelop/blob/dc6b3b39c2147d944a9aca609504e2ec9dc121be/newIDE/README.md#scripting-a-project-with-the-editor-functions",
+    "codeType": "implementation",
+    "codeScope": "Verified LiveMcpServer.js implements loopback Streamable HTTP, bearer-token and Origin checks, client sessions bound to an editor window, JSON-RPC forwarding, and shutdown cleanup. GDevelop's IDE README separately documents the shared editor-function tools and a stdio CLI MCP entry point; the hosted event-generation backend is separate from the local bridge.",
+    "limitations": "Requires the desktop editor on the same computer, opt-in access, and a bearer access key. A session targets one editor window; edits remain unsaved until explicitly saved. Event generation and asset or extension lookup require GDevelop sign-in and online services. The agent provider bills model use separately. Source and documentation reviewed; no local installation or end-to-end playtest was performed.",
+    "publisher": "GDevelop / 4ian",
+    "official": true,
+    "reviewed": "2026-11-24"
   },
 ];

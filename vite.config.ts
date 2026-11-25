@@ -13,6 +13,31 @@ const base =
 export default defineConfig({
   base: base.replace(/\/+/g, "/"),
   publicDir: fileURLToPath(new URL("./website/public", import.meta.url)),
+  optimizeDeps: {
+    // Fumadocs serves its ESM modules as source. Prepare the shared UI runtime
+    // together so first-page/document imports cannot replace the React chunks.
+    include: [
+      "lucide-react",
+      "next-themes",
+      "@fuma-translate/react",
+      "class-variance-authority",
+      "scroll-into-view-if-needed",
+      "hast-util-to-jsx-runtime",
+      "cn",
+      "zbsearch",
+      "zod",
+      "@radix-ui/react-accordion",
+      "@radix-ui/react-collapsible",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-direction",
+      "@radix-ui/react-navigation-menu",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-presence",
+      "@radix-ui/react-scroll-area",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-tabs",
+    ],
+  },
   plugins: [
     fumadocsMdx({
       globalOptions: {

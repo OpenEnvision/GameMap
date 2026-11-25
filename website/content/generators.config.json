@@ -4,6 +4,10 @@
     "legacySources": ["AWESOME.md", "docs/AWESOME.md"],
     "renderer": "scripts/lib/guides/catalog.mjs"
   },
+  "resource-catalog-zh": {
+    "source": "docs/zh/reference/catalog.md",
+    "renderer": "scripts/lib/guides/catalog.mjs"
+  },
   "game-builds": {
     "source": "docs/tutorials-and-demos.md",
     "renderer": "scripts/lib/guides/learning.mjs"
@@ -15,6 +19,10 @@
   "testing-library": {
     "source": "docs/reference/testing-library.md",
     "legacySources": ["docs/game-testing-library.md"],
+    "renderer": "scripts/lib/guides/testing.mjs"
+  },
+  "testing-library-zh": {
+    "source": "docs/zh/reference/testing-library.md",
     "renderer": "scripts/lib/guides/testing.mjs"
   },
   "repository-index": {

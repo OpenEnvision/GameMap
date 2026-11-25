@@ -8,9 +8,13 @@ import type { SearchIndex } from "../../content/matching";
 export async function loader({ request }: LoaderFunctionArgs) {
   const current = contentFor(request);
   const alternate = current === content ? contentIn("zh") : content;
+  const docsOnly = new URL(request.url).pathname.endsWith(
+    "/docs-search-index.json",
+  );
+  const entries = docsOnly ? current.all("document") : current.entries;
   const documents = (
     await Promise.all(
-      current.entries.map(async (entry) => {
+      entries.map(async (entry) => {
         if (
           entry.kind === "path" ||
           entry.kind === "step" ||
@@ -18,7 +22,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
         )
           return null;
         let body = "";
+        let counterpart = alternate.byKey(entry.key)!;
         if (entry.kind === "document") {
+          const slug = entry.id.replace(/^zh\//, "");
+          // The two reader versions have distinct keys. Historical archives
+          // keep their source identities and have no translation counterpart.
+          if (slug !== "remote-source-index" && !slug.startsWith("remote/"))
+            counterpart =
+              alternate.byKey(
+                `document:${entry.id === slug ? `zh/${slug}` : slug}`,
+              ) ?? counterpart;
           const page = source.getPage(entry.id.split("/"));
           if (!page)
             throw new Error(`Search cannot omit document body: ${entry.id}`);
@@ -29,7 +42,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
           ].join("\n");
         }
         const fields = searchFields(entry);
-        const otherFields = searchFields(alternate.byKey(entry.key)!);
+        const otherFields = searchFields(counterpart);
         return {
           key: entry.key,
           kind: entry.kind,
@@ -38,6 +51,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
           text: body ? fields + "\n" + body : fields,
           // Separate alternate-language reader fields from the visible page's text.
           ...(otherFields !== fields ? { alternateText: otherFields } : {}),
+          ...(counterpart.title !== entry.title
+            ? { alternateTitle: counterpart.title }
+            : {}),
         };
       }),
     )

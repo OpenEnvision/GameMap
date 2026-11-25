@@ -22,20 +22,36 @@ An unofficial English adaptation and reorganization of [The Level Design Book](h
 
 ## Load only the references the task needs
 
-| Task or symptom | Read |
-| --- | --- |
-| Start a level; control scope; develop pacing, research, or worldbuilding | [Foundations and pre-production](references/foundations.md) |
-| Draw a layout; connect routes; handle verticality, backtracking, gates, or shortcuts | [Spatial layout](references/spatial-layout.md) |
-| Build a blockout; diagnose scale; design terrain, massing, or modular kits | [Blockout and metrics](references/blockout-metrics.md) |
-| Design encounters, enemies, cover, objectives, or competitive balance | [Combat and balance](references/combat-balance.md) |
-| Diagnose navigation confusion; plan and interpret playtests | [Wayfinding and playtesting](references/wayfinding-playtesting.md) |
-| Implement triggers, objectives, spawning, doors, or recovery states | [Scripting and doors](references/scripting-doors.md) |
-| Improve lighting, darkness, visual readability, materials, or environmental narrative | [Lighting and environment art](references/lighting-art.md) |
-| Profile performance; package, publish, or present a level | [Optimization and release](references/optimization-release.md) |
-| Understand professional history, architecture, cultural assumptions, or zero-player levels | [Culture and history](references/culture-history.md) |
-| Analyze existing levels and transfer patterns without copying surfaces | [Case studies](references/case-studies.md) |
-| Build a learning plan, exercise, critique, or portfolio | [Learning and teaching](references/learning.md) |
-| Choose tools; work with TrenchBroom, Quake, FGD, MAP, or MDL | [Tools and Quake](references/tools-quake.md) |
+| Task or symptom                                                                            | Read                                                               |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Start a level; control scope; develop pacing, research, or worldbuilding                   | [Foundations and pre-production](references/foundations.md)        |
+| Draw a layout; connect routes; handle verticality, backtracking, gates, or shortcuts       | [Spatial layout](references/spatial-layout.md)                     |
+| Build a blockout; diagnose scale; design terrain, massing, or modular kits                 | [Blockout and metrics](references/blockout-metrics.md)             |
+| Design encounters, enemies, cover, objectives, or competitive balance                      | [Combat and balance](references/combat-balance.md)                 |
+| Diagnose navigation confusion; plan and interpret playtests                                | [Wayfinding and playtesting](references/wayfinding-playtesting.md) |
+| Implement triggers, objectives, spawning, doors, or recovery states                        | [Scripting and doors](references/scripting-doors.md)               |
+| Improve lighting, darkness, visual readability, materials, or environmental narrative      | [Lighting and environment art](references/lighting-art.md)         |
+| Profile performance; package, publish, or present a level                                  | [Optimization and release](references/optimization-release.md)     |
+| Understand professional history, architecture, cultural assumptions, or zero-player levels | [Culture and history](references/culture-history.md)               |
+| Analyze existing levels and transfer patterns without copying surfaces                     | [Case studies](references/case-studies.md)                         |
+| Build a learning plan, exercise, critique, or portfolio                                    | [Learning and teaching](references/learning.md)                    |
+| Choose tools; work with TrenchBroom, Quake, FGD, MAP, or MDL                               | [Tools and Quake](references/tools-quake.md)                       |
+
+## Keep one iteration connected
+
+For a first assignment, use an existing controller and one start-to-goal route. In the brief, identify the build, the player's goal, the rule that changes progress, the reset state, and one question to test. Add a second route or encounter only when it helps answer that question.
+
+The three templates follow the same version of the level. Give them a shared build identifier and retain earlier records when the level changes:
+
+| Record                                          | Put here                                                                            | Example for a return-route level                                                          |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [Brief](templates/level-brief.md)               | Intent, fixed rules, assumptions, and the planned test                              | After inspecting an empty socket, a new player can find a cell and return.                |
+| [Playtest report](templates/playtest-report.md) | What happened in each session, including assistance, timeout, and technical failure | Record the first route chosen at the junction after visiting the socket.                  |
+| [Review](templates/review.md)                   | A finding tied to that evidence, a proposed change, and its regression check        | If the gallery entrance is missed, test its floor continuity before adding a route arrow. |
+
+This is a GameMap working example. Its proposed route and checks are not observations from a played level. The templates contain a planning example and an explicitly hypothetical finding so that a team can see how the records connect.
+
+When an AI tool participates, name its job. A development agent may edit a level; a gameplay agent may attempt it; a person may judge whether its cues make sense. Keep those results separate. For an automated play session, record the observation/action interface, model and client versions, reset/seed, and action or time budget. Reaching the goal with a gameplay agent does not establish that unfamiliar human players understood the route.
 
 ## Operating procedure
 
@@ -44,6 +60,7 @@ An unofficial English adaptation and reorganization of [The Level Design Book](h
 Restate: **For which player, under which rules and constraints, should which experience occur, and what evidence would support it?**
 
 Ask only for missing information that changes the next decision:
+
 - Genre, camera, movement, combat, interaction, and the existing project's state.
 - Audience, single-player or multiplayer rules, intended duration or match length.
 - Engine, platform, assets, team, deadline, and requested deliverable.
@@ -53,6 +70,7 @@ When progress is possible, state provisional assumptions and propose a small nex
 ### 2. Write a minimal brief
 
 Use the [level brief template](templates/level-brief.md). Establish:
+
 - One-sentence experience goal and a few actionable design pillars.
 - Core activities; what is introduced, tested, combined, or changed.
 - Start, completion, failure, retry, and persistence conditions.
@@ -64,6 +82,7 @@ Use the [level brief template](templates/level-brief.md). Establish:
 ### 3. Explore structure in the cheapest useful representation
 
 Choose a beat sheet, node graph, floor plan, section, or rough blockout. Do not require all of them.
+
 - Mark starts, goals, required progression, branches, gates, shortcuts, and landmarks.
 - Distinguish visibility from reachability; annotate heights and important sightlines.
 - Estimate, then measure traversal, combat, waiting, and backtracking time. Area alone does not predict duration.
@@ -72,6 +91,7 @@ Choose a beat sheet, node graph, floor plan, section, or rough blockout. Do not 
 ### 4. Make the risky part playable early
 
 Build a small, end-to-end playable slice of the riskiest relationship:
+
 - Use representative camera, movement, collision, interaction, and enemy capabilities.
 - Test clearance, jumps, stairs, cover, camera behavior, and retries in a metrics playground.
 - Add only the scripting, lighting, sound, and temporary signs necessary for the question.
@@ -82,6 +102,7 @@ If execution is unavailable, deliver specifications and test steps explicitly la
 ### 5. Observe without completing the experience for the player
 
 Use [playtesting guidance](references/wayfinding-playtesting.md) and the [playtest report](templates/playtest-report.md).
+
 - Define the question and expected observable behavior before recruiting testers.
 - Unless the agreed test method requires it, do not coach, explain, or defend during play.
 - Separate observed behavior, player statements, and designer interpretation.
@@ -91,18 +112,19 @@ Use [playtesting guidance](references/wayfinding-playtesting.md) and the [playte
 
 ### 6. Select the next intervention from evidence
 
-| Symptom | Investigate before adding content |
-| --- | --- |
-| Confusing route | Ground continuity, decision points, landmarks, goal exposure, and actual connections—not arrows first |
-| Flat combat | Enemy roles, readable information, space, resources, and alternatives—not more health first |
-| Awkward scale | Camera and controller measurements—not real-world dimensions alone |
-| Monotony | Activity changes, intensity, downtime, repetition, and retry cost—not greater length |
-| Art damages play | Sightlines, collision, interaction readability, and navigation—not more detail |
-| Poor performance | Measured bottlenecks on representative hardware—not screenshots or average FPS alone |
+| Symptom          | Investigate before adding content                                                                     |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| Confusing route  | Ground continuity, decision points, landmarks, goal exposure, and actual connections—not arrows first |
+| Flat combat      | Enemy roles, readable information, space, resources, and alternatives—not more health first           |
+| Awkward scale    | Camera and controller measurements—not real-world dimensions alone                                    |
+| Monotony         | Activity changes, intensity, downtime, repetition, and retry cost—not greater length                  |
+| Art damages play | Sightlines, collision, interaction readability, and navigation—not more detail                        |
+| Poor performance | Measured bottlenecks on representative hardware—not screenshots or average FPS alone                  |
 
 ### 7. Deliver a reviewable version
 
 Provide what the task needs, not every possible document:
+
 1. Intent, constraints, and labeled assumptions.
 2. Beats/routes/layout with a legend and meaningful annotations.
 3. Playable blockout or implementable specification.

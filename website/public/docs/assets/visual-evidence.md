@@ -1,6 +1,10 @@
 # Visual evidence and agent-harness research
 
-Use screenshots, video, state inspection, and control traces to check what an agent actually changed. Pair the methods below with a runnable project from the [testing library](../reference/testing-library.md).
+An agent changes a character's material, captures a screenshot and declares the fix complete. First establish that the image shows the modified scene. In Godot 4.5, an offscreen [SubViewport](https://docs.godotengine.org/en/4.5/classes/class_subviewport.html) updates only when visible by default; a capture can therefore miss the intended update. The readback contracts below explain how to obtain and retain the right pixels.
+
+For a capture check, add a temporary visible marker that changes with the test step. Record the scene revision, target viewport, step identity and original image. Require the expected marker and dimensions before sending the frame to a visual judge; diagnose a stale or empty capture as an observation failure. Keep the marker outside the region used for appearance scoring, or capture a separate qualification frame.
+
+Once capture works, pair the image with the action and state evidence needed for the question: changing material color, hitting an enemy and saving a scene need different checks. Keep original images beside crops or annotated derivatives. A project from the [testing library](../reference/testing-library.md) can provide the controlled scene for this work.
 
 For concrete selector, memory, temporal-verification and asset-feedback mechanisms, see the [visual-feedback contract dossier](./visual-feedback.md).
 

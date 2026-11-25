@@ -81,6 +81,10 @@
   --tax-3d: #5f666a;
   --tax-production: #8d8d89;
   --tax-world: #8a0c12;
+  --tax-audio: #596f8b;
+  --tax-runtime: #8a4646;
+  --tax-testing: #597168;
+  --tax-publishing: #826747;
   /* Scales. */
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -161,6 +165,10 @@
   --tax-3d: #a8a8a2;
   --tax-production: #d9d9d4;
   --tax-world: #c4161d;
+  --tax-audio: #9bb2ce;
+  --tax-runtime: #d79c9c;
+  --tax-testing: #9fbfb2;
+  --tax-publishing: #ccb18d;
 }
 :root,
 .dark {
@@ -493,27 +501,6 @@ kbd {
   display: block;
   object-fit: cover;
 }
-.page-cover-label {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  max-width: calc(100% - 20px);
-  padding: 4px 7px;
-  border-radius: 4px;
-  background: var(--chip-bg);
-  color: var(--chip-ink);
-  font-size: 10px;
-  line-height: 1.5;
-  pointer-events: none;
-}
-.game-preview-unavailable {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 9;
-  padding: 24px;
-  color: var(--muted);
-  font-size: 12px;
-}
 .image-action {
   display: flex;
   align-items: center;
@@ -746,12 +733,6 @@ kbd {
   background: var(--panel);
   padding: 22px;
 }
-.resource-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 21px;
-}
 .resource-icon {
   display: inline-flex;
   align-items: center;
@@ -775,9 +756,6 @@ kbd {
 .resource-icon.logo-dark {
   background: var(--logo-dark-bg);
   color-scheme: dark;
-}
-.resource-card-top .bookmark-button {
-  margin-left: auto;
 }
 .resource-affiliation {
   display: block;
@@ -934,15 +912,6 @@ kbd {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--panel);
-}
-.testing-symbol {
-  width: 38px;
-  height: 38px;
-  border-radius: 7px;
-  display: grid;
-  place-items: center;
-  background: var(--soft);
-  margin-bottom: 20px;
 }
 .testing-card .small-label {
   font-size: 9px;
@@ -1276,12 +1245,8 @@ kbd {
     min-height: 44px;
   }
   .resource-card-footer button,
-  .resource-card-footer a,
-  .resource-card-top .quiet-icon {
+  .resource-card-footer a {
     min-height: 44px;
-  }
-  .resource-card-top .quiet-icon {
-    width: 44px;
   }
   .resource-tile {
     padding: 22px;
@@ -1293,9 +1258,6 @@ kbd {
     font-size: 13px;
     line-height: 1.85;
     min-height: 0;
-  }
-  .resource-card-top {
-    margin-bottom: 16px;
   }
   .resource-affiliation {
     font-size: 11px;

@@ -9,6 +9,7 @@ Combat systems define movement, aiming, attacks, damage, resources, defenses, en
 If the core attack is unreadable or movement is unreliable, adding a better room may not solve the problem. Identify whether the failure belongs to the mechanic, the arrangement, or their interaction.
 
 Before designing a fight, establish:
+
 - Player movement and attack capabilities.
 - Expected information and reaction opportunities.
 - Enemy perception, reach, mobility, and failure states.
@@ -22,6 +23,7 @@ Numerical damage is only part of effective pressure. Exposure, accuracy, telegra
 A useful enemy role creates a reason to act differently. Roles might pressure distance, displace the player, deny a position, demand priority, punish exposure, or support another enemy.
 
 For each role, specify:
+
 - What the player can perceive before being punished.
 - What action or situation the enemy encourages.
 - Which weakness or counterplay can be learned.
@@ -35,6 +37,7 @@ For stealth especially, distinguish sensing from interpretation. Suspicion, inve
 ## 3. Build encounters around a question
 
 Use a compact encounter brief:
+
 - Intended decision, feeling, or skill.
 - Starting view, player state, and resources.
 - Enemy roles, positions, patrols, and arrival conditions.
@@ -55,6 +58,23 @@ Use a compact encounter brief:
 
 An “arena” is not automatically a circular room with a locked door. Confinement, spawning, and wave structures are choices that must serve the goal.
 
+### Prototype a reason to leave cover
+
+For an adapted shooter exercise, reuse one existing ranged enemy and one approaching enemy. The question is whether their positions make changing cover useful while leaving a readable retreat. This is a setup to test, not a report of player behavior.
+
+Place a tall pillar beyond the entrance, a ranged guard across the room, and a side passage for the approaching enemy. Keep the entrance retreat open. Start each trial with the same weapon, health, ammunition, enemy settings, and enemy alert state; record those values from the actual project.
+
+| Relationship           | Intended decision                                                    | First implementation check                                                              |
+| ---------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Entrance to pillar     | Enter for a better angle while retaining retreat                     | The guard is visible before the player takes fire; the pillar actually blocks its shots |
+| Pillar to guard        | Peek or change position to attack                                    | Camera safety and weapon-origin exposure agree with the intended cover behavior         |
+| Side passage to pillar | Reposition when the approaching enemy threatens the current position | The enemy can traverse the passage and gives perceptible warning before attacking       |
+| Retreat to entrance    | Recover or reconsider rather than become trapped                     | The player can back out; enemies follow or stop according to a defined rule             |
+
+First run with only the guard, then only the approaching enemy, then both. A failed path or an enemy firing through the pillar is an implementation defect to fix before judging the combination. In the combined test, record first commitment, cover changes, damage source, retreat, and completion or failure. If players stay at the entrance, investigate whether it offers every needed attack angle; do not automatically increase enemy damage.
+
+For a geometry comparison, change only the pillar or side-route relationship and retain the other settings. A scripted command that teleports the player to the next cover position cannot establish that a player could discover and traverse that route.
+
 ### Difficulty changes
 
 Consider changing composition, placement, resources, information, timing, and behavior—not only health or damage. Verify that a change preserves the intended lesson and does not remove counterplay.
@@ -66,6 +86,7 @@ A difficult fight can be appropriate. Unclear causality, unavoidable damage, bro
 Cover includes any structure that blocks relevant sightlines or attacks; it is not limited to chest-high boxes or explicit cover mechanics.
 
 Describe cover by what the actual game supports:
+
 - Partial versus full occlusion.
 - Standing versus crouched use.
 - Hard protection versus concealment only.
@@ -101,24 +122,25 @@ Competitive maps must consider rules, skill, team coordination, spawn behavior, 
 
 ### Map-balance audit
 
-| Relationship | Questions |
-| --- | --- |
-| Starts and spawns | Can a player orient before danger? Can opponents predict or trap spawns? |
-| Arrival timing | Who reaches a contested item, angle, or objective first, under actual movement? |
-| Sightlines | Which ranges and weapons dominate? What does exposure cost? |
-| Routes | Are flanks usable, recognizable, and worth their travel cost? |
-| Height | What pays for information and attack advantages? |
-| Resources | Do rewards generate movement and contest, or reinforce permanent control? |
-| Chokes | Do they create decisions or simply remove options? |
-| Rotation | Can players respond to changing objectives without one route always winning? |
-| Recovery | Can the losing side meaningfully re-enter play? |
-| Population | Does the map still work at its intended player count and mode? |
+| Relationship      | Questions                                                                       |
+| ----------------- | ------------------------------------------------------------------------------- |
+| Starts and spawns | Can a player orient before danger? Can opponents predict or trap spawns?        |
+| Arrival timing    | Who reaches a contested item, angle, or objective first, under actual movement? |
+| Sightlines        | Which ranges and weapons dominate? What does exposure cost?                     |
+| Routes            | Are flanks usable, recognizable, and worth their travel cost?                   |
+| Height            | What pays for information and attack advantages?                                |
+| Resources         | Do rewards generate movement and contest, or reinforce permanent control?       |
+| Chokes            | Do they create decisions or simply remove options?                              |
+| Rotation          | Can players respond to changing objectives without one route always winning?    |
+| Recovery          | Can the losing side meaningfully re-enter play?                                 |
+| Population        | Does the map still work at its intended player count and mode?                  |
 
 Do not impose a three-lane diagram, equal path lengths, or exact mirroring without a rule-specific reason.
 
 ### Timing worksheet
 
 For a relevant route, measure:
+
 - Spawn-to-contact.
 - Spawn-to-objective/item.
 - Rotation between objectives.
@@ -133,6 +155,7 @@ Measure using representative players and movement options. Distance divided by t
 Record map version, mode, player count, teams, experience, rules, and major events. Examine where advantage develops, not just the final winner.
 
 Useful evidence includes:
+
 - Side-swapped rounds.
 - Repeated contested timings.
 - Routes chosen and routes consistently ignored.
@@ -142,6 +165,12 @@ Useful evidence includes:
 Win rates from a small uneven group do not prove a side advantage. Heatmaps can locate activity but cannot alone explain its cause.
 
 Competitive skill also evolves. A once-uncontested relationship can change when a community discovers movement, tactics, or resource timing. Treat balance as a continuing inquiry.
+
+### Run a paired arrival-time check
+
+For a contested pickup, mark two spawn points and the pickup's activation boundary. Keep the mode, loadout, movement options, and start signal fixed. Have the same two testers run from opposite sides, exchange sides, then repeat the pair. Record tester, side, route, input/start timing, arrival event, and interruptions for every attempt; retain ties and failed traversals.
+
+This adapted check asks whether an apparent side advantage follows the spawn or follows the tester. Measure with a shared clock or game event log, not two unsynchronized recordings. If the advantage follows one route after swapping testers, inspect its turns, exposure, and required movement before changing pickup placement. These short runs investigate arrival opportunity; they do not establish whole-match fairness.
 
 ## Deliverable
 

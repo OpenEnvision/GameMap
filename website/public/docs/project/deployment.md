@@ -1,6 +1,6 @@
 # Website development and deployment
 
-GameMap uses **Fumadocs, React Router, React, TypeScript, and Vite**. The publishing target is [GitHub Pages](https://openenvision.org/GameMap/). Production consists of static HTML, CSS, JavaScript, media, and a browser-side search index, with optional zero-server Supabase Direct community features.
+A guide can work at the development server root and still lose a screenshot or language link under the published subpath. Edit with the local server, then build with the Pages base and open the result in the static preview. The deployment target is [GitHub Pages](https://openenvision.org/GameMap/). It serves HTML, CSS, JavaScript, media, and a browser-side search index. An installation can also enable Supabase Direct for community features.
 
 ## Local development
 
@@ -55,11 +55,13 @@ npm run preview
 
 The preview command reads the base path from the built site and prints the correct URL. It serves static files only, with no SPA fallback, matching GitHub Pages more closely than a development server.
 
+In that preview, open a changed article by URL, refresh it, switch languages, and follow a local asset or section link in the article. If it only fails in the preview, check whether the broken URL starts at the site root or repeats the `/GameMap/` prefix. If direct refresh fails while a click from the home page works, look for the article's generated directory and index file in `dist/`.
+
 ## Supabase Direct community mode
 
 GameMap supports optional zero-server community interactions (email/GitHub sign-in, ratings, comments, reports, screenshot submissions, and browser moderation) using Supabase Cloud directly from the static site.
 
-- Generate ready-to-run SQL with `npm run community:direct-sql -- --with-games --out .build/setup.sql`, backed by `supabase/direct-mode/enable-supabase-direct.sql`.
+- The checked-in `supabase/direct-mode/enable-supabase-direct.sql` extends an existing Supabase schema. It requires migrations `0001` through `0031`, which are absent from this checkout. On an already migrated instance, `npm run community:direct-sql -- --with-games --out .build/setup.sql` generates the extension and a call to the existing game-sync function. For a fresh checkout without those migrations, use the default static build.
 - Set `VITE_GAMEMAP_COMMUNITY=1`, `VITE_GAMEMAP_COMMUNITY_MODE=supabase-direct`, `VITE_SUPABASE_URL`, and `VITE_SUPABASE_PUBLISHABLE_KEY` at build time, or configure `GAMEMAP_SUPABASE_URL` and `GAMEMAP_SUPABASE_PUBLISHABLE_KEY` as GitHub Actions repository variables.
 
 ## GitHub Pages setup

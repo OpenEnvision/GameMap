@@ -6,8 +6,6 @@ import {
 } from "react-router";
 import {
   ArrowDownUp,
-  ArrowRight,
-  ArrowUpRight,
   Bookmark,
   Compass,
   Download,
@@ -19,29 +17,67 @@ import {
   X,
 } from "lucide-react";
 import { Link, useNavigate, useSiteI18n, SourceLanguage } from "../lib/i18n";
-import { contentFor, sources } from "../../content/registry.server";
+import {
+  content,
+  contentFor,
+  contentIn,
+  sources,
+} from "../../content/registry.server";
 import { matchesSearch } from "../../content/matching";
-import { searchableText } from "../../content/search";
+import {
+  compareDirectoryTitles,
+  parseDirectorySearchQuery,
+} from "../../content/directory-search";
+import { resourceSearchText } from "../../content/resource-search.server";
 import { ResourceAttribution } from "../../src/components/ResourceIcon";
-import { type Dimension, type Stage } from "../../src/types";
+import { CatalogIcon } from "../components/catalog-icon";
+import {
+  resourceCollections,
+  type Dimension,
+  type Stage,
+} from "../../src/types";
 import {
   categories,
   categoryGlyphs,
   stageLabels,
   typeLabels,
 } from "../lib/catalog";
-import { ResourceDetail, ResourceMark } from "../components/resource-detail";
+import { ResourceDetail } from "../components/resource-detail";
 import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
 import { IndexEmpty, IndexHero } from "../components/catalog-browser";
 import { ResourceOverview } from "../components/resource-overview";
 import { ResourceCardInfo } from "../components/resource-card-info";
+export { shouldRevalidateCollection as shouldRevalidate } from "../lib/collection-query";
+
+const productionToolTopics = ["Tiled", "LDtk", "Aseprite", "ink", "Nakama"];
+const resourceFilterKeys = [
+  "q",
+  "category",
+  "type",
+  "stage",
+  "track",
+  "dimension",
+  "saved",
+] as const;
+
 export function loader({ request }: LoaderFunctionArgs) {
-  const content = contentFor(request);
+  const local = contentFor(request);
+  const chinese = contentIn("zh");
   return {
-    entries: content.all("resource"),
-    demos: content.all("demo"),
+    entries: local.all("resource"),
+    demos: local.all("demo"),
     identities: sources.identities,
+    resourceSearch: resourceSearchText(),
+    testingLinks: local.all("testing").map((entry) => ({
+      title: entry.title,
+      url: entry.url,
+      search: [
+        content.require("testing", entry.id).title,
+        chinese.require("testing", entry.id).title,
+        entry.id.replaceAll("-", " "),
+      ].join(" "),
+    })),
   };
 }
 function supportedFilter(
@@ -54,13 +90,11 @@ function supportedFilter(
 
 export default function Resources() {
   const { t } = useSiteI18n(),
-    { entries, demos, identities } = useLoaderData<typeof loader>();
+    { entries, demos, identities, resourceSearch, testingLinks } =
+      useLoaderData<typeof loader>();
   const resources = entries.map((entry) => entry.data),
-    entryById = new Map(entries.map((entry) => [entry.id, entry])),
-    searchText = new Map(
-      entries.map((entry) => [entry.id, searchableText(entry)]),
-    );
-  const [params, setParams, hydrated] = useClientQuery(),
+    entryById = new Map(entries.map((entry) => [entry.id, entry]));
+  const [params, , hydrated] = useClientQuery(),
     location = useLocation(),
     navigate = useNavigate();
   const [saved, setSaved] = useState<string[]>([]),
@@ -101,6 +135,15 @@ export default function Resources() {
         : [...previous, id],
     );
   const query = params.get("q") || "",
+    search = parseDirectorySearchQuery(query),
+    selectedScope = supportedFilter(
+      params.get("collection"),
+      [...resourceCollections.map(({ id }) => id), "all"],
+      "",
+    ),
+    collection =
+      selectedScope ||
+      (resourceFilterKeys.some((key) => params.has(key)) ? "all" : "tools"),
     category = supportedFilter(
       params.get("category"),
       categories.map(({ id }) => id),
@@ -112,20 +155,41 @@ export default function Resources() {
       "3d",
       "world",
     ]),
-    sort = supportedFilter(params.get("sort"), ["curated", "name"], "curated"),
+    sort = supportedFilter(
+      params.get("sort"),
+      search.empty ? ["category", "name"] : ["relevance", "category", "name"],
+      search.empty ? "category" : "relevance",
+    ),
     savedOnly = params.get("saved") === "1";
-  const update = (key: string, value: string) =>
-    setParams(
-      (previous) => {
-        const next = new URLSearchParams(previous);
-        if (key === "track") next.delete("dimension");
-        if (!value || value === "all") next.delete(key);
-        else next.set(key, value);
-        return next;
+  const applyFilters = (next: URLSearchParams) =>
+    navigate(
+      {
+        search: next.size ? `?${next}` : "",
+        hash:
+          window.location.hash === "#resource-results"
+            ? ""
+            : window.location.hash,
       },
-      { replace: true, preventScrollReset: true },
+      { replace: true, preventScrollReset: true, flushSync: true },
     );
-  const filtered = resources
+  const update = (key: string, value: string) => {
+    const next = new URLSearchParams(window.location.search);
+    if (key === "track") next.delete("dimension");
+    if (key === "collection") {
+      for (const filter of ["category", "type", "stage", "track", "dimension"])
+        next.delete(filter);
+      next.set("collection", value || "tools");
+    } else {
+      if (key === "saved" && value === "1") next.set("collection", "all");
+      if (!value || value === "all") next.delete(key);
+      else next.set(key, value);
+    }
+    return applyFilters(next);
+  };
+  const collectionResources = resources.filter(
+    (resource) => collection === "all" || resource.collection === collection,
+  );
+  const filtered = collectionResources
     .filter(
       (resource) =>
         (category === "all" || resource.category === category) &&
@@ -133,9 +197,20 @@ export default function Resources() {
         (stage === "all" || resource.stages.includes(stage as Stage)) &&
         (track === "all" || resource.dimensions.includes(track as Dimension)) &&
         (!savedOnly || saved.includes(resource.id)) &&
-        matchesSearch(searchText.get(resource.id) || "", query),
+        matchesSearch(resourceSearch[resource.id] || "", search),
     )
-    .sort((a, b) => (sort === "name" ? a.name.localeCompare(b.name) : 0));
+    .sort((a, b) => {
+      const relevance =
+        sort === "relevance"
+          ? compareDirectoryTitles(search, a.name, b.name)
+          : 0;
+      const categoryOrder =
+        sort !== "name"
+          ? categories.findIndex(({ id }) => id === a.category) -
+            categories.findIndex(({ id }) => id === b.category)
+          : 0;
+      return relevance || categoryOrder || a.name.localeCompare(b.name);
+    });
   let activeId = "";
   try {
     if (hydrated && location.hash.startsWith("#resource/"))
@@ -179,12 +254,43 @@ export default function Resources() {
   const counts = Object.fromEntries(
     categories.map((item) => [
       item.id,
-      resources.filter((resource) => resource.category === item.id).length,
+      collectionResources.filter((resource) => resource.category === item.id)
+        .length,
     ]),
   );
   const tone = (id: string) =>
     ({ "--tone": `var(--tax-${id})` }) as CSSProperties;
   const selectedCategory = categories.find((item) => item.id === category);
+  const selectedCollection = resourceCollections.find(
+    (item) => item.id === collection,
+  );
+  const availableCategories = categories.filter(
+    (item) => counts[item.id] > 0 || category === item.id,
+  );
+  const availableTypes = Object.entries(typeLabels).filter(
+    ([id]) =>
+      type === id ||
+      collectionResources.some((resource) => resource.type === id),
+  );
+  const otherCollectionMatches =
+    !search.empty && !savedOnly && collection !== "all"
+      ? resources.filter(
+          (resource) =>
+            resource.collection !== collection &&
+            matchesSearch(resourceSearch[resource.id] || "", search),
+        ).length
+      : 0;
+  const testingMatches =
+    !search.empty && query.trim().length > 1 && !savedOnly
+      ? testingLinks
+          .filter((item) => matchesSearch(item.search, search))
+          .sort((a, b) => compareDirectoryTitles(search, a.title, b.title))
+      : [];
+  const guideMatches =
+    !search.empty && query.trim().length > 1 && !savedOnly
+      ? productionToolTopics.filter((topic) => matchesSearch(topic, search))
+      : [];
+  const hasRelated = testingMatches.length > 0 || guideMatches.length > 0;
   const CategoryGlyph = selectedCategory
     ? categoryGlyphs[selectedCategory.id]
     : LayoutGrid;
@@ -212,26 +318,13 @@ export default function Resources() {
     },
     { key: "saved", value: savedOnly ? "1" : "", label: t("Saved only") },
   ].filter(({ value }) => value && value !== "all");
-  const clearFilters = () =>
-    setParams(
-      (previous) => {
-        const next = new URLSearchParams(previous);
-        for (const key of [
-          "q",
-          "category",
-          "type",
-          "stage",
-          "track",
-          "dimension",
-          "saved",
-        ])
-          next.delete(key);
-        return next;
-      },
-      { replace: true, preventScrollReset: true },
-    );
+  const clearFilters = () => {
+    const next = new URLSearchParams(window.location.search);
+    for (const key of resourceFilterKeys) next.delete(key);
+    return applyFilters(next);
+  };
   const lede =
-    "Find coding agents, game engines, asset pipelines and world models. Explore what they do, where they fit and how to get started.";
+    "Choose tools for each part of making a game. Browse guides, research and technical references in their own collections.";
   return (
     <main id="main-content" className="ix-page ix-resources">
       <title>{t("Resource library — GameMap")}</title>
@@ -240,28 +333,188 @@ export default function Resources() {
         pillar="tools"
         title="Your next building block."
         lede={lede}
-        count={resources.length}
-        countLabel="curated resources"
+        count={collectionResources.length}
+        countLabel={selectedCollection?.label || "All resources"}
       >
         <div className="heading-links">
           <Link to="/docs/evaluation/review-coverage/">
             {t("How we review sources")}
-            <ArrowUpRight size={14} />
           </Link>
         </div>
       </IndexHero>
       <div className="ix-wrap">
-        <div className="ix-bar">
+        <div className="resource-search">
           <label className="ix-search">
             <Search size={18} aria-hidden="true" />
             <input
               id="resource-search"
+              type="search"
               aria-label={t("Search resources")}
+              aria-describedby="resource-search-scope"
               placeholder={t("Search tools, engines, topics…")}
               value={query}
               onChange={(event) => update("q", event.target.value)}
             />
           </label>
+          <p className="resource-scope-note" id="resource-search-scope">
+            {selectedScope
+              ? t("Search scope is {collection}.", {
+                  collection: t(selectedCollection?.label || "All resources"),
+                })
+              : t("Search covers all collections unless you select one.")}
+          </p>
+          <div className="resource-search-count" aria-live="polite">
+            {!search.empty &&
+              (filtered.length ? (
+                <a href="#resource-results">
+                  {t(
+                    filtered.length === 1
+                      ? "View 1 matching resource"
+                      : "View {count} matching resources",
+                    { count: filtered.length },
+                  )}
+                </a>
+              ) : (
+                t("No resources match these filters.")
+              ))}
+          </div>
+          {otherCollectionMatches > 0 && (
+            <button
+              type="button"
+              className="resource-expand-search"
+              onClick={() => update("collection", "all")}
+            >
+              {t(
+                otherCollectionMatches === 1
+                  ? "Search all collections to see {count} more match"
+                  : "Search all collections to see {count} more matches",
+                { count: otherCollectionMatches },
+              )}
+            </button>
+          )}
+        </div>
+        {hasRelated && (
+          <section
+            className="resource-related-results"
+            aria-labelledby="resource-related-heading"
+          >
+            <h2 id="resource-related-heading">{t("Elsewhere on GameMap")}</h2>
+            <div className="resource-related-groups">
+              {testingMatches.length > 0 && (
+                <div>
+                  <h3>{t("Testing library")}</h3>
+                  <ul>
+                    {testingMatches.slice(0, 4).map((item) => (
+                      <li key={item.url}>
+                        <Link to={item.url}>{item.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                  {testingMatches.length > 4 && (
+                    <Link
+                      to={`${url.page("testing")}?${new URLSearchParams({ q: query })}`}
+                    >
+                      {t("See all testing results")}
+                    </Link>
+                  )}
+                </div>
+              )}
+              {guideMatches.length > 0 && (
+                <div>
+                  <h3>{t("Production tools guide")}</h3>
+                  <ul>
+                    {guideMatches.map((topic) => (
+                      <li key={topic}>
+                        <Link
+                          to={`${url.document("production/tools")}#${topic.toLowerCase()}`}
+                        >
+                          {topic}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+        <section
+          className="resource-collection-section"
+          aria-label={t("Browse the library")}
+        >
+          <div className="resource-collection-heading">
+            <h2>{t("What do you need?")}</h2>
+            <button
+              className="resource-all-collections"
+              aria-pressed={collection === "all"}
+              onClick={() => update("collection", "all")}
+            >
+              {t("All resources")} <span>{resources.length}</span>
+            </button>
+          </div>
+          <div
+            className="resource-collections"
+            role="group"
+            aria-label={t("Library collection")}
+          >
+            {resourceCollections.map((item) => (
+              <button
+                key={item.id}
+                aria-pressed={collection === item.id}
+                onClick={() => update("collection", item.id)}
+              >
+                <span className="resource-collection-title">
+                  {t(item.label)}
+                  <strong>
+                    {
+                      resources.filter(
+                        (resource) => resource.collection === item.id,
+                      ).length
+                    }
+                  </strong>
+                </span>
+                <span className="resource-collection-description">
+                  {t(item.description)}
+                </span>
+              </button>
+            ))}
+          </div>
+          <p className="resource-collection-context">
+            {t(
+              selectedCollection?.description ||
+                "Browse every tool, guide, research project and technical reference.",
+            )}
+          </p>
+          <details className="resource-directory">
+            <summary>
+              {t("Browse the complete directory")}
+              <span>{resources.length}</span>
+            </summary>
+            <div className="resource-directory-groups">
+              {resourceCollections.map((item) => (
+                <section key={item.id}>
+                  <h3>{t(item.label)}</h3>
+                  <ul>
+                    {resources
+                      .filter((resource) => resource.collection === item.id)
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((resource) => (
+                        <li
+                          key={resource.id}
+                          data-content-ref={entryById.get(resource.id)!.key}
+                        >
+                          <Link to={url.resource(resource.id)}>
+                            {resource.name}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </details>
+        </section>
+        <div className="ix-bar">
           <div className="ix-bar-selects">
             <span className="ix-bar-hint">
               <SlidersHorizontal size={14} aria-hidden="true" />
@@ -275,7 +528,7 @@ export default function Resources() {
                 onChange={(event) => update("type", event.target.value)}
               >
                 <option value="all">{t("All types")}</option>
-                {Object.entries(typeLabels).map(([id, label]) => (
+                {availableTypes.map(([id, label]) => (
                   <option key={id} value={id}>
                     {t(label)}
                   </option>
@@ -317,7 +570,10 @@ export default function Resources() {
                 value={sort}
                 onChange={(event) => update("sort", event.target.value)}
               >
-                <option value="curated">{t("Curated order")}</option>
+                {!search.empty && (
+                  <option value="relevance">{t("Best match")}</option>
+                )}
+                <option value="category">{t("Category, then name")}</option>
                 <option value="name">{t("Name: A–Z")}</option>
               </select>
             </label>
@@ -358,10 +614,10 @@ export default function Resources() {
               onClick={() => update("category", "all")}
             >
               <LayoutGrid size={15} aria-hidden="true" />
-              {t("All resources")}
-              <span>{resources.length}</span>
+              {t("All tasks")}
+              <span>{collectionResources.length}</span>
             </button>
-            {categories.map((item) => {
+            {availableCategories.map((item) => {
               const Glyph = categoryGlyphs[item.id];
               return (
                 <button
@@ -382,7 +638,7 @@ export default function Resources() {
             aria-hidden="true"
             data-filtered={category !== "all" || undefined}
           >
-            {categories.map((item) => (
+            {availableCategories.map((item) => (
               <i
                 key={item.id}
                 style={{ ...tone(item.id), flexGrow: counts[item.id] }}
@@ -428,12 +684,12 @@ export default function Resources() {
         )}
         <ResourceOverview
           resources={filtered}
-          total={resources.length}
+          total={collectionResources.length}
           filters={{ category, type, stage, track }}
           onFilter={update}
         />
-        <div className="ix-meta">
-          <span aria-live="polite">
+        <div className="ix-meta" id="resource-results" tabIndex={-1}>
+          <span aria-live={query.trim() ? undefined : "polite"}>
             <strong>
               {t(
                 filtered.length === 1
@@ -447,6 +703,9 @@ export default function Resources() {
           <span className="ix-meta-rule" aria-hidden="true" />
           <span>
             {[
+              selectedCollection
+                ? t(selectedCollection.label)
+                : t("All resources"),
               category === "all"
                 ? ""
                 : t(categories.find((item) => item.id === category)!.label),
@@ -466,7 +725,7 @@ export default function Resources() {
         </div>
         {filtered.length ? (
           <div className="resource-grid">
-            {filtered.map((resource, index) => {
+            {filtered.map((resource) => {
               const entry = entryById.get(resource.id)!,
                 identity = identities[resource.id as keyof typeof identities],
                 isSaved = saved.includes(resource.id),
@@ -478,37 +737,21 @@ export default function Resources() {
                   data-content-ref={entry.key}
                   style={tone(resource.category)}
                 >
-                  <div
-                    className="resource-card-top"
-                    data-logo={identity.asset ? undefined : "none"}
+                  <CatalogIcon icon={Glyph} className="resource-card-mark" />
+                  <button
+                    className="quiet-icon bookmark-button"
+                    aria-label={t(isSaved ? "Unsave {title}" : "Save {title}", {
+                      title: resource.name,
+                    })}
+                    aria-pressed={isSaved}
+                    onClick={() => toggleSave(resource.id)}
                   >
-                    <span className="ix-tile-index" aria-hidden="true">
-                      {String(index + 1).padStart(3, "0")}
-                    </span>
-                    <ResourceMark
-                      resource={resource}
-                      identity={identity}
-                      size={56}
+                    <Bookmark
+                      size={16}
+                      fill={isSaved ? "currentColor" : "none"}
                     />
-                    <button
-                      className="quiet-icon bookmark-button"
-                      aria-label={t(
-                        isSaved ? "Unsave {title}" : "Save {title}",
-                        {
-                          title: resource.name,
-                        },
-                      )}
-                      aria-pressed={isSaved}
-                      onClick={() => toggleSave(resource.id)}
-                    >
-                      <Bookmark
-                        size={16}
-                        fill={isSaved ? "currentColor" : "none"}
-                      />
-                    </button>
-                  </div>
+                  </button>
                   <span className="small-label">
-                    <Glyph size={12} aria-hidden="true" />
                     {t(
                       categories.find(
                         (category) => category.id === resource.category,
@@ -530,12 +773,12 @@ export default function Resources() {
                   </p>
                   <ResourceCardInfo
                     entry={entry}
+                    showCollection={collection === "all"}
                     onTopic={(topic) => update("q", topic)}
                   />
                   <div className="resource-card-footer">
                     <button onClick={() => selectResource(resource.id)}>
                       {t("View details")}
-                      <ArrowRight size={15} />
                     </button>
                     <a
                       href={resource.url}
@@ -545,7 +788,7 @@ export default function Resources() {
                         title: resource.name,
                       })}
                     >
-                      <ArrowUpRight size={16} />
+                      {t("Open project")}
                     </a>
                   </div>
                 </article>
@@ -553,22 +796,27 @@ export default function Resources() {
             })}
           </div>
         ) : (
-          <IndexEmpty
-            title={
-              savedOnly
-                ? "Your collection has room to grow."
-                : "No resources on this path."
-            }
-            body={
-              savedOnly
-                ? "Save a few useful tools with the bookmark button, then find them here."
-                : "Try another search or loosen the filters a little."
-            }
-          >
-            <button className="button button-secondary" onClick={clearFilters}>
-              {t("Browse all resources")}
-            </button>
-          </IndexEmpty>
+          !hasRelated && (
+            <IndexEmpty
+              title={
+                savedOnly
+                  ? "Your collection has room to grow."
+                  : "No resources on this path."
+              }
+              body={
+                savedOnly
+                  ? "Save a few useful tools with the bookmark button, then find them here."
+                  : "Try another search or loosen the filters a little."
+              }
+            >
+              <button
+                className="button button-secondary"
+                onClick={clearFilters}
+              >
+                {t("Clear filters")}
+              </button>
+            </IndexEmpty>
+          )
         )}
       </div>
       {active && (

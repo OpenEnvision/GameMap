@@ -1,0 +1,1272 @@
+{
+  "repository-research:Humpalumps/Cadle": {
+    "summary": "浏览器 FPS／RPG，包含数据驱动任务、程序化地形、合成音频，以及独立的画面、动画和性能检查工具。",
+    "license_note": "代码采用 MIT；资产和录制音频受独立 NOTICE 限制。",
+    "ai_note": "CLAUDE.md 和 README 描述了代理编排及验证流程；未进行独立创作归属核查。"
+  },
+  "repository-research:levy-street/world-of-claudecraft": {
+    "summary": "浏览器 MMO，以共享的确定性游戏核心支持权威多人服务器、离线世界及无画面的 Gymnasium 环境。",
+    "license_note": "许可依据：MIT License。适用该许可的仓库代码／材料受其覆盖；第三方资产和依赖可能另有条款。MIT 仅覆盖源码。README 区分各项媒体、受限／非商业媒体及未获许可的品牌标识；再分发前须查阅 CREDITS。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:corosolto/client": {
+    "summary": "巴西题材讽刺浏览器 FPS，包含机器人对局、多人测试版、程序化与导入资产，文档还介绍了视觉评估工具。",
+    "license_note": "许可依据：GNU Affero General Public License v3.0。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 明确将结对开发归属于 Claude、Kimi、Codex／GPT 和 GLM，并链接原始提示词。"
+  },
+  "repository-research:Kevin-Liu-01/Claude-of-Tanks": {
+    "summary": "装甲战斗浏览器游戏，包含逐装甲板计算、弹道、可破坏战场、固定步长权威模拟、多人模式及场景／载具检查工作室。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 明确注明采用端到端、多代理 Claude／Codex 开发流程。"
+  },
+  "repository-research:alexdevmotion/grand-theft-austerity-open-world": {
+    "summary": "第三人称政治讽刺游戏，以 OpenStreetMap 构建布加勒斯特，包含战役任务、自由探索、载具、警察、天气和成长系统。",
+    "license_note": "许可依据：MIT License。适用该许可的仓库代码／材料受其覆盖；第三方资产和依赖可能另有条款。代码采用 MIT；衍生自 OpenStreetMap 的数据采用 ODbL-1.0，其他引用材料保留各自条款。",
+    "ai_note": "README 将原始游戏创作活动项目归属于 Codex／GPT-5.6，并将 Codex 列为此扩展版的开发协作者。"
+  },
+  "repository-research:Burry/mark-of-the-veil": {
+    "summary": "八章节浏览器动作战役，支持第一／第三人称切换、竞技场遭遇战、首领战、手柄和程序化音乐。",
+    "license_note": "许可依据：MIT License。适用该许可的仓库代码／材料受其覆盖；第三方资产和依赖可能另有条款。README 将 MIT 应用于代码／原创资产，并单独列明第三方软件及 CC0 资产的署名。",
+    "ai_note": "作者描述了最初的 GPT-5.6 Sol Ultra／Codex 提示词实验及此后的持续开发。"
+  },
+  "repository-research:vkopitsa/browser-shooter": {
+    "summary": "浏览器 FPS，结合波次生存、主机权威 WebRTC 多人模式、回合制炸弹模式、地图编辑器及基于 OpenStreetMap 的战场。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 声称代码、测试及文档由 Claude Code 在自然语言指导下编写。"
+  },
+  "repository-research:reicapivararbx/capyquake": {
+    "summary": "Three.js 竞技场射击游戏，包含变异敌人波次、首领、成长、物品经济系统、多人大厅及触控。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。README 写明教育用途／按现状提供，但未确立标准的宽松许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Braffolk/fable5-world-demo": {
+    "summary": "使用种子的程序化开放世界渲染器，生成地形、侵蚀、植被、水体和大气，文档说明了截图及性能剖析检查。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 声称约 99% 的开发由 Claude Fable 5 模型完成，包括验证工具，并有人工引导。"
+  },
+  "repository-research:braedonsaunders/voidstrike": {
+    "summary": "浏览器 RTS，文档描述了基于 Worker 的 ECS 模拟、固定步长确定性逻辑、锁步 WebRTC 对战、失同步诊断及 GPU 渲染。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:BarthPaleologue/CosmosJourneyer": {
+    "summary": "Babylon.js 太空探索游戏，包含程序化行星世界、无缝地表探索及浏览器／Electron 版本，文档说明了单元和端到端测试。",
+    "license_note": "许可依据：GNU Affero General Public License v3.0。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:serejaris/dust-arena": {
+    "summary": "指定的 Dust Arena 仓库仍不可用。同一所有者较早的 claude-fable 单体仓库保存了历史源码及带日期的迁移指向，目标为指定仓库。",
+    "license_note": "无法在指定位置确认当前许可及复用范围。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:RealAbdurRehman/decay": {
+    "summary": "浏览器生存射击游戏，包含怪物波次、拾取物、受移动影响的射击精度、变化地图及小地图。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:iamrichmack111/richmack-the-forest": {
+    "summary": "恐怖驾驶生存游戏，包含动态敌人、营地任务、世界事件、载具战斗、实例化及对象池。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:bbs220/project_block_shooter": {
+    "summary": "低多边形多人 FPS 原型，采用 React Three Fiber、Node 权威服务器、Rapier 物理、客户端预测及即时命中战斗。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:mohsenheydari/three-fps": {
+    "summary": "FPS 示例，采用实体／组件架构、Ammo.js 刚体控制、根运动 NPC 动画及寻路。",
+    "license_note": "许可依据：MIT License。适用该许可的仓库代码／材料受其覆盖；第三方资产和依赖可能另有条款。代码采用 MIT；README 分别注明 CC-BY-4.0 模型、CC0 环境材料及 Mixamo 内容。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:tensorspace-ai/evolution-arena": {
+    "summary": "在客户端运行的程序化生存游戏，突变会跨世代改变生物形态与机制，并包含能量、保暖、捕食者及触控。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:gianlucatruda/music-melee": {
+    "summary": "围绕音乐节奏与计分设计的跑酷 FPS，结合空间音频合成、物理和浏览器渲染。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "作者描述了 Aider 架构师模式流程：由 o3-mini 规划、Claude 3.7 Sonnet 实现。"
+  },
+  "repository-research:danyparc/antigravity-evil-eyes": {
+    "summary": "浏览器生存 FPS，包含霓虹环境、追逐玩家的眼球敌人、基于物理的移动及弹射物战斗。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "仓库简介及 README 将迭代开发归属于 Antigravity。"
+  },
+  "repository-research:Arnie016/flight-simulator-fable5": {
+    "summary": "浏览器飞行训练原型，包含任务、遥测、计分、回放／复盘流程，以及可选的实时语音教练。",
+    "license_note": "许可依据：MIT。项目代码的 MIT 声明仅见于作者 README，根目录没有许可文件。第三方飞机模型／音频采用独立许可。",
+    "ai_note": "README 分别注明 Codex 参与迭代开发，以及 Claude Fable 5／Claude Code 参与创作，但未区分各模型的贡献比例。"
+  },
+  "repository-research:imr4n4lif/bloodwave-fps-game": {
+    "summary": "浏览器波次生存射击游戏，包含多种武器、开放地形与建筑场景、僵尸行为、HUD 及音频接入点。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:profullstack/nightcell7": {
+    "summary": "Babylon.js 分章节 FPS 单体仓库，包含浏览器／PWA／Electron 客户端及采用 Colyseus 的服务端权威多人架构。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:BunPrinceton/kings-field-game": {
+    "summary": "Three.js 第一人称地牢探索项目，记录了通过 Git worktree 并行开展 Claude Code 开发的过程。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "README 记录多个 Claude Code 实例通过 Git worktree 并行开发功能分支。"
+  },
+  "repository-research:Humpalumps/Aether": {
+    "summary": "程序化 WebGL2 法术特效工坊，包含数据驱动发射器、GPU 粒子模拟、确定性回放及视觉测量流程。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Moonfall-Lab/moonfall-ark": {
+    "summary": "无法在所提供的 GitHub 地址检查指定的 Moonfall Ark 仓库。",
+    "license_note": "无法在指定位置确认当前许可及复用范围。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Redblock-Online/redblock-client": {
+    "summary": "Three.js 瞄准训练器与世界编辑器，包含程序化靶标、可复用方块组件、变换、撤销／重做及场景导入导出。",
+    "license_note": "许可依据：Redblock Community License 1.0。仓库材料受已检查的许可约束，不包括采用独立许可的依赖／资产。LICENSE.md 写明 Redblock Community License 1.0，包含品牌标识及同类公开／商业／托管服务限制；这与 README 的 MIT 声明不一致。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:LBALab/lba2remake": {
+    "summary": "Little Big Adventure 系列的重新实现，提供可探索场景，以及可检查对象、变量和角色脚本的编辑器。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:NikLever/THREEjs_RPG_Game": {
+    "summary": "Nik Lever 的 Three.js 课程资源包含 Lost Treasure 悬疑解谜 RPG 示例及独立的 FBX 动画混合器示例。已检查的源码实现了拾取物与门的交互、相机切换及屏幕摇杆。",
+    "license_note": "在已检查的项目自身源码树或清单中，未找到适用于整个项目的复用许可。源码公开可读不代表获准再分发；依赖和媒体可能另有条款。",
+    "ai_note": "项目自身材料未说明开发过程中使用了 AI。"
+  },
+  "repository-research:stickyfingies/grove": {
+    "summary": "浏览器 RPG 技术沙盒，采用实体组件架构，独立的渲染与物理线程通过共享内存通信。",
+    "license_note": "许可依据：保留所有权利。README 保留游戏／原创内容的版权，禁止未经同意的复制或再分发。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:cedric-h/lab": {
+    "summary": "小型多人 3D RPG 战斗项目，链接了游戏视频，并列明程序、模型及动画贡献者。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:kaetram/kaetram-open": {
+    "summary": "源自 BrowserQuest 的旧版 2D MMORPG 及可扩展游戏代码，包含服务器基础设施和地图工具。",
+    "license_note": "许可依据：MPL-2.0 加 Omnia Public License（README）。README 将 MPL-2.0 与额外 OPL 使用限制结合；资产注明为 CC-BY-SA-3.0。不能简化为不带限定的 MPL-2.0。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:hyperfy-xyz/hyperfy": {
+    "summary": "用于持久化、自托管 3D 世界的框架，支持世界内编辑、JavaScript 应用、多人协作、物理及 VR。",
+    "license_note": "许可依据：GPL-3.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:PrismarineJS/prismarine-web-client": {
+    "summary": "通过 WebSocket 转 TCP 代理在浏览器运行 Minecraft 客户端，支持世界渲染、玩家移动及方块交互。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:LabyStudio/js-minecraft": {
+    "summary": "Minecraft 风格学习沙盒，实现体素地形、光照、移动、渲染、UI 及多人协议功能。",
+    "license_note": "许可依据：CC-BY-NC-4.0。已检查的根目录 LICENSE 采用知识共享署名—非商业性使用 4.0；第三方资源保留各自权利。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:hexianWeb/Third-Person-MC": {
+    "summary": "第三人称体素风格世界示例，包含程序化生物群系、角色移动、相机碰撞处理及持续开发的战斗系统。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:justjavac/minecraft-web": {
+    "summary": "Minecraft 风格浏览器游戏，包含创造和生存模式；作者将开发归属于 Kimi K3，并记录第三方媒体来源。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 将项目开发归属于 Kimi K3。"
+  },
+  "repository-research:maxscharwath/toonks-game": {
+    "summary": "浏览器坦克战斗游戏，采用 WebRTC 主机／客户端联网，供好友对战。",
+    "license_note": "许可依据：Apache-2.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:ryancampbell/kart-royale": {
+    "summary": "程序化浏览器卡丁车竞速游戏，网格、纹理和声音均由代码生成；README 公开提示词及多代理评审流程。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 描述了先通过单个提示词启动，再开展九轮经编排的多代理迭代。"
+  },
+  "repository-research:toddeTV/zlig": {
+    "summary": "日式禅意景观放置类浏览器游戏，记录开发配置与第三方署名，并披露了 AI 辅助。",
+    "license_note": "许可依据：修改版 CC-BY-NC-SA-4.0。已检查的 LICENSE.md 写明采用附加项目条款的修改版 CC BY-NC-SA 4.0，仅适用于原创代码／模型。",
+    "ai_note": "README 注明使用 Copilot 解答编程问题，并使用 ChatGPT 进行编程／代码及图像生成。"
+  },
+  "repository-research:akarlsten/cuberun": {
+    "summary": "合成波风格避障游戏，包含逐渐加速、与音乐同步的特效、本地最高分及触控。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:coldi/r3f-game-demo": {
+    "summary": "从 Colmen’s Quest 提取的极简俯视图块游戏示例，展示 React 游戏架构及整格移动。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:filahf/r3f-spotify-game": {
+    "summary": "受 AudioSurf 启发的 3D 音乐游戏，连接 Spotify，让玩家在随音频变化的场景中切换车道。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:jonit-dev/vibe-coder-3d": {
+    "summary": "早期游戏引擎／编辑器项目，目标是结合 React 场景编辑、Rust 运行时及自然语言游戏创作。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 描述了计划中的 AI 辅助游戏创作，并明确标记项目尚不可用。"
+  },
+  "repository-research:iaruso/circuit-rush": {
+    "summary": "极简计时竞速游戏，包含车辆物理、检查点、可移动障碍及三圈个人最佳成绩挑战。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:fgarrec0397/granity": {
+    "summary": "基于可视化控件的游戏引擎与编辑器，可放置可编程 React 组件、操作场景并保存布局。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:JL978/3d-tic-tac-toe": {
+    "summary": "小型 3D 井字棋项目，提供本地开发说明。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:prnthh/react-three-game": {
+    "summary": "基于预制体的场景框架，提供可视化编辑器、可复用且兼容 JSON 的场景树及由 React 定义的行为。",
+    "license_note": "许可依据：自定义 Pockit 许可。已检查的 LICENSE 是简短的非标准许可，并非 MIT 或其他公认的宽松许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:manan30/billiards": {
+    "summary": "基础台球桌模拟，采用自定义物理实现，并提供托管示例。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:verekia/r3f-gamedev": {
+    "summary": "极简游戏开发示例集，涵盖血条、受伤反馈、武器拖尾、相机特效、插值及实体状态模式。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:winsznx/bull-rush": {
+    "summary": "无尽跑酷游戏，包含确定性的每日赛道、服务器回放验证、排行榜，以及文档说明的链上奖金金库集成。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:michaelkolesidis/beachy-beachy-ball": {
+    "summary": "障碍赛游戏，玩家控制沙滩球跳跃穿过关卡，抵达目标星星。",
+    "license_note": "许可依据：AGPL-3.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:EVEDensity/MineWorld": {
+    "summary": "程序化体素探索游戏，包含方块放置／破坏、机器人 NPC、分块地形及桌面／触控输入。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:akay25/TheAviator": {
+    "summary": "yakudoo 的 The Aviator 派生版本：驾驶飞机收集燃料、躲避障碍，逐步挑战速度更快的关卡。",
+    "license_note": "许可依据：MIT（README 声明）。README 声称采用 MIT，但查询的根目录 LICENSE 不存在。上游／第三方范围未单独确认。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:norio/vrm-game-starter": {
+    "summary": "VRM 角色游戏起点，包含人形动画重定向、脚部 IK、基于 BVH 的碰撞、触控／手柄输入及浏览器内关卡编辑器。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:anshaneja5/skyline-run": {
+    "summary": "将 GitHub 贡献图转换为城市的飞行游戏，玩家低空掠过由贡献数据生成的建筑、进行近距离穿越以得分。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:esc5221/drive-game": {
+    "summary": "Web／Android 驾驶模拟器，使用真实赛道几何、自定义高频车辆物理、天气、合成引擎音效、赛车线及幽灵圈回放。",
+    "license_note": "许可依据：MIT（仅代码）。已检查的 LICENSE 将 MIT 限于源码；OSM 赛道数据采用 ODbL-1.0，模型／字体采用独立许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Eray114514/Deep-Space": {
+    "summary": "使用种子的太空探索项目，包含无缝行星着陆、地表移动、地形 LOD、大气渲染、星图及触控输入。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 说明随附配乐由 Suno 生成；未确认代码作者归属。"
+  },
+  "repository-research:pranshuparmar/downhill-mayhem": {
+    "summary": "可独立运行的山地自行车速降竞速致敬游戏，包含对手、空中特技、加速、战斗及桌面／移动端／手柄控制。",
+    "license_note": "许可依据：Apache-2.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Vheissu/emerald-bayou": {
+    "summary": "气垫船探索与工作任务游戏，场景为流式加载的程序化沼泽，包含野生动物、天气、无线电叙事及可配置画质。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 说明单独分发的 GLB 模型由 Meshy 生成。"
+  },
+  "repository-research:winchxyz/celadon": {
+    "summary": "陶艺游戏，涵盖拉坯、干燥、修坯、上釉及烧制，结合运行时几何生成、材质模拟和工坊环境。",
+    "license_note": "许可依据：MIT（仅代码）。已检查的 LICENSE 覆盖代码，CC0 录音及 OFL-1.1 字体另有说明。",
+    "ai_note": "README 注明使用 Ultracode 模式的 Claude Opus 5。"
+  },
+  "repository-research:jonradoff/chessmata": {
+    "summary": "面向人类和代理的多人国际象棋平台，包含 3D 棋盘、匹配、排名、REST API、CLI、UCI 兼容性及 MCP 工具。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 记录了供人类／代理下国际象棋使用的 MCP、CLI、UCI 和 REST 接口；这不能确立 AI 作者归属。"
+  },
+  "repository-research:StarKnightt/Pixel-Quest": {
+    "summary": "横向卷轴平台游戏，结合 3D 地形与面向相机的精灵图，包含跳跃辅助、踩踏敌人、收集物、移动平台及限时关卡。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:pshenok/datacenter-survival": {
+    "summary": "教育性数据中心管理游戏，将机架收入与供电链容量、冷却、热传播、故障及效率指标联系起来。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:laszlo-gilanyi/OldenEraExplorer": {
+    "summary": "配套数据／模型查看工具，从用户本地持有的 Heroes of Might and Magic: Olden Era 安装中提取内容，并通过本地网页界面展示数据。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Quincunx33/fastroads": {
+    "summary": "定制的 Slow Roads 风格无尽驾驶体验，包含双向车流、碰撞反馈、可移动触控按钮及支持离线的 PWA 外壳。",
+    "license_note": "许可依据：未知；上游条款尚未确认。README 将条款交由上游项目／历史记录说明，但没有明确本项目的条款。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:bridge-mind/tideline": {
+    "summary": "程序化浏览器钓鱼游戏，包含抛竿、基于张力的收线、装备成长、地点解锁、天气／时间效果及鱼种日志。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:avihaymenahem/voltmarch": {
+    "summary": "即时战略项目，当前 README 侧重 Windows 桌面版、非对称阵营、基地建设、陆海空单位，以及战役、遭遇战、多人和回放模式。",
+    "license_note": "许可依据：VOLTMARCH Proprietary License。已检查的 LICENSE 保留源码及原创资产的所有权利；第三方材料保留各自条款。",
+    "ai_note": "README 注明遭遇战卡片的地形图层由 ImageGen 制作；这不能确立 AI 代码作者归属。"
+  },
+  "repository-research:emollick/monument-brutalist-city-builder": {
+    "summary": "粗野主义城市设计玩具，可直接控制建筑体量，生成程序化构图与城市活动，提供多种分析及电影视角和本地存档。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Noisemaker111/jgengine": {
+    "summary": "模块化游戏 SDK，包含独立核心、物理与 UI 适配器、多人／存储后端，以及打包提供的游戏构建编码代理技能。",
+    "license_note": "许可依据：Apache-2.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 记录了打包提供的编码代理技能及面向代理的 SDK 流程。"
+  },
+  "repository-research:baptistefalvet/NeedForTokens": {
+    "summary": "程序化街机竞速游戏，记录了由单个提示词通过 Claude Code 创建的来源，包含对手、驾驶控制和遥测，并明确说明画面及地形限制。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 明确注明使用单个 Claude Code 提示词，并公开了该提示词。"
+  },
+  "repository-research:wormholeportal/Makone": {
+    "summary": "程序化 3D 创作工具包，结合代理指令、场景／游戏运行时及捕获／检查工具，在编写世界代码时提供视觉反馈。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 描述了面向现有编码代理的工具包，提供截图／检查反馈。"
+  },
+  "repository-research:georgekobaidze/sunday-dev-drive": {
+    "summary": "合成波风格驾驶体验，将 DEV Community 用户的文章及个人统计转换为路边广告牌和标志。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:michaelkolesidis/fintech-world": {
+    "summary": "交互式 3D 教育／游戏化平台，通过可探索的网页体验介绍数字支付产品。",
+    "license_note": "许可依据：AGPL-3.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Hack23/blacktrigram": {
+    "summary": "韩国武术浏览器战斗模拟器，包含基于架势的战斗、角色类型、目标选择、动画，以及详细的架构和测试文档。",
+    "license_note": "许可依据：Apache-2.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 包含 GitHub Copilot 自定义代理开发章节；仅凭这一点不能证明全部代码由 AI 生成。"
+  },
+  "repository-research:GyuoMi/exidem": {
+    "summary": "Stairwell Iliad 是 Three.js 探索／解谜游戏；已检查的源码连接了玩家、碰撞八叉树及物品交互，结局代码包含语音识别行为，以及语音辅助组件不可用时的替代路径。",
+    "license_note": "package.json 声明 GPL-3.0，仓库中也有 GPLv3 LICENSE。媒体采用混合许可：署名信息及钥匙模型的声明确认存在 CC-BY-NC-4.0 内容，同时包含 CC-BY 和 CC0 资产。本次检查未确认已署名配乐的复用授权；不得将代码许可标签应用于全部附带媒体。",
+    "ai_note": "项目自身材料未说明开发过程中使用了 AI。"
+  },
+  "repository-research:leslieyip02/racing": {
+    "summary": "小型驾驶／竞速示例，包含键盘控制、推力调整，以及文档说明的检查点快捷键和时间步进行为。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:michaelkolesidis/zigzag": {
+    "summary": "极简 3D 小球无尽跑酷游戏，每次点击改变方向，使小球留在狭窄的悬空道路上。",
+    "license_note": "许可依据：AGPL-3.0。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:load1n9/caviar": {
+    "summary": "原生／浏览器游戏引擎，包含场景／世界基础结构、精灵图、程序化噪声示例、CLI，以及文档说明的 Deno／浏览器入口。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:kpreid/all-is-cubes": {
+    "summary": "实验性可编辑体素世界引擎，其方块本身又由更小方块构成，提供 CPU／GPU 渲染及桌面／浏览器应用。",
+    "license_note": "许可依据：MIT OR Apache-2.0。尽管元数据仅列 Apache-2.0，README 明确提供 MIT 或 Apache-2.0 二选一。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Refsa/pollus": {
+    "summary": "基于 ECS 的小型 C# 引擎，包含模块化输入／音频／UI 系统，面向原生和浏览器平台。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:snowfrogdev/nanojet": {
+    "summary": "TypeScript／Vite 工作区，包含 WebGPU 引擎及 Pong 示例。已检查的源码连接了 ECS 世界、游戏循环和渲染器，示例包含玩家／CPU 球拍、计分及合成得分音效。",
+    "license_note": "在已检查的项目自身源码树或清单中，未找到适用于整个项目的复用许可。源码公开可读不代表获准再分发；依赖和媒体可能另有条款。",
+    "ai_note": "项目自身材料未说明开发过程中使用了 AI。"
+  },
+  "repository-research:eliassjogreen/pioneer": {
+    "summary": "开发中的 ECS 游戏引擎，面向浏览器及原生 Deno 使用，渲染后端仍列为待开发任务。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:iErcann/enari-engine": {
+    "summary": "Three.js／Ammo.js FPS 试验场，包含第一与第三人称视角、武器动画、GLB 地图加载及多个环境示例。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:haosong/3D-Online-FPS": {
+    "summary": "采用 Three.js、Socket.io 和 Node.js 的教学性多人 3D 射击网站，附中文实现教程。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Parking-Master/FPS": {
+    "summary": "受 Halo 启发的浏览器 FPS，包含多人大厅、机器人、多张地图及多种武器，联网使用 Gametime.js 和 PubNub。",
+    "license_note": "许可依据：MIT，适用于项目代码；资产署名包含独立的 CC BY、CC BY-NC-SA 和 CC0 条款。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:mrdoob/three-descent": {
+    "summary": "Descent 的 Three.js 移植，包含第一章共享软件版数据，并支持用户提供已注册完整版游戏文件。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "README 将 Three.js 移植归属于 mrdoob 与 Claude。"
+  },
+  "repository-research:kamalesh404/multiplayer-fps-game": {
+    "summary": "BulletStorm Arena 浏览器 FPS，包含 Three.js 渲染、Socket.io 多人模式、角色移动，以及文档说明的服务端移动／命中验证。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:mrdoob/three-doom": {
+    "summary": "Doom 的 Three.js 移植，包含首个共享软件章节，并支持用户提供 Doom 或 Doom II 的 WAD 文件。",
+    "license_note": "许可依据：GPL-2.0，仅适用于代码；WAD 数据采用独立许可。",
+    "ai_note": "README 将 Three.js 移植归属于 mrdoob、Claude 和 Codex。"
+  },
+  "repository-research:UstymUkhman/YetAnotherZombieHorror": {
+    "summary": "第一与第三人称僵尸生存射击游戏，包含可配置的 Ammo.js／BVH 物理、瞄准、武器切换及视觉特效设置。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:kamalesh404/velocity.io": {
+    "summary": "Three.js 多人 FPS，采用 Rapier 运动学移动、GLB 地图碰撞体、程序化武器运动及 Socket.io 同步。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:StarKnightt/operation-ironhold": {
+    "summary": "单 HTML 文件浏览器 FPS，包含限时清除敌人的目标、程序化世界、武器和音频，并公开了使用五个提示词进行 AI 开发的记录。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "README 称 AI 代理使用五个提示词构建了项目，并链接 PROMPTS.md。"
+  },
+  "repository-research:vincenzo-afk/NIGHTFALL": {
+    "summary": "TypeScript 浏览器 FPS 脚手架，文档描述英雄职业、游戏模式、移动物理和经过验证的网络数据结构；核心战斗与渲染仍未检查确认。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:whitwhoa/open-browser-fps": {
+    "summary": "较早的 Three.js／Node.js／Socket.io 权威服务器移动示例，支持多人角色同步，但没有射击实现。",
+    "license_note": "许可依据：GPL-3.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:StarKnightt/cinder-ops": {
+    "summary": "程序化 Three.js 单人撤离 FPS，包含街道竞技场、四种武器、敌对 AI、补给箱及合成音频。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:8tp/instagib-arena": {
+    "summary": "Quake 风格浏览器轨道炮 FPS，文档描述了权威多人模式、延迟补偿、离线机器人、排名决斗、回放及可配置无障碍功能。",
+    "license_note": "许可依据：AGPL-3.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:iaanzhao/vertex-fps": {
+    "summary": "低多边形 Three.js 竞技场 FPS，包含对抗机器人的团队死斗、可破坏掩体、三种武器及单独托管的 WebSocket 多人服务器。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:comster/fps-threejs": {
+    "summary": "小型浏览器 FPS，包含敌人、生命值、分数和换弹，附使用 Claude Code 或 Codex 扩展项目的入门指南。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "README 教授如何使用 Claude Code 或 Codex 扩展项目，但未确立现有代码的作者归属。"
+  },
+  "repository-research:Kurt-Hanel/mp-fps-game": {
+    "summary": "计划支持多人大厅和对局的 Three.js 浏览器 FPS 项目；简短 README 提供了游戏目录的启动命令。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:eskafu/zombie-fps": {
+    "summary": "以 1960 年代村庄为背景的静态 Three.js 僵尸生存 FPS，包含钩索、随机武器箱，以及文档说明的僵尸生成／导航系统。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "AGENTS.md 描述了项目；已检查的来源中未找到作者明确披露 AI 创作的说明。"
+  },
+  "repository-research:mmclqx/frontline-zero": {
+    "summary": "派生自 mshumer/Claude-of-Duty 的程序化 Three.js／WebGL2 FPS，增加图形预设、纹理缓存及武器／角色修正。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:heihuzicity-tech/pastel-nuketown-fps": {
+    "summary": "柔和色调的 Three.js FPS，包含单人机器人，以及通过 WebSocket 中继连接、最多四人的主机权威房间。",
+    "license_note": "许可依据：保留所有权利。README 明确写有“Private. All rights reserved.”；未据此推断任何复用授权。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:stobieee-bit/FPScape": {
+    "summary": "Three.js 第一人称 RPG 源码树，已实现技能经验及任务状态／奖励逻辑，并包含 WebSocket 多人客户端及独立的 Node ws 服务端包。",
+    "license_note": "整个项目的许可仍未确认。server/package.json 仅为服务端包声明 ISC；已检查的源码树中没有找到项目整体许可文本或客户端／媒体授权。不得将该服务端清单声明扩展到整个仓库。",
+    "ai_note": "项目自身材料未说明开发过程中使用了 AI。"
+  },
+  "repository-research:rizdigico/VoidStrike-FPS": {
+    "summary": "单页 Three.js FPS，包含枪械晋级、死斗、生存和计时模式、五个竞技场、武器成长及程序化音频。",
+    "license_note": "许可依据：ISC，来自 README 许可声明；未检查独立许可文件。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:szefo94/VibeOnDuty": {
+    "summary": "Three.js 浏览器 FPS，包含波次模式、训练、搜索与摧毁、团队死斗、地图编辑器，以及文档说明的 Colyseus 专用服务器多人模式。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "AGENTS.md 和 CLAUDE.md 记录了适配代理的流程；仅凭这些文件不能证明 AI 作者归属。"
+  },
+  "repository-research:TheFadGhost/operation-blackline": {
+    "summary": "面向自托管 5v5 团队死斗的程序化 Three.js／Node 浏览器 FPS，包含机器人、权威命中检查、客户端预测及合成资产。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "README 称大部分代码使用 OpenRouter ox alpha 编写，由人工指导和审查。"
+  },
+  "repository-research:DustinVII/the-outlands-game": {
+    "summary": "实验性 Vite／Three.js 多人移动原型，采用 Socket.io 同步，战斗／物理路线图明确尚未完成。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:hnprivv/Forge_FPS": {
+    "summary": "Three.js／Socket.IO 浏览器 FPS，内置项目指南描述单人打靶、四人房间、自由混战及搜索与摧毁模式，包含武器和爆炸桶机制。已检查的服务端源码实现房间及游戏事件转发。",
+    "license_note": "根目录 package.json 声明 ISC，但已检查的源码树中没有找到独立项目许可文本。这只是清单中的许可声明，并非已确认的所有附带模型、字体、纹理或声音的使用授权。",
+    "ai_note": "已检查的 HEAD 提交说明明确将 Claude Sonnet 4.6 列为共同作者。这能确认仓库对该提交的署名声明，但不属于独立审核，也不能证明整个游戏由 AI 编写。"
+  },
+  "repository-research:tangkwok0104/cat-of-duty": {
+    "summary": "Three.js／Rapier 波次生存 FPS，包含猫士兵、武器升级，并记录 Claude Code 构建、游玩测试及对抗式 QA 流程。",
+    "license_note": "许可依据：PolyForm-Noncommercial-1.0.0，仅适用于源码；生成的美术／音频／模型保留权利，部分外部资产采用 CC0。",
+    "ai_note": "README 称 Claude Code 代理构建了几乎全部内容，由人工指导并进行游玩测试，同时描述了代理的 QA 流程。"
+  },
+  "repository-research:whatgoodarewords/gungame": {
+    "summary": "Phase-0 浏览器 FPS 脚手架，规划了 scoutzknivez 风格移动和击杀晋级枪械玩法，采用共享 TypeScript 模拟及权威联网架构。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "仓库简介称项目通过 AI 编排者与审核者循环构建；README 仍将状态标为 Phase 0。"
+  },
+  "repository-research:dong-quan-tran/phaserift": {
+    "summary": "浏览器多人 FPS，元数据描述了 Three.js／Node、WebSocket 状态同步、即时命中战斗及传送门；README 只有简短标题。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:krishsoni15/DEADSIGNAL": {
+    "summary": "僵尸／执法记录仪风格浏览器 FPS，采用智能手机陀螺仪控制器、WebSocket 输入传输、Three.js／React 渲染及 Rapier 布娃娃物理。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Alwin936/Three.Js-FPS-Game---Vibe-Coded-w-Codex": {
+    "summary": "Frenzy Fighters 是 Three.js 僵尸竞技场 FPS；仓库的操作说明页面描述基于分数的关卡、多发射击强化及多阶段投石首领。已检查的 JavaScript 构建了渲染器、竞技场和僵尸模型。",
+    "license_note": "在已检查的项目自身源码树或清单中，未找到适用于整个项目的复用许可。源码公开可读不代表获准再分发；依赖和媒体可能另有条款。",
+    "ai_note": "仓库简介明确说明使用 Codex 构建。"
+  },
+  "repository-research:luongnv89/codex-of-duty": {
+    "summary": "Three.js／Rapier 浏览器 FPS，包含流式加载的城市区块、战术敌人、多种武器、空间音频及中继点目标。",
+    "license_note": "许可依据：ISC。尽管 API 返回 NOASSERTION，已检查的 ISC 许可仍确认源码采用该许可。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:TiagoSilvaPereira/simple-3d-fps": {
+    "summary": "Babylon.js／WebGL 浏览器 FPS，提供在线预览链接及随附 HTML 文档，定位为重视简洁代码的简单项目。",
+    "license_note": "许可依据：MIT，适用于源码；音乐、步枪模型、头骨和天空盒采用独立条款。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:KylerCondran/Fate": {
+    "summary": "纯 JavaScript 奇幻 FPS，包含多种主题关卡、武器、拾取物及敌人类型；作者披露选择性使用了 AI 编程及图像生成辅助。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "作者在 README 中披露，在部分数学及艺术工作中使用了图像生成和编码代理。"
+  },
+  "repository-research:zlatnaspirala/magic-three": {
+    "summary": "基于类组织的 Three.js／Ammo.js FPS 框架与示例，支持地图加载、浏览器 ES 模块，以及 OpenVidu／Kurento 或旧版 WebRTC 多人模式。",
+    "license_note": "许可依据：GPL-3.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:ZundaAI-Lab/prism-rift-vanguard": {
+    "summary": "Three.js 战役射击游戏，包含任务波次、首领、水晶、任务间飞船升级、多语言 UI 及本地成长存档。",
+    "license_note": "许可依据：0BSD。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Footprintarts/ThreeJS_FPS_2.0": {
+    "summary": "Three.js FPS 示例的模块化扩展，包含带动画的武器骨架、八叉树碰撞、移动、球形弹射物及音频。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:LeoOpenBotDevelopment/Three.js-3D-FPS-Game": {
+    "summary": "Three.js 浏览器 FPS，包含冲刺／跳跃、追击敌人、血条、射击及换弹，代码受限制性的自定义条款约束。",
+    "license_note": "许可依据：要求修改的自定义非商业许可，仅适用于源码；公开再分发需进行实质性修改。模型另行采用 CC BY 4.0。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:codepankajpy/SolFrag": {
+    "summary": "集成 Solana／Phantom 钱包的浏览器多人射击客户端；联网服务器和链上代码以独立仓库链接提供。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:n1md7/three-boilerplate": {
+    "summary": "Vite／TypeScript／Three.js FPS 起点，包含控制、碰撞、武器动画及手电筒，声音、粒子和 UI 标为开发中。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:ThanosRestas/Theasis": {
+    "summary": "Babylon.js 浏览器 FPS，包含多个世界区域、动画武器与敌人、消耗品、冲刺能量及清除敌人的目标。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:csarkosh/html5-fps": {
+    "summary": "无法检查指定仓库：GitHub 返回 404，限定所有者范围的仓库搜索也未找到匹配。",
+    "license_note": "无法在指定位置确认当前许可及复用范围。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:timetocode/nengi-babylon-3d-shooter": {
+    "summary": "Babylon.js／nengi 多人模板，展示预测移动、服务器状态校正、确定性输入及回溯延迟补偿。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:RolandCsibrei/babylon-lite-dude-particle-shooter": {
+    "summary": "Dude Particle Shooter 的 Babylon Lite 移植，详细记录了为仅支持 WebGPU 的渲染器替换 Babylon.js API 的过程。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:akhawatrahTW/cs1.6": {
+    "summary": "较早的 Babylon.js FPS 示例，包含射线检测、采用 A* 的敌人、拾取物、爆头、移动端控制，以及从 Counter-Strike 1.6 提取的模型。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:alexdevmotion/grand-theft-austerity": {
+    "summary": "最初的 AI Game Jam 第三人称讽刺游戏，背景为精简版布加勒斯特，包含短篇故事、驾驶及警察追逐片段；现已被 Open World 仓库取代。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 将最初的 AI Game Jam 构建归属于 Codex 和 GPT-5.6 sol。"
+  },
+  "repository-research:cbascom1/ClaudeCodeMetroidvaniaGame": {
+    "summary": "由 Claude Code 编写的银河恶魔城类垂直切片，包含相互连接的房间、平台跳跃、定向近战、能力、敌人、首领及成长系统。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 称完整垂直切片由 Claude Code 构建。"
+  },
+  "repository-research:lawrab/the-pile": {
+    "summary": "由 AI 编写的游戏待玩清单管理工具，导入 Steam 库，展示游玩状态及积压统计，并加入游戏化追踪机制。",
+    "license_note": "许可依据：MIT（README 声明）。README 声称采用 MIT，但查询的根目录 LICENSE 不存在。",
+    "ai_note": "README 称全部代码通过与 Claude Code 对话生成。"
+  },
+  "repository-research:noweh/mobius-chess": {
+    "summary": "受国际象棋启发的策略游戏，在自交且无边界的棋盘上采用新移动拓扑和吃王规则，支持本地／AI 对战，并记录 AI 开发过程。",
+    "license_note": "许可依据：MIT。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 描述了先由人工构思及制定规格，再由 Claude Code 自主实现的过程。"
+  },
+  "repository-research:darupong/vite-endless-runner-game": {
+    "summary": "React Three Fiber／Three.js 跑酷游戏，已检查的源码实现了换道、跳跃／滑行、障碍与金币处理、合成音频及浏览器本地前十名排行榜。",
+    "license_note": "在已检查的项目自身源码树或清单中，未找到适用于整个项目的复用许可。源码公开可读不代表获准再分发；依赖和媒体可能另有条款。",
+    "ai_note": "仓库简介称游戏完全使用 Claude Code 构建。已检查的部署配置提交包含 Claude Sonnet 4.6 的共同作者署名尾注。"
+  },
+  "repository-research:az9713/pirate-adventure": {
+    "summary": "两关点击式海盗冒险游戏，包含导航网格、背包谜题、对话、收集物及游戏内编辑器。",
+    "license_note": "许可依据：代码采用 MIT、资产采用 CC0（均为 README 声明）。README 声称代码采用 MIT、列出的模型采用 CC0，但查询的根目录 LICENSE 不存在。",
+    "ai_note": "README 注明 Claude Code 负责代码／架构／资产，Claude in Chrome 负责视觉测试，由人工提供创意指导。"
+  },
+  "repository-research:Uzzoper/vibecraft": {
+    "summary": "纯客户端体素建造／探索游戏，包含程序化地形和洞穴、区块流式加载、僵尸、生命值、合成音效及移动端控制。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库简介明确注明这些助手参与了体素游戏开发。"
+  },
+  "repository-research:Susanzzzzzzz/AICraft": {
+    "summary": "浏览器／移动端体素沙盒，包含建造、合成、战斗、关卡、天气及程序化音频，并提供 Android 打包方案和开发规格。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 将游戏及其规格的生成归属于 Claude Code 与 OpenSpec 流程。"
+  },
+  "repository-research:pahorema/murmur": {
+    "summary": "无法读取指定仓库，未能确认当前功能。",
+    "license_note": "无法在指定位置确认当前许可及复用范围。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:sentifold/generals-rts-threejs-port": {
+    "summary": "Command & Conquer: Generals – Zero Hour 的非官方浏览器重实现，以已发布的引擎源码为参考，使用用户自己持有的游戏资产。",
+    "license_note": "许可依据：GPL-3.0，附 Electronic Arts 第 7 节附加条款。已检查的 LICENSE.md 包含 GPL-3.0 及 EA 附加条款；明确不包括原版游戏资产。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:romanticamaj/promptasy": {
+    "summary": "学习提示词工程的探索游戏，通过组合提示词解决挑战，包含离线评分、附引用的教学材料及本地进度。",
+    "license_note": "许可依据：MIT（仅代码）。已检查的 LICENSE 仅覆盖代码；附带音乐／音效／字体及外部教学文本有独立权利。",
+    "ai_note": "README 将原创配乐归属于 Gary Hsieh 和 SUNO.ai；代码作者归属尚未确认。"
+  },
+  "repository-research:yunit00/game-corovans": {
+    "summary": "浏览器奇幻动作游戏，围绕保卫精灵村庄、伏击商队、完成任务及逐步推进至山地堡垒遭遇战展开。",
+    "license_note": "许可依据：MIT（仅代码）。已检查的 LICENSE 仅覆盖代码，不包括第三方模型、纹理、音频、环境及字体。",
+    "ai_note": "README 将游戏标为使用 Fable 5 的实验。"
+  },
+  "repository-research:evanhgs/billard-anglais": {
+    "summary": "开仑式台球项目，包含 Pygame 桌面实现及 Flask／Socket.IO 浏览器路由，支持本地游玩和双人房间。主页称其为 3D 开仑台球，已检查的桌面计分代码在撞到另外两球后加一分。",
+    "license_note": "在已检查的项目自身源码树或清单中，未找到适用于整个项目的复用许可。源码公开可读不代表获准再分发；依赖和媒体可能另有条款。",
+    "ai_note": "仓库简介称游戏以 vibe coding 方式开发，但未注明模型或工具。"
+  },
+  "repository-research:alvarosabu/tres-breakout": {
+    "summary": "合成波风格打砖块游戏，包含三关、逐渐加快的球速、三条生命及持久保存的最高分。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "仓库简介称 TresJS 打砖块游戏使用 Fable 5 以 vibe coding 方式开发。"
+  },
+  "repository-research:gcoche-bit/synthcrew-mcp-game": {
+    "summary": "游戏化 3D 代理仪表盘，包含可探索世界、可点击代理、任务规划／执行视图、实时活动及本地 API／WebSocket 后端。",
+    "license_note": "许可依据：未知。仓库许可分类来自 GitHub 元数据；不假定附带媒体和依赖也采用相同许可。",
+    "ai_note": "README 记录的是代理仪表盘及 CLI／MCP 集成，并非 AI 编写代码的声明。"
+  },
+  "repository-research:majidmanzarpour/threejs-game-skills": {
+    "summary": "Codex／Claude Code 技能包，包含统筹代理、玩法／渲染指引、随附 Vite／TypeScript 脚手架及确定性的 Playwright QA 模板。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:gamedev-skills/awesome-gamedev-agent-skills": {
+    "summary": "跨引擎技能集及路由器，可选择针对具体引擎的玩法、资产、测试及制作指令。",
+    "license_note": "许可依据：Apache License 2.0。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:buyun00/Seed-GameDev-Harness": {
+    "summary": "Claude Code 插件，用于组建游戏开发代理团队、分派引擎／领域任务、持久保存项目知识及注入技能片段。",
+    "license_note": "许可依据：MIT。项目代码的 MIT 声明仅见于作者 README；已检查的根目录列表中没有许可文件。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:Donchitos/Claude-Code-Game-Studios": {
+    "summary": "协同工作室模板，包含各角色专用代理、实现技能、质量门槛、钩子及针对具体引擎的流程。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:bullish0x/GameStudio": {
+    "summary": "位于项目本地且不绑定服务商的工作室框架，共享代理／技能定义，并为 Claude、Codex、Cursor 及浏览器／原生引擎提供适配器。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:PlayableIntelligence/game-creator": {
+    "summary": "面向 Phaser 和 Three.js 的浏览器游戏技能流程，可搭建项目、创建资产／音频、执行文档规定的 QA 阶段，并集成部署／变现。",
+    "license_note": "许可依据：MIT。项目代码的 MIT 声明仅见于作者 README，根目录没有许可文件。README 说明使用 @strudel/web 音频的游戏需要采用与 AGPL-3.0 兼容的许可。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:heagandev/threejs-agent-starter": {
+    "summary": "Three.js 躲避游戏起点，包含架构规则、可复用技能、功能提示词及独立空白游戏分支，供代理辅助扩展。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 说明 Cube Runner 分支在一次代理会话中从空白起点构建；未确认具体模型。"
+  },
+  "repository-research:0x0funky/agent-game-forge": {
+    "summary": "优先本地运行的 2D 游戏 IDE，结合 Codex／Claude 流程、可视化场景编辑器、精灵图生成及 JavaScript／Canvas 输出。",
+    "license_note": "许可依据：Apache License 2.0。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:frabcd/codex-ai-game-studio": {
+    "summary": "Codex 游戏制作流程包，涵盖游戏规划、工具选择、程序化 Three.js 建模、资产、编辑器集成、可撤销变更及 QA 门槛。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:Sstobo/Claude-Code-Game-Master": {
+    "summary": "Claude Code 角色扮演运行框架，包含持久化战役状态、自定义世界规则、文档检索及可选生成插画。",
+    "license_note": "许可依据：知识共享署名—非商业性使用—相同方式共享 4.0。仓库材料受已检查的许可约束，不包括采用独立许可的依赖／资产。CC-BY-NC-SA-4.0 的非商业及相同方式共享条件适用。",
+    "ai_note": "README 描述了运行时由 LLM 担任游戏主持人或游玩策略；这与代码作者归属是不同问题。"
+  },
+  "repository-research:htdt/godogen": {
+    "summary": "生成器源码，可发布适合代理使用的轻量 Godot、Bevy、Babylon.js 或 Three.js 游戏仓库，并提供资产及运行证据流程。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:gamekit-agent/gamekit-cli": {
+    "summary": "Normal 提供的 CLI，通过 Claude 命令、技能、MCP 桥接及构建／游玩测试流程创建或扩展 Unity 项目。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:RandallLiuXin/GodotMaker": {
+    "summary": "Godot 的文本生成游戏流程层，采用外部代理执行器，提供迭代构建／修复／评估、视觉 QA 及导出打包。",
+    "license_note": "许可依据：Business Source License 1.1。仓库材料受已检查的许可约束，不包括采用独立许可的依赖／资产。BUSL-1.1 的额外授权允许游戏开发及产出销售，但不包括竞争性商业产品或服务。已检查的许可将转换日期设为 2030-09-11，转换后的许可为 Apache-2.0。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:IdoCohen560/claude-unity-game-studio": {
+    "summary": "面向 Unity 的组合包，结合工作室代理、引擎／中间件技能、流程插件及统筹代理的质量门槛。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:HermeticOrmus/claude-code-game-development": {
+    "summary": "游戏开发插件市场及手册，涵盖引擎、渲染、多人、音频、测试及通用开发插件。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:joemonster/claude-game-studio": {
+    "summary": "将 OpenAI 游戏工作室技能重新打包用于 Claude Code，涵盖浏览器游戏架构、Phaser／Three.js／R3F、资产流程及游玩测试。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:Shellishack/3d-web-game-dev-skills": {
+    "summary": "Codex 技能集，用于程序化低多边形 Three.js 模型／glTF 导出，以及快速搭建 React／Vite／Babylon.js 原型。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:LeanEntropy/threejs-phaser-game-skills": {
+    "summary": "已在文档中说明来源的 Three.js Game Skills 派生版本，增加 Phaser 3 统筹代理及 2D 浏览器游戏流程。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:markjeromecruz/threejs-claude-starter": {
+    "summary": "无需构建的 Three.js／anime.js 起点，包含仓库内置库、带光照的庭院场景、相机移动及面向初学者的 Claude 扩展指引。",
+    "license_note": "许可依据：MIT License。仓库材料受已检查的许可约束，不包括采用独立许可的依赖／资产。模板及内置库采用 MIT；附带模型另行声明采用 CC0。",
+    "ai_note": "README 将可复用起点追溯至较早使用 Claude Code 制作的游戏；不包含该游戏的角色及美术。"
+  },
+  "repository-research:MRCalderon3D/everything-game-dev-code": {
+    "summary": "多引擎、多代理脚手架，包含面向设计、实现、资产及 QA 的规则、命令、技能、适配器、钩子和示例。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "README 描述了 AI 代理流程或集成。"
+  },
+  "repository-research:akolaarthurali/everything-claude-code-CLAUDE-CODE-GAME-ENHANCER-2": {
+    "summary": "affaan-m/ECC 的派生版本，已检查的 README 描述了通用代理运行框架的技能、记忆、安全、钩子及流程配置。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "继承的 README 记录了通用代理运行框架流程；不得将上游的个人经历声明归属于派生仓库所有者。"
+  },
+  "repository-research:mrdoob/three.js": {
+    "summary": "通用 JavaScript 3D 库，提供 WebGL／WebGPU 渲染器、SVG／CSS3D 扩展，以及示例和文档。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:BabylonJS/Babylon.js": {
+    "summary": "JavaScript／TypeScript 游戏与渲染引擎，提供在线试验场、带类型的 npm 包、文档及导出器生态。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:playcanvas/engine": {
+    "summary": "WebGL2／WebGPU 游戏与图形运行时，支持 3D 应用、高斯泼溅、XR 及浏览器交付。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:pmndrs/react-three-fiber": {
+    "summary": "Three.js 的 React 渲染器，将场景表达为可复用的交互组件，并与 React 状态及生命周期集成。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:pmndrs/drei": {
+    "summary": "React Three Fiber 的可复用辅助工具和现成抽象合集，使用独立的 three-stdlib 包。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:enable3d/enable3d": {
+    "summary": "TypeScript 框架，为 Three.js 添加 Ammo.js 物理，为 Phaser 3 添加 3D 功能，提供独立包及示例。",
+    "license_note": "许可依据：LGPL-3.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:pmndrs/react-three-rapier": {
+    "summary": "Rapier WASM 物理的 React Three Fiber 封装，暴露刚体、碰撞体、关节、事件及调试辅助工具。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:dimforge/rapier.js": {
+    "summary": "已归档的旧 Rapier 官方 JavaScript 绑定仓库；README 现指向 Rapier 主仓库的 typescript 目录。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:pmndrs/cannon-es": {
+    "summary": "cannon.js 的类型安全 ESM／CommonJS 派生版本，支持 tree shaking、触发器刚体、碰撞／力计算修正及现代化打包。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:kripken/ammo.js": {
+    "summary": "通过 Emscripten 将 Bullet 物理移植到 JavaScript／WASM，包含刚体、软体、高度图及车辆示例。",
+    "license_note": "许可依据：Zlib，适用于 ammo.js 代码；README 也明确指出 zlib／Bullet 许可。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:vanruesc/postprocessing": {
+    "summary": "Three.js 后处理库，包含特效合成器、全屏特效合并、色彩管理指引，以及抗锯齿／辉光／模糊效果。",
+    "license_note": "许可依据：Zlib。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:gkjohnson/three-mesh-bvh": {
+    "summary": "通过包围体层次结构加速 Three.js 射线检测和空间查询，包含形状检测、蒙皮几何及 Worker 生成示例。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Mugen87/yuka": {
+    "summary": "不依赖引擎的 JavaScript 游戏 AI 库，支持代理、转向、导航网格、感知、触发器、模糊逻辑及 JSON 状态序列化。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:ecsyjs/ecsy": {
+    "summary": "实验性 JavaScript ECS 框架，包含独立作用域的世界、响应式查询、有序系统及池化实体／组件。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:NateTheGreatt/bitECS": {
+    "summary": "极简、面向数据的 TypeScript ECS，包含查询、实体关系、序列化及适合线程的架构。",
+    "license_note": "许可依据：MPL-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:pmndrs/miniplex": {
+    "summary": "独立核实的替代项目 hmans/miniplex 是 TypeScript 实体管理器，采用普通 JavaScript 对象、原型式查询及可选 React 绑定。",
+    "license_note": "指定位置的许可未知。替代项目 hmans/miniplex 的许可依据为 MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Yomotsu/camera-controls": {
+    "summary": "Three.js 环绕式相机控制器，支持平滑过渡、推拉／平移、取景、边界及可配置鼠标／触控交互。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:pmndrs/three-stdlib": {
+    "summary": "将 Three.js 示例工具独立打包为 TypeScript，支持 ESM／CommonJS，以及浏览器、Worker 和 Node。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:jrouwe/JoltPhysics.js": {
+    "summary": "Jolt Physics 的 Emscripten 绑定，提供 WASM、asm.js、调试及多线程构建，保留 C++ 风格接口。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:colyseus/colyseus": {
+    "summary": "Node.js 权威多人框架，提供客户端 SDK、房间匹配及状态同步。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:geckosio/geckos.io": {
+    "summary": "WebRTC 数据通道传输，用于基于 UDP 的实时客户端／服务端通信，采用 Node.js 服务端及浏览器客户端。",
+    "license_note": "许可依据：BSD-3-Clause。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:nengi/nengi": {
+    "summary": "独立核实的替代项目 timetocode/nengi 是 Node.js／HTML5 多人联网引擎，支持二进制状态快照、插值、客户端预测及延迟补偿。",
+    "license_note": "指定位置的许可未知。替代项目 timetocode/nengi 的许可依据为 Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:lance-gg/lance": {
+    "summary": "Node.js 多人服务端／客户端框架，包含二进制 WebSocket 联网、插值、预测／重新模拟及调试工具。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:networked-aframe/networked-aframe": {
+    "summary": "A-Frame 多用户网页 VR 框架，支持组件同步及 WebRTC／WebSocket 适配器，包括语音／视频支持。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:ZyFou/ProceduralTerrains": {
+    "summary": "React／Three.js GPU 地形创作工作室，包含平铺／无限／行星模式、噪声层、真实世界地形、导出及 Unity／Blender 集成。",
+    "license_note": "许可依据：MIT；Blender 扩展采用 GPL-3.0-or-later。核心及 Unity 包采用 MIT，Blender 扩展采用 GPL-3.0-or-later。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:IceCreamYou/THREE.Terrain": {
+    "summary": "Three.js 程序化地形库，包含噪声／分形生成器、过滤、带种子的随机性、网格散布及导入导出辅助工具。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "README 链接 SKILL.md 以帮助代理使用该库；未确认代码由 AI 编写的声明。"
+  },
+  "repository-research:MavonEngine/Core": {
+    "summary": "早期 TypeScript／Three.js 游戏引擎框架，结合 Rapier 物理、geckos.io 联网、客户端／服务端共享实体及编辑器／调试功能。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:hyperfy-xyz/hyperfy-ref": {
+    "summary": "较早的 Hyperfy 参考实现，包含服务端和网站包；元数据指出 hyperfy-xyz/hyperfy 是其当前继任项目。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:hyperfy-io/hyperfy-recipes": {
+    "summary": "Hyperfy SDK 示例，涵盖同步电梯／门、NPC 对话、近距离视频、传送器及区块链交互。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:tcm390/eliza-3d-hyperfy-starter": {
+    "summary": "原型桥接，通过自定义 Hyperfy 客户端／插件封装，让 Eliza 代理像用户一样连接 Hyperfy 世界。",
+    "license_note": "许可依据：MIT 风格许可文本。已检查的许可采用 MIT 格式，并署名 Eliza 贡献者；API 返回 NOASSERTION。",
+    "ai_note": "README 描述了 Eliza 代理集成；创作来源与归属尚未确认。"
+  },
+  "repository-research:HowieDuhzit/Hyperfy-Tools": {
+    "summary": "Hyperfy 资产的 Blender 扩展，提供刚体／LOD／碰撞体设置、Mixamo／VRM 骨架转换、GLB 导出、吸附点及批量重命名。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:BKcore/HexGL": {
+    "summary": "未来风格 HTML5 竞速游戏，提供公开的稳定版源码及独立全分辨率纹理资产。",
+    "license_note": "许可依据：MIT。README 说明，除非某个文件另有声明，代码和资源均采用 MIT。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:CodeArtemis/TriggerRally": {
+    "summary": "客户端拉力竞速游戏，在 IndexedDB 中保存赛道与驾驶记录，并以 JSON 交换；当前 README 说明在线功能不可用。",
+    "license_note": "许可依据：GPL-3.0，仅适用于源码；内容在同一许可文件中采用独立且限制性的条款。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:kripken/BananaBread": {
+    "summary": "Cube 2／Sauerbraten 的 Emscripten 网页移植，包含机器人战斗、视觉特效及集成编辑器；开发已停止，由 Sour 项目延续。",
+    "license_note": "许可依据：Zlib，适用于代码；美术另行采用 CC BY／CC BY-SA，具体声明按目录记录。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:cfoust/sour": {
+    "summary": "Sauerbraten 服务端及网页客户端，通过 Emscripten、WebGL2、Go 和 React 前端，让浏览器／移动端玩家与原生桌面客户端互通。",
+    "license_note": "许可依据：MIT，并保留上游许可。作者编写的衔接代码／修改采用 MIT；继承的组件保留原许可。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:phoboslab/q1k3": {
+    "summary": "2021 年 js13k 精简 FPS，包含两关、敌人、三种武器、程序化纹理、动态光照及空间音频。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Triang3l/WebQuake": {
+    "summary": "HTML5／WebGL Quake 源码移植，包含 Node.js 专用服务器，可与原生 Quake 客户端跨端联机，需要用户提供游戏数据。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:turol/webquake2": {
+    "summary": "Quake II／R1Q2 的 Emscripten 移植，支持浏览器 WebGL／WebSocket，并提供原生专用服务器构建。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:lrusso/Quake3": {
+    "summary": "Quake III Arena 移植，面向 ES2015 之前的 JavaScript／asm.js，不使用 WebAssembly，加载用户选择的 PK3 游戏数据。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:swift502/Sketchbook": {
+    "summary": "已归档的 Three.js／cannon.js 第三人称试验场，包含角色控制、汽车、飞机及用 Blender 制作的 GLB 场景。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:threejs-games/threejs-games.github.io": {
+    "summary": "较早的可复用 Three.js 游戏组件及教程衍生示例集，指引读者前往更新的 Partisan Games 仓库。",
+    "license_note": "许可依据：未知。资产和依赖的条款须另行检查。",
+    "ai_note": "已检查的来源未记录开发过程中使用了 AI。"
+  },
+  "repository-research:Humpalumps/world-of-claudecraft": {
+    "summary": "levy-street/world-of-claudecraft 的公开派生仓库，包含相同浏览器 MMO、确定性模拟、服务器及无画面环境的文档。",
+    "license_note": "许可依据：MIT License。适用该许可的仓库代码／材料受其覆盖；第三方资产和依赖可能另有条款。代码采用 MIT；此派生版本的 README 单独标明 CC0 美术及 MIT 水体贴图。不得用当前上游的媒体清单替代此修订版本的记录。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:MarshalX/world-of-claudecraft-addons": {
+    "summary": "外部用户脚本扩展平台，包含游戏内市场、战斗／背包 UI 扩展、带类型的 API 及开发测试框架。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:yoefun/world-of-claudecraft-rs": {
+    "summary": "当前默认源码树仅有一行 README，内容为 world-of-claudecraft-rs 名称。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:u2/world-of-claudecraft-mcp": {
+    "summary": "官方无画面游戏环境的 MCP 适配器，将数值观察转换为可读状态，并暴露具名动作／重置工具。",
+    "license_note": "许可依据：未知。未确认此仓库的复用许可。未知不代表获准复用。",
+    "ai_note": "README 描述了运行时由 LLM 担任游戏主持人或游玩策略；这与代码作者归属是不同问题。"
+  },
+  "repository-research:remontsuri/world-of-claudecraft-agent": {
+    "summary": "无法在所提供的 GitHub 地址检查指定的游戏代理仓库。",
+    "license_note": "无法在指定位置确认当前许可及复用范围。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:wrkrdev/world-of-claudecraft-wrkr-demo": {
+    "summary": "无法在所提供的 GitHub 地址检查指定的 WRKR 示例仓库。",
+    "license_note": "无法在指定位置确认当前许可及复用范围。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:slonce70/world-of-claudecraft-claude-bot": {
+    "summary": "Node／WebSocket 游戏机器人，包含任务、战斗、治疗、重连行为、可选协同机器人群及实时仪表盘。",
+    "license_note": "许可依据：MIT License。仓库许可覆盖其自身代码和材料。第三方资产、依赖及外部服务的条款须另行检查。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:michelpereira/awesome-open-source-games": {
+    "summary": "精选资源目录，收集浏览器、原生及移动平台中源码可获取的游戏、引擎、地图、扩展及相关资源。",
+    "license_note": "许可依据：Creative Commons Zero v1.0 Universal，适用于目录文本，不包括链接项目。CC0 适用于目录，并非每个链接游戏。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:leereilly/games": {
+    "summary": "历史资源目录，收集 GitHub 托管的跨平台游戏、引擎、地图、扩展及相关项目。",
+    "license_note": "许可依据：CC-BY-NC-SA-4.0，仅适用于目录。README 将目录置于 CC BY-NC-SA-4.0 下；链接项目相互独立。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:Symbitic/awesome-babylonjs": {
+    "summary": "社区整理的 Babylon.js 索引，包含文档、在线试验场、演示、场景、游戏、示例和工具。",
+    "license_note": "许可依据：Creative Commons Zero v1.0 Universal，适用于目录文本，不包括链接项目。CC0 适用于目录，并非每个链接项目。",
+    "ai_note": "仓库元数据及 README 未说明开发过程中使用了 AI。"
+  },
+  "repository-research:genex-games/genex-desktop": {
+    "summary": "面向 AI 原生游戏开发的开源桌面应用，可使用包括本地模型在内的各类 AI，在 Unreal Engine、Unity、Godot、Roblox 或 Three.js 中构建项目。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:mrzh7/scam-with-your-friends-web": {
+    "summary": "Scam With Your Friends Web 是非官方开源浏览器重制版。协作式 AI 呼叫中心游戏，包含 3D 办公室、语音聊天及每日业绩指标，采用 React 和 Three.js，并在 Cloudflare 自托管。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:MineDojo/Voyager": {
+    "summary": "基于大语言模型的开放式具身代理。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "根据 2025–2026 年游戏 AI 综述阅读清单收录；未进行独立创作归属核查。"
+  },
+  "repository-research:BAAI-Agents/Cradle": {
+    "summary": "Cradle 是面向通用计算机控制（GCC）的早期框架，旨在通过推理、自我改进及技能整理，使代理在要求较低的标准化通用环境中处理各类计算机任务。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "根据 2025–2026 年游戏 AI 综述阅读清单收录；未进行独立创作归属核查。"
+  },
+  "repository-research:eloialonso/diamond": {
+    "summary": "DIAMOND（DIffusion As a Model Of eNvironment Dreams）是在扩散世界模型中训练的强化学习代理，入选 NeurIPS 2024 Spotlight。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "根据 2025–2026 年游戏 AI 综述阅读清单收录；未进行独立创作归属核查。"
+  },
+  "repository-research:solaris-wm/solaris": {
+    "summary": "Minecraft 中的首个多人视频世界模型。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "根据 2025–2026 年游戏 AI 综述阅读清单收录；未进行独立创作归属核查。"
+  },
+  "repository-research:WenyiWU0111/RSIGame": {
+    "summary": "RSIGame：通过递归自我改进实现自主代理式游戏开发。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "根据 2025–2026 年游戏 AI 综述阅读清单收录；未进行独立创作归属核查。"
+  },
+  "repository-research:jefferysha0627/agent-office-3d": {
+    "summary": "展示 AI 编码代理实时状态的低多边形 3D 办公室；空闲代理会离开去玩 Minecraft，且不消耗 token。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:Jimntu/GameDirector_code": {
+    "summary": "GameDirector：将玩法逻辑与渲染分离，用于玩家可配置的游戏世界模型。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "根据 2025–2026 年游戏 AI 综述阅读清单收录；未进行独立创作归属核查。"
+  },
+  "repository-research:melonjs/melonJS": {
+    "summary": "面向 JavaScript／TypeScript 的现代 HTML5 游戏引擎，覆盖 2D 与 3D，包含 WebGL／WebGPU 渲染、内置物理、Tiled 地图及 glTF 支持和 WebAudio。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:esengine/estella": {
+    "summary": "高速 2D／3D 游戏引擎，包含 TypeScript SDK、C++／WebAssembly 核心及可视化编辑器，同一项目可发布到网页、桌面、微信小游戏、可玩广告、Android 和 iOS。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:soonfx-engine/core": {
+    "summary": "面向 RPG 及策略游戏的 TypeScript 游戏数值引擎，零依赖，支持类型安全的公式解析、战斗系统模拟及表达式求值。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:luckyyyyy/miu2d": {
+    "summary": "Miu2D 是采用 Rust、TypeScript、React 和 Canvas 的浏览器 2D RPG 引擎，用于经典中国武侠 RPG 的网页重制。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:majidmanzarpour/vibe-coding-starter-pack-3d-multiplayer": {
+    "summary": "使用 Three.js、React 和 SpacetimeDB 的轻量 3D 网页多人起点，支持实时同步、角色移动及可定制游戏机制，用于构建交互式多人体验。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:Jamesun921/cam-run": {
+    "summary": "摄像头跑步游戏，通过姿态检测让角色在无限场景中移动，AI 伙伴提供实时动作指导及个性化反馈，采用 Three.js 和 MediaPipe Pose。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:freeciv/freeciv-web": {
+    "summary": "Freeciv-web 是采用 HTML5 和 WebGL 的开源策略游戏，可在线与其他玩家对战，也可在单人模式中对抗 AI。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:wellingfeng/UltraGameStudio": {
+    "summary": "UltraGameStudio 是面向游戏开发的 AI 编码代理，涵盖引擎流程、玩法代码及资产生成。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:yc-software/minecraft-agent-harness": {
+    "summary": "通过 Mineflayer 工具、持久会话及 shell 沙盒，在 Minecraft 中运行语言模型代理。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:JamesIV4/nethack-3d": {
+    "summary": "可在网页、Windows、macOS 和 Android 游玩 NetHack 的 3D 客户端。采用 @neth4ck/neth4ck 派生版本运行编译为 WebAssembly 的 NetHack，由 React hooks／Zustand 前端处理输入及游戏 UI，使用 Three.js 渲染。支持 NetHack 5.0、NetHack 3.6.7 和 Slash’Em。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:dammafra/drysland": {
+    "summary": "Three.js Journey Challenge 017 第一名作品：采用 Three.js 的轻松接水管游戏，支持在线存档及适合移动端的控制。",
+    "license_note": "许可依据：AGPL-3.0。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:OpenWebGAL/WebGAL": {
+    "summary": "面向网页的现代开源视觉小说引擎，包含脚本语言及用于浏览器交互故事的编辑器。",
+    "license_note": "许可依据：MPL-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:ill-inc/biomes-game": {
+    "summary": "Biomes 是面向网页的开源沙盒 MMORPG，使用 Next.js、TypeScript、React 和 WebAssembly 等网页技术构建。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:excaliburjs/Excalibur": {
+    "summary": "易用的网页 TypeScript 2D 游戏引擎，为 HTML5 Canvas 游戏提供场景、角色、输入、物理及资产 API。",
+    "license_note": "许可依据：BSD-2-Clause。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:tentone/nunuStudio": {
+    "summary": "基于网页技术的跨平台 3D／WebXR 游戏引擎。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:eva-engine/eva.js": {
+    "summary": "Eva.js 是专门用于创建交互式游戏项目的前端游戏引擎。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:EvanBacon/Expo-Crossy-Road": {
+    "summary": "使用 Expo（iOS、Android 和网页）、Three.js、Tween 及 React Native 制作的 Crossy Road 仿制游戏。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:EvanBacon/pillar-valley": {
+    "summary": "使用 Expo 和 Three.js 构建的跨平台电子游戏。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:MattSurabian/DuckHunt-JS": {
+    "summary": "DuckHunt 的 JavaScript 与 HTML5 移植。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:Priler/dino3d": {
+    "summary": "Chrome T-Rex 离线跑酷游戏的 3D WebGL 版本。",
+    "license_note": "许可依据：GPL-3.0。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:Megabyteceer/thing-editor": {
+    "summary": "基于 pixi.js 的可视化游戏编辑器。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:axaq/traviso.js": {
+    "summary": "Traviso 是开源 JavaScript 引擎，便于构建在浏览器运行的等距视角应用。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:acatovic/ai-game-studio": {
+    "summary": "通过 AI 生成精灵表等 2D 游戏资产。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:piqnt/stage.js": {
+    "summary": "面向游戏开发的 2D HTML5 渲染与布局引擎。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:ad044/lainTSX": {
+    "summary": "Serial Experiments Lain PSX 游戏的 WebGL 实现。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:yomotsu/meshwalk": {
+    "summary": "面向使用 Three.js 的第三人称射击（TPS）游戏开发。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:Jahrome907/minecraft-agent-skills": {
+    "summary": "Minecraft AI 代理技能及同时面向 Codex 和 Claude Code 的插件组合包。",
+    "license_note": "许可依据：MIT。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:rmalde/minecraft-agent": {
+    "summary": "Minecraft 的 Astra 规划器和 JEV 控制器，包含原生录制、经过测试的路线及运行验证。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:patch-gg/trompe": {
+    "summary": "使用图像模型为灰盒关卡整体制作纹理：规划相机、绘制、投射和烘焙，包含真实阴影并输出 glTF。",
+    "license_note": "许可依据：Apache-2.0。资产和依赖的条款须另行检查。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:iErcann/NotBlox": {
+    "summary": "Roblox 风格的 Three.js／Node.js 3D 多人游戏，包含汽车和物理；网站为 WWW.NOTBLOX.ONLINE。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:IceCreamYou/Nemesis": {
+    "summary": "完全基于浏览器的 HTML5（WebGL）第一人称射击游戏，最初于 AngelHack 2012 在 24 小时内完成。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  },
+  "repository-research:MageStudio/Mage": {
+    "summary": "基于 Three.js 的 3D 游戏引擎，包含类似 Unity 的脚本、由 Ammo.js 驱动的物理 Worker、由 Infernojs 驱动的 UI 及简洁 API，正处于非常活跃的开发中。",
+    "license_note": "GitHub 元数据未记录许可；复用前须检查仓库声明。",
+    "ai_note": "通过 2026 年 GitHub 仓库搜索收录，范围为浏览器游戏、引擎及游戏 AI 工具；未进行独立创作归属核查。"
+  }
+}

@@ -1,9 +1,8 @@
+import { useState } from "react";
 import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { publicAsset } from "../lib/catalog";
 import type { LearningMedia } from "../../src/data/learningMedia";
-import type { PageCover } from "../../src/data/pageCovers";
 import { chineseMessages, type Locale } from "../../content/locale";
-import { pageCoverAlt } from "../../content/media";
 import { RatingSummary } from "./community";
 
 const accessLabels = {
@@ -13,12 +12,6 @@ const accessLabels = {
   reference: "Project reference",
 } as const;
 
-/** One card for games and prototypes, with explicit release/source-only status.
- *  The screenshot (or a generated "uncharted world" when none was reviewed) is
- *  the poster; the title sits on it, and the body keeps a fixed rhythm so rows
- *  line up without subgrid (cards can then skip rendering off-screen).
- *  Static HTML retains the full catalog, so the markup stays lean: external-link
- *  arrows are drawn by CSS (gallery.css) instead of five inline SVG icons per card. */
 export function GameCard({
   contentKey,
   id,
@@ -31,7 +24,6 @@ export function GameCard({
   recordUrl,
   sourceUrl,
   media,
-  pageCover,
   extraLink,
   compact = false,
 }: {
@@ -46,15 +38,22 @@ export function GameCard({
   recordUrl?: string;
   sourceUrl?: string;
   media?: Pick<LearningMedia, "src" | "alt" | "width" | "height">;
-  pageCover?: PageCover;
   extraLink?: { label: string; url: string };
   compact?: boolean;
 }) {
   const { t, locale } = useSiteI18n();
-  const sourceOnly = demo.kind === "source",
-    referenceOnly = demo.kind === "reference";
-  const fallback = media ? undefined : pageCover;
-  const image = media || fallback;
+  const [failedImage, setFailedImage] = useState<string>();
+  const image = media?.src === failedImage ? undefined : media;
+  const referenceOnly = demo.kind === "reference";
+  const accessAction = t(
+    referenceOnly
+      ? "View project"
+      : demo.kind === "source"
+        ? "View source"
+        : demo.kind === "playable"
+          ? "Play the game"
+          : "Get the game",
+  );
   // Build-story labels come from the records; one without a translation stays
   // English on Chinese pages, so say so for screen readers.
   const extraEnglish =
@@ -69,68 +68,41 @@ export function GameCard({
       data-content-ref={contentKey}
       data-game-track={track}
       data-access-kind={demo.kind}
-      data-cover-kind={
-        media
-          ? "gameplay"
-          : fallback?.origin === "catalog-page-capture"
-            ? "catalog-page"
-            : fallback
-              ? "project-page"
-              : undefined
-      }
+      data-cover-kind={image ? "gameplay" : undefined}
     >
-      <a
-        className="example-image"
-        href={demo.url}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={t(
-          referenceOnly
-            ? "View project reference for {title}"
-            : sourceOnly
-              ? "View source for {title}"
-              : demo.kind === "playable"
-                ? "Play {title}"
-                : "Download {title}",
-          { title },
-        )}
-      >
-        {image && (
+      {image && (
+        <a
+          className="example-image"
+          href={demo.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={t(
+            referenceOnly
+              ? "View project reference for {title}"
+              : demo.kind === "source"
+                ? "View source for {title}"
+                : demo.kind === "playable"
+                  ? "Play {title}"
+                  : "Download {title}",
+            { title },
+          )}
+        >
           <img
             src={publicAsset(image.src)}
-            alt={fallback ? pageCoverAlt(image.alt) : image.alt}
+            alt={t(image.alt)}
             width={image.width}
             height={image.height}
             loading="lazy"
             decoding="async"
+            ref={(element) => {
+              if (element?.complete && element.naturalWidth === 0)
+                setFailedImage(image.src);
+            }}
+            onError={() => setFailedImage(image.src)}
           />
-        )}
-        {fallback && (
-          <span className="page-cover-label">
-            {t(
-              fallback.origin === "catalog-page-capture"
-                ? "GameMap page screenshot"
-                : "Project page screenshot",
-            )}
-          </span>
-        )}
-        {!image && (
-          <span className="game-preview-unavailable">
-            {t("No screenshot available")}
-          </span>
-        )}
-        <span className="image-action">
-          {t(
-            referenceOnly
-              ? "View project"
-              : sourceOnly
-                ? "View source"
-                : demo.kind === "playable"
-                  ? "Play the game"
-                  : "Get the game",
-          )}
-        </span>
-      </a>
+          <span className="image-action">{accessAction}</span>
+        </a>
+      )}
       <div className="example-body">
         <div className="card-meta">
           <span className="card-spec">
@@ -156,12 +128,22 @@ export function GameCard({
           <RatingSummary gameKey={contentKey} recordUrl={recordUrl} />
         )}
         <div className="example-links">
+          {!image && (
+            <a
+              className="example-access-link"
+              href={demo.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {accessAction}
+            </a>
+          )}
           {recordUrl && (
-            <Link to={recordUrl} reloadDocument>
+            <Link className="example-record-link" to={recordUrl} reloadDocument>
               {t("Complete record")}
             </Link>
           )}
-          {sourceUrl && (
+          {sourceUrl && (image || sourceUrl !== demo.url) && (
             <a href={sourceUrl} target="_blank" rel="noreferrer">
               {t(referenceOnly ? "Project reference" : "Project source")}
             </a>

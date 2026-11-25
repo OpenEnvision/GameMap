@@ -1,6 +1,10 @@
 # Generation jobs, artifact delivery, and asset acquisition
 
-Follow a generation request from submission through completion, download, and asset validation. Check provider-specific job states, failure responses, and artifact lifetimes before building an adapter. For usage rights, see [provider and model terms](api-terms.md).
+You submit a prop for generation, close the laptop, and return to a timeout message. Start recovery from the existing task identity. Query its state and available outputs before submitting again; the message describes the client's wait, while the provider may still be working.
+
+Meshy's [text-to-3D workflow](https://docs.meshy.ai/en/api/text-to-3d) makes the handoff concrete: an untextured preview is one task, and refinement uses that successful preview's ID to create textures. Keep both task identities and archive the preview if refinement fails. Record the actual failure stage so a missing texture does not erase usable geometry or trigger another geometry request unnecessarily.
+
+Before engine import, require the output roles declared for this asset, completed local copies and matching hashes. The [archive gate](#run-a-local-archive-gate-before-engine-import) below gives a model/base-color/normal example; change that profile to match your material. Keep remote completion, acquired files and import acceptance as separate results. For usage rights, see [provider and model terms](api-terms.md).
 
 ## A job ID is not an imported asset
 
@@ -14,11 +18,96 @@ Preserve submission identity, raw provider state, version/model choices, input h
 | [Meshy lifecycle](https://docs.meshy.ai/en/api/task-lifecycle) | A polling/network error is not a failed generation; client timeout does not cancel remote work. The guide documents failed-task refunds. | Reconcile the existing task after transport errors. Submission idempotency, actual charges and account-specific behavior were not exercised. |
 | [Meshy retention](https://docs.meshy.ai/en/api/asset-retention) | Nonenterprise API artifacts have at most three days of retention. Signed URLs stop at expires_at; repeated GET returns the same expiry. While retained, input_task_id can avoid reusing an expired model URL; after task removal a stored copy is needed. | Archive required formats/maps promptly and record hashes. Enterprise retention can differ; a download URL is not a durable asset identifier. The page's October 18 banner announces lowpoly retirement on October 30, 2026; confirm the selected Meshy model at submission time. |
 | [Tripo submission](https://docs.tripo3d.ai/get-started/quick-start.html) and [task results](https://docs.tripo3d.ai/task-query/get-your-task-result.html) | Submission returns data.task_id. Queries require the submitting API key, including when an account has several keys. Final states include failure, banned, expired, cancelled and unknown as well as success. Output URLs default to five-minute expiry; undocumented fields are unstable. | Track an opaque credential reference, never the credential itself in research artifacts. A success-only polling loop can hang on failure. A cancelled state does not establish a cancellation endpoint/refund; URL renewal and underlying retention remain unverified. |
-| [Rodin quickstart](https://docs.hyper3d.ai/en/get-started/quick-start) and [downloads](https://docs.hyper3d.ai/en/api-specification/download-results) | Generation has a top-level UUID and child jobs. All children must be Done before treating generation as complete; a Failed child prevents full success. Download can return currently available files even while generation is incomplete. | Require a nonempty child-job set and aggregate terminal outcome. A download response or HTTP201 is not proof of complete generation. Preserve missing-file diagnostics rather than immediately paying for a replacement task. |
+| [Rodin quickstart](https://docs.hyper3d.ai/en/get-started/quick-start) and [downloads](https://docs.hyper3d.ai/en/api-specification/download-results) | The generation response's top-level uuid becomes task_uuid for download; jobs.subscription_key is the separate status-query key. The documented sequence requires a nonempty child-job set with every job Done before download; any Failed child prevents full success. HTTP201 can still contain an error field such as NO_SUCH_TASK or INVALID_REQUEST. | Check the response body for error before consuming its file list, then reconcile required output roles with archived files. The download endpoint does not promise to reject an incomplete generation, so an available list or HTTP201 alone is insufficient. Preserve diagnostics before considering another chargeable submission. |
 | [Rodin retention policy](https://docs.hyper3d.ai/en/legal/data-retention-policy) | API input/output active-system retention is seven days; download URLs separately expire. | Archive accepted outputs; URL refresh, cancellation and durable recovery guarantees were not established. A sample client deadline is not a provider SLA. |
 | [Luma Agents migration](https://docs.agents.lumalabs.ai/guides/videos/migration/) and [errors](https://docs.agents.lumalabs.ai/guides/error-handling/) | Current Agents requests use different model/schema/state fields from legacy Dream Machine. HTTP submission errors differ from asynchronous failure_code/failure_reason. Rate-limited work calls for backoff; corrupt/unsupported input requires correction. Output links expire after one hour and generation retrieval can refresh them. | Preserve generation ID, X-Request-Id and X-API-Version. Tracing is not deduplication. Underlying retention and cancellation/refund are unknown. Do not combine legacy callback assumptions with this documented polling migration; research-use restrictions remain separate. |
 | [Runway versioning](https://docs.dev.runwayml.com/api-details/versioning/) and [output formats](https://docs.dev.runwayml.com/assets/outputs/) | X-Runway-Version selects the dated API version; /v1 does not. Old API versions have four months of support after a new version. Output URLs expire within 24–48 hours of API access and are intended to be downloaded/stored. | Preserve the response's output array and selected model/version. Backward-compatible additions can appear without a new date. URL expiry is not a deletion/retention guarantee, and output rights do not settle provider training or competitive-research permission. |
 | [Scenario generation](https://docs.scenario.com/get-started/documentation/quick-start-guide/step-3-generate-your-first-image-text-to-image), [webhooks](https://docs.scenario.com/get-started/documentation/webhooks) and [CDN](https://docs.scenario.com/get-started/documentation/content-delivery-network-cdn) | Explicit model IDs and asynchronous jobs are separate from delivery. Webhooks are signed, should receive a timely 2xx acknowledgement, and can retry up to three total delivery attempts; duplicate event IDs and out-of-order arrival must be handled. Asset URLs can expire and thumbnails can be public. | Acknowledge within the documented 30-second limit and process work separately; authenticate events, reconcile duplicates and poll critical jobs to recover missed or exhausted deliveries. A webhook-delivery failure is not a generation failure. No webhook endpoint, persistent credential or live listener was created for this research. |
+
+## Run a local archive gate before engine import
+
+Start with one downloaded candidate and a declared output profile. For this example only, the receiving material requires three roles: model, base_color and normal. A different work order may require a different set. Record the actual provider, task, model/version and target-project revision; do not put credentials or signed URLs in this manifest. Create a fresh archive directory, finish copying its files, then write the manifest with independently calculated SHA256 values. Keep this record separate from the provider's terminal-state response.
+
+Save this structure as manifest.json beside the downloaded files, replacing every placeholder with observed values. Filenames are local examples, not a provider naming contract. Each role occurs exactly once; the hashes must describe the archived bytes, not a thumbnail or another format variant.
+
+```json
+{
+  "provider": "REPLACE_PROVIDER",
+  "task_id": "REPLACE_TASK_ID",
+  "model": "REPLACE_MODEL_AND_VERSION",
+  "project_revision": "REPLACE_PROJECT_REVISION",
+  "outputs": [
+    {"role": "model", "path": "model.glb", "sha256": "REPLACE_SHA256"},
+    {"role": "base_color", "path": "base_color.png", "sha256": "REPLACE_SHA256"},
+    {"role": "normal", "path": "normal.png", "sha256": "REPLACE_SHA256"}
+  ]
+}
+```
+
+Save the following as check_archive.py and run python3 check_archive.py path/to/manifest.json model base_color normal. Python 3.9 or newer and its standard library are sufficient. The required roles come from the command, so removing a missing map from the manifest cannot redefine the acceptance profile. This checker reads files without modifying them; use it on a quiescent local archive, not a directory another process is still writing.
+
+```python
+import hashlib
+import json
+import re
+import sys
+from pathlib import Path
+
+
+def check(manifest_path, required_roles):
+    if not required_roles or len(set(required_roles)) != len(required_roles):
+        raise ValueError("declare a nonempty, unique role profile")
+    root = manifest_path.resolve().parent
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    for key in ("provider", "task_id", "model", "project_revision"):
+        value = manifest.get(key)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"missing provenance: {key}")
+    outputs = manifest.get("outputs")
+    if not isinstance(outputs, list):
+        raise ValueError("outputs must be an array")
+    seen = set()
+    for row in outputs:
+        if not isinstance(row, dict):
+            raise ValueError("each output must be an object")
+        role = row.get("role")
+        if not isinstance(role, str) or role not in required_roles or role in seen:
+            raise ValueError(f"unexpected or duplicate role: {role}")
+        seen.add(role)
+        name = row.get("path")
+        if not isinstance(name, str) or not name or Path(name).is_absolute():
+            raise ValueError(f"invalid relative path: {role}")
+        path = (root / name).resolve()
+        path.relative_to(root)
+        if not path.is_file() or path.stat().st_size == 0:
+            raise ValueError(f"missing or empty file: {role}")
+        expected = row.get("sha256")
+        if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-fA-F]{64}", expected):
+            raise ValueError(f"invalid SHA256: {role}")
+        digest = hashlib.sha256()
+        with path.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+        if digest.hexdigest() != expected.lower():
+            raise ValueError(f"hash mismatch: {role}")
+    if seen != set(required_roles):
+        raise ValueError(f"missing roles: {sorted(set(required_roles) - seen)}")
+    print(f"PASS: {len(seen)} local artifact roles and byte hashes")
+
+
+if __name__ == "__main__":
+    try:
+        if len(sys.argv) < 3:
+            raise ValueError("usage: check_archive.py MANIFEST ROLE [ROLE ...]")
+        check(Path(sys.argv[1]), sys.argv[2:])
+    except (OSError, ValueError, TypeError, AttributeError) as error:
+        print(f"FAIL: {error}", file=sys.stderr)
+        sys.exit(1)
+```
+
+On failure, retain the directory and report; restore an interrupted local copy from the same retained remote task when possible, rather than submitting another generation automatically. A wrong output role or model requires reconciling the task response, not renaming a file until the checker passes. Freeze the accepted archive before downstream tools edit its contents.
+
+**Local verification scope:** the snippet was exercised on 2026-11-25 with synthetic local bytes: a matching three-role archive passed; changed bytes, an empty file, a missing role, a duplicate role, an absolute path and a path escaping the archive failed. These are checks of the snippet, not provider or engine results. A pass establishes local role/byte consistency only: provenance strings are recorded, not authenticated; file extensions, format validity, channel interpretation, visual quality, rights and target-engine behavior are not checked. Continue with [portable-asset validation](validation.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity) and the [export/import work order](../production/work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies), recording import, save and fresh-process reopen separately.
 
 ## Replicate file acquisition and terminal accounting
 

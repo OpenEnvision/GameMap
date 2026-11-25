@@ -1,6 +1,6 @@
 # Resource logo sources
 
-Find the organization, research affiliation, or maintainer behind each resource, along with the source of its bundled mark.
+If you are crediting a research demo, open the entry's evidence link for the authors and affiliations. Use the original mark link to identify the artwork on the page. The [SolarRenderer](#solarrenderer) shield came from the NUS School of Computing website, while the author page lists other affiliations as well. Take the author credit from the project page and the artwork credit from the image source.
 
 School and institute marks identify a verified author affiliation, not exclusive ownership or endorsement. For collaborative research, the notes below preserve the selection rationale and other affiliations. Official project marks identify their own projects; third-party engine tools do not inherit an engine logo. Independent projects without a publicly verifiable mark show the maintainer name only. No generated logo, generic icon, default identicon, or portrait is used as a substitute.
 
@@ -21,54 +21,37 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | mini-swe-agent | mini-SWE-agent / SWE-agent | brand | [Primary source](https://github.com/SWE-agent/mini-swe-agent/blob/main/mkdocs.yml) | [Original image](https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/main/docs/assets/mini_square.svg) | <code>logos/mini-swe-agent-swe-agent-bfd49ec27a1e.svg</code> |
 | AGENTS.md | Agentic AI Foundation | institution | [Primary source](https://agents.md/) | [Original image](https://cdn.sanity.io/images/4o10fa7h/production/b2a2e03cf5baa4ada47dccb4cfabb3e29c5dc1b9-2000x2000.png) | <code>logos/agentic-ai-foundation-e19aebeb3141.png</code> |
 | Agent Skills | Anthropic | creator | [Primary source](https://agentskills.io/home) | [Original image](https://github.com/anthropics.png?size=256) | <code>logos/anthropic-71c4fa5d4a22.png</code> |
-| Codex · Create Browser-based Games | OpenAI | brand | [Primary source](https://github.com/openai/codex) | [Original image](https://github.com/openai.png?size=256) | <code>logos/openai-cde5d42ad75d.png</code> |
 | MCP for Unity | MCP for Unity / CoplayDev | creator | [Primary source](https://github.com/CoplayDev/unity-mcp) | [Original image](https://raw.githubusercontent.com/CoplayDev/unity-mcp/beta/docs/images/logo-header-light.png) | <code>logos/mcp-for-unity-coplaydev-83f6d5fb6cb7.png</code> |
 | Unity-MCP Operator Guide | MCP for Unity / CoplayDev | creator | [Primary source](https://github.com/CoplayDev/unity-mcp) | [Original image](https://raw.githubusercontent.com/CoplayDev/unity-mcp/beta/docs/images/logo-header-light.png) | <code>logos/mcp-for-unity-coplaydev-83f6d5fb6cb7.png</code> |
 | Godot MCP · Coding-Solo | Solomon Elias / Coding-Solo | creator | [Primary source](https://github.com/Coding-Solo/godot-mcp) | No published project mark | Maintainer name only |
-| MCP for Blender | Siddharth Ahuja / ahujasid | creator | [Primary source](https://github.com/ahujasid/mcp-for-blender) | No published project mark | Maintainer name only |
+| MCP for Blender | Siddharth Ahuja / ahujasid | creator | [Primary source](https://github.com/ahujasid/mcp-for-blender) | [Original image](https://www.mcp-for-blender.com/favicons/apple-touch-icon.png) | <code>logos/mcp-for-blender-b5ad1a118cfb.png</code> |
 | Unreal MCP · chongdashu | Chong-U / AI Oriented Dev | creator | [Primary source](https://github.com/chongdashu/unreal-mcp) | No published project mark | Maintainer name only |
-| Playwright MCP | Microsoft / Playwright | brand | [Primary source](https://github.com/microsoft/playwright-mcp) | [Original image](https://playwright.dev/img/playwright-logo.svg) | <code>logos/microsoft-playwright-42a5ff460d7c.svg</code> |
-| Godot Engine · Official Documentation | Godot Engine | brand | [Primary source](https://github.com/godotengine/godot) | [Original image](https://github.com/godotengine.png?size=256) | <code>logos/godot-engine-3c9b7f792300.png</code> |
+| Unity Agent Plugin | Unity Technologies | brand | [Primary source](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin) | [Original image](https://github.com/Unity-Technologies.png) | <code>logos/unity-technologies-84b30ca73d1e.png</code> |
+| MCP Unity Editor | Miguel Tomas · CoderGamester | creator | [Primary source](https://github.com/CoderGamester/mcp-unity) | No published project mark | Maintainer name only |
+| Windows · UI Automation and Input Semantics | Microsoft | brand | [Primary source](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
+| Godot Engine | Godot Engine | brand | [Primary source](https://github.com/godotengine/godot) | [Original image](https://github.com/godotengine.png?size=256) | <code>logos/godot-engine-3c9b7f792300.png</code> |
 | Godot · Command Line Tutorial | Godot Engine | brand | [Primary source](https://github.com/godotengine/godot) | [Original image](https://github.com/godotengine.png?size=256) | <code>logos/godot-engine-3c9b7f792300.png</code> |
-| Godot Demo Projects | Godot Engine | brand | [Primary source](https://github.com/godotengine/godot) | [Original image](https://github.com/godotengine.png?size=256) | <code>logos/godot-engine-3c9b7f792300.png</code> |
-| GUT · Godot Unit Test | GUT / bitwes | brand | [Primary source](https://github.com/bitwes/Gut) | [Original image](https://raw.githubusercontent.com/bitwes/Gut/main/images/gut_logo_256x256.png) | <code>logos/gut-bitwes-df8cdf532c90.png</code> |
-| GDQuest · First 2D Game | GDQuest | brand | [Primary source](https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/) | [Original image](https://github.com/GDQuest.png?size=256) | <code>logos/gdquest-9b58a051e485.png</code> |
-| Unity · Manual | Unity | brand | [Primary source](https://github.com/Unity-Technologies/2d-techdemos) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
-| Unity Test Framework | Unity | brand | [Primary source](https://github.com/Unity-Technologies/2d-techdemos) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
-| Unity · 2D Tech Demos | Unity | brand | [Primary source](https://github.com/Unity-Technologies/2d-techdemos) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
-| Catlike Coding · Surface Contact | Catlike Coding / Jasper Flick | creator | [Primary source](https://catlikecoding.com/) | [Original image](https://catlikecoding.com/unity/code-documentation/logo-catlikecoding.png) | <code>logos/catlike-coding-jasper-flick-0b71b19bfa2a.png</code> |
-| Unreal Engine · Documentation | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
-| Unreal · Automation Test Framework | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
-| Lyra Sample Game | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| Unity | Unity | brand | [Primary source](https://github.com/Unity-Technologies/2d-techdemos) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
+| Unreal Engine | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
 | Epic Developer Community · UE | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
 | Three.js | Three.js | brand | [Primary source](https://github.com/mrdoob/three.js) | [Original image](https://raw.githubusercontent.com/mrdoob/three.js/dev/files/icon.svg) | <code>logos/three-js-e71c607c8ef4.svg</code> |
 | Three.js · Examples | Three.js | brand | [Primary source](https://github.com/mrdoob/three.js) | [Original image](https://raw.githubusercontent.com/mrdoob/three.js/dev/files/icon.svg) | <code>logos/three-js-e71c607c8ef4.svg</code> |
 | Three.js · Instanced Crowd Engineering | red-reddington | creator | [Primary source](https://discourse.threejs.org/t/one-draw-call-massive-crowd-performance-engineering-in-three-js/89928) | No published project mark | Maintainer name only |
 | React Three Fiber | Poimandres / pmndrs | creator | [Primary source](https://github.com/pmndrs/react-three-fiber) | [Original image](https://github.com/pmndrs.png?size=256) | <code>logos/poimandres-pmndrs-8f3e6d6b8c62.png</code> |
+| Phaser | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
+| Unreal Engine · Remote Control API | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| Unity · Addressables Build and Loading APIs | Unity | brand | [Primary source](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
+| FastNoise Lite | Auburn | creator | [Primary source](https://github.com/Auburn/FastNoiseLite) | No published project mark | Maintainer name only |
+| DirectX Shader Compiler | Microsoft | brand | [Primary source](https://github.com/microsoft/DirectXShaderCompiler) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
+| GDevelop AI & MCP | GDevelop | brand | [Primary source](https://gdevelop.io/features) | [Original image](https://gdevelop.io/download/GDevelop_press_kit.zip) | <code>logos/gdevelop-e35f00ddab8e.svg</code> |
+| PixelLab AI Agent Toolkit | PixelLab | brand | [Primary source](https://www.pixellab.ai/mcp) | [Original image](https://avatars.githubusercontent.com/u/151592092?v=4) | <code>logos/pixellab-c3af2d8508f8.png</code> |
+| Agent Sprite Forge | 0x0funky | creator | [Primary source](https://github.com/0x0funky/agent-sprite-forge) | No published project mark | Maintainer name only |
+| Scenario | Scenario | brand | [Primary source](https://github.com/scenario-labs/Scenario-Unity) | [Original image](https://avatars.githubusercontent.com/u/71755875?s=200&v=4) | <code>logos/scenario-69c44818c77c.png</code> |
+| OpenAI Image Generation | OpenAI | brand | [Primary source](https://developers.openai.com/api/docs/guides/image-generation) | [Original image](https://github.com/openai.png?size=256) | <code>logos/openai-cde5d42ad75d.png</code> |
+| MSDF Atlas Generator | Chlumsky | creator | [Primary source](https://github.com/Chlumsky/msdf-atlas-gen) | No published project mark | Maintainer name only |
 | Blender | Blender | brand | [Primary source](https://github.com/blender/blender) | [Original image](https://github.com/blender.png?size=256) | <code>logos/blender-2f115b53a895.png</code> |
 | Blender Python · API Quickstart | Blender | brand | [Primary source](https://github.com/blender/blender) | [Original image](https://github.com/blender.png?size=256) | <code>logos/blender-2f115b53a895.png</code> |
 | Khronos · glTF-Blender-IO | Khronos Group | creator | [Primary source](https://github.com/KhronosGroup/glTF-Blender-IO) | [Original image](https://github.com/KhronosGroup.png?size=256) | <code>logos/khronos-group-f784820a94fc.png</code> |
-| Phaser · First Game Guide | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
-| Phaser · Examples | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
-| Unreal Engine · Remote Control API | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
-| Unity · Addressables Build and Loading APIs | Unity | brand | [Primary source](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
-| GameGPT | AutoGame Research | brand | [Primary source](https://arxiv.org/html/2310.08067) | [Original image](https://autogame.ai/images/logo.svg) | <code>logos/autogame-research-e967543b6c83.svg</code> |
-| OpenGame | The Chinese University of Hong Kong · MMLab | institution | [Primary source](https://github.com/leigest519/OpenGame) | [Original image](https://www.cuhk.edu.hk/english/images/fav-icons/apple-touch-icon.png) | <code>logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png</code> |
-| GameDevBench | Carnegie Mellon University | institution | [Primary source](https://arxiv.org/html/2602.11103) | [Original image](https://live-cmu-brand.pantheonsite.io/sites/default/files/cmu-brand-files/inline-images/cmu-wordmark-square-w-on-r%201.png) | <code>logos/carnegie-mellon-university-c40d43eb19fa.png</code> |
-| GameXpert-Bench | Institute of Automation, Chinese Academy of Sciences | institution | [Primary source](https://arxiv.org/html/2608.21833) | [Original image](https://ia.cas.cn/images/favicon.png) | <code>logos/institute-of-automation-chinese-academy-of-sciences-1568edd09a70.png</code> |
-| GameGen-Verifier | The Chinese University of Hong Kong | institution | [Primary source](https://arxiv.org/pdf/2605.07442) | [Original image](https://www.cuhk.edu.hk/english/images/fav-icons/apple-touch-icon.png) | <code>logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png</code> |
-| MarioGPT | IT University of Copenhagen | institution | [Primary source](https://arxiv.org/html/2302.05981) | [Original image](https://en.itu.dk/svg/itu/logo_en.svg) | <code>logos/it-university-of-copenhagen-a4764ab8996e.svg</code> |
-| GAVEL | New York University · Tandon School of Engineering | institution | [Primary source](https://arxiv.org/html/2407.09388) | [Original image](https://engineering.nyu.edu/themes/custom/tandon/images/favicon/apple-touch-icon.png) | <code>logos/new-york-university-tandon-school-of-engineering-d82ccba1edc3.png</code> |
-| Cardiverse | Rutgers University | institution | [Primary source](https://arxiv.org/html/2502.07128) | [Original image](https://communications.rutgers.edu/sites/default/files/Rutgers_Primary_Mark_Horizontal_Red_and_Black_RGB.svg) | <code>logos/rutgers-university-d9578e3c36ff.svg</code> |
-| Agent Game Forge | Agent Game Forge · 0x0funky | brand | [Primary source](https://github.com/0x0funky/agent-game-forge) | [Original image](https://raw.githubusercontent.com/0x0funky/agent-game-forge/main/apps/web/public/ogf-logo-256.png) | <code>logos/agent-game-forge-0x0funky-43c95b0fa403.png</code> |
-| Text2Game | Song Li · boltomli | creator | [Primary source](https://github.com/boltomli/t2g) | No published project mark | Maintainer name only |
-| PixelLab AI Agent Toolkit | PixelLab | brand | [Primary source](https://www.pixellab.ai/mcp) | [Original image](https://avatars.githubusercontent.com/u/151592092?v=4) | <code>logos/pixellab-c3af2d8508f8.png</code> |
-| Agent Sprite Forge | 0x0funky | creator | [Primary source](https://github.com/0x0funky/agent-sprite-forge) | No published project mark | Maintainer name only |
-| OpenAI Image Generation | OpenAI | brand | [Primary source](https://developers.openai.com/api/docs/guides/image-generation) | [Original image](https://github.com/openai.png?size=256) | <code>logos/openai-cde5d42ad75d.png</code> |
-| 3AGameFactory | OpenDCAI | brand | [Primary source](https://github.com/OpenDCAI/GameFactory-3A) | [Original image](https://avatars.githubusercontent.com/u/177615276?v=4) | <code>logos/opendcai-1d87e5fed141.png</code> |
-| GameEngineBench | Nitrode | brand | [Primary source](https://arxiv.org/html/2607.03525) | [Original image](https://nitrode.com/assets/nitrode/nitrode-mark.svg) | <code>logos/nitrode-140a4ff0a205.svg</code> |
-| Unity Agent Plugin | Unity Technologies | brand | [Primary source](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin) | [Original image](https://github.com/Unity-Technologies.png) | <code>logos/unity-technologies-84b30ca73d1e.png</code> |
-| MCP Unity Editor | Miguel Tomas · CoderGamester | creator | [Primary source](https://github.com/CoderGamester/mcp-unity) | No published project mark | Maintainer name only |
 | Godot MCP 3D Asset Builder | LuigiDeFacci | creator | [Primary source](https://github.com/LuigiDeFacci/godot-create-3d-assets) | No published project mark | Maintainer name only |
 | Hunyuan3D 2.0 | Tencent Hunyuan | brand | [Primary source](https://github.com/Tencent-Hunyuan/Hunyuan3D-2) | [Original image](https://avatars.githubusercontent.com/u/210980732?v=4) | <code>logos/tencent-hunyuan-547abf65938b.png</code> |
 | TRELLIS | Microsoft | brand | [Primary source](https://github.com/microsoft/TRELLIS) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
@@ -77,32 +60,56 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | Holodeck | Allen Institute for AI · Ai2 | institution | [Primary source](https://arxiv.org/html/2312.09067) | [Original image](https://allenai.org/icon.png?56c26b049606f4e5) | <code>logos/allen-institute-for-ai-ai2-c42b207f6534.png</code> |
 | Video2Game | University of Illinois Urbana-Champaign | institution | [Primary source](https://arxiv.org/html/2404.09833) | [Original image](https://cdn.brand.illinois.edu/touch-icon-180x180.png) | <code>logos/university-of-illinois-urbana-champaign-3e3bb99e394e.png</code> |
 | BlenderLLM / BlendNet / CADBench | The Chinese University of Hong Kong, Shenzhen · School of Data Science | institution | [Primary source](https://github.com/FreedomIntelligence/BlenderLLM) | [Original image](https://www.cuhk.edu.cn/sites/default/files/zh-hans_logo.png) | <code>logos/the-chinese-university-of-hong-kong-shenzhen-school-of-data--afe7ceb4b29f.png</code> |
+| Meshy API | Meshy | brand | [Primary source](https://www.meshy.ai/media-kit) | [Original image](https://cdn.meshy.ai/ti_w%3A2048%2Cq%3A75/landing-assets/media-kit/meshy-logo-general.webp) | <code>logos/meshy-a8d0b59eb31a.webp</code> |
+| HY-Motion 1.0 | Tencent Hunyuan | brand | [Primary source](https://github.com/Tencent-Hunyuan/HY-Motion-1.0) | [Original image](https://avatars.githubusercontent.com/u/210980732?v=4) | <code>logos/tencent-hunyuan-547abf65938b.png</code> |
+| Tripo Model Generation API | Tripo AI / VAST | brand | [Primary source](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html) | [Original image](https://avatars.githubusercontent.com/u/149052137?v=4) | <code>logos/tripo-ai-vast-50f52a476f35.png</code> |
+| Adobe Mixamo | Adobe / Mixamo | brand | [Primary source](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html) | [Original image](https://helpx.adobe.com/content/dam/helpx/icons/adobe-logo.svg) | <code>logos/adobe-20180a27b278.svg</code> |
+| WonderWorld | Stanford University | institution | [Primary source](https://kovenyu.com/wonderworld/) | [Original image](https://www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png) | <code>logos/stanford-university-28c9f9e81778.png</code> |
+| ElevenLabs Sound Effects | ElevenLabs | brand | [Primary source](https://github.com/elevenlabs/elevenlabs-python) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
+| Stable Audio Open 1.0 | Stability AI | brand | [Primary source](https://stability.ai/) | [Original image](https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/4e38b1d7-350c-4fd8-ac08-114a3448f110/Stability-ai-logo-white-dot.png) | <code>logos/stable-audio-open-e030c46f6897.png</code> |
+| ElevenLabs Music | ElevenLabs | brand | [Primary source](https://elevenlabs.io/docs/overview/capabilities/music) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
+| ElevenLabs Speech Generation | ElevenLabs | brand | [Primary source](https://elevenlabs.io/docs/api-reference/text-to-speech/convert) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
+| Codex · Create Browser-based Games | OpenAI | brand | [Primary source](https://github.com/openai/codex) | [Original image](https://github.com/openai.png?size=256) | <code>logos/openai-cde5d42ad75d.png</code> |
+| Godot Demo Projects | Godot Engine | brand | [Primary source](https://github.com/godotengine/godot) | [Original image](https://github.com/godotengine.png?size=256) | <code>logos/godot-engine-3c9b7f792300.png</code> |
+| GDQuest · First 2D Game | GDQuest | brand | [Primary source](https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/) | [Original image](https://github.com/GDQuest.png?size=256) | <code>logos/gdquest-9b58a051e485.png</code> |
+| Unity · 2D Tech Demos | Unity | brand | [Primary source](https://github.com/Unity-Technologies/2d-techdemos) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
+| Catlike Coding · Surface Contact | Catlike Coding / Jasper Flick | creator | [Primary source](https://catlikecoding.com/) | [Original image](https://catlikecoding.com/unity/code-documentation/logo-catlikecoding.png) | <code>logos/catlike-coding-jasper-flick-0b71b19bfa2a.png</code> |
+| Lyra Sample Game | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| Phaser · Examples | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
+| GameGPT | AutoGame Research | brand | [Primary source](https://arxiv.org/html/2310.08067) | [Original image](https://autogame.ai/images/logo.svg) | <code>logos/autogame-research-e967543b6c83.svg</code> |
+| OpenGame | The Chinese University of Hong Kong · MMLab | institution | [Primary source](https://github.com/leigest519/OpenGame) | [Original image](https://www.cuhk.edu.hk/english/images/fav-icons/apple-touch-icon.png) | <code>logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png</code> |
+| MarioGPT | IT University of Copenhagen | institution | [Primary source](https://arxiv.org/html/2302.05981) | [Original image](https://en.itu.dk/svg/itu/logo_en.svg) | <code>logos/it-university-of-copenhagen-a4764ab8996e.svg</code> |
+| GAVEL | New York University · Tandon School of Engineering | institution | [Primary source](https://arxiv.org/html/2407.09388) | [Original image](https://engineering.nyu.edu/themes/custom/tandon/images/favicon/apple-touch-icon.png) | <code>logos/new-york-university-tandon-school-of-engineering-d82ccba1edc3.png</code> |
+| Cardiverse | Rutgers University | institution | [Primary source](https://arxiv.org/html/2502.07128) | [Original image](https://communications.rutgers.edu/sites/default/files/Rutgers_Primary_Mark_Horizontal_Red_and_Black_RGB.svg) | <code>logos/rutgers-university-d9578e3c36ff.svg</code> |
+| Agent Game Forge | Agent Game Forge · 0x0funky | brand | [Primary source](https://github.com/0x0funky/agent-game-forge) | [Original image](https://raw.githubusercontent.com/0x0funky/agent-game-forge/main/apps/web/public/ogf-logo-256.png) | <code>logos/agent-game-forge-0x0funky-43c95b0fa403.png</code> |
+| Text2Game | Song Li · boltomli | creator | [Primary source](https://github.com/boltomli/t2g) | No published project mark | Maintainer name only |
+| 3AGameFactory | OpenDCAI | brand | [Primary source](https://github.com/OpenDCAI/GameFactory-3A) | [Original image](https://avatars.githubusercontent.com/u/177615276?v=4) | <code>logos/opendcai-1d87e5fed141.png</code> |
 | AutoUE | Pluto156 | creator | [Primary source](https://github.com/Pluto156/AutoUE) | No published project mark | Maintainer name only |
 | UniGen | yxwan123 | creator | [Primary source](https://github.com/yxwan123/UniGen) | No published project mark | Maintainer name only |
-| Tripo Model Generation API | Tripo AI / VAST | brand | [Primary source](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html) | [Original image](https://avatars.githubusercontent.com/u/149052137?v=4) | <code>logos/tripo-ai-vast-50f52a476f35.png</code> |
+| Level Design Book · unofficial design skill | The Level Design Book · unofficial adaptation | creator | [Primary source](https://book.leveldesignbook.com/appendix/about) | No published project mark | Maintainer name only |
+| Convai | Convai | brand | [Primary source](https://convai.com/) | [Original image](https://cdn.prod.website-files.com/66f6655083b0f778e338eebf/66fb9e2f3b4c9acafeeeca64_Group%20654947.png) | <code>logos/convai-da09160535bb.png</code> |
+| Inworld Agent Runtime | Inworld AI | brand | [Primary source](https://docs.inworld.ai/character-studio-deprecation) | [Original image](https://inworld.ai/) | <code>logos/inworld-ae122592c46b.svg</code> |
+| Playwright MCP | Microsoft / Playwright | brand | [Primary source](https://github.com/microsoft/playwright-mcp) | [Original image](https://playwright.dev/img/playwright-logo.svg) | <code>logos/microsoft-playwright-42a5ff460d7c.svg</code> |
+| GUT · Godot Unit Test | GUT / bitwes | brand | [Primary source](https://github.com/bitwes/Gut) | [Original image](https://raw.githubusercontent.com/bitwes/Gut/main/images/gut_logo_256x256.png) | <code>logos/gut-bitwes-df8cdf532c90.png</code> |
+| Unity Test Framework | Unity | brand | [Primary source](https://github.com/Unity-Technologies/2d-techdemos) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
+| Unreal · Automation Test Framework | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| GameDevBench | Carnegie Mellon University | institution | [Primary source](https://arxiv.org/html/2602.11103) | [Original image](https://live-cmu-brand.pantheonsite.io/sites/default/files/cmu-brand-files/inline-images/cmu-wordmark-square-w-on-r%201.png) | <code>logos/carnegie-mellon-university-c40d43eb19fa.png</code> |
+| GameXpert-Bench | Institute of Automation, Chinese Academy of Sciences | institution | [Primary source](https://arxiv.org/html/2608.21833) | [Original image](https://ia.cas.cn/images/favicon.png) | <code>logos/institute-of-automation-chinese-academy-of-sciences-1568edd09a70.png</code> |
+| GameGen-Verifier | The Chinese University of Hong Kong | institution | [Primary source](https://arxiv.org/pdf/2605.07442) | [Original image](https://www.cuhk.edu.hk/english/images/fav-icons/apple-touch-icon.png) | <code>logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png</code> |
+| GameEngineBench | Nitrode | brand | [Primary source](https://arxiv.org/html/2607.03525) | [Original image](https://nitrode.com/assets/nitrode/nitrode-mark.svg) | <code>logos/nitrode-140a4ff0a205.svg</code> |
+| Regression Games | Regression Games | brand | [Primary source](https://github.com/Regression-Games) | [Original image](https://github.com/Regression-Games.png?size=256) | <code>logos/regression-games-42b84c069d79.png</code> |
+| modl.ai | modl.ai | brand | [Primary source](https://github.com/modl-ai) | [Original image](https://github.com/modl-ai.png?size=256) | <code>logos/modl-ai-5ab80a9907ac.png</code> |
+| Unreal Engine · Gauntlet | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| Xbox Accessibility Guidelines | Microsoft | brand | [Primary source](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
+| Playwright Test | Microsoft / Playwright | brand | [Primary source](https://playwright.dev/docs/test-snapshots) | [Original image](https://playwright.dev/img/playwright-logo.svg) | <code>logos/microsoft-playwright-42a5ff460d7c.svg</code> |
+| GameCI | GameCI contributors | creator | [Primary source](https://github.com/game-ci/unity-builder) | [Original image](https://raw.githubusercontent.com/game-ci/documentation/main/static/assets/images/game-ci-brand-logo-wordmark-light.svg) | <code>logos/gameci-a81a25dbfbf6.svg</code> |
+| GdUnit4 | Godot GdUnit Labs / Mike Schulze | creator | [Primary source](https://github.com/godot-gdunit-labs/gdUnit4) | [Original image](https://raw.githubusercontent.com/godot-gdunit-labs/gdUnit4/v6.2.3/icon.png) | <code>logos/gdunit4-ed176306a061.png</code> |
+| Unreal Insights | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
 | CrazyGames | CrazyGames | brand | [Primary source](https://developer.crazygames.com/) | [Original image](https://imgs.crazygames.com/favicons/favicon-transparent.png?quality=95&metadata=none&width=196&height=196&fit=crop) | <code>logos/crazygames-c284e89a355c.jpg</code> |
 | Epic Games Store | Epic Games / Epic Games Store | brand | [Primary source](https://store.epicgames.com/en-US/distribution) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
 | GOG | GOG | brand | [Primary source](https://www.gog.com/pressroom/press-kit/) | [Original image](https://www.gog.com/pressroom/wp-content/uploads/2025/06/GOG_LOGO_DARK.png) | <code>logos/gog-e8ee9c8c97d9.png</code> |
 | itch.io | itch.io | brand | [Primary source](https://itch.io/press-kit) | [Original image](https://static.itch.io/images/app-icon.svg) | <code>logos/itch-io-7c7c74347fbf.svg</code> |
 | Steam | Valve / Steam | brand | [Primary source](https://partner.steamgames.com/) | [Original image](https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016) | <code>logos/steam-ec1098f56177.svg</code> |
-| Scenario | Scenario | brand | [Primary source](https://github.com/scenario-labs/Scenario-Unity) | [Original image](https://avatars.githubusercontent.com/u/71755875?s=200&v=4) | <code>logos/scenario-69c44818c77c.png</code> |
-| Meshy API | Meshy | brand | [Primary source](https://www.meshy.ai/media-kit) | [Original image](https://cdn.meshy.ai/ti_w%3A2048%2Cq%3A75/landing-assets/media-kit/meshy-logo-general.webp) | <code>logos/meshy-a8d0b59eb31a.webp</code> |
-| HY-Motion 1.0 | Tencent Hunyuan | brand | [Primary source](https://github.com/Tencent-Hunyuan/HY-Motion-1.0) | [Original image](https://avatars.githubusercontent.com/u/210980732?v=4) | <code>logos/tencent-hunyuan-547abf65938b.png</code> |
-| ElevenLabs Sound Effects | ElevenLabs | brand | [Primary source](https://github.com/elevenlabs/elevenlabs-python) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
-| Stable Audio Open 1.0 | Stability AI | brand | [Primary source](https://stability.ai/) | [Original image](https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/4e38b1d7-350c-4fd8-ac08-114a3448f110/Stability-ai-logo-white-dot.png) | <code>logos/stable-audio-open-e030c46f6897.png</code> |
-| Regression Games | Regression Games | brand | [Primary source](https://github.com/Regression-Games) | [Original image](https://github.com/Regression-Games.png?size=256) | <code>logos/regression-games-42b84c069d79.png</code> |
-| modl.ai | modl.ai | brand | [Primary source](https://github.com/modl-ai) | [Original image](https://github.com/modl-ai.png?size=256) | <code>logos/modl-ai-5ab80a9907ac.png</code> |
-| Convai | Convai | brand | [Primary source](https://convai.com/) | [Original image](https://cdn.prod.website-files.com/66f6655083b0f778e338eebf/66fb9e2f3b4c9acafeeeca64_Group%20654947.png) | <code>logos/convai-da09160535bb.png</code> |
-| Unreal Engine · Gauntlet | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
-| Windows · UI Automation and Input Semantics | Microsoft | brand | [Primary source](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
-| ElevenLabs Music | ElevenLabs | brand | [Primary source](https://elevenlabs.io/docs/overview/capabilities/music) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
-| ElevenLabs Speech Generation | ElevenLabs | brand | [Primary source](https://elevenlabs.io/docs/api-reference/text-to-speech/convert) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
-| Xbox Accessibility Guidelines | Microsoft | brand | [Primary source](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
-| MSDF Atlas Generator | Chlumsky | creator | [Primary source](https://github.com/Chlumsky/msdf-atlas-gen) | No published project mark | Maintainer name only |
-| FastNoise Lite | Auburn | creator | [Primary source](https://github.com/Auburn/FastNoiseLite) | No published project mark | Maintainer name only |
-| DirectX Shader Compiler | Microsoft | brand | [Primary source](https://github.com/microsoft/DirectXShaderCompiler) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
-| Playwright Test | Microsoft / Playwright | brand | [Primary source](https://playwright.dev/docs/test-snapshots) | [Original image](https://playwright.dev/img/playwright-logo.svg) | <code>logos/microsoft-playwright-42a5ff460d7c.svg</code> |
-| Level Design Book · unofficial design skill | The Level Design Book · unofficial adaptation | creator | [Primary source](https://book.leveldesignbook.com/appendix/about) | No published project mark | Maintainer name only |
 | SolarRenderer | National University of Singapore | institution | [Primary source](https://enderfga.cn/SolarRenderer/) | [Original image](https://www.comp.nus.edu.sg/wp-content/uploads/2023/09/cropped-favicon-180x180.png) | <code>logos/national-university-of-singapore-208339f730ed.png</code> |
 | StreamRender-H3 | NVIDIA Research | brand | [Primary source](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/) | [Original image](https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/legal-info/logo-brand-usage/_jcr_content/root/responsivegrid/nv_container_392921705/nv_container/nv_image.coreimg.svg/1776076920288/nvidia-logo-vert.svg) | <code>logos/nvidia-research-eeccd683f64c.svg</code> |
 | Code World Model: Coding Agent as World Brain | Westlake University | institution | [Primary source](https://buaacyw.github.io/cwm/) | [Original image](https://en.westlake.edu.cn/images/header_icon_color.png) | <code>logos/westlake-university-0523b293fb55.png</code> |
@@ -121,7 +128,6 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | DIAMOND — Diffusion for World Modeling | University of Geneva | institution | [Primary source](https://diamond-wm.github.io/) | [Original image](https://www.unige.ch/cdn/themes/unige2016/img/unige-logo.svg) | <code>logos/university-of-geneva-1463fc8ebff6.svg</code> |
 | GameFactory | The University of Hong Kong | institution | [Primary source](https://github.com/KlingAIResearch/GameFactory) | [Original image](https://www.hku.hk/etc.clientlibs/hkucms/clientlibs/clientlib-site/resources/apple-touch-icon-180x180.png) | <code>logos/the-university-of-hong-kong-9f73767c00f9.png</code> |
 | Oasis: A Universe in a Transformer | Decart | brand | [Primary source](https://oasis-model.github.io/) | [Original image](https://cdn.prod.website-files.com/69a974f0b1fffb03644ecf2c/69ac71152873beed5390c042_footer-signet.svg) | <code>logos/decart-6ca0a89a6eb1.svg</code> |
-| WonderWorld | Stanford University | institution | [Primary source](https://kovenyu.com/wonderworld/) | [Original image](https://www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png) | <code>logos/stanford-university-28c9f9e81778.png</code> |
 | World Labs Marble | World Labs | brand | [Primary source](https://www.worldlabs.ai/blog/marble-world-model) | [Original image](https://www.worldlabs.ai/icon.svg) | <code>logos/world-labs-d497d3eca146.svg</code> |
 
 ## Attribution notes
@@ -178,10 +184,6 @@ AGENTS.md explicitly states current stewardship by the Agentic AI Foundation und
 
 The official format website states Agent Skills was originally developed by Anthropic. Label as creator; the open format is adopted across the ecosystem.
 
-### Codex · Create Browser-based Games
-
-Official OpenAI coding agent and OpenAI-authored workflow. Use the OpenAI brand mark, not a generated substitute.
-
 ### MCP for Unity
 
 Exact MCP for Unity project logo from its README. Independent community integration, explicitly not affiliated with Unity Technologies. The operator guide belongs to the same repository.
@@ -196,17 +198,25 @@ ownership is confirmed by the repository and creator profile, but no independent
 
 ### MCP for Blender
 
-repository and linked project site confirm an independent community integration, explicitly not affiliated with Blender Foundation. No separate project or organization logo has been confirmed; do not replace it with the official Blender logo or a personal portrait.
+The repository credits Siddharth Ahuja and states the community project is independent of the Blender Foundation. The project site's square mark matches the branding in the repository banner and identifies MCP for Blender.
 
 ### Unreal MCP · chongdashu
 
 repository ownership is chongdashu; the linked creator profile identifies AI Oriented Dev and aioriented.dev. No project/creator brand image has been confirmed. Do not use Epic/Unreal branding as an implied creator.
 
-### Playwright MCP
+### Unity Agent Plugin
 
-Official Microsoft Playwright project. Use the real Playwright brand mark; it is a Microsoft-maintained MCP, unlike third-party engine bridges.
+Unity's own product documentation identifies the official plugin, with source under the Unity-Technologies organization. Use the official organization's brand image; this attribution applies to the official plugin, not independent Unity MCP bridges.
 
-### Godot Engine · Official Documentation
+### MCP Unity Editor
+
+The independent repository is maintained by CoderGamester, whose profile names Miguel Tomas. The file index has no project image mark and the README uses ASCII art and third-party badges. The maintainer avatar is a personal photograph, so it is not used as a brand logo. Do not attribute this third-party plugin to Unity or to the maintainer's employer.
+
+### Windows · UI Automation and Input Semantics
+
+Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.
+
+### Godot Engine
 
 Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.
 
@@ -214,43 +224,11 @@ Official engine and its own documentation/demo repositories. The official Godot 
 
 Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.
 
-### Godot Demo Projects
-
-Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.
-
-### GUT · Godot Unit Test
-
-The actual GUT project logo is referenced on the first line of its official README; do not use the Godot engine mark in its place.
-
-### GDQuest · First 2D Game
-
-GDQuest-authored course and library page; use GDQuest's own organization mark rather than Godot branding.
-
-### Unity · Manual
+### Unity
 
 Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.
 
-### Unity Test Framework
-
-Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.
-
-### Unity · 2D Tech Demos
-
-Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.
-
-### Catlike Coding · Surface Contact
-
-The official site identifies Jasper Flick as the author and sole operator. Its own code documentation labels this image Logo. Use the Catlike Coding creator mark rather than Unity's logo.
-
-### Unreal Engine · Documentation
-
-Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.
-
-### Unreal · Automation Test Framework
-
-Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.
-
-### Lyra Sample Game
+### Unreal Engine
 
 Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.
 
@@ -274,23 +252,7 @@ the original forum post identifies the creator as red-reddington and links a Cod
 
 The repository belongs to the pmndrs collective. Use its real organization brand mark with creator attribution rather than the generic React logo, which belongs to another project.
 
-### Blender
-
-Official Blender mirror and API quickstart source. The official organization avatar uses the Blender brand mark.
-
-### Blender Python · API Quickstart
-
-Official Blender mirror and API quickstart source. The official organization avatar uses the Blender brand mark.
-
-### Khronos · glTF-Blender-IO
-
-Repository ownership confirms the Khronos-maintained glTF importer/exporter. Use the actual Khronos Group organization logo, with creator attribution.
-
-### Phaser · First Game Guide
-
-Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.
-
-### Phaser · Examples
+### Phaser
 
 Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.
 
@@ -302,45 +264,17 @@ Official documentation identifies the publisher of this interface. The existing 
 
 Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.
 
-### GameGPT
+### FastNoise Lite
 
-The paper lists first author Dake Chen at AutoGame Research and uses autogame.ai email addresses for other AutoGame authors. The logo is linked by AutoGame's official homepage. Other author affiliations include X-Institute, USC, and Tsinghua; this is a representative research affiliation, not exclusive ownership or endorsement.
+Official project or publisher attribution is supported by the linked primary source. Independent maintainer attribution is shown as text; no unrelated image is substituted.
 
-### OpenGame
+### DirectX Shader Compiler
 
-The official README directly identifies the author team as CUHK MMLab and lists CUHK email addresses. Uses the university's official website icon to identify that affiliation.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
-### GameDevBench
+### GDevelop AI & MCP
 
-The paper lists first author Wayne Chi and most coauthors at Carnegie Mellon; one coauthor is at Princeton. The 900px square logo is the image displayed on CMU's official brand standards University Logo page.
-
-### GameXpert-Bench
-
-The paper lists first author Kun Chen at MAIS, Institute of Automation, Chinese Academy of Sciences. It also lists Tsinghua, HKUST, CUHK Shenzhen, Tencent Lightspeed Studios, and the Tencent Hunyuan team. The institute icon is linked by its official identity page https://ia.cas.cn/gkjj/xxbs/. Affiliation is representative, not exclusive.
-
-### GameGen-Verifier
-
-The PDF's first page assigns first author Chaobo Jia and Hong Xu to affiliation 1, CUHK. Equal contributors and coauthors also list HUST, Lionrock AI Lab, NTU, HKU, and an independent researcher. The university icon identifies one verified author affiliation, not the sole project owner.
-
-### MarioGPT
-
-The paper lists first author Shyam Sudhakaran at IT University of Copenhagen and modl.ai; other authors also list ITU and modl.ai. Uses the university's official English logo. This is one verified affiliation rather than exclusive institutional authorship.
-
-### GAVEL
-
-The paper lists first author Graham Todd and Julian Togelius at NYU Tandon. Other authors list ETH Zurich, Flinders, UCLouvain, and Maastricht. This identifies the first author's institution using NYU Tandon's own website icon.
-
-### Cardiverse
-
-The paper lists first author Danrui Li and several coauthors at Rutgers, with other affiliations including Ontario Tech and Roblox. The SVG is linked from Rutgers' official Logos, Signatures, and Visual Identity page. This is a representative author affiliation.
-
-### Agent Game Forge
-
-This is the actual project logo committed in the official repository's web/public directory, with several size variants. The repository is independently maintained by 0x0funky; no university or corporate affiliation is asserted.
-
-### Text2Game
-
-The public repository is maintained under boltomli, whose GitHub profile names Song Li. Its README and file index expose no project or institutional brand mark. The profile image is a toy photograph and is not used as a logo. Show the verified maintainer name without inventing a school or company mark.
+Original GDevelop G logo (purple background).svg from GDevelop_press_kit/GDevelop - Press Kit/Logos/ in the official media archive linked by the GDevelop website. The archive identifies GDevelop Ltd as the trademark holder. Original paths, colors and aspect ratio are retained.
 
 ### PixelLab AI Agent Toolkit
 
@@ -350,25 +284,29 @@ The official PixelLab site describes its MCP asset service. The pixellab-code Gi
 
 Independent project maintained by 0x0funky. No separate public project logo or institutional affiliation is confirmed. The maintainer uses a custom illustrated profile avatar, which is omitted because it is not an official project or organization mark. The robot mark in Agent Game Forge belongs to a different project and is not reused here.
 
+### Scenario
+
+Official Scenario organization mark. The public Unity integration belongs to scenario-labs, whose organization links to scenario.com.
+
 ### OpenAI Image Generation
 
 Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
-### 3AGameFactory
+### MSDF Atlas Generator
 
-The official repository is owned by the OpenDCAI organization, whose profile describes data-centric AI research. No university affiliation was established from the project or organization profile. Use only the organization's actual selected identity image; do not infer a school from the project name.
+Official project or publisher attribution is supported by the linked primary source. Independent maintainer attribution is shown as text; no unrelated image is substituted.
 
-### GameEngineBench
+### Blender
 
-The paper lists Brian La, Sejoon Chang, and Ben Kim at Nitrode, provides research@nitrode.com, and links the Nitrode-Research repository. Other affiliations include Nexon Intelligence Labs and several universities. The paper explicitly says authors' views do not necessarily reflect employer or institutional policy. The mark is linked from Nitrode's official site.
+Official Blender mirror and API quickstart source. The official organization avatar uses the Blender brand mark.
 
-### Unity Agent Plugin
+### Blender Python · API Quickstart
 
-Unity's own product documentation identifies the official plugin, with source under the Unity-Technologies organization. Use the official organization's brand image; this attribution applies to the official plugin, not independent Unity MCP bridges.
+Official Blender mirror and API quickstart source. The official organization avatar uses the Blender brand mark.
 
-### MCP Unity Editor
+### Khronos · glTF-Blender-IO
 
-The independent repository is maintained by CoderGamester, whose profile names Miguel Tomas. The file index has no project image mark and the README uses ASCII art and third-party badges. The maintainer avatar is a personal photograph, so it is not used as a brand logo. Do not attribute this third-party plugin to Unity or to the maintainer's employer.
+Repository ownership confirms the Khronos-maintained glTF importer/exporter. Use the actual Khronos Group organization logo, with creator attribution.
 
 ### Godot MCP 3D Asset Builder
 
@@ -402,6 +340,102 @@ The paper lists first author Hongchi Xia at both UIUC and Shanghai Jiao Tong Uni
 
 The official README's About section explicitly says the team is from the School of Data Science, CUHK Shenzhen. The university logo is linked on its official English homepage. CUHK Shenzhen is identified distinctly from CUHK in Hong Kong.
 
+### Meshy API
+
+Original full-color Meshy brand mark downloaded from the official media kit; artwork and aspect ratio are preserved.
+
+### HY-Motion 1.0
+
+HY-Motion is published by the official Tencent-Hunyuan organization. Reuse its verified original Tencent Hunyuan brand mark, also used for Hunyuan3D.
+
+### Tripo Model Generation API
+
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
+
+### Adobe Mixamo
+
+Original Adobe wordmark displayed in the official Mixamo FAQ footer. It identifies Adobe as the service maintainer, rather than authorship of characters or animation assets. Original SVG paths, red color and aspect ratio are retained; only the XML declaration was removed.
+
+### WonderWorld
+
+The author page lists equal-contribution first authors Hong-Xing (Koven) Yu and Haoyi Duan at Stanford University, with MIT also represented. Select Stanford. The logo is the official touch icon linked by https://identity.stanford.edu/.
+
+### ElevenLabs Sound Effects
+
+The official ElevenLabs SDK organization uses the ElevenLabs double-bar mark. This is the company mark, not an audio placeholder.
+
+### Stable Audio Open 1.0
+
+Original Stability AI wordmark served in the official website footer; the Stable Audio Open model is published by stabilityai.
+
+### ElevenLabs Music
+
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
+
+### ElevenLabs Speech Generation
+
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
+
+### Codex · Create Browser-based Games
+
+Official OpenAI coding agent and OpenAI-authored workflow. Use the OpenAI brand mark, not a generated substitute.
+
+### Godot Demo Projects
+
+Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.
+
+### GDQuest · First 2D Game
+
+GDQuest-authored course and library page; use GDQuest's own organization mark rather than Godot branding.
+
+### Unity · 2D Tech Demos
+
+Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.
+
+### Catlike Coding · Surface Contact
+
+The official site identifies Jasper Flick as the author and sole operator. Its own code documentation labels this image Logo. Use the Catlike Coding creator mark rather than Unity's logo.
+
+### Lyra Sample Game
+
+Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.
+
+### Phaser · Examples
+
+Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.
+
+### GameGPT
+
+The paper lists first author Dake Chen at AutoGame Research and uses autogame.ai email addresses for other AutoGame authors. The logo is linked by AutoGame's official homepage. Other author affiliations include X-Institute, USC, and Tsinghua; this is a representative research affiliation, not exclusive ownership or endorsement.
+
+### OpenGame
+
+The official README directly identifies the author team as CUHK MMLab and lists CUHK email addresses. Uses the university's official website icon to identify that affiliation.
+
+### MarioGPT
+
+The paper lists first author Shyam Sudhakaran at IT University of Copenhagen and modl.ai; other authors also list ITU and modl.ai. Uses the university's official English logo. This is one verified affiliation rather than exclusive institutional authorship.
+
+### GAVEL
+
+The paper lists first author Graham Todd and Julian Togelius at NYU Tandon. Other authors list ETH Zurich, Flinders, UCLouvain, and Maastricht. This identifies the first author's institution using NYU Tandon's own website icon.
+
+### Cardiverse
+
+The paper lists first author Danrui Li and several coauthors at Rutgers, with other affiliations including Ontario Tech and Roblox. The SVG is linked from Rutgers' official Logos, Signatures, and Visual Identity page. This is a representative author affiliation.
+
+### Agent Game Forge
+
+This is the actual project logo committed in the official repository's web/public directory, with several size variants. The repository is independently maintained by 0x0funky; no university or corporate affiliation is asserted.
+
+### Text2Game
+
+The public repository is maintained under boltomli, whose GitHub profile names Song Li. Its README and file index expose no project or institutional brand mark. The profile image is a toy photograph and is not used as a logo. Show the verified maintainer name without inventing a school or company mark.
+
+### 3AGameFactory
+
+The official repository is owned by the OpenDCAI organization, whose profile describes data-centric AI research. No university affiliation was established from the project or organization profile. Use only the organization's actual selected identity image; do not infer a school from the project name.
+
 ### AutoUE
 
 The public implementation is maintained by Pluto156. No independent project mark or institutional affiliation was verified from the repository. Show the real maintainer name; do not substitute an account portrait, identicon, or engine logo.
@@ -410,9 +444,81 @@ The public implementation is maintained by Pluto156. No independent project mark
 
 The public implementation is maintained by yxwan123. No independent project mark or institutional affiliation was verified from the repository. Show the real maintainer name; do not substitute an account portrait, identicon, or engine logo.
 
-### Tripo Model Generation API
+### Level Design Book · unofficial design skill
+
+Original writing: Robert Yang and contributors including Andrew Yoder. GameMap distributes an unofficial operational adaptation with its original CC BY-NC-SA 4.0 license, attribution, source map, and third-party exceptions. The book authors and pi maintainers have not endorsed this package. No generated logo or maintainer portrait is used.
+
+### Convai
+
+Original Convai mark from the official website apple-touch-icon. The GitHub organization avatar is a default identicon and is deliberately not used.
+
+### Inworld Agent Runtime
+
+Original inline SVG from the official Inworld homepage header link labelled Inworld home, extracted without redrawing paths or changing colors or proportions. This is the Inworld corporate wordmark; the official migration guide identifies its Agent Runtime and engine SDKs.
+
+### Playwright MCP
+
+Official Microsoft Playwright project. Use the real Playwright brand mark; it is a Microsoft-maintained MCP, unlike third-party engine bridges.
+
+### GUT · Godot Unit Test
+
+The actual GUT project logo is referenced on the first line of its official README; do not use the Godot engine mark in its place.
+
+### Unity Test Framework
+
+Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.
+
+### Unreal · Automation Test Framework
+
+Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.
+
+### GameDevBench
+
+The paper lists first author Wayne Chi and most coauthors at Carnegie Mellon; one coauthor is at Princeton. The 900px square logo is the image displayed on CMU's official brand standards University Logo page.
+
+### GameXpert-Bench
+
+The paper lists first author Kun Chen at MAIS, Institute of Automation, Chinese Academy of Sciences. It also lists Tsinghua, HKUST, CUHK Shenzhen, Tencent Lightspeed Studios, and the Tencent Hunyuan team. The institute icon is linked by its official identity page https://ia.cas.cn/gkjj/xxbs/. Affiliation is representative, not exclusive.
+
+### GameGen-Verifier
+
+The PDF's first page assigns first author Chaobo Jia and Hong Xu to affiliation 1, CUHK. Equal contributors and coauthors also list HUST, Lionrock AI Lab, NTU, HKU, and an independent researcher. The university icon identifies one verified author affiliation, not the sole project owner.
+
+### GameEngineBench
+
+The paper lists Brian La, Sejoon Chang, and Ben Kim at Nitrode, provides research@nitrode.com, and links the Nitrode-Research repository. Other affiliations include Nexon Intelligence Labs and several universities. The paper explicitly says authors' views do not necessarily reflect employer or institutional policy. The mark is linked from Nitrode's official site.
+
+### Regression Games
+
+The official Regression Games organization links regression.gg and publishes RGUnityBots; use its original RG company mark.
+
+### modl.ai
+
+The modl-ai organization links modl.ai. Its custom black rounded-square company mark is visually verified, not a default GitHub identicon.
+
+### Unreal Engine · Gauntlet
+
+Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.
+
+### Xbox Accessibility Guidelines
 
 Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
+
+### Playwright Test
+
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
+
+### GameCI
+
+GameCI is a community-maintained project. The Unity Builder repository credits its contributors and documents its independence from Unity Technologies. The artwork is the wordmark used in the GameCI documentation navigation.
+
+### GdUnit4
+
+The GdUnit4 repository and versioned MIT license credit Mike Schulze and the contributors to this independent Godot testing framework. The icon from release v6.2.3 matches the one published in the Godot Asset Library.
+
+### Unreal Insights
+
+Epic's Unreal Engine documentation describes Unreal Insights, the bundled executable, and the source build target. The reviewed Epic Games mark identifies the publisher. The product record links the applicable engine terms.
 
 ### CrazyGames
 
@@ -434,81 +540,9 @@ Official itch.io app icon from the publisher’s press kit. The artwork is uncha
 
 Exact Steam wordmark used by the official Steam storefront. Bundled locally with colors and aspect ratio intact; only the XML declaration and external DTD header were removed. The Steam brand identifies Valve’s distribution platform, not authorship of any listed game.
 
-### Scenario
-
-Official Scenario organization mark. The public Unity integration belongs to scenario-labs, whose organization links to scenario.com.
-
-### Meshy API
-
-Original full-color Meshy brand mark downloaded from the official media kit; artwork and aspect ratio are preserved.
-
-### HY-Motion 1.0
-
-HY-Motion is published by the official Tencent-Hunyuan organization. Reuse its verified original Tencent Hunyuan brand mark, also used for Hunyuan3D.
-
-### ElevenLabs Sound Effects
-
-The official ElevenLabs SDK organization uses the ElevenLabs double-bar mark. This is the company mark, not an audio placeholder.
-
-### Stable Audio Open 1.0
-
-Original Stability AI wordmark served in the official website footer; the Stable Audio Open model is published by stabilityai.
-
-### Regression Games
-
-The official Regression Games organization links regression.gg and publishes RGUnityBots; use its original RG company mark.
-
-### modl.ai
-
-The modl-ai organization links modl.ai. Its custom black rounded-square company mark is visually verified, not a default GitHub identicon.
-
-### Convai
-
-Original Convai mark from the official website apple-touch-icon. The GitHub organization avatar is a default identicon and is deliberately not used.
-
-### Unreal Engine · Gauntlet
-
-Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.
-
-### Windows · UI Automation and Input Semantics
-
-Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.
-
-### ElevenLabs Music
-
-Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
-
-### ElevenLabs Speech Generation
-
-Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
-
-### Xbox Accessibility Guidelines
-
-Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
-
-### MSDF Atlas Generator
-
-Official project or publisher attribution is supported by the linked primary source. Independent maintainer attribution is shown as text; no unrelated image is substituted.
-
-### FastNoise Lite
-
-Official project or publisher attribution is supported by the linked primary source. Independent maintainer attribution is shown as text; no unrelated image is substituted.
-
-### DirectX Shader Compiler
-
-Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
-
-### Playwright Test
-
-Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
-
-### Level Design Book · unofficial design skill
-
-Original writing: Robert Yang and contributors including Andrew Yoder. GameMap distributes an unofficial operational adaptation with its original CC BY-NC-SA 4.0 license, attribution, source map, and third-party exceptions. The book authors and pi maintainers have not endorsed this package. No generated logo or maintainer portrait is used.
-
 ### SolarRenderer
 
-First author Guian Fang is affiliation 1 (NUS). The author page also lists LIGHTSPEED, CUHK(SZ), SLAI, and HKUST(GZ). Use the complete vertical logo from the official NUS identity page, not an isolated shield: https://www.nus.edu.sg/identity/elements-of-the-nus-logo. The displayed shield is the official NUS website icon supplied by the School of Computing website; this does not assign the paper to that school.
+First author Guian Fang is affiliation 1 (NUS). The author page also lists LIGHTSPEED, CUHK(SZ), SLAI, and HKUST(GZ). The bundled mark is the NUS website shield icon supplied by the School of Computing website. See https://www.nus.edu.sg/identity/elements-of-the-nus-logo for the complete institutional logo. The icon source does not assign the paper to that school.
 
 ### StreamRender-H3
 
@@ -577,10 +611,6 @@ The official repository lists first authors Jiwen Yu and Yiran Qin with The Univ
 ### Oasis: A Universe in a Transformer
 
 The official Oasis page credits Decart and Etched and specifically credits the AI team at Decart. Select the model team’s company, Decart, while acknowledging Etched. The logo is the footer image explicitly labeled Decart signet in https://decart.ai/ HTML.
-
-### WonderWorld
-
-The author page lists equal-contribution first authors Hong-Xing (Koven) Yu and Haoyi Duan at Stanford University, with MIT also represented. Select Stanford. The logo is the official touch icon linked by https://identity.stanford.edu/.
 
 ### World Labs Marble
 

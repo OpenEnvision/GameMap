@@ -13,7 +13,7 @@ import { assertMarkdownSafety } from "./markdown-safety.mjs";
 import { sha256, canonicalJSON } from "./codec.mjs";
 
 export function renderLogoAttribution(resources, identities) {
-  let output = `# Resource logo sources\n\nFind the organization, research affiliation, or maintainer behind each resource, along with the source of its bundled mark.\n\nSchool and institute marks identify a verified author affiliation, not exclusive ownership or endorsement. For collaborative research, the notes below preserve the selection rationale and other affiliations. Official project marks identify their own projects; third-party engine tools do not inherit an engine logo. Independent projects without a publicly verifiable mark show the maintainer name only. No generated logo, generic icon, default identicon, or portrait is used as a substitute.\n\nOriginal artwork is displayed with its aspect ratio and colors intact. Wide wordmarks receive more space. Nonvisual XML declarations and external DTD headers are removed from SVG files; artwork is unchanged. Files are served locally from <code>website/public/logos/</code> and do not require a remote image request. The identity registry records the original image URL, primary affiliation evidence, and a SHA-256 checksum. Legacy files under <code>website/public/icons/</code> are not used for resource identities; their accompanying licenses remain with those files.\n\n| Resource | Verified identity | Role | Evidence | Original mark | Local file |\n| --- | --- | --- | --- | --- | --- |\n`;
+  let output = `# Resource logo sources\n\nIf you are crediting a research demo, open the entry's evidence link for the authors and affiliations. Use the original mark link to identify the artwork on the page. The [SolarRenderer](#solarrenderer) shield came from the NUS School of Computing website, while the author page lists other affiliations as well. Take the author credit from the project page and the artwork credit from the image source.\n\nSchool and institute marks identify a verified author affiliation, not exclusive ownership or endorsement. For collaborative research, the notes below preserve the selection rationale and other affiliations. Official project marks identify their own projects; third-party engine tools do not inherit an engine logo. Independent projects without a publicly verifiable mark show the maintainer name only. No generated logo, generic icon, default identicon, or portrait is used as a substitute.\n\nOriginal artwork is displayed with its aspect ratio and colors intact. Wide wordmarks receive more space. Nonvisual XML declarations and external DTD headers are removed from SVG files; artwork is unchanged. Files are served locally from <code>website/public/logos/</code> and do not require a remote image request. The identity registry records the original image URL, primary affiliation evidence, and a SHA-256 checksum. Legacy files under <code>website/public/icons/</code> are not used for resource identities; their accompanying licenses remain with those files.\n\n| Resource | Verified identity | Role | Evidence | Original mark | Local file |\n| --- | --- | --- | --- | --- | --- |\n`;
   for (const resource of resources) {
     const identity = identities[resource.id];
     assert.ok(identity, `Missing identity: ${resource.id}`);
@@ -61,6 +61,8 @@ export function renderGeneratedDocuments(input) {
   const renderers = {
     "resource-catalog": (source) =>
       renderAwesome(sources.resources, { source }),
+    "resource-catalog-zh": (source) =>
+      renderAwesome(sources.resources, { source, locale: "zh" }),
     "game-builds": () =>
       renderLearningGuide(
         sources.learningPaths,
@@ -77,6 +79,7 @@ export function renderGeneratedDocuments(input) {
         sources.agentResourceKinds,
       ),
     "testing-library": () => renderTestingGuide(sources),
+    "testing-library-zh": () => renderTestingGuide(sources, { locale: "zh" }),
     "repository-index": () =>
       renderRepositoryResearch(sources.repositoryResearch),
     "logo-attribution": () =>

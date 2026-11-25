@@ -1,6 +1,10 @@
 # 资产交换与验证契约
 
-在每次交接时检查生成的资产：文件格式、几何体、材质、动画、依赖项以及引擎导入。使用下列针对各格式的要求，为目标工具链制定验收检查。
+敌人在生成器预览中正常，进入游戏却过大、缺少纹理或无法播放动画。保留原始下载，先检查实际接收资产的导入器，再考虑重新生成候选。Godot 4.5 的[格式指南](https://docs.godotengine.org/en/4.5/tutorials/assets_pipeline/importing_3d_scenes/available_formats.html)推荐 glTF 2.0；直接导入 Blender 文件也会调用 Blender，因此这条路径增加了已安装工具的依赖。
+
+交接 GLB 时，先留一份 [Khronos Validator](https://github.com/KhronosGroup/glTF-Validator) 报告。修掉错误，再看警告涉及的扩展在引擎里是否支持。格式过关后，放到有尺寸参照物和固定光照的场景，挂上指定材质，播一段项目要用的动作。贴图缺失、比例错或蒙皮变形异常，就留在导入环节排查。
+
+对于 2D 精灵，在浅色与深色背景上，以玩法尺寸和相机缩放检查透明边缘。遇到暗边或模糊时，重新生成图像前，先对照 [Godot 4.5 图像导入指南](https://docs.godotengine.org/en/4.5/tutorials/assets_pipeline/importing_images.html)检查过滤、alpha 处理和 mipmap。把有效的导入设置与源图像一同记录，供下次重新导入时核对。
 
 ## 1. 验证可移植资产，不要混淆格式有效性与保真度
 

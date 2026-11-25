@@ -1,6 +1,10 @@
 # Reproducing game-development benchmarks
 
-Find the code, data, harness, and evaluation setup needed to reproduce each study. Check split isolation and artifact availability before comparing reported results.
+You want to compare two agents on a platformer's collision fix. The [GothicVania creator's account](https://github.com/acatovic/gothicvania-codex-demo#implement---evaluate-cycle-is-the-key) describes using browser feedback to repair an enemy's gravity. Turning that kind of task into a comparison requires a frozen starting project, a precise fault and checks that both agents face under the same conditions.
+
+Keep one project copy per attempt. Give each agent the same source access, runtime observations, tool permissions and time/cost budget. Have a separate check confirm the enemy lands correctly and the existing player route still works; keep failed builds and exhausted attempts in the result ledger. Letting one agent inspect engine state while the other sees screenshots changes the comparison. Multiple replays of this one repair estimate repeatability on that task, rather than coverage of many independent games.
+
+Use the matrix below to decide whether to reproduce a published protocol or construct this local test. If you replace the tasks, judge, observation surface or repair budget, report the resulting local experiment with those changes. A useful local regression can guide your team's tool choice without being comparable to the paper's leaderboard. The later sections cover uncertainty, adaptive feedback and artifact accounting when expanding beyond one task.
 
 ## Artifact and control matrix
 

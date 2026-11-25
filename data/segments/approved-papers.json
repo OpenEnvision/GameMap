@@ -34819,7 +34819,7 @@
     ],
     "topics": [
       "Agent benchmarks",
-      "Quality assurance"
+      "Agent gameplay evaluation"
     ],
     "url": "https://arxiv.org/abs/2609.02459",
     "arxivId": "2609.02459",
@@ -35419,7 +35419,7 @@
     ],
     "topics": [
       "Agent benchmarks",
-      "Quality assurance"
+      "Agent gameplay evaluation"
     ],
     "url": "https://arxiv.org/abs/2609.25001",
     "arxivId": "2609.25001",
@@ -35599,7 +35599,7 @@
     ],
     "topics": [
       "Agent benchmarks",
-      "Quality assurance"
+      "Agent gameplay evaluation"
     ],
     "url": "https://arxiv.org/abs/2609.31473",
     "arxivId": "2609.31473",
@@ -64924,20 +64924,21 @@
   {
     "id": "paper-arxiv-2611-24073",
     "title": "3D GameDev Arena: Benchmarking Coding Agents That Plan, Build, and Playtest extreme Long-Horizon Browser Games",
-    "description": "Coding agents now resolve repository issues and generate compact playable games, but whether they can build a large 3D game from scratch remains open.",
-    "classification": "Indexed from arXiv November 2026 game-AI submissions; roles and topics index this paper into GameMap's seven research areas.",
+    "description": "Benchmark of coding agents generating 3D browser games from text specifications and UI/UX reference images. Evaluation covers functional acceptance against the specification, agent QA and playtesting, and human preferences for the generated games.",
+    "classification": "Editorial roles and topics were checked against the primary paper's game-generation and development-evaluation scope.",
     "authors": "Bizhe Bai, Jiliang Jian, Yuqing Yan et al.",
     "year": 2026,
     "publication": "arXiv preprint arXiv:2611.24073",
     "referenceType": "preprint",
-    "primaryRole": "test",
+    "primaryRole": "build",
     "roles": [
+      "build",
       "test"
     ],
     "topics": [
-      "Game agents",
-      "Gameplay benchmarks",
-      "Game playing"
+      "Game development",
+      "Coding agent evaluation",
+      "Game QA and playtesting"
     ],
     "url": "https://arxiv.org/abs/2611.24073",
     "arxivId": "2611.24073",
@@ -64955,20 +64956,20 @@
       "repositories": [],
       "projects": [],
       "demos": [],
-      "reviewStatus": "unverified",
-      "checkedAt": "2026-11-21",
+      "reviewStatus": "source-reviewed",
+      "checkedAt": "2026-11-24",
       "evidence": [
         {
-          "label": "arXiv record",
+          "label": "Primary paper abstract reviewed",
           "url": "https://arxiv.org/abs/2611.24073"
         },
         {
-          "label": "arXiv November 2026 listing",
+          "label": "Original import: arXiv November 2026 listing",
           "url": "https://arxiv.org/list/cs.AI/2611"
         }
       ],
       "notes": [
-        "Indexed from the arXiv November 2026 submissions; the paper itself was not independently reviewed here."
+        "The primary paper's abstract was reviewed for research scope. Source-code availability remains unverified; no game or model was executed in this review."
       ]
     }
   },
@@ -65383,20 +65384,21 @@
   {
     "id": "paper-arxiv-2611-17681",
     "title": "OCTAVE: A Capability-Resolved Benchmark for End-to-End HTML5 Game Generation",
-    "description": "Complete game generation requires agents to coordinate rules, interactions, states, and presentation over a long development process.",
-    "classification": "Indexed from arXiv November 2026 game-AI submissions; roles and topics index this paper into GameMap's seven research areas.",
+    "description": "Benchmark for end-to-end HTML5 game generation, with requirement-level evaluation across eight capability dimensions. Automated judgments inspect static source code for completeness and richness; runtime playability and successful interactive gameplay are outside those static checks.",
+    "classification": "Editorial roles and topics were checked against the primary paper's game-generation and development-evaluation scope.",
     "authors": "Kehang Li, Xinlan Xu, Yulin Jin et al.",
     "year": 2026,
     "publication": "arXiv preprint arXiv:2611.17681",
     "referenceType": "preprint",
-    "primaryRole": "test",
+    "primaryRole": "build",
     "roles": [
+      "build",
       "test"
     ],
     "topics": [
-      "Game agents",
-      "Gameplay benchmarks",
-      "Game playing"
+      "Game development",
+      "Coding agent evaluation",
+      "Static source-code evaluation"
     ],
     "url": "https://arxiv.org/abs/2611.17681",
     "arxivId": "2611.17681",
@@ -65414,20 +65416,20 @@
       "repositories": [],
       "projects": [],
       "demos": [],
-      "reviewStatus": "unverified",
-      "checkedAt": "2026-11-21",
+      "reviewStatus": "source-reviewed",
+      "checkedAt": "2026-11-24",
       "evidence": [
         {
-          "label": "arXiv record",
+          "label": "Primary paper abstract reviewed",
           "url": "https://arxiv.org/abs/2611.17681"
         },
         {
-          "label": "arXiv November 2026 listing",
+          "label": "Original import: arXiv November 2026 listing",
           "url": "https://arxiv.org/list/cs.AI/2611"
         }
       ],
       "notes": [
-        "Indexed from the arXiv November 2026 submissions; the paper itself was not independently reviewed here."
+        "The primary paper's abstract was reviewed for research scope. Source-code availability remains unverified; no game or model was executed in this review."
       ]
     }
   },
@@ -66520,20 +66522,21 @@
   {
     "id": "paper-arxiv-2611-24408",
     "title": "StrideWorld: Benchmarking Scene Rigidity and Action Consistency in Interactive Video World Model",
-    "description": "Interactive video world models turn user commands into the exploration of a generated scene, which requires the scene to keep its 3D structure as the camera moves and each action to keep a stable effect.",
-    "classification": "Indexed from arXiv November 2026 game-AI submissions; roles and topics index this paper into GameMap's seven research areas.",
+    "description": "Benchmark of interactive video world models that measures scene rigidity and action consistency against fixed geometric and action-stride references. Its evaluation concerns generated-video geometry and camera-motion behavior; the release provides a benchmark and measurement pipeline.",
+    "classification": "Editorial roles and topics were checked against the primary paper and its author-linked benchmark repository.",
     "authors": "Chuang Wang, Rui Nie, Jie Song et al.",
     "year": 2026,
     "publication": "arXiv preprint arXiv:2611.24408",
     "referenceType": "preprint",
-    "primaryRole": "test",
+    "primaryRole": "model",
     "roles": [
+      "model",
       "test"
     ],
     "topics": [
       "World models",
-      "Gameplay benchmarks",
-      "Real-time interaction"
+      "Video world-model evaluation",
+      "Scene rigidity and action consistency"
     ],
     "url": "https://arxiv.org/abs/2611.24408",
     "arxivId": "2611.24408",
@@ -66547,34 +66550,137 @@
     ],
     "citedSections": [],
     "access": {
-      "codeStatus": "source-available",
+      "codeStatus": "open-source",
       "repositories": [
         {
-          "label": "Code linked by the survey",
+          "label": "Author-linked StrideWorld benchmark implementation",
           "url": "https://github.com/chuangwang123/strideworld",
           "kind": "implementation",
           "license": {
-            "status": "unspecified",
-            "name": "License not established"
+            "status": "open-source",
+            "name": "Apache License 2.0",
+            "url": "https://github.com/chuangwang123/strideworld/blob/main/LICENSE"
           }
         }
       ],
       "projects": [],
       "demos": [],
-      "reviewStatus": "unverified",
-      "checkedAt": "2026-11-21",
+      "reviewStatus": "source-reviewed",
+      "checkedAt": "2026-11-24",
       "evidence": [
         {
-          "label": "arXiv record",
+          "label": "Primary paper with author-linked repository",
           "url": "https://arxiv.org/abs/2611.24408"
         },
         {
-          "label": "arXiv November 2026 listing",
-          "url": "https://arxiv.org/list/cs.AI/2611"
+          "label": "Author-linked benchmark repository reviewed",
+          "url": "https://github.com/chuangwang123/strideworld"
+        },
+        {
+          "label": "Repository license text inspected",
+          "url": "https://github.com/chuangwang123/strideworld/blob/main/LICENSE"
+        },
+        {
+          "label": "Benchmark scoring implementation inspected",
+          "url": "https://github.com/chuangwang123/strideworld/blob/main/scoring/assemble.py"
         }
       ],
       "notes": [
-        "Indexed from the arXiv November 2026 submissions; the paper itself was not independently reviewed here."
+        "The primary paper links this repository directly. Benchmark source files and the Apache-2.0 license text were inspected; the benchmark was not executed in this review.",
+        "Apache-2.0 applies to the repository code. The data release and third-party models and trackers retain their own terms; the code license does not establish their licenses."
+      ]
+    }
+  },
+  {
+    "id": "paper-arxiv-2505-14357",
+    "title": "Vid2World: Crafting Video Diffusion Models to Interactive World Models",
+    "description": "Converts pretrained video diffusion models into autoregressive, action-conditioned world models. Experiments include CS:GO video simulation alongside robot manipulation and navigation. The game experiments predict video from observations and actions; they do not provide a complete game project or editable game-engine scene.",
+    "classification": "Editorial world-model scope was checked against the primary paper, the ICLR proceedings, and the author-linked project and code.",
+    "authors": "Siqiao Huang, Jialong Wu, Qixing Zhou, Shangchen Miao, and Mingsheng Long.",
+    "year": 2025,
+    "publication": "ICLR 2026; first preprint published in 2025.",
+    "referenceType": "conference-paper",
+    "primaryRole": "model",
+    "roles": [
+      "model"
+    ],
+    "topics": [
+      "World models",
+      "Action-conditioned video generation",
+      "Game simulation"
+    ],
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1214d67bb7fa38d40e0b3c2be677e39b-Abstract-Conference.html",
+    "arxivId": "2505.14357",
+    "pdfUrl": "https://arxiv.org/pdf/2505.14357",
+    "resourceIds": [],
+    "origins": [
+      {
+        "label": "Primary conference publication",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1214d67bb7fa38d40e0b3c2be677e39b-Abstract-Conference.html"
+      },
+      {
+        "label": "First preprint",
+        "url": "https://arxiv.org/abs/2505.14357"
+      }
+    ],
+    "citedSections": [],
+    "access": {
+      "codeStatus": "open-source",
+      "repositories": [
+        {
+          "label": "Author-linked Vid2World implementation",
+          "url": "https://github.com/thuml/Vid2World",
+          "kind": "implementation",
+          "license": {
+            "status": "open-source",
+            "name": "Apache License 2.0",
+            "url": "https://github.com/thuml/Vid2World/blob/main/LICENSE"
+          }
+        }
+      ],
+      "projects": [
+        {
+          "label": "Author-linked project page",
+          "url": "https://knightnemo.github.io/vid2world/"
+        }
+      ],
+      "demos": [],
+      "reviewStatus": "source-reviewed",
+      "checkedAt": "2026-11-24",
+      "evidence": [
+        {
+          "label": "ICLR 2026 conference publication",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1214d67bb7fa38d40e0b3c2be677e39b-Abstract-Conference.html"
+        },
+        {
+          "label": "Primary paper and first-preprint date",
+          "url": "https://arxiv.org/abs/2505.14357"
+        },
+        {
+          "label": "Author-linked project and CS:GO experiments",
+          "url": "https://knightnemo.github.io/vid2world/"
+        },
+        {
+          "label": "Author-linked implementation reviewed",
+          "url": "https://github.com/thuml/Vid2World"
+        },
+        {
+          "label": "Repository license text inspected",
+          "url": "https://github.com/thuml/Vid2World/blob/main/LICENSE"
+        },
+        {
+          "label": "Training and inference entry point inspected",
+          "url": "https://github.com/thuml/Vid2World/blob/main/main/trainer.py"
+        },
+        {
+          "label": "CS:GO experiment configurations",
+          "url": "https://github.com/thuml/Vid2World/tree/main/configs/game"
+        }
+      ],
+      "notes": [
+        "The author-linked repository includes training, inference, and evaluation code for video world models, including CS:GO configurations. Source inspection only; experiments were not reproduced.",
+        "The repository LICENSE is Apache-2.0; its README's MIT badge conflicts with that file. Model checkpoints, base models, datasets, and game assets require separate review of their own terms.",
+        "The year records the first preprint in 2025; the conference publication is ICLR 2026."
       ]
     }
   }

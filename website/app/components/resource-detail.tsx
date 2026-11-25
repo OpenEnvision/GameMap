@@ -4,27 +4,15 @@ import { Link, useSiteI18n, LanguageSwitcher } from "../lib/i18n";
 import {
   ArrowUpRight,
   Bookmark,
-  BookOpen,
-  Box,
   Boxes,
   Check,
-  Film,
   Link2,
-  Map,
-  Network,
-  Plug,
   Route,
-  Shapes,
-  Type,
-  Users,
-  Waves,
-  Workflow,
   X,
-  type LucideIcon,
 } from "lucide-react";
-import type { Resource } from "../../src/types";
+import { resourceCollections, type Resource } from "../../src/types";
 import type { ResourceIdentity } from "../../src/data/resourceIdentities";
-import ResourceIcon from "../../src/components/ResourceIcon";
+import { CatalogIcon } from "./catalog-icon";
 import type { ContentEntry } from "../../content/models";
 import {
   ContentBlockView,
@@ -41,51 +29,6 @@ import {
   typeGlyphs,
   typeLabels,
 } from "../lib/catalog";
-
-const functionGlyphs: Record<string, LucideIcon> = {
-  "level-design-book-skill": Map,
-  "godot-mcp": Plug,
-  "mcp-for-blender": Shapes,
-  "unreal-mcp": Network,
-  "threejs-crowd-experience": Users,
-  text2game: BookOpen,
-  "agent-sprite-forge": Film,
-  "mcp-unity": Plug,
-  "godot-3d-asset-skill": Box,
-  autoue: Workflow,
-  unigen: Workflow,
-  "msdf-atlas-gen": Type,
-  "fastnoise-lite": Waves,
-};
-
-/** Verified project artwork, or a neutral function glyph in a muted tile.
- *  Function glyphs are decorative, not project branding. */
-export function ResourceMark({
-  resource,
-  identity,
-  size,
-}: {
-  resource: Resource;
-  identity: ResourceIdentity;
-  size: number;
-}) {
-  const { t } = useSiteI18n();
-  if (identity.asset)
-    return <ResourceIcon resource={resource} identity={identity} size={size} />;
-  const Glyph = functionGlyphs[resource.id] || typeGlyphs[resource.type];
-  return (
-    <span
-      className="resource-glyph"
-      style={{ width: size, height: size }}
-      aria-hidden="true"
-      data-logo="none"
-      data-resource-id={resource.id}
-      title={t("Function icon: {type}", { type: t(typeLabels[resource.type]) })}
-    >
-      <Glyph size={Math.round(size * 0.4)} strokeWidth={1.5} />
-    </span>
-  );
-}
 
 export function ResourceDetail({
   entry,
@@ -144,7 +87,6 @@ export function ResourceDetail({
     ...entry,
     blocks: entry.blocks.filter((block) => !intro.includes(block)),
   };
-  const logo = identity.asset ? undefined : "none";
   return (
     <dialog
       ref={dialog}
@@ -180,15 +122,10 @@ export function ResourceDetail({
       </div>
       <div className="rd-layout">
         <div className="rd-head">
-          {/* Narrow screens: the mark sits beside the title. Wide screens show
-              it on the rail's stage instead. */}
-          <span className="rd-mark" data-logo={logo}>
-            <ResourceMark resource={resource} identity={identity} size={52} />
-          </span>
+          <CatalogIcon icon={CategoryGlyph} />
           <div className="rd-head-text">
             {category && (
               <span className="small-label rd-category">
-                <CategoryGlyph size={13} aria-hidden="true" />
                 {t(category.label)}
               </span>
             )}
@@ -210,9 +147,6 @@ export function ResourceDetail({
             ))}
         </div>
         <aside className="rd-rail">
-          <span className="rd-stage" data-logo={logo}>
-            <ResourceMark resource={resource} identity={identity} size={72} />
-          </span>
           <div className="detail-actions">
             <a
               className="button button-primary"
@@ -233,6 +167,16 @@ export function ResourceDetail({
             </button>
           </div>
           <dl className="rd-facts">
+            <div>
+              <dt>{t("Library collection")}</dt>
+              <dd>
+                {t(
+                  resourceCollections.find(
+                    ({ id }) => id === resource.collection,
+                  )!.label,
+                )}
+              </dd>
+            </div>
             <div>
               <dt>
                 <TypeGlyph size={13} aria-hidden="true" />

@@ -1,6 +1,10 @@
 # Native operation details and lifecycle boundaries
 
-Look up the native commands, files, lifecycle events, and failure signals behind a production operation. Pair these details with the [engine-operation reference](engine-operations.md#animation-rendering-and-interchange) when implementing a work order.
+An automation script can report that it pressed Interact while the game never receives the interaction. Similar gaps occur between baking and saved lightmaps, or stopping an audio event and hearing its tail. Use the native operation's real lifecycle to decide what to wait for, what to collect and which owner should handle a failure. Pair the details with the [engine-operation reference](engine-operations.md#animation-rendering-and-interchange).
+
+If a Godot menu responds but the player interaction does not, inspect how that controller reads input before changing it. The [Godot 4.5 Input reference](https://docs.godotengine.org/en/4.5/classes/class_input.html#class-input-method-action-press) says `action_press()` updates polling state without calling `Node._input()`; `parse_input_event()` enters the event path. The two routes therefore exercise different controller implementations. A harness using the wrong one has not yet demonstrated a gameplay defect.
+
+Ask the automation owner to attach the injected action and target viewport; ask the gameplay programmer for the expected handler and whether GUI input can consume the event. Trace raw delivery, the intended handler and the resulting world-state change. Only then assign the fix to injection, focus/routing or gameplay. A missing response must not lead to repeated interaction submissions: the first command may still be pending, and a repeated purchase or pickup could create a second effect. The detailed input section below explains the buffering, update and reset boundaries needed to resolve that uncertainty.
 
 ## How to read lifecycle limits
 

@@ -1,6 +1,10 @@
 # Production tools and acceptance boundaries
 
-Find production tools for animation, procedural content, audio, rendering, and validation. Use each tool's native artifacts and completion signals to define the handoff to the next stage.
+A production tool is useful when the next person can consume its output. If an animator delivers only a sprite sheet, the programmer may still be missing timing and tags; if a dialogue editor hands over only compiled runtime data, the writer may be unable to revise it. Use this page to choose the authoring tool and the file-level handoff together.
+
+For a walking animation that jitters after import, ask for the editable source and the exact image/metadata pair used by the engine before commissioning a redraw. Aseprite's [CLI documentation](https://aseprite.org/docs/cli/) separates sheet-image export from JSON metadata and makes tag inclusion an explicit option. Keep the export settings with that pair; rebuilding a different sheet while reusing old metadata is not a repair.
+
+The animator owns pose and timing intent. The export/pipeline owner checks that the delivered frames, tags and files match the source; the consuming programmer owns anchor interpretation and playback configuration. Use the [sprite-delivery contract](../assets/validation.md#sprite-atlas-metadata-and-playback-delivery) when those boundaries disagree. Send a wrong pose back to animation, missing tags back to export, and stable source frames that shift only in-engine to the importer or placement code. This same division helps choose other tools below: retain an editable authoring artifact, its runtime derivative and the conversion settings, rather than making a rendered preview carry all three jobs.
 
 ## Authoring, localization and narrative
 

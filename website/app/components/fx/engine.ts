@@ -44,7 +44,7 @@ const INTERACTIVE_SELECTOR = [
 ].join(",");
 const TEXT_SELECTOR = `textarea, [contenteditable]:not([contenteditable="false"]), input:not(${BUTTON_TYPES})`;
 const HIDE_SELECTOR = 'iframe, [data-cursor="hide"]';
-const MEDIA_SELECTOR = "img, picture, video, canvas, .game-preview-unavailable";
+const MEDIA_SELECTOR = "img, picture, video, canvas";
 const GLOW_PROPS = ["--mx", "--my", "--tilt-x", "--tilt-y"] as const;
 const MAX_TILT = 3;
 

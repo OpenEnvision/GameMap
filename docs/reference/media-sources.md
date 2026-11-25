@@ -1,6 +1,6 @@
 # Demo media sources
 
-Homepage previews are excerpts from recordings published by the project authors. The credits below link each clip to its original source.
+If you plan to cite a gameplay image, first check who captured it and what they were running. The Dinosaur Game Offline shot below came from the author's hosted build after a jump. Cloud Crush shows a frame supplied by its publisher. For a neural render, read the input and output panels together before making a claim about what the model controlled. This ledger links each excerpt from the earlier showcase, community game screenshots, and a resource-library clip to its source.
 
 The previews retain every part of the source frame, including original game interfaces and input/output comparison labels. Only excerpt selection, proportional resizing, frame-rate normalization (maximum 30 fps), H.264 encoding, audio removal, and first-frame WebP poster encoding were applied to the six primary excerpts. Square footage and wide comparisons use a quiet matte instead of cutting off content. Native frame proportions are used in the lower gallery when practical. The mobile comparison variant additionally rearranges the two complete source panels as described below; it does not crop, replace, or generate any scene content.
 
@@ -10,9 +10,13 @@ The [community screenshot ledger](../../website/public/game-screenshot-sources.j
 
 Creator-published images retain their original attribution and rights. Browser captures use isolated, sandboxed sessions with guest access and default device permissions.
 
+- Papertrails · Author screenshot of the autumn village. [Source record](https://github.com/xikhar/papertrails/blob/5a284f71164ea3bd54ee788553e21f7f21a1b7b7/screenshots/village.png) · [Original image](https://raw.githubusercontent.com/xikhar/papertrails/5a284f71164ea3bd54ee788553e21f7f21a1b7b7/screenshots/village.png) · [Local preview](../../website/public/media/learning/fable52-papertrails.webp)
+- MOTHLIGHT · GameMap browser capture of the driving build after starting a run. [Playable source](https://aiarcade.games/play/mothlight) · [Local preview](../../website/public/media/learning/fable52-mothlight.webp)
+- Tidebell · GameMap browser capture in Sunlit Shallows after starting a dive. [Playable source](https://aiarcade.games/play/tidebell) · [Local preview](../../website/public/media/learning/fable52-tidebell.webp)
+
 ## AI game tutorial screenshots
 
-Reviewed October 18, 2026. Each AI game case has a real-game preview with explicit provenance: 27 GameMap captures from linked browser builds, 2 local source-project captures, and 15 creator-published gameplay screenshots or recording stills. The page badges identify each origin. For creator-published images, we record the date the image source was checked.
+Reviewed October 18, 2026. This batch of 44 real-game previews has explicit provenance: 27 GameMap captures from linked browser builds, 2 local source-project captures, and 15 creator-published gameplay screenshots or recording stills. The page badges identify each origin. For creator-published images, we record the date the image source was checked.
 
 Images are proportionally resized and centered on a 1280 × 720 canvas without cropping game content. The [manifest](../../website/public/media/learning/manifest.json) records origin, source URL, capture or review date, dimensions, file size, and SHA-256. Creator images also retain their original image URL. Underlying art, characters, and interfaces remain credited to their creators and rights holders.
 
@@ -71,6 +75,8 @@ Cloud Crush uses the publisher's `screenshots/09_gameplay.png` at pinned source 
 
 ## Homepage video excerpts
 
+These six excerpts make up the earlier homepage video set. Use the original recording to check context outside the excerpt or to compare against another published result.
+
 | Case | Official project | Original recording | Local excerpt | Format | Credit |
 | --- | --- | --- | --- | --- | --- |
 | OpenGame · Portal runner | [Project page](https://yelonhu.github.io/OpenGame-landing-page/) | [Author video](https://yelonhu.github.io/OpenGame-landing-page/hero/marvel_1.mp4) | 0.0–12.0 s | 960 × 640 · 5.41 MB | OpenGame · CUHK MMLab |
@@ -84,17 +90,17 @@ Cloud Crush uses the publisher's `screenshots/09_gameplay.png` at pinned source 
 
 - **2D:** two actual OpenGame game recordings: a pixel platformer and a top-down action arena. The clips show movement and combat rather than a title screen or a dialogue-only portrait. OpenGame is the author project for both distinct game examples.
 - **3D:** two Unreal Engine 5 gameplay recordings from [3AGameFactory's official Game Demos](https://github.com/OpenDCAI/GameFactory-3A#game-demos): character movement and melee combat with responsive health bars, followed by RPG movement and object interaction. These are the repository's actual recorded game demos, separate from its later CG-only examples. The authors identify generated characters and props, alongside Mixamo motion and existing scene assets. Their asset breakdown is preserved in the linked README.
-- **Code WM:** StreamRender-H3's synchronized engine input / neural output comparison, followed by SolarRenderer's voxel-conditioned castle scene. The SolarRenderer project page identifies that input structure as a voxel scene. The first case preserves both panels of the original comparison.
+- **Structure-conditioned neural rendering:** StreamRender-H3's synchronized engine input / neural output comparison, followed by SolarRenderer's voxel-conditioned castle scene. The SolarRenderer project page identifies that input structure as a voxel scene. The first case preserves both panels of the original comparison. These clips document visual outputs under provided inputs. The recordings do not establish executable rules, editable scene export, or sustained closed-loop control.
 
 ## Mobile comparison variant
 
 The narrow-screen variant of **StreamRender-H3 · Engine to neural render** uses the exact same 10.0-second, 24-fps excerpt. Its original 960 × 274 side-by-side frame is rearranged to **480 × 548**: the complete left half (engine input) is above the complete right half (neural render). Each panel remains 480 × 274. Every source pixel area is retained, the two views stay synchronized, and the original Engine / Render labels remain visible. No panel is cropped and no new imagery or text is added. Only H.264 re-encoding follows the row-by-row pixel rearrangement.
 
-The local [mobile MP4](../../website/public/media/showcase/streamrender-car-mobile.mp4) is 2.05 MB (2,047,833 bytes), with a matching [first-frame WebP poster](../../website/public/media/showcase/streamrender-car-mobile.webp). The manifest records its parent case, source asset, layout, dimensions, timing, sizes, and SHA-256 checksums separately in the top-level **variants** array. It is an alternate presentation of one existing case, so the homepage still has **six primary cases**.
+The local [mobile MP4](../../website/public/media/showcase/streamrender-car-mobile.mp4) is 2.05 MB (2,047,833 bytes), with a matching [first-frame WebP poster](../../website/public/media/showcase/streamrender-car-mobile.webp). The manifest records its parent case, source asset, layout, dimensions, timing, sizes, and SHA-256 checksums separately in the top-level **variants** array. It is an alternate presentation of one existing case, so the showcase still has **six primary cases**.
 
 ## Resource-library clip
 
-The Holodeck living-room preview remains available beside its resource entry, separately from the six homepage cases. It is an author-published camera tour of a generated room layout, objects, and materials; it is not character gameplay or a complete playable game. Its original provenance and title are preserved in the manifest's top-level **libraryClips** array. The former arcade homepage clip is no longer part of the curated media set.
+The Holodeck living-room preview remains available beside its resource entry, separately from the six cases in the earlier homepage showcase. It is an author-published camera tour of a generated room layout, objects, and materials; it is not character gameplay or a complete playable game. Its original provenance and title are preserved in the manifest's top-level **libraryClips** array. The former arcade homepage clip is no longer part of the curated media set.
 
 | Library resource | Official project | Original recording | Local excerpt | Format | Credit |
 | --- | --- | --- | --- | --- | --- |
@@ -104,12 +110,12 @@ The Holodeck living-room preview remains available beside its resource entry, se
 
 Each excerpt and its matching poster is in `website/public/media/showcase/`. The [manifest](../../website/public/media/showcase/manifest.json) records original URLs, source and output dimensions, excerpt boundaries, sizes, and SHA-256 checksums. The six primary excerpt videos total 21.13 MB; the mobile alternative adds 2.05 MB and the preserved Holodeck library clip adds 3.98 MB. All bundled MP4s total **27.16 MB** (27,156,189 bytes). Including all matching posters, the complete local demo media bundle totals **27.62 MB**. The videos are H.264 MP4s with no audio track and with the `moov` box before `mdat` for progressive playback.
 
-Only the selected hero case attaches a video source on entry. Previews are muted; manual pause persists across cases and tracks. Reduced-motion and data-saving preferences start with the genuine first-frame poster. Playback pauses offscreen, in hidden tabs, during a detail drawer or navigation overlay, and while another preview or film player is active. Gallery videos attach only on pointer intent or an explicit click. Unoptimized legacy remote videos are click-to-play only. Seek position and time are derived from the playing media rather than a decorative progress animation.
+In the former homepage showcase, only the selected case attached a video source on entry. Previews were muted, and a manual pause persisted across cases and tracks. Reduced-motion and data-saving preferences started with the first-frame poster. Playback paused offscreen, in hidden tabs, during a detail drawer or navigation overlay, and when another player was active. Gallery videos attached their sources on pointer intent or a click, and unoptimized remote videos required a click. The timeline followed the media's playhead.
 
-Watch full demo opens an accessible player with native controls, sound where present, and the original author-hosted recording. Those full films and external project pages require internet access. The 2D secondary source uses the official author repository's raw download URL to avoid a slow GitHub Pages node; the project page remains the attribution source.
+The recorded full-demo links point to the original author-hosted films. Those full films and external project pages require internet access. The 2D secondary source uses the official author repository's raw download URL to avoid a slow GitHub Pages node; the project page remains the attribution source.
 
 ## Attribution
 
 Recordings, rendered scenes, and underlying characters/artwork remain the property of their respective authors and rights holders. These are linked, credited research-directory excerpts. Project code licenses do not automatically grant rights to all video, game characters, paper figures, or generated outputs. The OpenGame and OpenDCAI/3AGameFactory repositories, Holodeck author page, SolarRenderer author page, and NVIDIA project page are retained beside the cases.
 
-Legacy research posters for MarioGPT, Hunyuan3D, TRELLIS, Infinigen, and GameNGen remain in the resource library. They keep their existing author links and descriptions. GameNGen's poster is explicitly a method figure. TRELLIS's author-published material is identified for academic/research purposes. These images are not substituted for the six homepage videos.
+Legacy research posters for MarioGPT, Hunyuan3D, TRELLIS, Infinigen, and GameNGen remain in the resource library. They keep their existing author links and descriptions. GameNGen's poster is explicitly a method figure. TRELLIS's author-published material is identified for academic/research purposes. These images serve as visual references on their resource entries.

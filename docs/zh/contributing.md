@@ -2,7 +2,7 @@
 
 网站内容必须遵循[内容模型与覆盖范围约定](project/content-model.md)。
 
-欢迎贡献可信资源、修正描述、修复链接，以及有证据支持的工程经验。GameMap 梳理编码智能体、引擎生态、2D 与 3D 开发以及世界模型。
+浏览器游戏链接失效时，先查作者的发行页和仓库。如果发行版换了地址，请给出新网址，并说明打开后看到了什么。如果只剩工程，请给出对应的源码提交、预期启动步骤，以及缺失的资产或依赖。原来的截图可以保留，注明它来自当时的构建。[社区案例审阅](evaluation/community-cases.md)里有这两种发行形式的实例。
 
 ## Git 来源与生成工作流
 
@@ -32,7 +32,7 @@ npm run check:build
 
 不要提交依赖、`dist/` 或 `website/dist/`、旧版根目录预览、`.build/`、`.react-router/`、`website/.content/` 中准备好的文档、复制的 `website/public/docs-assets/`、TypeScript/Vite/lint 缓存、覆盖率与浏览器测试报告、智能体轨迹、日志、临时文件、本地环境机密，或特定机器的编辑器及操作系统文件。构建产物会在 CI 中重新生成，且只有 `dist/` 会发布到 GitHub Pages。可共享的环境配置应放在 `.env.example`、`.env.sample` 或 `.env.template` 中，且不得包含机密。`.gitignore` 有意不隐藏源媒体、锁文件、共享的 VS Code 配置或环境模板。
 
-类 Cadle 的研究清单维护在 `data/segments/repository-research.json` 中。其完整来源候选成员及审阅状态会接受验证；`docs/cadle-repositories.md` 和公开的 Markdown/JSON 下载文件均由生成器生成。这些研究行不会自动成为资源卡片或精选可玩案例。
+类 Cadle 的研究清单维护在 `data/segments/repository-research.json` 中。其完整来源候选成员及审阅状态会接受验证；生成的 `docs/cadle-repositories.md` 指向仓库研究目录，完整台账保存在公开 JSON 下载中。这些研究行不会自动成为资源卡片或精选可玩案例。
 
 ### 仓库结构与格式
 
@@ -46,14 +46,15 @@ npm run check:build
 
 ## 条目格式
 
-每个分段都是 JSON 数组。每个 `id` 必须保持稳定，并在所有分段中唯一。示例：
+资源分段是 JSON 数组。每条资源的 `id` 必须保持稳定，并在所有资源分段中唯一。
 
 ```json
 {
   "id": "example-resource",
   "name": "Official Project Name",
-  "category": "2d",
+  "category": "production",
   "type": "framework",
+  "collection": "tools",
   "summary": "One sentence explaining the problem it solves.",
   "detail": "Describe inputs, outputs, relevant stages, and key limitations. Distinguish released artifacts from planned work.",
   "url": "https://example.org/official-project",
@@ -68,13 +69,27 @@ npm run check:build
 
 | 字段              | 取值与指导                                                                                                  |
 | --------------- | ------------------------------------------------------------------------------------------------------ |
-| `category`      | `agents`、`engines`、`2d`、`3d`、`production` 或 `world`；选择最能反映主要贡献的类别                                      |
-| `type`          | `agent`、`framework`、`skill`、`benchmark`、`paper`、`docs`、`tool`、`community` 或 `dataset`                  |
+| `collection`    | 必填：`tools`、`learning`、`research` 或 `reference`；先判断条目如何使用，再选择其主题 |
+| `category`      | `agents`、`engines`、`2d`、`3d`、`audio`、`production`、`runtime`、`testing`、`publishing` 或 `world`；按主要开发用途选择，独立于游戏维度 |
+| `type`          | `agent`、`framework`、`skill`、`benchmark`、`paper`、`docs`、`tool`、`community`、`dataset`、`tutorial` 或 `platform`；描述条目本身，而非其发布者 |
 | `stages`        | 从 `plan`、`code`、`assets`、`scene`、`test`、`ship`、`runtime` 和 `world` 中选择                                 |
 | `dimensions`    | 从 `2d`、`3d` 和 `world` 中选择                                                                              |
 | `links`, `year` | 可选；链接应指向能够支持其标签含义的具体页面。论文优先使用首个预印本的年份                                                                  |
 | `verified`      | `YYYY-MM-DD`；实际检查来源的日期                                                                                 |
 | `access`        | 可选的 `tutorial`、`demo` 和 `source` 对象，每个包含 `label`、`kind`、`note` 及 HTTPS `url`；仅在为 `unavailable` 时省略 URL |
+
+集合应遵循一致的收录规则：
+
+| 集合 | 收录规则 |
+| --- | --- |
+| `tools` | 可使用的工具、引擎、服务、可复用技能、智能体桥接与发行平台。产品可以将其官方文档作为主要使用入口。 |
+| `learning` | 完整指南、教程、官方文档、示例项目与实用工程文章。 |
+| `research` | 论文、基准、评估协议与研究原型。仅公开管线代码，并不意味着研究原型已经成为生产工具。 |
+| `reference` | 专门 API、格式、底层库与集成参考。通用桌面自动化应放在这里，除非有具体的游戏编辑器或游戏测试集成证据支持其更广泛的相关性。 |
+
+分类用于描述主要用途：`agents` 涵盖智能体与引擎桥接；`engines` 涵盖引擎与渲染；`2d` 涵盖 2D 美术与精灵；`3d` 涵盖 3D 资产与动画；`audio` 涵盖音效与语音；`production` 涵盖游戏创作与设计；`runtime` 涵盖运行时 AI 与 NPC；`testing` 涵盖测试与质量保障；`publishing` 涵盖发行；`world` 涵盖世界模型。旧分类 ID 保持稳定以保留链接，显示名称则遵循这些含义。使用 `dimensions` 表示对 2D/3D 的适用性：Unity MCP 桥接即使控制 3D 场景，也应归入 `agents`；音频、测试与发行资源应分别使用对应的用途分类。
+
+按步骤展开的学习资料使用 `tutorial`，游戏发行或分发平台使用 `platform`。`community` 仅用于实际社区或学习中心；社区作者撰写的教程仍应使用 `tutorial` 或 `docs` 类型。`runtime` 阶段用于 AI 或 NPC 行为，而非普通资产加载；`world` 阶段和维度用于世界模型工作，而非所有程序化地形或噪声库。
 
 在 `summary` 和 `detail` 中使用简洁自然的英语，保留官方项目名称。在没有证据支持时，不要将未发布代码描述为开源框架，不要将图像生成描述为动画生成，也不要将玩游戏的智能体描述为开发智能体。通过标签和阶段表达跨类别关联，而不是为了增加数量重复收录资源。
 
@@ -82,7 +97,7 @@ npm run check:build
 
 ## 证据与收录标准
 
-优先使用作者论文、官方文档、项目仓库、模型卡和数据卡。不要推断官方来源不支持的功能。将社区经验标记为 `community`，并保留引擎版本、硬件和问题场景。添加链接前应阅读其内容；搜索摘要不足以作为精确指标的证据。
+优先使用作者论文、官方文档、项目仓库、模型卡和数据卡。不要推断官方来源不支持的功能。将社区经验归于其作者，并保留引擎版本、硬件和问题场景；按内容选择资源类型，不要将社区作者身份当作类型。添加链接前应阅读其内容；搜索摘要不足以作为精确指标的证据。
 
 `verified` 表示已检查来源。只有在实际运行后，才能声称完成复现，并提供命令、版本、硬件、输入、结果及测试范围的限制。区分论文演示、完整开源实现、部分推理代码、托管产品和发布计划。代码、模型权重与数据可能适用不同条款；应链接到各自的官方说明，而不是从单一仓库的许可证标签推而广之。
 
@@ -98,7 +113,7 @@ npm run check:build
 - 明确将拟议的检查或工单模板称为提案或模板；不要将其描述为已完成的集成或测量结果。
 - 将审计时间戳和内部标识符保留在源记录或维护台账中，而不是面向读者的引言中。
 - 新指南放在与其导航分组对应的 `docs/` 主题文件夹中。`docs/README.md` 列出了各文件夹、生成的页面，以及命名与标题规范。
-- 中文指南位于 `docs/zh/` 下。将指向未翻译材料的链接标为英文。不要为了改变语气而改写另行授权并原样保留的技能包。
+- 中文指南位于 `docs/zh/` 下。将指向未翻译材料的链接标为英文。给单独授权的关卡设计改编包补实例时，请保留许可证、原始署名及来源链接，并注明哪些是原书内容，哪些是改编包自己的练习。
 
 ## 翻译
 
@@ -107,7 +122,7 @@ npm run check:build
 - 运行 `node scripts/check/locales.mjs --approve-new`，记录新翻译字段的指纹。该命令不会批准源文本变更。更新已有译文的源指纹前应先审阅译文；绝不能自动刷新全部哈希。
 - 在 `docs/zh/` 下添加完整中文文章。有意指向英文原文的链接应标记为 `(English)`，或使用现有的中文语言标记。其他内部链接保持所选界面语言。
 - 将未翻译段落明确标为英文。不要替换第三方源文件，也不要将翻译后的标题当作已翻译文章呈现。
-- 运行 `npm run check`，重新构建，并为两个语言版本运行 `npm run check:build` 和 `npm run test:web`。
+- 运行 `npm run check`，重新构建，再运行 `npm run check:build`。预览受影响页面的两个语言版本。
 
 ## 拉取请求
 

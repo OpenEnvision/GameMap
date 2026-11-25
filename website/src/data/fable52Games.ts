@@ -5,14 +5,14 @@ export const fable52Games: LearningPath[] = [
   {
     "id": "fable52-papertrails",
     "title": "Papertrails",
-    "description": "An endless pop-up book you walk through: paper villages rise and fold away across five biomes while you collect pressed leaves, shells and night stars. A relaxing procedural exploration game that ships as a browser build.",
+    "description": "An endless pop-up book you walk through: paper villages rise and fold away across five biomes while you collect pressed leaves, shells and night stars. A creator-hosted procedural exploration game linked from the arcade.",
     "engine": "Three.js · procedural WebGL · browser",
     "track": "3d",
     "category": "community",
     "aiUse": "The Fable 5.2 Games Arcade lists this build under \"Claude Fable 5.2 + Claude Opus 5.5\" and names Shikhar as its creator (arcade record checked 2026-11-22). This is aggregator metadata, not an independent authorship audit, and GameMap did not execute the build.",
     "steps": [
-      "Open the arcade play page and walk between biomes; note how the paper villages fold and how the collectibles respawn.",
-      "Use the arcade source inspector and the single-file download to find the procedural geometry and compare it with the Three.js and Procedural tags.",
+      "Open the creator-hosted build and walk between biomes; note how paper structures rise and fold and how the atlas records exploration.",
+      "Use the arcade build record for the development account and Open Original provenance, then inspect procedural geometry in the creator repository; the arcade entry does not provide a single-file download.",
       "Read the MIT license on the creator repository before reusing code; generated texture and audio rights are not separately documented."
     ],
     "tutorial": {
@@ -22,9 +22,9 @@ export const fable52Games: LearningPath[] = [
     },
     "demo": {
       "label": "Play Papertrails",
-      "url": "https://aiarcade.games/play/papertrails",
+      "url": "https://xikhar.github.io/papertrails/",
       "kind": "playable",
-      "note": "Community-arcade browser build, opened 2026-11-22. No original prompt was published for this build."
+      "note": "Direct link to the creator-hosted browser build, verified against the arcade's Open Original and the creator README. The arcade build record describes development rather than publishing an original prompt."
     },
     "source": {
       "label": "Open the creator repository",
@@ -35,7 +35,7 @@ export const fable52Games: LearningPath[] = [
     "evidence": {
       "label": "Inspect the primary build record",
       "url": "https://aiarcade.games/play/papertrails",
-      "note": "Arcade record: createdAt 2026-11-19, modelVersion \"Claude Fable 5.2 + Claude Opus 5.5\", author Shikhar, tags Exploration / Collectathon / Procedural / Three.js / Relaxing. Play page and repository returned HTTP 200 on 2026-11-22."
+      "note": "Arcade record: createdAt 2026-11-19, modelVersion \"Claude Fable 5.2 + Claude Opus 5.5\", author Shikhar. Rechecked 2026-11-25: the page embeds the creator-hosted build and links Open Original; the creator README links the same deployment."
     },
     "resourceIds": [
       "threejs"
@@ -235,18 +235,18 @@ export const fable52Games: LearningPath[] = [
   {
     "id": "fable52-mothlight",
     "title": "MOTHLIGHT // Vesper-9",
-    "description": "Street racing through a rain-slick cyberpunk city: thread twelve light gates across five districts. One of four browser games in the creator repository, and the most played build in that collection.",
+    "description": "Street racing through a rain-slick cyberpunk city: thread twelve light gates across five districts. An iteration of an earlier first-person exploration project, bundled as a single-file browser build.",
     "engine": "Three.js · WebGL · single-file browser build",
     "track": "3d",
     "category": "community",
-    "aiUse": "The Fable 5.2 Games Arcade attributes this build to Claude Fable 5.2 and names hahaliu1029 as its creator (arcade record checked 2026-11-22). The same repository holds three sibling games. This is aggregator and README metadata, not an independent authorship audit.",
+    "aiUse": "The arcade and creator README attribute this build to hahaliu1029 using Claude Fable 5.2. The published third instruction converts an existing walking game into a driving game, retaining its city while replacing the controller. This is a documented iteration, not evidence of a fresh one-shot build.",
     "steps": [
       "Play a run and note how the twelve light gates are distributed across the five districts.",
-      "Open the published prompt and compare its brief with the racing, HUD and district-map behaviour you observed.",
+      "Compare the published iteration prompt with the earlier walking version and the driving controller in the mothlight project.",
       "Read the Apache-2.0 notice in the shared repository before reusing code; generated texture and audio rights are not separately documented."
     ],
     "tutorial": {
-      "label": "Read the published one-shot prompt",
+      "label": "Read the published prompt",
       "url": "https://aiarcade.games/play/mothlight?tab=prompt",
       "kind": "prompt"
     },
@@ -254,18 +254,18 @@ export const fable52Games: LearningPath[] = [
       "label": "Play MOTHLIGHT",
       "url": "https://aiarcade.games/play/mothlight",
       "kind": "playable",
-      "note": "Community-arcade browser build, opened 2026-11-22. Arcade metadata reports a 1,144 KB build and publishes the original prompt."
+      "note": "Arcade-hosted single-file browser build. Its published prompt is an iteration request converting an existing walking game into a driving game."
     },
     "source": {
       "label": "Open the four-game creator repository",
       "url": "https://github.com/hahaliu1029/fable5.2demo",
       "scope": "complete-project",
-      "note": "GitHub license check on 2026-11-22: Apache-2.0. The repository holds several games plus a short rendered film; this card covers the mothlight directory. Asset licenses for generated textures and photos are not separately documented."
+      "note": "Apache-2.0 creator repository; this card covers the mothlight directory and its driving iteration. The README identifies its screenshots as the earlier walking version. Asset licenses for generated textures and photos are not separately documented."
     },
     "evidence": {
       "label": "Inspect the primary build record",
       "url": "https://aiarcade.games/play/mothlight?tab=prompt",
-      "note": "Arcade record: createdAt 2026-11-11, modelVersion \"Claude Fable 5.2\", author hahaliu1029, hasPrompt true, tags Racing / Three.js / WebGL / Cyberpunk. Play page and prompt tab returned HTTP 200 on 2026-11-22."
+      "note": "Rechecked 2026-11-25: the arcade's How It's Made section and creator README identify the published instruction as the third request, converting a prior first-person exploration game into the Night Run driving version."
     },
     "resourceIds": [
       "threejs"
@@ -278,14 +278,14 @@ export const fable52Games: LearningPath[] = [
     "engine": "Three.js · WebGL · procedural geometry",
     "track": "3d",
     "category": "community",
-    "aiUse": "The Fable 5.2 Games Arcade attributes this build to Claude Fable 5.2 and names hahaliu1029 as its creator (arcade record checked 2026-11-22). The arcade publishes the original prompt. This is aggregator and README metadata, not an independent authorship audit.",
+    "aiUse": "The arcade and creator README attribute Tidebell to hahaliu1029 using Claude Fable 5.2 and publish its starting brief as the first of three requests. The published brief documents the requested game; it does not independently establish that the finished build required only one turn.",
     "steps": [
       "Play a descent and count the seven bells, noting how lighting changes from the reef to the abyss.",
-      "Open the published prompt and compare its brief with the procedural models and the single-file, no-network-request build.",
+      "Read the published starting brief and compare it with the procedural-model and offline-packaging design described in the source.",
       "Read the Apache-2.0 notice in the shared repository before reusing code; generated model rights are not separately documented."
     ],
     "tutorial": {
-      "label": "Read the published one-shot prompt",
+      "label": "Read the published prompt",
       "url": "https://aiarcade.games/play/tidebell?tab=prompt",
       "kind": "prompt"
     },
@@ -293,7 +293,7 @@ export const fable52Games: LearningPath[] = [
       "label": "Play Tidebell",
       "url": "https://aiarcade.games/play/tidebell",
       "kind": "playable",
-      "note": "Community-arcade browser build, opened 2026-11-22. Arcade metadata reports a 3,110 KB build and publishes the original prompt."
+      "note": "Arcade-hosted standalone HTML build for keyboard and mouse. The published starting brief is identified as the first of three requests, without a complete interaction transcript."
     },
     "source": {
       "label": "Open the four-game creator repository",
@@ -304,7 +304,7 @@ export const fable52Games: LearningPath[] = [
     "evidence": {
       "label": "Inspect the primary build record",
       "url": "https://aiarcade.games/play/tidebell?tab=prompt",
-      "note": "Arcade record: createdAt 2026-11-11, modelVersion \"Claude Fable 5.2\", author hahaliu1029, hasPrompt true, tags Exploration / Three.js / WebGL / Underwater / Procedural. Play page and prompt tab returned HTTP 200 on 2026-11-22."
+      "note": "Rechecked 2026-11-25: the arcade's How It's Made section and creator README publish the underwater-exploration starting brief as the first of three requests; neither provides a complete turn-by-turn transcript."
     },
     "resourceIds": [
       "threejs"

@@ -139,18 +139,23 @@
   },
   "testing-pack:change-a-game": {
     "title": "修改一个可运行的游戏。",
-    "resources": "Godot 官方示例 · SuperTux · Wesnoth",
+    "resources": "Godot official demos · SuperTux · The Battle for Wesnoth",
     "task": "先构建基线，再修改一个机制，并回放同一段输入序列。",
-    "measure": "构建是否成功、目标行为是否实现、出现哪些回归，以及修复尝试。"
+    "measure": "构建是否成功、目标行为是否实现、出现哪些回归，以及修复尝试。",
+    "check": "在所选的一个项目中定义预期结果，保存未修改的基线运行记录。修改后重新构建、实际执行要求的机制，并回放原始输入序列以检查已有行为。记录全部三项检查的命令及通过／失败证据。"
   },
   "testing-pack:give-an-agent-a-goal": {
     "title": "给代理一个明确目标。",
     "task": "固定任务、随机种子、动作频率、观察来源和每轮预算。",
-    "measure": "成功率、碰撞次数、路径长度、资源消耗和任务完成情况。"
+    "measure": "成功率、碰撞次数、路径长度、资源消耗和任务完成情况。",
+    "resources": "MiniGrid / BabyAI · Crafter · ViZDoom",
+    "check": "运行前固定环境与任务、种子设置、观察模式、动作频率及动作／时间预算。记录每个计划回合直至成功、失败、超时或报错，保存其回报、长度、终止原因及动作／观察轨迹。报告结果时须包含失败及未完成的运行。"
   },
   "testing-pack:asset-through-pipeline": {
     "title": "让一个资产走完整条流程。",
     "task": "导入角色，映射骨骼，并播放一段具有适用许可的动作。",
-    "measure": "纹理缺失、比例、蒙皮、脚底滑动、根运动和循环接缝。"
+    "measure": "纹理缺失、比例、蒙皮、脚底滑动、根运动和循环接缝。",
+    "resources": "Kenney · Quaternius Universal Animation Library · 100STYLE",
+    "check": "选择一个已绑定角色及一个兼容动画片段，确保均受所记录的许可覆盖。导入固定版本的引擎，验证纹理、单位和骨架映射，再播放一个指定片段，检查蒙皮、脚部接触、根节点位移及循环接缝。保存导入设置和结果；将文件缺失或关节未映射记为失败。"
   }
 }

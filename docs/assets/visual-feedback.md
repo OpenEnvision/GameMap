@@ -1,6 +1,10 @@
 # Visual-feedback mechanisms for game-creation harnesses
 
-Choose what an agent should inspect, how it should summarize observations, and which changes should trigger another check. The methods below cover game creation, gameplay-video QA, scene generation, and general visual feedback.
+The creator of [GothicVania Codex Demo](https://github.com/acatovic/gothicvania-codex-demo#implement---evaluate-cycle-is-the-key) describes a browser-testing loop that exposed a floating enemy and led to a gravity fix. That is a useful starting question for a visual-feedback system: which observations let a reviewer distinguish the defect from a jump, spawn animation or moving camera?
+
+For your own regression, record the same encounter before and after the change. Keep the input trace and inspect the approach, expected landing and subsequent movement. A selector that returns only a polished end frame has missed the evidence needed for this verdict. Mark the case insufficient when the relevant interval is absent, and retain the full recording for review.
+
+Compare uniform sampling with the proposed selector on the same recordings and inspection budget, counting exploratory crops and frames too. Have an independent reviewer check whether the selected evidence supports the stated diagnosis. Use the methods below to choose the intervention: retrieving a missed moment, enlarging a small object and retaining a past observation solve different problems. Add a new memory or critique loop only when it addresses the observed failure.
 
 ## Choose the intervention before choosing the score
 

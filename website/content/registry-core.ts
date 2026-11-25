@@ -19,6 +19,7 @@ import { researchExampleListings } from "./research-games";
 import { anyPageCoverSchema, gameplayMediaSchema } from "./contracts";
 import type { GameplayMedia } from "../src/data/gameplayScreenshots";
 import { pageCoverAlt } from "./media";
+import { resourceForReading } from "./resource-compatibility";
 
 const imageKeys = {
   src: true,
@@ -238,7 +239,8 @@ export function createRegistry(
     add("paper", item.id, item, url.paper(item.id));
   for (const item of sources.threejsGames)
     add("threejs-game", item.id, item, url.threejsGame(item.id));
-  for (const item of sources.resources) {
+  for (const resource of sources.resources) {
+    const item = resourceForReading(resource);
     const entry = add("resource", item.id, item, url.resource(item.id));
     const image = sources.projectMedia[item.id];
     if (image) {

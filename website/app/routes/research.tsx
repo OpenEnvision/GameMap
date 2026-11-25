@@ -1,167 +1,212 @@
 import { useMemo } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { Search, ArrowRight } from "lucide-react";
-import { contentFor } from "../../content/registry.server";
-import { matchesSearch } from "../../content/matching";
-import { searchableText } from "../../content/search";
+import {
+  Search,
+  ArrowRight,
+  Download,
+  SlidersHorizontal,
+  X,
+  CodeXml,
+} from "lucide-react";
+import { content, contentFor } from "../../content/registry.server";
 import { researchRecordVisible } from "../../content/research-visibility";
+import {
+  researchTopics,
+  researchTopicFor,
+  researchReadiness,
+  researchSnapshot,
+  researchLicense,
+  researchBrowserOptions,
+  normalizeResearchFilters,
+  selectResearchEntries,
+  type ResearchSearchIndex,
+} from "../../content/research-browser";
+import { researchSearchText } from "../../content/research-browser.server";
 import type { ContentEntry } from "../../content/models";
 import { researchLedger } from "../lib/collection-stats";
 import { collectionPage, updateCollectionQuery } from "../lib/collection-query";
-import { ContentCard } from "../components/content";
 import { useClientQuery } from "../lib/client-query";
-import { Link, useSiteI18n } from "../lib/i18n";
+import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
+import { publicAsset } from "../../src/publicAsset";
 import {
   CollectionPagination,
   IndexEmpty,
   IndexHero,
 } from "../components/catalog-browser";
+export { shouldRevalidateCollection as shouldRevalidate } from "../lib/collection-query";
 
-const researchTopics = [
-  "games",
-  "shooters",
-  "engines",
-  "agents",
-  "tools",
-  "research",
+type ResearchEntry = ContentEntry<"repository-research">;
+const filterKeys = [
+  "topic",
+  "status",
+  "stage",
+  "snapshot",
+  "license",
+  "sort",
 ] as const;
-type ResearchTopic = (typeof researchTopics)[number];
-
-const groupTopic: Record<string, ResearchTopic> = {
-  reference: "games",
-  core: "games",
-  games_more: "games",
-  fps_more: "shooters",
-  ai_games: "games",
-  harness: "agents",
-  components: "engines",
-  classics: "games",
-  woc_ecosystem: "games",
-  awesome: "games",
-};
-
-const discoveryTopic: Record<string, ResearchTopic> = {
-  "genex-games/genex-desktop": "agents",
-  "mrzh7/scam-with-your-friends-web": "games",
-  "minedojo/voyager": "research",
-  "baai-agents/cradle": "research",
-  "eloialonso/diamond": "research",
-  "solaris-wm/solaris": "research",
-  "wenyiwu0111/rsigame": "research",
-  "jefferysha0627/agent-office-3d": "agents",
-  "jimntu/gamedirector_code": "research",
-  "melonjs/melonjs": "engines",
-  "esengine/estella": "engines",
-  "soonfx-engine/core": "engines",
-  "luckyyyyy/miu2d": "engines",
-  "majidmanzarpour/vibe-coding-starter-pack-3d-multiplayer": "tools",
-  "jamesun921/cam-run": "games",
-  "freeciv/freeciv-web": "games",
-  "wellingfeng/ultragamestudio": "agents",
-  "yc-software/minecraft-agent-harness": "agents",
-  "jamesiv4/nethack-3d": "games",
-  "dammafra/drysland": "games",
-  "openwebgal/webgal": "engines",
-  "ill-inc/biomes-game": "games",
-  "excaliburjs/excalibur": "engines",
-  "tentone/nunustudio": "engines",
-  "eva-engine/eva.js": "engines",
-  "evanbacon/expo-crossy-road": "games",
-  "evanbacon/pillar-valley": "games",
-  "mattsurabian/duckhunt-js": "games",
-  "priler/dino3d": "games",
-  "megabyteceer/thing-editor": "tools",
-  "axaq/traviso.js": "engines",
-  "acatovic/ai-game-studio": "tools",
-  "piqnt/stage.js": "engines",
-  "ad044/laintsx": "games",
-  "yomotsu/meshwalk": "engines",
-  "jahrome907/minecraft-agent-skills": "agents",
-  "rmalde/minecraft-agent": "agents",
-  "patch-gg/trompe": "tools",
-  "iercann/notblox": "games",
-  "icecreamyou/nemesis": "shooters",
-  "magestudio/mage": "engines",
-};
-
-function topicFor(entry: ContentEntry<"repository-research">): ResearchTopic {
-  const data = entry.data;
-  if (data.group === "discoveries_2026") {
-    const mapped = discoveryTopic[data.requested_repo.toLowerCase()];
-    if (mapped) return mapped;
-  }
-  return groupTopic[data.group] ?? "games";
-}
-
-function isHiddenResearch(entry: ContentEntry<"repository-research">): boolean {
-  return !researchRecordVisible("repository-research", entry.data);
-}
-
 const description =
-  "Browse more game repositories beyond the examples gallery.";
+  "Game projects, engines, tools and references, with source evidence and review limits.";
 
 export function loader({ request }: LoaderFunctionArgs) {
-  const content = contentFor(request);
+  const registry = contentFor(request);
+  const allRecords = researchLedger(registry);
+  const canonicalRecords = researchLedger(content).filter((entry) =>
+    researchRecordVisible(entry.kind, entry.data),
+  );
   return {
-    records: researchLedger(content),
+    records: allRecords.filter((entry) =>
+      researchRecordVisible(entry.kind, entry.data),
+    ),
+    options: researchBrowserOptions(canonicalRecords),
+    search: researchSearchText(),
+    exampleCount:
+      registry.all("repository-research").length - allRecords.length,
+    hiddenCount: allRecords.length - canonicalRecords.length,
   };
 }
-export default function RepositoryResearch() {
-  const { t } = useSiteI18n(),
-    { records: allRecords } = useLoaderData<typeof loader>(),
-    [params, setParams, hydrated] = useClientQuery();
-  const records = useMemo(
-    () => allRecords.filter((entry) => !isHiddenResearch(entry)),
-    [allRecords],
+
+function ResearchCard({
+  entry,
+  number,
+  search,
+}: {
+  entry: ResearchEntry;
+  number: number;
+  search: ResearchSearchIndex;
+}) {
+  const { t } = useSiteI18n();
+  const stage = researchReadiness(entry);
+  const snapshot = researchSnapshot(entry);
+  const license = researchLicense(entry, search);
+  const topic = researchTopics.find(({ id }) => id === researchTopicFor(entry));
+  const repo = entry.data.canonical_repo || entry.data.requested_repo;
+  return (
+    <article className="research-card" data-content-ref={entry.key}>
+      <div className="research-card-top">
+        <span
+          className="research-card-number"
+          aria-label={t("Result {number}", { number })}
+        >
+          {String(number).padStart(3, "0")}
+        </span>
+        <span>{t(topic?.label || "Repository research record")}</span>
+        <SourceLanguage english={entry.descriptionLanguage === "en"} />
+      </div>
+      <h2>
+        <Link to={entry.url}>
+          <bdi>{entry.title}</bdi>
+        </Link>
+      </h2>
+      <p
+        className="research-card-summary"
+        lang={entry.descriptionLanguage === "en" ? "en" : undefined}
+      >
+        {entry.description}
+      </p>
+      <div className="research-card-flags">
+        <span data-stage={stage.id}>{t(stage.label)}</span>
+        <span
+          title={t(
+            "License summary; see the research notes for asset and dependency terms.",
+          )}
+        >
+          {t(license.label)}
+        </span>
+      </div>
+      <p className="research-card-review">
+        <span>
+          {t("Source checked")}:{" "}
+          <time dateTime={entry.data.checked_at}>{entry.data.checked_at}</time>
+        </span>
+        <span>{t(snapshot.label)}</span>
+      </p>
+      <div className="research-card-actions">
+        <Link to={entry.url}>
+          {t("Review notes")}
+          <ArrowRight size={15} aria-hidden="true" />
+        </Link>
+        <a
+          href={`https://github.com/${repo.split("/").map(encodeURIComponent).join("/")}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <CodeXml size={15} aria-hidden="true" />
+          {t("Repository")}
+        </a>
+      </div>
+    </article>
   );
-  const hiddenCount = allRecords.length - records.length;
-  const query = params.get("q") || "",
-    status = params.get("status") || "all",
-    topic = params.get("topic") || "all";
-  const searchIndex = useMemo(
-    () => new Map(records.map((entry) => [entry.key, searchableText(entry)])),
-    [records],
+}
+
+export default function RepositoryResearch() {
+  const { t } = useSiteI18n();
+  const { records, options, search, exampleCount, hiddenCount } =
+    useLoaderData<typeof loader>();
+  const [params, setParams, hydrated] = useClientQuery();
+  const filters = useMemo(
+    () => normalizeResearchFilters(params, options),
+    [params, options],
   );
   const filtered = useMemo(
-    () =>
-      records.filter(
-        (entry) =>
-          (topic === "all" || topicFor(entry) === topic) &&
-          (status === "all" || entry.data.disposition === status) &&
-          matchesSearch(searchIndex.get(entry.key) ?? "", query),
-      ),
-    [records, searchIndex, topic, status, query],
+    () => selectResearchEntries(records, filters, search),
+    [records, filters, search],
   );
-  const topicCounts = useMemo(
-    () =>
-      researchTopics.map((value) => ({
-        value,
-        count: records.filter((entry) => topicFor(entry) === value).length,
-      })),
-    [records],
-  );
-  const topicLabels: Record<ResearchTopic, string> = {
-    games: t("Games & playable builds"),
-    shooters: t("Shooters & FPS"),
-    engines: t("Engines & frameworks"),
-    agents: t("Game AI & agents"),
-    tools: t("Tools, editors & assets"),
-    research: t("Research & benchmarks"),
-  };
   const pagination = collectionPage(params.get("page"), filtered.length);
   const visible = hydrated
     ? filtered.slice(pagination.start - 1, pagination.end)
-    : filtered;
+    : records;
+  const invalid = filterKeys.filter(
+    (key) => params.has(key) && params.get(key) !== filters[key],
+  );
+  const optionLabel = (key: string, value: string) => {
+    const group =
+      key === "topic"
+        ? options.topics
+        : key === "status"
+          ? options.statuses
+          : key === "stage"
+            ? options.stages
+            : key === "snapshot"
+              ? options.snapshots
+              : key === "license"
+                ? options.licenses
+                : options.sorts;
+    return t(group.find(({ id }) => id === value)?.label || value);
+  };
+  const active = [
+    ...(filters.query ? [["q", filters.query, filters.query]] : []),
+    ...filterKeys
+      .filter(
+        (key) =>
+          filters[key] !== "all" &&
+          !(key === "sort" && filters.sort === "ledger"),
+      )
+      .map((key) => [key, filters[key], optionLabel(key, filters[key])]),
+  ];
   const update = (key: string, value: string) =>
-    setParams((previous) => updateCollectionQuery(previous, { [key]: value }), {
-      replace: key !== "page",
-      preventScrollReset: true,
-    });
+    setParams(
+      (previous) => {
+        const next = updateCollectionQuery(previous, { [key]: value });
+        for (const item of invalid) if (item !== key) next.delete(item);
+        if (key === "sort" && value === "ledger") next.delete("sort");
+        return next;
+      },
+      { replace: key !== "page", preventScrollReset: true },
+    );
+  const clear = () =>
+    setParams(
+      (previous) => {
+        const next = new URLSearchParams(previous);
+        for (const key of [...filterKeys, "q", "page"]) next.delete(key);
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
   const turnPage = (page: number) => {
     update("page", String(page));
-    document
-      .getElementById("collection-results")
-      ?.scrollIntoView({ block: "start" });
+    const result = document.getElementById("collection-results");
+    result?.focus({ preventScroll: true });
+    result?.scrollIntoView({ block: "start" });
   };
   const paging = (position: "top" | "bottom") =>
     hydrated && (
@@ -173,9 +218,6 @@ export default function RepositoryResearch() {
         }
       />
     );
-  const dispositions = [
-    ...new Set(records.map((entry) => entry.data.disposition)),
-  ];
   return (
     <main id="main-content" className="ix-page ix-research">
       <title>{t("Repository research ledger — GameMap")}</title>
@@ -185,100 +227,207 @@ export default function RepositoryResearch() {
         title="The repository research ledger."
         lede={description}
         count={records.length}
-        countLabel="repositories reviewed"
+        countLabel="repositories in this list"
       >
         <div className="heading-links">
           <Link to="/examples/#game-examples">
             {t("Game examples")}
-            <ArrowRight size={14} />
+            <ArrowRight size={14} aria-hidden="true" />
           </Link>
+          <a href={publicAsset("repository-research.json")} download>
+            <Download size={14} aria-hidden="true" />
+            {t("Download full audit (JSON)")}
+          </a>
         </div>
       </IndexHero>
       <div className="ix-wrap">
+        <p className="research-coverage">
+          {t(
+            "{listed} listed here · {examples} in Game examples · {hidden} audit-only",
+            {
+              listed: records.length,
+              examples: exampleCount,
+              hidden: hiddenCount,
+            },
+          )}
+        </p>
         <nav className="ix-topics" aria-label={t("Research topics")}>
           <button
             type="button"
-            aria-pressed={topic === "all"}
+            disabled={!hydrated}
+            aria-pressed={filters.topic === "all"}
             onClick={() => update("topic", "all")}
           >
             <span>{t("All topics")}</span>
             <span>{records.length}</span>
           </button>
-          {topicCounts.map((item, index) => (
+          {options.topics.map(({ id, label, count }) => (
             <button
-              key={item.value}
+              key={id}
               type="button"
-              aria-pressed={topic === item.value}
-              disabled={!item.count}
-              onClick={() => update("topic", item.value)}
+              aria-pressed={filters.topic === id}
+              disabled={!hydrated || !count}
+              onClick={() => update("topic", id)}
             >
-              <span>
-                <small>{String(index + 1).padStart(2, "0")}</small>
-                {topicLabels[item.value]}
-              </span>
-              <span>{item.count}</span>
+              <span>{t(label)}</span>
+              <span>{count}</span>
             </button>
           ))}
         </nav>
-        <div className="ix-bar">
+        <div className="ix-bar research-toolbar">
           <label className="ix-search">
             <Search size={18} aria-hidden="true" />
             <input
               type="search"
+              disabled={!hydrated}
               aria-label={t("Search repository research")}
-              placeholder={t(
-                "Search repository, scope, license, or qualification…",
-              )}
-              value={query}
+              placeholder={t("Search repositories, topics or license names…")}
+              value={params.get("q") || ""}
               onChange={(event) => update("q", event.target.value)}
             />
           </label>
-          <div className="ix-bar-selects">
-            <label className="ix-select ix-select-wide">
-              <select
-                aria-label={t("Research disposition")}
-                value={status}
-                onChange={(event) => update("status", event.target.value)}
-              >
-                <option value="all">{t("All dispositions")}</option>
-                {dispositions.map((value) => (
-                  <option key={value} value={value}>
-                    {t(value)}
-                  </option>
-                ))}
-              </select>
-            </label>
+          <label className="research-select">
+            <span className="sr-only">{t("Research disposition")}</span>
+            <select
+              disabled={!hydrated}
+              value={filters.status}
+              onChange={(event) => update("status", event.target.value)}
+            >
+              <option value="all">{t("All dispositions")}</option>
+              {options.statuses.map(({ id, label, count }) => (
+                <option key={id} value={id}>
+                  {t(label)} · {count}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="research-select">
+            <span className="sr-only">{t("Sort collection")}</span>
+            <select
+              disabled={!hydrated}
+              value={filters.sort}
+              onChange={(event) => update("sort", event.target.value)}
+            >
+              {options.sorts.map(({ id, label }) => (
+                <option key={id} value={id}>
+                  {t(label)}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <details className="catalog-refinements research-refinements">
+          <summary>
+            <SlidersHorizontal size={15} aria-hidden="true" />
+            {t("Evidence & license filters")}
+            <span>{t("Refine results")}</span>
+          </summary>
+          <div className="catalog-refinement-fields">
+            {(
+              [
+                ["license", "License", "All licenses", options.licenses],
+                ["stage", "Review depth", "All review depths", options.stages],
+                [
+                  "snapshot",
+                  "Evidence snapshot",
+                  "All snapshot states",
+                  options.snapshots,
+                ],
+              ] as const
+            ).map(([key, label, all, values]) => (
+              <label key={key}>
+                <span>{t(label)}</span>
+                <select
+                  disabled={!hydrated}
+                  value={filters[key]}
+                  onChange={(event) => update(key, event.target.value)}
+                >
+                  <option value="all">{t(all)}</option>
+                  {values.map(({ id, label, count }) => (
+                    <option key={id} value={id}>
+                      {t(label)} · {count}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ))}
           </div>
-        </div>
-        <div className="ix-meta" id="collection-results">
-          <h2 className="ix-meta-title" aria-live="polite">
-            {t("{count} of {total} research records", {
-              count: filtered.length,
-              total: records.length,
-            })}
-          </h2>
-          <span className="ix-meta-rule" aria-hidden="true" />
-          <span>{t("Numbered in ledger order")}</span>
-        </div>
-        {hiddenCount > 0 && (
-          <p className="ix-quality-note">
+        </details>
+        <p className="research-review-note">
+          {t(
+            "Source review describes the available evidence; these projects have not been executed in this review. Check each record for implementation, license and access limits.",
+          )}
+        </p>
+        <noscript>
+          <p className="research-review-note">
             {t(
-              "{count} unavailable, archived, forked or placeholder records are hidden from this list. The complete audit ledger remains available to download.",
-              { count: hiddenCount },
+              "All records are shown. Enable JavaScript to filter, sort, and browse by page.",
             )}
           </p>
+        </noscript>
+        {invalid.length > 0 && (
+          <p className="research-filter-notice" role="status">
+            {t("Unknown filters were ignored.")}
+          </p>
         )}
+        {(active.length > 0 || invalid.length > 0) && (
+          <div
+            className="catalog-active-filters"
+            aria-label={t("Active filters")}
+          >
+            {active.map(([key, , label]) => (
+              <button
+                key={key}
+                onClick={() =>
+                  update(
+                    key,
+                    key === "q" ? "" : key === "sort" ? "ledger" : "all",
+                  )
+                }
+                aria-label={t("Remove filter: {filter}", { filter: label })}
+              >
+                {label}
+                <X size={12} aria-hidden="true" />
+              </button>
+            ))}
+            <button className="catalog-clear" onClick={clear}>
+              {t("Clear filters")}
+            </button>
+          </div>
+        )}
+        <div className="catalog-results-bar">
+          <p id="collection-results" tabIndex={-1} aria-live="polite">
+            {hydrated && filtered.length
+              ? t("{start}–{end} of {count} records", {
+                  start: pagination.start,
+                  end: pagination.end,
+                  count: filtered.length,
+                })
+              : t("{count} of {total} records", {
+                  count: hydrated ? filtered.length : records.length,
+                  total: records.length,
+                })}
+          </p>
+          <span>{t("Numbered in result order")}</span>
+        </div>
         {paging("top")}
-        <div className="content-grid ix-ledger ix-ledger-numbered">
-          {visible.map((entry) => (
-            <ContentCard key={entry.key} entry={entry} />
+        <div className="research-grid">
+          {visible.map((entry, index) => (
+            <ResearchCard
+              key={entry.key}
+              entry={entry}
+              search={search}
+              number={(hydrated ? pagination.start - 1 : 0) + index + 1}
+            />
           ))}
         </div>
         {!filtered.length && (
           <IndexEmpty
             title="No matching research records."
             body="Try fewer words, another topic, or another disposition."
-          />
+          >
+            <button onClick={clear}>{t("Clear filters")}</button>
+          </IndexEmpty>
         )}
         {paging("bottom")}
       </div>

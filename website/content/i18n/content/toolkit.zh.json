@@ -117,7 +117,8 @@
   },
   "agent:unity-ai-official-mcp": {
     "title": "Unity CLI 1.0 与 Unity AI · 官方代理接口、unity mcp 与 AI Gateway",
-    "summary": "Unity 已弃用 com.unity.ai.assistant 包内的编辑器内 MCP Server，改由 Unity CLI 内置的 unity mcp 服务承接；CLI 还可通过 unity command 与 unity eval 直接驱动编辑器，而独立的 Unity AI 测试版提供编辑器内 Assistant 与 AI Gateway。"
+    "summary": "Unity 已弃用 com.unity.ai.assistant 包内的编辑器内 MCP Server，改由 Unity CLI 内置的 unity mcp 服务承接；CLI 还可通过 unity command 与 unity eval 直接驱动编辑器，而独立的 Unity AI 测试版提供编辑器内 Assistant 与 AI Gateway。Unity 官方插件与 CLI 配置明确支持 Codex。",
+    "codeScope": "官方迁移页说明，com.unity.ai.assistant 的编辑器内 MCP Server 已弃用，由使用同一协议的 Unity CLI 内置 unity mcp 承接，而 CLI 的 MCP 模式继续受到完整支持。文档列出 unity pipeline install、unity mcp configure、unity mcp configure --list、unity skill install，以及直接操作编辑器的 unity command / unity eval。CLI 无需 AI 代理也能管理编辑器版本、执行无头构建与测试套件；官方技能涵盖 Claude Code、Codex、Cursor、Copilot、Windsurf 等客户端。Unity 的 Codex 专用指南说明如何从 Unity-Technologies/unity-agent-plugin 插件市场安装 unity@unity-agent-plugin，并验证技能已加载；官方 CLI 发布说明也记载 unity mcp configure codex。第三方 MCP 包不受此次弃用影响。"
   },
   "agent:roblox-studio-official-mcp": {
     "title": "Roblox Studio · 官方 MCP Server、Assistant 与试玩代理",
@@ -202,5 +203,13 @@
   "agent:godot-ai-assistant-hub": {
     "title": "Godot AI Assistant Hub · 带逐工具权限的编辑器内插件",
     "summary": "社区 Godot 插件在编辑器内提供可按任务配置的多个助手，支持脚本、场景、节点、资源、文件与项目分组工具，具备逐工具权限控制，并优先支持 Ollama、llama.cpp 等本地模型提供方。"
+  },
+  "agent:gdevelop-official-mcp-bridge": {
+    "title": "GDevelop · 官方实时编辑器 MCP 桥接",
+    "engine": "GDevelop 5 · 2D / 3D · 桌面编辑器",
+    "summary": "GDevelop 内置的 MCP Server 让 Claude Code、Cursor、Codex、VS Code Copilot 与 Gemini CLI 检查并编辑已打开的游戏，创建场景与对象、编写事件、运行玩法测试并保存改动。",
+    "codeScope": "已核查的 LiveMcpServer.js 实现了本机回环地址上的 Streamable HTTP、Bearer token 与 Origin 校验、绑定到编辑器窗口的客户端会话、JSON-RPC 转发，以及停止服务时的清理。GDevelop IDE 的 README 另行说明共用的编辑器操作工具，以及通过 stdio 运行的 CLI MCP 入口；托管的事件生成后端与本地桥接相互独立。",
+    "limitations": "需要在同一台电脑上运行桌面编辑器、主动开启访问并提供 Bearer 访问密钥。每个会话操作一个编辑器窗口；改动在明确保存前不会落盘。事件生成以及资产或扩展查找需要登录 GDevelop 并使用在线服务。模型用量由代理服务商单独计费。已审阅源码与文档，未执行本地安装或端到端试玩。",
+    "publisher": "GDevelop / 4ian"
   }
 }

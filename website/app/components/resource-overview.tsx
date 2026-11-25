@@ -58,7 +58,7 @@ export function ResourceOverview({
       className="resource-overview"
       aria-labelledby="resource-overview-title"
     >
-      <details className="resource-overview-disclosure" open>
+      <details className="resource-overview-disclosure">
         <summary>
           <ChartNoAxesCombined size={20} aria-hidden="true" />
           <h2 id="resource-overview-title">{t("Library at a glance")}</h2>
@@ -77,7 +77,7 @@ export function ResourceOverview({
         <div className="resource-overview-body">
           <p className="resource-overview-intro">
             {t(
-              "Charts follow your filters. Select a category, stage, track or type to explore.",
+              "Distribution of the current results. One resource can support several stages and tracks.",
             )}
           </p>
           <div className="resource-chart-grid">
@@ -118,6 +118,7 @@ export function ResourceOverview({
                             { "--tone": `var(--tax-${id})` } as CSSProperties
                           }
                           aria-pressed={filters.category === id}
+                          disabled={count === 0 && filters.category !== id}
                           aria-label={filterLabel(label, count)}
                           onClick={() => filter("category", id)}
                         >
@@ -145,6 +146,7 @@ export function ResourceOverview({
                       <button
                         data-stage={id}
                         aria-pressed={filters.stage === id}
+                        disabled={count === 0 && filters.stage !== id}
                         aria-label={filterLabel(label, count)}
                         onClick={() => filter("stage", id)}
                       >
@@ -186,6 +188,7 @@ export function ResourceOverview({
                           { "--tone": `var(--tax-${id})` } as CSSProperties
                         }
                         aria-pressed={filters.track === id}
+                        disabled={count === 0 && filters.track !== id}
                         aria-label={filterLabel(label, count)}
                         onClick={() => filter("track", id)}
                       >
@@ -231,6 +234,7 @@ export function ResourceOverview({
                       data-type={id}
                       data-empty={count === 0 || undefined}
                       aria-pressed={filters.type === id}
+                      disabled={count === 0 && filters.type !== id}
                       aria-label={filterLabel(label, count)}
                       onClick={() => filter("type", id)}
                     >

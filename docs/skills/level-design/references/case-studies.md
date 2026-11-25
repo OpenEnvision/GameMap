@@ -7,12 +7,14 @@ Sources: [How to study a level](https://book.leveldesignbook.com/studies/overvie
 Do not begin and end with a top-down screenshot.
 
 Establish:
+
 - Game/version, mode, rules, player state, and relevant mechanics.
 - What evidence is available: direct play, recording, map, editor data, or an author's analysis.
 - What question motivates the study.
 - Which observations are yours and which come from the source.
 
 Useful study passes:
+
 1. Play or observe without a thesis to notice surprises.
 2. Reconstruct routes, heights, gates, resources, encounters, and states.
 3. Repeat with attention to one relationship.
@@ -30,6 +32,7 @@ When direct play is unavailable, say so. A close reading can still be useful wit
 The article treats a relatively linear castle area as instruction in exploration patterns. Branches, elevation, danger, loot, repeated spaces, and shortcuts teach players how to read the game.
 
 Useful relationships:
+
 - Visible or implied destinations encourage investigation.
 - Optional detours test curiosity and expose information or rewards.
 - Encounters interact with narrow circulation, ranged pressure, and approach direction.
@@ -43,6 +46,7 @@ Can a short area teach players how this game hides and reconnects space, without
 ### Prototype adaptation
 
 Build one required route, a readable but optional detour, and a return connection. Place threats so that observation and approach matter. Test whether an unfamiliar player:
+
 - Notices the possibility of exploration.
 - Distinguishes progress from a detour.
 - Recognizes the return connection.
@@ -63,6 +67,7 @@ Dark Souls' camera, combat commitment, death, resource recovery, and repeated tr
 The mission changes the player's relationship to the City over time: an initially familiar public environment becomes a place for following targets, entering private territory, and later navigating danger.
 
 The article connects:
+
 - An initial event that gives the player an investigative objective.
 - Following assassins through the City.
 - Discovering and infiltrating Ramirez's private space.
@@ -79,6 +84,7 @@ Can reusing a place under changed conditions produce a new activity and a new in
 Create a route used first for observation and later for escape or cautious return. Change selected access conditions, actors, or knowledge, not necessarily the entire geometry.
 
 Test:
+
 - Can players understand what changed?
 - Does prior spatial knowledge remain useful?
 - Are new threats readable rather than arbitrary?
@@ -97,6 +103,7 @@ Light/shadow stealth, guard behavior, movement, and information matter. A conven
 Chill Out is a compact asymmetric competitive arena. The article begins with Halo's rules because geometry cannot be evaluated independently of movement, shields, health, weapons, and pickup behavior.
 
 Useful relationships:
+
 - Rooms, corridors, elevation, and shortcuts produce a dense circulation network.
 - Weapon and item locations create reasons to move and contest.
 - Important positions provide advantages with costs and vulnerabilities.
@@ -126,6 +133,7 @@ A weapon's effectiveness, shield recovery, player speed, and item rules can reve
 The article relates themed physical space to game-like spatial organization while also addressing cultural and political meanings.
 
 It discusses:
+
 - Designers' site study and field-trip practices.
 - Layering and revealing space.
 - **Weenies:** conspicuous distant attractions or landmarks that draw visitors onward.
@@ -148,6 +156,7 @@ Visitors' bodies, fatigue, queues, weather, accessibility, money, and social con
 ## 6. Stub cases are not completed evidence
 
 At the reading snapshot, these pages contain titles or reminders, not full analyses:
+
 - [The Cradle — Thief 3](https://book.leveldesignbook.com/studies/sp/cradle).
 - [Sapienza — Hitman](https://book.leveldesignbook.com/studies/sp/sapienza).
 - [Silent Cartographer — Halo 1](https://book.leveldesignbook.com/studies/sp/silent-cartographer).
@@ -160,15 +169,46 @@ They can become new research assignments. Do not invent an analysis and cite the
 
 Use this adaptation when borrowing a pattern:
 
-| Field | Record |
-| --- | --- |
-| Observed relationship | What connects actions, space, information, and consequence? |
-| Source evidence | Direct play, author analysis, recording, or map |
-| Enabling rules | Camera, movement, combat, persistence, resources, audience |
-| Intended effect | What the relationship seems to accomplish |
-| Alternative explanation | What else could cause that effect |
-| Target differences | Which enabling conditions are absent or changed |
-| Small prototype | Minimum reconstruction of the relationship |
-| Test | Observable behavior that would support or challenge the transfer |
+| Field                   | Record                                                           |
+| ----------------------- | ---------------------------------------------------------------- |
+| Observed relationship   | What connects actions, space, information, and consequence?      |
+| Source evidence         | Direct play, author analysis, recording, or map                  |
+| Enabling rules          | Camera, movement, combat, persistence, resources, audience       |
+| Intended effect         | What the relationship seems to accomplish                        |
+| Alternative explanation | What else could cause that effect                                |
+| Target differences      | Which enabling conditions are absent or changed                  |
+| Small prototype         | Minimum reconstruction of the relationship                       |
+| Test                    | Observable behavior that would support or challenge the transfer |
 
 A successful transfer preserves a useful relationship under new conditions. It does not require copying the source's theme, silhouette, room count, or reputation.
+
+### Filled proposal: recognizing a return connection
+
+The following GameMap proposal develops the Undead Burg adaptation above into a testable miniature. It is a design to build and test, not a new observation of Dark Souls or a report of a completed prototype.
+
+```text
+A ---- B ---- C
+|            |
++----- G ----+
+```
+
+Here A is the starting courtyard, B a recognizable landmark on the outward route, and C the objective. G is a shortcut gate that can first be opened from C. After collecting the objective, the task is to return to A. Use existing movement and interaction mechanics; keep the landmark visible from the return entrance.
+
+Check route cost with the actual controller when building it: a connection drawn as one edge is not necessarily quicker to traverse. If G does not shorten the return, adjust the space or describe it as an alternative route rather than claiming a shortcut benefit.
+
+| Transfer field          | Filled proposal                                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Relationship            | Opening a connection turns an outward journey into recognizable, shorter return travel                                           |
+| Evidence used           | The book's Undead Burg analysis, particularly repeated spaces and shortcuts; no direct play is claimed for this example          |
+| Enabling rules          | Persistent gate state, a return objective, distinguishable places, and a controller that cannot bypass the gate                  |
+| Intended effect         | The player recognizes A and understands that G changed the route network                                                         |
+| Alternative explanation | An objective arrow or explicit instruction leads the player through G without recognition                                        |
+| Target difference       | This miniature has no combat, death, or resource-recovery cost; it tests orientation, not the full Dark Souls experience         |
+| Small prototype         | Three spaces and one working gate, with the same marker and instruction settings across revisions                                |
+| Test                    | After opening G, observe the return choice and ask the player to identify where they have arrived before explaining the shortcut |
+
+Make two separate notes: **what happened** and **what it might mean**. Taking G shows route use; correctly identifying A or explaining the new connection supplies evidence about recognition. If the player crosses G only after being told to, the route is technically usable but the intended learning remains unsupported.
+
+For each attempt, record the build, start state, prior exposure to the layout, prompts or hints given, route taken, and a recording time or screenshot that anchors the observation. If a player mistakes A for a new courtyard, revise a recognizable landmark or the return framing, then test with someone unfamiliar with that revision. Do not count memorization of the test route as independent first-time evidence.
+
+An AI evaluation must also state the observation and action interface. A player given the complete room graph has different evidence from one navigating rendered images. Keep those results separate when judging whether an AI-generated layout communicates its spatial relationships.

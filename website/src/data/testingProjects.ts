@@ -506,7 +506,7 @@ export const testingProjects: TestingResource[] = [
     "access": {
       "label": "Browse runnable examples",
       "url": "https://bevyengine.org/examples/",
-      "note": "The official example browser groups examples by topic; running them requires cloning the repository and a Rust toolchain."
+      "note": "Supported examples run directly in the browser through WASM and WebGL2, with a separate WebGPU example browser. Running or modifying the source locally requires a matching repository checkout and Rust toolchain."
     },
     "codeLicense": "MIT or Apache-2.0 at your option for the engine source.",
     "assetLicense": "Assets bundled under examples/ carry separate licenses listed in CREDITS.md; they are not distributed in the published crates.",
@@ -516,6 +516,10 @@ export const testingProjects: TestingResource[] = [
       {
         "label": "Official example browser",
         "url": "https://bevyengine.org/examples/"
+      },
+      {
+        "label": "Official live WebGPU examples",
+        "url": "https://bevy.org/examples-webgpu/"
       },
       {
         "label": "Examples directory and coverage",
@@ -535,7 +539,7 @@ export const testingProjects: TestingResource[] = [
       "Check out a release tag rather than main, and install the Rust toolchain required by that release.",
       "Run one example with cargo run --example breakout, then record the tag, toolchain, adapter and asset licenses from CREDITS.md."
     ],
-    "limitations": "Bevy describes itself as early-stage, with breaking API changes roughly every three months, so main is not a stable baseline. Example assets have separate licenses in CREDITS.md. Source reviewed, not built or run locally.",
-    "reviewed": "2026-11-22"
+    "limitations": "The hosted examples are a subset of the repository and depend on browser graphics support; they are not a pinned local baseline. Bevy has breaking API releases, so record a release tag and matching Rust toolchain for local regression work. Example assets have separate licenses in CREDITS.md. Source and browser-entry documentation reviewed, not built or run locally.",
+    "reviewed": "2026-11-24"
   },
 ];

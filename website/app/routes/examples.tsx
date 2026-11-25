@@ -23,7 +23,8 @@ import { agentLabels, type AgentId } from "../../src/data/agentGameTypes";
 import { searchableText } from "../../content/search";
 import { ContentBlockView, ContentLink } from "../components/content";
 import { contentKinds, type ContentEntry } from "../../content/models";
-import { SourceLanguage, useSiteI18n } from "../lib/i18n";
+import { url } from "../../content/site";
+import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 export { shouldRevalidateCollection as shouldRevalidate } from "../lib/collection-query";
 
 /** Reviewed gameplay captures that make up the drifting header collage.
@@ -123,7 +124,14 @@ function emphasize(text: string): ReactNode {
 
 /** The URL keys this page filters by; anything else in the query (campaign
  *  tags and the like) survives clearing. */
-const filterKeys = ["q", "track", "client"] as const;
+const filterKeys = ["q", "track", "client", "access"] as const;
+const accessOptions = {
+  all: "All access types",
+  playable: "Play in browser",
+  download: "Downloadable build",
+  source: "Source only",
+  reference: "Project reference",
+} as const;
 // The grid shows 1–5 columns (gallery.css); 60 divides by each, so every
 // page except the last one ends on a full row.
 const pageSize = 60;
@@ -177,7 +185,6 @@ export function loader({ request }: LoaderFunctionArgs) {
       ]),
     ),
     researchMedia: sources.researchGameMedia,
-    pageCovers: sources.pageCovers,
     attribution: sources.gameCaseAgents,
     mosaic: mosaicPicks.flatMap((name) => {
       const media = captures.get(name);
@@ -197,7 +204,6 @@ export default function Examples() {
       media,
       gameplayMedia,
       researchMedia,
-      pageCovers,
       attribution,
       mosaic,
     } = useLoaderData<typeof loader>(),
@@ -212,6 +218,11 @@ export default function Examples() {
     client = Object.hasOwn(agentLabels, params.get("client") || "")
       ? params.get("client")!
       : "all";
+  const requestedAccess = params.get("access") || "";
+  const access = Object.hasOwn(accessOptions, requestedAccess)
+    ? (requestedAccess as keyof typeof accessOptions)
+    : "all";
+  const matchesAccess = (kind: string) => access === "all" || access === kind;
   const summary = useRef<HTMLInputElement>(null);
   const results = useRef<HTMLParagraphElement>(null);
   const update = (key: string, value: string) => {
@@ -255,9 +266,13 @@ export default function Examples() {
     ...(client !== "all"
       ? ([["client", t(agentLabels[client as AgentId])]] as const)
       : []),
+    ...(access !== "all"
+      ? ([["access", t(accessOptions[access])]] as const)
+      : []),
   ];
   const games = examples.filter(
     (entry) =>
+      matchesAccess(entry.data.demo.kind) &&
       (track === "all" || entry.data.track === track) &&
       (client === "all" ||
         (attribution[entry.id] || []).includes(client as AgentId)) &&
@@ -265,18 +280,21 @@ export default function Examples() {
   );
   const linkedGames = researchGames.filter(
     (entry) =>
+      matchesAccess(entry.data.game_access.kind) &&
       client === "all" &&
       (track === "all" || entry.data.game_access.track === track) &&
       matchesSearch(entry.searchText.join(""), query),
   );
   const importedGames = importedThreejs.filter(
     (entry) =>
+      matchesAccess("source") &&
       client === "all" &&
       (track === "all" || track === "3d") &&
       matchesSearch(entry.searchText.join(""), query),
   );
   const submittedGames = works.filter(
     (work) =>
+      matchesAccess(work.accessKind) &&
       client === "all" &&
       (track === "all" || work.track === track) &&
       matchesSearch(
@@ -285,11 +303,32 @@ export default function Examples() {
       ),
   );
   const allGames = [
-    ...linkedGames.map((entry) => ({ type: "research" as const, entry })),
-    ...importedGames.map((entry) => ({ type: "imported" as const, entry })),
+    ...linkedGames.map((entry) => ({
+      type: "research" as const,
+      entry,
+      media: researchMedia[entry.id],
+    })),
+    ...importedGames.map((entry) => ({
+      type: "imported" as const,
+      entry,
+      media: gameplayMedia[entry.key],
+    })),
     ...submittedGames.map((work) => ({ type: "submitted" as const, work })),
-    ...games.map((entry) => ({ type: "native" as const, entry })),
+    ...games.map((entry) => ({
+      type: "native" as const,
+      entry,
+      media: gameplayMedia[entry.key] || media[entry.id],
+    })),
   ];
+  if (!query && track === "all" && client === "all" && access === "all") {
+    const hasScreenshot = (game: (typeof allGames)[number]) =>
+      game.type === "submitted"
+        ? Boolean(game.work.screenshots[0])
+        : Boolean(game.media);
+    allGames.sort(
+      (a, b) => Number(hasScreenshot(b)) - Number(hasScreenshot(a)),
+    );
+  }
   const gameCount = allGames.length;
   const pagination = collectionPage(params.get("page"), gameCount, pageSize);
   // Static HTML retains the complete catalog; the browser pages the combined
@@ -362,6 +401,13 @@ export default function Examples() {
                 "AI authorship is optional. Community games retain source evidence and explicit verification limits.",
               )}
             </p>
+            <Link
+              className="gallery-study-link"
+              to={url.document("guides/browser-game-case-study")}
+            >
+              {t("Study a browser game")}
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </Link>
           </div>
           <dl className="gallery-stats">
             <div className="gallery-stat-total">
@@ -402,6 +448,20 @@ export default function Examples() {
                 }}
               />
             </label>
+            <div className="gallery-select gallery-access">
+              <select
+                aria-label={t("Access type")}
+                value={access}
+                onChange={(event) => update("access", event.target.value)}
+              >
+                {Object.entries(accessOptions).map(([id, label]) => (
+                  <option key={id} value={id}>
+                    {t(label)}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown size={16} aria-hidden="true" />
+            </div>
             <div className="gallery-select">
               <select
                 aria-label={t("Client or model")}
@@ -484,7 +544,7 @@ export default function Examples() {
                       <ResearchGameCard
                         key={item.entry.key}
                         entry={item.entry}
-                        media={researchMedia[item.entry.id]}
+                        media={item.media}
                       />
                     );
                   case "imported":
@@ -492,8 +552,7 @@ export default function Examples() {
                       <ImportedThreejsCard
                         key={item.entry.key}
                         entry={item.entry}
-                        media={gameplayMedia[item.entry.key]}
-                        pageCover={pageCovers[item.entry.key]}
+                        media={item.media}
                       />
                     );
                   case "submitted":
@@ -506,10 +565,7 @@ export default function Examples() {
                         key={item.entry.key}
                         game={item.entry.data}
                         descriptionLanguage={item.entry.descriptionLanguage}
-                        media={
-                          gameplayMedia[item.entry.key] || media[item.entry.id]
-                        }
-                        pageCover={pageCovers[item.entry.key]}
+                        media={item.media}
                       />
                     );
                 }
@@ -529,7 +585,7 @@ export default function Examples() {
         {!gameCount && (
           <IndexEmpty
             title="No games found."
-            body="Try another title, engine, or AI tool."
+            body="Try another search or change a filter."
             className="gallery-empty"
             seed={29}
           >

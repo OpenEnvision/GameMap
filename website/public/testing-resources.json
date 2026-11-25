@@ -1,6 +1,6 @@
 {
   "kind": "testing-resource-library",
-  "reviewed": "2026-11-22",
+  "reviewed": "2026-11-24",
   "verification": "Primary-source review; not installation or runtime certification",
   "resourceKinds": {
     "project": "Games & engine projects",
@@ -26,25 +26,43 @@
       "id": "change-a-game",
       "use": "coding",
       "title": "Change a working game.",
-      "resources": "Godot demos · SuperTux · Wesnoth",
+      "resources": "Godot official demos · SuperTux · The Battle for Wesnoth",
+      "testingIds": [
+        "godot-demos",
+        "supertux",
+        "wesnoth"
+      ],
       "task": "Build the baseline, change one mechanic, then replay the same input sequence.",
-      "measure": "Build success, requested behavior, regressions, and repair attempts."
+      "measure": "Build success, requested behavior, regressions, and repair attempts.",
+      "check": "In one selected project, define the expected outcomes and save an unchanged baseline run. After the edit, build again, exercise the requested mechanic, and replay the original input sequence to check existing behavior. Record commands and pass/fail evidence for all three checks."
     },
     {
       "id": "give-an-agent-a-goal",
       "use": "playing",
       "title": "Give an agent a goal.",
-      "resources": "MiniGrid · Crafter · ViZDoom",
+      "resources": "MiniGrid / BabyAI · Crafter · ViZDoom",
+      "testingIds": [
+        "minigrid",
+        "crafter",
+        "vizdoom"
+      ],
       "task": "Fix the task, seed, action rate, observation source, and episode budget.",
-      "measure": "Success rate, collisions, path length, resources, and task completion."
+      "measure": "Success rate, collisions, path length, resources, and task completion.",
+      "check": "Before running, fix the environment and task, seed settings, observation mode, action rate and action/time budget. Record every scheduled episode through success, failure, timeout or error, saving its return, length, termination reason and action/observation trace. Include failed and unfinished runs in the reported results."
     },
     {
       "id": "asset-through-pipeline",
       "use": "pipeline",
       "title": "Move an asset through the pipeline.",
-      "resources": "Kenney · Quaternius Standard · 100STYLE",
+      "resources": "Kenney · Quaternius Universal Animation Library · 100STYLE",
+      "testingIds": [
+        "kenney",
+        "quaternius-ual",
+        "100style"
+      ],
       "task": "Import a character, map its skeleton, and play a licensed motion clip.",
-      "measure": "Missing textures, scale, skinning, foot sliding, root motion, and loop seams."
+      "measure": "Missing textures, scale, skinning, foot sliding, root motion, and loop seams.",
+      "check": "Choose one rigged character and one compatible clip covered by the recorded licenses. Import them into a pinned engine, verify textures, units and skeleton mapping, then play one named clip and inspect skinning, foot contact, root travel and loop seams. Save import settings and results; record missing files or unmapped joints as failures."
     }
   ],
   "resources": [
@@ -760,7 +778,7 @@
       "access": {
         "label": "Browse runnable examples",
         "url": "https://bevyengine.org/examples/",
-        "note": "The official example browser groups examples by topic; running them requires cloning the repository and a Rust toolchain."
+        "note": "Supported examples run directly in the browser through WASM and WebGL2, with a separate WebGPU example browser. Running or modifying the source locally requires a matching repository checkout and Rust toolchain."
       },
       "codeLicense": "MIT or Apache-2.0 at your option for the engine source.",
       "assetLicense": "Assets bundled under examples/ carry separate licenses listed in CREDITS.md; they are not distributed in the published crates.",
@@ -770,6 +788,10 @@
         {
           "label": "Official example browser",
           "url": "https://bevyengine.org/examples/"
+        },
+        {
+          "label": "Official live WebGPU examples",
+          "url": "https://bevy.org/examples-webgpu/"
         },
         {
           "label": "Examples directory and coverage",
@@ -789,8 +811,8 @@
         "Check out a release tag rather than main, and install the Rust toolchain required by that release.",
         "Run one example with cargo run --example breakout, then record the tag, toolchain, adapter and asset licenses from CREDITS.md."
       ],
-      "limitations": "Bevy describes itself as early-stage, with breaking API changes roughly every three months, so main is not a stable baseline. Example assets have separate licenses in CREDITS.md. Source reviewed, not built or run locally.",
-      "reviewed": "2026-11-22"
+      "limitations": "The hosted examples are a subset of the repository and depend on browser graphics support; they are not a pinned local baseline. Bevy has breaking API releases, so record a release tag and matching Rust toolchain for local regression work. Example assets have separate licenses in CREDITS.md. Source and browser-entry documentation reviewed, not built or run locally.",
+      "reviewed": "2026-11-24"
     },
     {
       "id": "minigrid",
@@ -1241,6 +1263,10 @@
           "url": "https://github.com/openai/procgen#readme"
         },
         {
+          "label": "Native action space, seed options and state interface",
+          "url": "https://github.com/openai/procgen/blob/master/procgen/env.py"
+        },
+        {
           "label": "Benchmark paper",
           "url": "https://arxiv.org/abs/1912.01588"
         },
@@ -1249,18 +1275,19 @@
           "url": "https://github.com/openai/procgen/blob/master/LICENSE"
         }
       ],
-      "aiUseNote": "Separate train and test level distributions and fix the number of training levels, seed and distribution mode before comparing agents. Fast step rates do not remove the need to report wall-clock and sample budgets.",
+      "aiUseNote": "Separate train and test level distributions and fix the package version, wrapper, level selection, seed settings and distribution mode before comparing agents. Record the action sequence and episode boundaries; fast step rates do not remove the need to report wall-clock and sample budgets.",
       "testTasks": [
         "Compare an agent trained on a small level set against one trained on the full distribution, evaluated on held-out seeds.",
-        "Replay a fixed seed across package versions and assert identical initial observations and action masks.",
+        "Within one pinned version and wrapper, replay recorded actions from the same initial state and seed settings; compare observations, rewards and episode boundaries.",
         "Measure steps per second for one environment and record the hardware and thread count."
       ],
       "setup": [
-        "Create a Python environment and install procgen with a compatible Gym or Gymnasium wrapper.",
-        "Create one environment with a fixed seed and distribution mode, then log observations, rewards and done signals."
+        "Create a Python environment and pin procgen, its native Gym or Gym3 interface, and any additional wrapper dependencies.",
+        "Fix num_envs, num_levels, start_level, rand_seed, distribution_mode and thread count; retain the initial state or reset/episode order and a recorded action sequence.",
+        "Log observations, rewards and episode boundaries using the chosen interface; document any wrapper that converts these into terminated and truncated signals."
       ],
-      "limitations": "The repository states it is in maintenance mode with bug fixes and minor updates only. CoinRun differs from the original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.",
-      "reviewed": "2026-11-22"
+      "limitations": "The native interface exposes a discrete action space without an action_masks field. Any added mask or Gymnasium adaptation belongs to a separately documented wrapper. Identical seeds do not guarantee identical trajectories across dependency upgrades. The repository is in maintenance mode; CoinRun differs from its original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.",
+      "reviewed": "2026-11-24"
     },
     {
       "id": "google-research-football",
@@ -1552,7 +1579,6 @@
       "title": "Poly Haven",
       "kind": "asset",
       "uses": [
-        "playing",
         "pipeline"
       ],
       "dimensions": [
@@ -1597,7 +1623,6 @@
       "title": "ambientCG",
       "kind": "asset",
       "uses": [
-        "playing",
         "pipeline"
       ],
       "dimensions": [
@@ -1851,21 +1876,29 @@
           "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Negative"
         },
         {
+          "label": "Mesh_NoPosition cases and attribute table",
+          "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/Output/Negative/Mesh_NoPosition/README.md"
+        },
+        {
+          "label": "glTF specification: using primitive data",
+          "url": "https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/Specification.adoc#using-primitive-data"
+        },
+        {
           "label": "MIT license text",
           "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE"
         }
       ],
-      "aiUseNote": "Use the generated pairs as labelled pass/fail fixtures for an importer: Positive files must load, Negative files must be rejected with a specific diagnostic. A passing import does not prove full glTF conformance.",
+      "aiUseNote": "Define an expected result for each case from its documented properties, validator report and the glTF specification. The Negative directory is not a blanket instruction to reject an entire asset: without POSITION data, a client should skip rendering the affected primitive unless another mechanism supplies positions. Keep validator findings separate from importer diagnostics and rendering behavior; a passing case does not prove full glTF conformance.",
       "testTasks": [
-        "Load every Positive case in one importer and record unsupported features without treating a warning as a crash.",
-        "Check that Negative cases fail with an actionable error rather than silently producing a broken scene."
+        "Load selected Positive cases and compare supported geometry, materials and animation with their documented expectations; record unsupported features and diagnostics separately.",
+        "For each Negative case, compare the observed result with its documented expected handling, including a skipped primitive where appropriate, and check that malformed input does not crash the importer."
       ],
       "setup": [
         "Pin a repository commit and copy the Output/Positive and Output/Negative directories into a versioned fixture.",
-        "Record the importer version, expected outcome for each case and the exact error text for negative cases."
+        "Record the importer and validator versions, supported extensions and a per-case expectation; capture the validation report, importer diagnostics and rendered result rather than requiring every Negative asset to fail."
       ],
       "limitations": "Coverage is a work in progress and the README states more requirements are coming. The C# project targets a Visual Studio / .NET workflow; no generator was built or run locally in this review.",
-      "reviewed": "2026-11-22"
+      "reviewed": "2026-11-24"
     },
     {
       "id": "kenney-animated-characters",
@@ -1960,7 +1993,6 @@
       "title": "100STYLE",
       "kind": "motion",
       "uses": [
-        "playing",
         "pipeline"
       ],
       "dimensions": [
@@ -2005,7 +2037,6 @@
       "title": "CMU Motion Capture Database",
       "kind": "motion",
       "uses": [
-        "playing",
         "pipeline"
       ],
       "dimensions": [
@@ -2098,7 +2129,6 @@
       "title": "AMASS",
       "kind": "motion",
       "uses": [
-        "playing",
         "pipeline"
       ],
       "dimensions": [

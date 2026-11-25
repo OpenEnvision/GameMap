@@ -45,9 +45,6 @@
   .testing-grid > .testing-card {
     grid-row: span 8;
   }
-  .testing-grid > .testing-card > .testing-symbol {
-    grid-row: 1;
-  }
   .testing-grid > .testing-card > .small-label {
     grid-row: 2;
   }
@@ -74,7 +71,7 @@
   .resource-grid > .resource-tile {
     grid-row: span 8;
   }
-  .resource-grid > .resource-tile > .resource-card-top {
+  .resource-grid > .resource-tile > .resource-card-mark {
     grid-row: 1;
   }
   .resource-grid > .resource-tile > .small-label {

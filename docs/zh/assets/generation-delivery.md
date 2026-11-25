@@ -1,6 +1,10 @@
 # 生成任务、产物交付与资产获取
 
-跟踪生成请求从提交到完成、下载及资产验证的全过程。构建适配器前，应核查各提供商特定的任务状态、失败响应及产物生命周期。有关使用权利，请参阅[提供商与模型条款](api-terms.md)。
+提交道具后合上电脑，回来发现客户端超时。先用已有任务 ID 查状态和可下载的文件，再决定要不要重提。客户端等不到回复时，服务端可能还在生成。
+
+Meshy 的[文本转 3D 流程](https://docs.meshy.ai/en/api/text-to-3d)把交接关系说明得很具体：无纹理预览是一个任务，细化则使用成功预览的 ID 来生成纹理。保留两个任务标识；如果细化失败，仍归档预览。记录失败发生在哪一步，避免因缺少纹理而丢弃可用几何体，或无谓地重新请求生成几何体。
+
+导入引擎前，清点约定的交付文件，确认它们已完整下载，哈希与清单一致。下方[归档检查](#run-a-local-archive-gate-before-engine-import)以模型、基础色、法线为例，自己的材质需要哪些贴图，就查哪些。分别记下服务端生成、下载和导入的结果。使用范围见[提供商与模型条款](api-terms.md)。
 
 ## 任务 ID 不等于已导入的资产
 
@@ -14,11 +18,96 @@
 | [Meshy 生命周期](https://docs.meshy.ai/en/api/task-lifecycle)                                                                                                                                                                                                                                             | 轮询/网络错误不等于生成失败；客户端超时不会取消远程工作。指南说明了失败任务退款。                                                                                                        | 传输错误后应核对现有任务。本次未实际检验提交幂等性、实际费用或账户特定行为。                                                                                              |
 | [Meshy 保留规则](https://docs.meshy.ai/en/api/asset-retention)                                                                                                                                                                                                                                            | 非企业 API 产物最多保留三天。签名 URL 在 expires_at 失效；重复 GET 返回同一过期时间。保留期间可用 input_task_id 避免复用已过期的模型 URL；任务移除后则需要已存储的副本。                                      | 及时归档所需格式/贴图并记录哈希。企业保留规则可能不同；下载 URL 不是持久资产标识符。该页 10 月 18 日的横幅宣布 lowpoly 将于 2026 年 10 月 30 日退役；提交时应确认所选 Meshy 模型。                     |
 | [Tripo 提交](https://docs.tripo3d.ai/get-started/quick-start.html)与[任务结果](https://docs.tripo3d.ai/task-query/get-your-task-result.html)                                                                                                                                                                 | 提交返回 data.task_id。查询需要提交时的 API 密钥，即使同一账户有多个密钥也不例外。最终状态除 success 外，还包括 failure、banned、expired、cancelled 和 unknown。输出 URL 默认五分钟过期；未文档化字段不稳定。       | 跟踪不透明的凭据引用，绝不将凭据本身放入研究产物。只处理成功的轮询循环可能在失败时挂起。cancelled 状态不能确立取消端点/退款；URL 续期及底层保留规则仍未核实。                                              |
-| [Rodin 快速入门](https://docs.hyper3d.ai/en/get-started/quick-start)与[下载](https://docs.hyper3d.ai/en/api-specification/download-results)                                                                                                                                                                  | 生成包含顶层 UUID 和子任务。只有所有子任务均为 Done 才能视为生成完成；任一子任务 Failed 都会阻止完全成功。即使生成尚未完成，下载也可能返回当前可用文件。                                                           | 要求子任务集合非空，并汇总终态结果。下载响应或 HTTP201 不能证明生成完整。保留文件缺失诊断，而不是立即付费提交替代任务。                                                                    |
+| [Rodin 快速入门](https://docs.hyper3d.ai/en/get-started/quick-start)与[下载](https://docs.hyper3d.ai/en/api-specification/download-results) | 生成响应的顶层 uuid 用作下载的 task_uuid；jobs.subscription_key 是独立的状态查询键。文档化顺序要求子任务集合非空，且全部为 Done，之后才下载；任一 Failed 子任务都阻止整体成功。HTTP201 仍可能包含 error 字段，例如 NO_SUCH_TASK 或 INVALID_REQUEST。 | 使用文件列表前检查响应体的 error，再将必需输出角色与归档文件核对。下载端点不承诺拒绝尚未完成的生成，因此可用列表或 HTTP201 本身并不足够。考虑再次付费提交前先保留诊断。 |
 | [Rodin 保留政策](https://docs.hyper3d.ai/en/legal/data-retention-policy)                                                                                                                                                                                                                                  | API 输入/输出在活动系统中保留七天；下载 URL 另有有效期。                                                                                                                | 归档已验收输出；尚未确定 URL 刷新、取消及持久恢复保证。示例客户端的截止期限不是提供商 SLA。                                                                                  |
 | [Luma Agents 迁移](https://docs.agents.lumalabs.ai/guides/videos/migration/)与[错误](https://docs.agents.lumalabs.ai/guides/error-handling/)                                                                                                                                                               | 当前 Agents 请求的模型/模式/状态字段不同于旧版 Dream Machine。HTTP 提交错误不同于异步 failure_code/failure_reason。遇到限流应退避；损坏/不受支持的输入需要修正。输出链接一小时后过期，检索生成记录可刷新链接。             | 保留生成 ID、X-Request-Id 和 X-API-Version。追踪不等于去重。底层保留规则及取消/退款未知。不要将旧版回调假设与此处文档化的轮询迁移混用；研究使用限制仍需单独考虑。                                    |
 | [Runway 版本控制](https://docs.dev.runwayml.com/api-details/versioning/)与[输出格式](https://docs.dev.runwayml.com/assets/outputs/)                                                                                                                                                                            | X-Runway-Version 选择按日期标识的 API 版本；/v1 不具有此作用。新版本发布后，旧 API 版本获四个月支持。输出 URL 在 API 访问后 24–48 小时内过期，其用途是供下载/存储。                                       | 保留响应的 output 数组及所选模型/版本。向后兼容的新增内容可能在没有新日期版本时出现。URL 过期不是删除/保留保证，输出权利也不能解决提供商训练或竞争性研究许可问题。                                            |
 | [Scenario 生成](https://docs.scenario.com/get-started/documentation/quick-start-guide/step-3-generate-your-first-image-text-to-image)、[webhook](https://docs.scenario.com/get-started/documentation/webhooks) 与 [CDN](https://docs.scenario.com/get-started/documentation/content-delivery-network-cdn) | 显式模型 ID 与异步任务独立于交付。webhook 带有签名，应及时以 2xx 确认接收，且可重试至总计三次交付尝试；必须处理重复事件 ID 和乱序到达。资产 URL 可能过期，缩略图可能公开。                                               | 在文档规定的 30 秒内确认接收，并另行处理工作；验证事件身份、核对重复事件，并轮询关键任务以恢复遗漏或重试耗尽的交付。webhook 交付失败不等于生成失败。本研究未创建 webhook 端点、持久凭据或实时监听器。                       |
+
+## 在引擎导入前运行本地归档检查
+
+从一个已下载的候选和一份声明的输出规格开始。仅在本示例中，接收材质要求三个角色：model、base_color 和 normal。不同工单可以要求不同集合。记录实际提供商、任务、模型/版本及目标项目修订版；不要把凭据或签名 URL 放入此清单。新建归档目录，完成文件复制，再用独立计算的 SHA256 值写入清单。将此记录与提供商的终态响应分别保存。
+
+将以下结构保存为下载文件旁的 manifest.json，用观测值替换每个占位符。文件名仅为本地示例，不是提供商的命名契约。每个角色恰好出现一次；哈希必须描述归档字节，而非缩略图或另一种格式变体。
+
+```json
+{
+  "provider": "REPLACE_PROVIDER",
+  "task_id": "REPLACE_TASK_ID",
+  "model": "REPLACE_MODEL_AND_VERSION",
+  "project_revision": "REPLACE_PROJECT_REVISION",
+  "outputs": [
+    {"role": "model", "path": "model.glb", "sha256": "REPLACE_SHA256"},
+    {"role": "base_color", "path": "base_color.png", "sha256": "REPLACE_SHA256"},
+    {"role": "normal", "path": "normal.png", "sha256": "REPLACE_SHA256"}
+  ]
+}
+```
+
+将以下代码保存为 check_archive.py，并运行 python3 check_archive.py path/to/manifest.json model base_color normal。只需 Python 3.9 或更新版本及其标准库。必需角色来自命令，因此从清单中删除缺失贴图并不能重定义验收规格。此检查器只读文件，不修改它们；应对已停止写入的本地归档运行，而非仍有其他进程写入的目录。
+
+```python
+import hashlib
+import json
+import re
+import sys
+from pathlib import Path
+
+
+def check(manifest_path, required_roles):
+    if not required_roles or len(set(required_roles)) != len(required_roles):
+        raise ValueError("declare a nonempty, unique role profile")
+    root = manifest_path.resolve().parent
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    for key in ("provider", "task_id", "model", "project_revision"):
+        value = manifest.get(key)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"missing provenance: {key}")
+    outputs = manifest.get("outputs")
+    if not isinstance(outputs, list):
+        raise ValueError("outputs must be an array")
+    seen = set()
+    for row in outputs:
+        if not isinstance(row, dict):
+            raise ValueError("each output must be an object")
+        role = row.get("role")
+        if not isinstance(role, str) or role not in required_roles or role in seen:
+            raise ValueError(f"unexpected or duplicate role: {role}")
+        seen.add(role)
+        name = row.get("path")
+        if not isinstance(name, str) or not name or Path(name).is_absolute():
+            raise ValueError(f"invalid relative path: {role}")
+        path = (root / name).resolve()
+        path.relative_to(root)
+        if not path.is_file() or path.stat().st_size == 0:
+            raise ValueError(f"missing or empty file: {role}")
+        expected = row.get("sha256")
+        if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-fA-F]{64}", expected):
+            raise ValueError(f"invalid SHA256: {role}")
+        digest = hashlib.sha256()
+        with path.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+        if digest.hexdigest() != expected.lower():
+            raise ValueError(f"hash mismatch: {role}")
+    if seen != set(required_roles):
+        raise ValueError(f"missing roles: {sorted(set(required_roles) - seen)}")
+    print(f"PASS: {len(seen)} local artifact roles and byte hashes")
+
+
+if __name__ == "__main__":
+    try:
+        if len(sys.argv) < 3:
+            raise ValueError("usage: check_archive.py MANIFEST ROLE [ROLE ...]")
+        check(Path(sys.argv[1]), sys.argv[2:])
+    except (OSError, ValueError, TypeError, AttributeError) as error:
+        print(f"FAIL: {error}", file=sys.stderr)
+        sys.exit(1)
+```
+
+失败时保留目录和报告；如仍可获取，应从同一保留的远程任务恢复中断的本地副本，而非自动提交另一次生成。输出角色或模型错误需要核对任务响应，不能靠重命名文件来让检查通过。下游工具编辑内容前，应冻结已接纳的归档。
+
+**本地验证范围：** 此片段于 2026-11-25 使用合成的本地字节进行测试：匹配的三角色归档通过；字节被改动、空文件、角色缺失、角色重复、绝对路径及逃出归档目录的路径均失败。这些是片段检查，不是提供商或引擎结果。通过仅确立本地角色/字节一致性：来源字符串被记录，但未经认证；不检查扩展名、格式有效性、通道解释、视觉质量、权利或目标引擎行为。继续进行[可移植资产验证](validation.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity)和[导出/导入工单](../production/work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies)，分别记录导入、保存及全新进程重开。
 
 ## Replicate 文件获取与终态核算
 

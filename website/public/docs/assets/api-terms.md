@@ -1,6 +1,10 @@
 # Generative API and model boundaries
 
-Check output rights, research permissions, provider training terms, and artifact availability separately. Use the provider-specific sections below to identify the terms that apply to your intended use.
+Before reusing an AI-assisted game's assets, decide what you will distribute. Long Wind's [creator-maintained credits](https://github.com/jbang2004/long-wind/blob/main/CREDITS.md) separate MIT code, Poly Haven assets, Tripo characters and Mixamo animation; the author explicitly asks readers not to extract and redistribute the latter two separately. A source download therefore needs a file-by-file reuse decision.
+
+For your release, list each character, texture, sound and motion file beside its source, applicable terms and intended destination: packaged game, downloadable asset pack or public research dataset. Resolve missing permissions before moving that file out of the prototype; a placeholder lets development continue. When evaluating a service, distinguish running a private integration test from publishing outputs or using them to improve another model. Those uses can fall under different clauses.
+
+Use the tables below to find the relevant product and channel. Check who may use the output, what the provider may retain or train on, and how you will preserve the files. Keep the actual agreement or model-card revision with the asset record.
 
 See also [additional generative tools research](./generative-tools.md) for source-reviewed tools beyond the catalog cards.
 

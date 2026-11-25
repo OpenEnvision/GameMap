@@ -1,6 +1,6 @@
 # Coding agents and game tool integrations
 
-Choose the model, execution harness, domain skills, and engine interface separately. The combinations below link to implementation sources and setup instructions.
+A coding agent can finish its edit while the Unity editor is still compiling, or lose its bridge connection during a domain reload. Changing models at that point will not repair the editor state. Choose the model, execution harness, domain skills and engine interface separately, then use the running project's feedback to find which layer is blocked.
 
 ## Essential distinctions
 
@@ -8,6 +8,24 @@ Choose the model, execution harness, domain skills, and engine interface separat
 - **DeepSeek as a backend.** The [official Anthropic API compatibility guide](https://api-docs.deepseek.com/guides/anthropic_api/) confirms the compatibility endpoint and Claude Code integration, and lists ignored, mapped, or partially supported fields. This entry covers provider integration documentation. A targeted 2026-10-19 check identifies the separately published [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/README.md#L1-L15) as an official general-purpose developer preview; its existence does not establish game-specific engine support or change this documentation entry into a harness. Model mappings in that documentation can change; the directory does not pin current aliases.
 - **Code tests ≠ playtests.** Builds and unit tests check software behavior. Visuals, input, collisions, win and loss states, game feel, and sustained operation require feedback from the running game. General SWE-bench scores cannot directly rank game development capability.
 - **Editor bridges ≠ official engine vendor support.** The listed Unity, Godot, Blender, and UE bridges are independent projects. Check their functionality, maintenance, licenses, and engine compatibility separately.
+
+## Qualify a combination on one small task
+
+Choose the loop from the artifact you must hand over. First try one disposable project; add an editor bridge when the existing commands and observations cannot cover the task.
+
+For an existing Unity project, give one person ownership of editor recovery while the agent edits scripts. The community MCP for Unity [operator guide on its beta branch](https://github.com/CoplayDev/unity-mcp/blob/beta/unity-mcp-skill/SKILL.md) says its script-creation/edit tools already trigger import and compilation. It directs callers to inspect compilation, pending domain reload, `ready_for_tools` and `blocking_reasons`, then check the Console. Do not turn a busy response into another script submission or repeated refresh requests.
+
+Use that information to route the next action: compiler errors go back to the code change; a reloaded or wrong editor instance needs the bridge connection and active instance checked; a ready editor with the wrong scene result needs scene/property inspection. Only after the same project is ready should the agent attach the component or continue editing. Put the failing script, Console message, editor instance and last accepted operation in the task report. This gives the programmer a recoverable job rather than a transcript full of retries.
+
+| Needed outcome | First qualification task | Evidence to retain |
+| --- | --- | --- |
+| Modify code | Change one rule, compile, exercise it through normal input | Diff, commands, runtime log and changed behavior |
+| Author a scene | Inspect an object's identity/property, edit, save and reopen | Object reference, readback, saved diff and reopened scene |
+| Test gameplay | Perform a legal input sequence from known state, then reset | Inputs, state/events and matching capture; identify privileged inspection |
+
+For a key-and-door edit, check that the door stays locked without the key, one pickup unlocks it, and a fresh run starts locked again. If runtime state is unavailable, record the narrower visual verdict.
+
+The [MCP tools specification](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) separates discovery, calls, results and execution errors. A listed tool or error-free call does not demonstrate saved engine changes or a passing gameplay objective. Consult the [interface evidence notes](../evaluation/agent-interfaces.md), then retain working versions, available observations/actions and qualification outcomes as a capability sheet for the first real task.
 
 ## Sources and lifecycle changes
 

@@ -1,6 +1,10 @@
 # Asset candidate selection and visual-feedback creation
 
-Select assets against a concrete task, compare candidates in context, and use visual feedback to guide revisions. The systems below show different ways to retrieve, rank, edit, and evaluate 3D content.
+You need a chest the player can open, not just a chest-shaped decoration. Before comparing renders, require a movable lid, a usable pivot, room for the opening motion and a collider arrangement that allows the intended interaction. A fused lid disqualifies a candidate for this job even if it wins an appearance comparison.
+
+This is a real representation issue in automated selection. SceneSmith's [inspected validation prompt][SS-validation] rejects generated cabinets with open doors because its generated meshes cannot articulate. Its acceptance criteria fit the supported scene objects; they do not supply the hinge or gameplay behavior your chest needs.
+
+For a small candidate pool, inspect those hard requirements first. Place survivors in the same doorway or room, under the same camera and lighting, then compare style and silhouette. Keep a rejection reason and the candidate files so another reviewer can reproduce the choice. If none can open, return to asset preparation rather than choosing the prettiest failure. The methods below help distinguish retrieval, first-acceptable filtering and ranking when deciding how to automate that process.
 
 ## Reading the selection evidence
 

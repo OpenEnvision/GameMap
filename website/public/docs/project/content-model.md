@@ -1,15 +1,15 @@
 # Content model and coverage contract
 
-GameMap treats source content, presentation, and discovery as separate responsibilities. A checked-in array is not proof that its contents appear on the website. Coverage checks must reach the generated HTML.
+If a game is in a source fragment but missing from search, follow its stable ID. Check that the fragment reaches the owning collection, that its detail route was built, and that the search index lists that route. A row can pass source validation and still disappear at one of these steps. For a missing Chinese field, start from the same ID and compare the translation fingerprint before changing the page component.
 
 ## Authoritative definitions
 
 | Definition | Responsibility |
 | --- | --- |
-| `website/content/contracts.ts` | Versioned runtime payload/attachment validation; inferred TypeScript models and generated Studio form schemas |
+| `website/content/contracts.ts` | Versioned runtime payload and attachment validation and inferred TypeScript models |
 | `website/content/models.ts` | Content kinds, per-kind schema version, authoring owner, validator key, presentation blocks, and registry API |
 | `website/content/assembly.ts` | Rehydrate selected database revisions without filling missing business rows from Git |
-| `website/content/source-data.ts` | Complete provider boundary: Git for production builds, a database working input for local development, or a frozen release for isolated builds |
+| `website/content/source-data.ts` | Exports the repository data and translation overlays used by local development and production builds |
 | `website/content/generators.config.json` | Registered derived document addresses and trusted source renderers; no executable database recipes |
 | `website/content/sources.config.json` | Every data module, runtime export, fragment, attachment, and metadata owner |
 | `website/content/site.ts` | Route definitions, canonical URL helpers, and navigation |
@@ -27,7 +27,7 @@ The resource directory, game examples, agent toolkit, testing library, developme
 
 Each material record has a stable key of `kind:id`. Public records also have a canonical URL or anchor and an owning collection. IDs are authored, not generated from array positions or mutable titles. Duplicate keys and canonical addresses are errors rather than last-write-wins assignments.
 
-Development paths (`path`) and their steps (`step`) are authoring-only records. Their source data, database revisions, stable identities and content-manifest entries remain validated. Retained `/paths/` addresses identify these records but are not published routes. Neither kind appears in public navigation, pre-rendered pages or global search.
+Development paths (`path`) and their steps (`step`) are authoring-only records. Their source data, stable identities and content-manifest entries remain validated. Retained `/paths/` addresses identify these records but are not published routes. Neither kind appears in public navigation, pre-rendered pages or global search.
 
 Development steps belong to a track and retain separate description, deliverable, and checkpoint fields. Testing starters retain their task and measurement fields. Case attribution records creator evidence; a related resource link or model name does not establish the coding-agent client.
 
@@ -56,23 +56,23 @@ Source Markdown remains authoritative and is never rewritten by documentation pr
 5. **Regression tests:** deliberately omit records, fragment rows, fields, routes, and media references to verify that validation fails.
 6. **Browser checks:** exercise filtering, client/model attribution, multi-recording selection, mobile layout, direct URLs, global search, and reading without JavaScript.
 
-Run `npm run check` before building. Run `PAGES_BASE_PATH=/GameMap/ npm run build`, then `npm run check:build` and `npm run test:web`. Source checks do not require an existing build directory.
+Run `npm run check` before building. Run `PAGES_BASE_PATH=/GameMap/ npm run build`, then `npm run check:build`. Open the site with `npm run preview` and exercise filters, navigation, and the mobile layout in both locales. Source checks do not require an existing build directory.
 
 The build publishes a machine-readable `content-manifest.json` containing all registered records, including authoring-only paths and steps. Public records are discoverable through their owning collections and global search. Counts are derived from current source records; they are not manually maintained here. These checks establish content exposure and internal consistency, not execution, licensing clearance, production readiness, or factual verification of external projects.
 
 ## Development and packages
 
-`npm run dev` reads all database-owned editing heads and their translations in one read-only transaction, including unpublished drafts. The working input feeds the registry, generated guides, search, routes, downloads and referenced uploads. Current long-form Markdown remains Git-owned. Research labels and baseline links use the selected catalog's metadata rather than importing a second data file inside the field renderer.
+`npm run dev` generates derived files from the repository content and translation overlays, prepares documents and starts the local React Router preview.
 
-Database changes are polled every two seconds; Markdown and contract changes are watched. Generated working input and public files are disposable, not editing stores. An invalid refresh leaves the last prepared input active and reports the error in the terminal. There is no automatic Git fallback.
+The development server watches content sources, Markdown and navigation configuration. A refresh error is reported in the terminal. Correct the source data and save again to prepare the updated input.
 
-`npm run dev:git` explicitly previews the current Git production input and watches its source collections. `npm run local:import -- --apply` brings Git changes into an existing database as drafts: missing records are imported, existing ones are merged three ways, and same-field conflicts are reported for review. Database edits and database-only entries are kept. Static production previews still require a fresh build.
+`npm run build` produces the static release from the same sources. `npm run preview` serves the existing build, so rebuild first after changing the source.
 
 Catalog arrays and the repository research ledger share `data/segments/`, with explicit kind declarations in the source inventory. The research ledger is not promoted into resource cards. Skill packages live under `docs/skills/`, preserve their separate licenses, and generate deterministic archives checked byte-for-byte against their sources.
 
 ## Documentation languages
 
-English URLs remain unchanged. Chinese application views use `/zh/`; the existing `/docs/zh/` guides retain their addresses. Language links preserve collection filters and detail anchors. Matching document slugs select the actual Chinese guide; untranslated articles are readable under `/zh/docs/` with Chinese navigation, an English-source label, and an English-language article body. Documentation entrances open a starting guide in the selected language. The sidebar prefers translated counterparts without duplicating the same article.
+English URLs remain unchanged. Chinese application views use `/zh/`; the existing `/docs/zh/` guides retain their addresses. Language links preserve collection filters and detail anchors. Matching document slugs select the actual Chinese guide; untranslated articles are readable under `/zh/docs/` with Chinese navigation, an English-source label, and an English-language article body. Documentation entrances open the learning hub in the selected language, with task paths and a topic directory. The sidebar prefers translated counterparts without duplicating the same article.
 
 Interface messages live under `website/content/i18n/`. Content translations are server-only overlays keyed by the original `kind:id` and source text field. They do not create resource records or change IDs, enum values, source URLs, creator credits, or licenses. Each translated field has a reviewed English-source fingerprint; a changed source falls back to English and fails locale validation until reviewed. The level-design toolkit view inherits its translated title and summary from the catalog entity.
 
@@ -80,8 +80,8 @@ Public records in both locales are pre-rendered and checked for visible fields, 
 
 ## Adding content
 
-- For local authoring, create or revise structured records in Studio or through a database importer, retaining source evidence and limitations. The current editing revision appears in the local working preview; publication still requires review and a release.
-- For the retained Git production input, add a row to an existing typed collection. Its adapter registers it automatically; this does not overwrite a local database record.
+- Edit the owning file under `data/segments/` or `website/src/data/`, retaining source evidence and limitations.
+- Give new records in an existing typed collection a stable ID. Its adapter brings the record into the registry.
 - For a new data module or export, declare its owner and shape in the source inventory. A fragment must also be included in its aggregate collection; independent inventory checks detect omissions.
 - For a new field or content kind, define its type and explicit presentation before publishing. Structural omissions require an explanation; unknown runtime fields fail validation. Declare its runtime schema in `contracts.ts`, derive the TypeScript type, and declare its version, owner and validator key in `contentKinds`.
 - Add Markdown anywhere under `docs/`. Navigation, static rendering, search, and coverage discovery follow automatically. Add an optional label to `website/docs.config.json` for deliberate placement.

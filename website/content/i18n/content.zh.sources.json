@@ -80,7 +80,7 @@
     "detail": "6fc04c127efa798fd63002cb4a4c91767f44351423f046d99a540f28ca2ce9a4"
   },
   "resource:godot-engine": {
-    "summary": "ecc366f255e9b5ccf4a3b40e868e9776375bd369ec61aec605d86df51d1ace2a",
+    "summary": "39a3b97b90fb04919191913790c7d1a74e69018c366f1ef0acccbb019708ff76",
     "detail": "0051cf89ee1af2c5547ba1079152c96f284be9f86450cd10746d882cc122bc23"
   },
   "resource:godot-command-line": {
@@ -100,7 +100,7 @@
     "detail": "fcd593f3600fbf808b428488693dd7bafaec1c976e1b6d90326c4114a758ad5f"
   },
   "resource:unity-engine": {
-    "summary": "979c92f1ccb3788a9d599807a1aa906b064b7b8e5ba4fcd7b92357f73e52fca8",
+    "summary": "37aa27176ed6f2187195e13c06bd7694b967beb796acef1fddef8c67d6c9b9b5",
     "detail": "3d9bdee560eb3ee45f01464efd63358bafd07d109b79fd51bfb7dad523af198c"
   },
   "resource:unity-test-framework": {
@@ -116,7 +116,7 @@
     "detail": "8beb18f63965bf42536ffd8ba698dac27346333d9fb861fbcc82a2b3fd6a1a16"
   },
   "resource:unreal-engine": {
-    "summary": "6caacfc1545c9c219e68b6eecdeee1974cc5d9308c94cd1b1350d6e338bb119f",
+    "summary": "de43c1dad267eb3eaccf013e6d32022ca75e2ef733ba4f4a396c1aa2ad7f9267",
     "detail": "372e440a25a2fc9689611c3ff1acb84f8fb9a16ce32fe92001992dfe85f0bfac"
   },
   "resource:unreal-automation-tests": {
@@ -160,7 +160,7 @@
     "detail": "8ebbb6991da5b43c13178dda4a39e09e0043b11e3ea9118c5145f2c0b3c4e5f9"
   },
   "resource:phaser": {
-    "summary": "37f88b783b8e646869e63144f0cc9558d161d6329c8b8a5a22317d0b0914aa50",
+    "summary": "4d1646fa86de44585feb4da476d507bc432672344cd620fe704fb833abe8d6c7",
     "detail": "e934101d5f73a9a93438b2f3c432a133c8988cc03171ac53b321b15f4d37d4e2"
   },
   "resource:phaser-examples": {
@@ -580,19 +580,24 @@
   },
   "testing-pack:change-a-game": {
     "title": "37758b9af0af5762902af2a51a94e3ca6ba197657e114b890ea391883981d09d",
-    "resources": "fdbcf1d3f92a3ce59c4ea70a5eba7a8e3536d7be214523b02db5bdff7b96f2e4",
+    "resources": "52ddff25e30d9eb6887d74e6ef922e4757d66e172432d342b7187e679e04a32a",
     "task": "112cd7299c8c0a27456ffdf7322768fe298c7bf08b10f1c3ff1973aa4662ed12",
-    "measure": "06092dce9b7b698eab603aa4af964688ba5a95e228ea8df093607a6fe68d8b5f"
+    "measure": "06092dce9b7b698eab603aa4af964688ba5a95e228ea8df093607a6fe68d8b5f",
+    "check": "167811111d7cac3e83b556554db32bbef592da02f23935e96ea0b470222ce208"
   },
   "testing-pack:give-an-agent-a-goal": {
     "title": "a450516c67801b45358e183c435e8e8e4eed1cd6b50e5abc0e554953b3f393eb",
     "task": "edc68633ce4c6abfa11d8a6b5e32bc07767925796f5b720612e5b7ad002861d8",
-    "measure": "060270acbb7360d71130d8a82db3c014635fc0f89315fc154e0ee3594ad0bded"
+    "measure": "060270acbb7360d71130d8a82db3c014635fc0f89315fc154e0ee3594ad0bded",
+    "resources": "d43d73a977231737140f083feb0ee8c0b8a2e4ba4b7b9e2b8aa15ac8a13d2983",
+    "check": "9152ef366e97686e5623d9e40cb60c623e15fc3468b1b3b52a23dc420ab73f35"
   },
   "testing-pack:asset-through-pipeline": {
     "title": "d7e7903a5f2ae8c6b49a9b5eaa0f0c5596e2dece1518ecaba7d3cff88f16dbcd",
     "task": "3be97c9d5633326ea271b6b70033e457013fc8868e61f5a2f1574e4bdb66c807",
-    "measure": "db56062d0d3494c08a9b3fc6bc1f0784f5434e4dfeebfa4aba1e51f02edb2c7e"
+    "measure": "db56062d0d3494c08a9b3fc6bc1f0784f5434e4dfeebfa4aba1e51f02edb2c7e",
+    "resources": "44d3d900e9170946b6b7ab5d55fbad235b6929671dfd948b0d9a917a88df9be2",
+    "check": "fd11be6b1115d8b7a357a30c0c90ea4c41888bed4b914e4635eea6eeace726c8"
   },
   "example:cloud-crush-gemini-cli": {
     "title": "5de7ce1f183c3859312b678f2802b0766c08111e4764fa6bb4c6c3a8e29e2f77",
@@ -976,112 +981,364 @@
     "summary": "be37ad02abc3b2c7e74f24ecfdb130e4c3c70104ae59183fe98118c2390c3924"
   },
   "testing:godot-demos": {
-    "summary": "ea23139a58446e956b702e971a54a6e7978a2807d1146b242f8998b1ef954aa2"
+    "summary": "ea23139a58446e956b702e971a54a6e7978a2807d1146b242f8998b1ef954aa2",
+    "stack": "d2ae72326c0f3acd44fc2b45063bf77fae6c95173d7233cf744d80a3b24cd0f5",
+    "codeLicense": "fb63039efa2895e46db8bbb4edfa59aea0a96fff043c463e3eae0ba8cfa865dd",
+    "assetLicense": "1eb9c8ef22bd030142cbfe27ec333001a69032bcd4350bb0ef2643cf55009cd0",
+    "aiUseNote": "f32801a23b0e533948bd74cf3ee4412868b9e9343613156654b646fb6d0aa2ea",
+    "testTasks": "04d3da088b6bc62ae06033066a0fa3e2d6fd15e69525cb476c4e3578168d5b52",
+    "setup": "1c8cf124171463f75dde7841377073493f39803aeaeee9c40fce75a1b875bf67",
+    "limitations": "1e75bf8ba7101d45075e15568ec9a142567d81ef385e86fa1f62461a899e45a2"
   },
   "testing:supertux": {
-    "summary": "06130054d0848b9e9dd141adff3b85f28c76109e712fdc030862df13cd07d81d"
+    "summary": "06130054d0848b9e9dd141adff3b85f28c76109e712fdc030862df13cd07d81d",
+    "stack": "72c8abd0a61f0c92e1b1f8004e55f9a3059747349f74a724e6bf5e7be00cd627",
+    "codeLicense": "dd989b6083d01e716679800b5c39514f42018dbb4f482ba81be96f37902162f0",
+    "assetLicense": "0997fdd98d105c256aa1b98ed39479b9f459a017dbe268e98a82f1aa24ec1520",
+    "aiUseNote": "8727dd0d7c3709c8709b2df9ea68ace1c5741ddbd6ad75459da02121beec7763",
+    "testTasks": "5b4350f8f2d6fba4b94768d058b05e4b53ed215cf87573b09ee0408062566302",
+    "setup": "1514c7bb4684728fe05702af50a4336dfcc53f32e109b4e96ceded78c764d0cc",
+    "limitations": "c729e206fd2a71331c49a9feb21cac477be4533a63ee653a37baa6a62117703b"
   },
   "testing:endless-sky": {
-    "summary": "fa8ed572114fc9a4e597b3742c24779188ed792bd36f93627aa18a16b678a764"
+    "summary": "fa8ed572114fc9a4e597b3742c24779188ed792bd36f93627aa18a16b678a764",
+    "stack": "f4f3e226390d6c565ee29b16bc66a8a523c59b475ce319a1ea2aceec7a304c03",
+    "codeLicense": "a6bb3944ac74bfe27b1b1dbc9fec4e95c3db62b38086e613c6d75576bd3ed605",
+    "assetLicense": "59161df3c61da321920e148a577ddd9266c6a0981ff95640aaa843b49d2768e2",
+    "aiUseNote": "379983769f71fd53208df8c05b89554b1f73c74fada2a548c5a4aadac64b8137",
+    "testTasks": "3990ba1fd102388cd27c6c3bf093799aaeb113dfb31303dbf7b7c94fe71f3ee4",
+    "setup": "1b303aab3db201a69228dfaa54fd44cc0cbfbea5ca78d2c20f3e00af11f0e868",
+    "limitations": "982247f687e844d0538414bb029e2e0d3f3276fec01f088ee1ec9d1078018bf2"
   },
   "testing:ddnet": {
-    "summary": "912b170db0d7e5957adbe3fac62f91661338783b80452b1db2e5b1bb7a883763"
+    "summary": "912b170db0d7e5957adbe3fac62f91661338783b80452b1db2e5b1bb7a883763",
+    "stack": "b0e8d7fb507dee536ed6d8b7ebd1c3dff78aa289188930a1a1f4f31e533e7d4d",
+    "codeLicense": "358dc18374f6d0d7f8dfadc9f9273105cbcc3a66f4d8cdb99cd1dc1ec2665f20",
+    "assetLicense": "0c8a2749b49b2dd113b311f410eca21be18ca12fb4f9e7c901d106c27511a92d",
+    "aiUseNote": "ed21d325ce3b488575fbd8ea5b00ba6e41a95ce1adec8348dbddb1f692b961b1",
+    "testTasks": "09c3c53e7f9eee1fe4d353b46f74922eaacad958eaf9c6e95011d22fc42ada3d",
+    "setup": "b9e81c7bb7e16269b2da4583789fa00855f85c36dbe69035b683575f09fc269d",
+    "limitations": "4e4051c893f787b898600c7fb8660c5abd5482dbcfd9bb28cb6fa7f1fb1e3974"
   },
   "testing:wesnoth": {
-    "summary": "f79e7a77f370f75f96add5178838de03f0ec2aa1bb5ff6b2c37450e01d1aa156"
+    "summary": "f79e7a77f370f75f96add5178838de03f0ec2aa1bb5ff6b2c37450e01d1aa156",
+    "stack": "fb712d9b09a0a7f1d640441d39a8c8ae28c8ece0b08a5f5ffea4413b67a211d1",
+    "codeLicense": "1a1963363f69297fc38bc62307004522a30c89ab2d7686ae452f11c13f29e7a2",
+    "assetLicense": "2d4ab648fbdb107bdf25cf6266d12225b30f6791ea2c6a0cc2b2c330ee63e2ec",
+    "aiUseNote": "82383852c3bcfb4cda2ed287dad4cb9a22b226adf62006e57ff387b788eb878b",
+    "testTasks": "91110cc243f2f18a829ed75925a1efb1645b6db86e67de3cb700dea9e5007e11",
+    "setup": "eb89b95fb2c30058d7119df096b06d35508df6e67607c639fd582505f59a00c8",
+    "limitations": "8043455c68ce2e7e73b4751d1677f1bea83d0a53888cd8deb015a00d6c8d145f"
   },
   "testing:mindustry": {
-    "summary": "28a4e6e5d4ed80fc03518a79fa329867c6ba0ef0add1b3932c5bfe44ddc90758"
+    "summary": "28a4e6e5d4ed80fc03518a79fa329867c6ba0ef0add1b3932c5bfe44ddc90758",
+    "stack": "d57789f72bc9fd237a0010ad5c89b5cb18bfe75a7035a78b897fcc374228194c",
+    "codeLicense": "8eb2fc2ae71bb386dc2e8d7a7f3e85eb2a640afedcc939f564bcbec59714615b",
+    "assetLicense": "b26597fbc0c0547c84d6d4663a294fcca17f92b7ef82a9c21ab2a8f75df30dee",
+    "aiUseNote": "db184964309b8849c7669c58aff1d38d9f5f9d146c413b2605842d0880fa8d47",
+    "testTasks": "ae0c7bb8512036ed4c25951fb503709e9189cb9eeebad9810778f0704040d80d",
+    "setup": "447b664a1d81fbca8e2b315654d1ba0e003936b34edd30c1bc369e4ab48ac824",
+    "limitations": "c92d195a7c0446bdd36c010c26e46ad152941bc93fa85df31050942130cbfcb8"
   },
   "testing:openttd": {
-    "summary": "1701c4a42046b72431f3a8f375f8092d2e6c4176ddfab131b33aba92741ead72"
+    "summary": "1701c4a42046b72431f3a8f375f8092d2e6c4176ddfab131b33aba92741ead72",
+    "stack": "9a3f5d47496a8501e1764845898899b129e45dac731368951a209407461c426a",
+    "codeLicense": "0b752a6dba5b31ce755a3fa0751d526ee1def95ec9bda106ac57420430ec995a",
+    "assetLicense": "aebccb1657b945721a1d49eef08debd55d4045b5a79f70752bd9582909ce80fd",
+    "aiUseNote": "ebcba1bcbe667b2fd507eaa008058e80d3a996d9d7d8e0360bf2ec09b2a2b8a8",
+    "testTasks": "74fc8cf12aaec8a2d329efce029652255d7178630705bdbfcb5ff0ae744ce3d9",
+    "setup": "42efd38780f481f13dcec228c8966f4a6a57358acf7539dff5159808ba336e6e",
+    "limitations": "c113c83a6895928eecf30b44064c1b795950406debe5af4cc0d938c019a3ece6"
   },
   "testing:supertuxkart": {
-    "summary": "3b3a721a61bfd3c012aa8458d0222ef03f2f3776fecfedde56d864b55f36969d"
+    "summary": "3b3a721a61bfd3c012aa8458d0222ef03f2f3776fecfedde56d864b55f36969d",
+    "stack": "bfaec2b9db7ebccc3f5fba6cde23d4850624c5c7ff0a23388a8e87001d96a4ac",
+    "codeLicense": "b754e101d369e5013a0c5cacb6a11a2119dfdf513eb9b80b8953a1ced5848930",
+    "assetLicense": "00534a590eefe58d091db582156124b434de0397b3d41f98b388d506f470bc28",
+    "aiUseNote": "304abc4eca6c25238cd2985a14993c78eaf8559a0f0d9c2d67df721ba3ac7c10",
+    "testTasks": "f1624510d6d53f27ad62cfb6d07cce744d067c02268c86030dceba90c15cdf00",
+    "setup": "2d6425f3540e1676256553a0f8afa8e98cd3def9fa0736bce4aa230d1eb0ed3f",
+    "limitations": "0bb8d64fcb6c0b1e4ddb4f89bd27decd46adcab04ca2843d7f127009701e95f2"
   },
   "testing:luanti-minetest-game": {
-    "summary": "a0cb491a58ddbed39ed47044830acbf0b5307ebc3c67abd66f7945eb37367e84"
+    "summary": "a0cb491a58ddbed39ed47044830acbf0b5307ebc3c67abd66f7945eb37367e84",
+    "stack": "3df3010c4e47c2bbb15d779fa816acdc68fda2ce493304f3232837e35e36fa1b",
+    "codeLicense": "2b510c428fc91248fd43cb666a8bf4f2b2a916f03b8dae0baca42b62c66fe2cf",
+    "assetLicense": "fcdbbf3376f8cc3bfd6dbfa7d5e0e6c4ad06b4ac2e8745115e708763cef732bb",
+    "aiUseNote": "72a0aecd4abb5b2a61a7f028ba371c75c69c607c509874f27decdb45c23e6cb3",
+    "testTasks": "5bef127c9708faaf8a8191415ca67c99d1dad8a374d1fbf26afb60bbcd1f0bfa",
+    "setup": "dc2bd114cb85feb17f51ce3ddda79cb52b1c9d3b40d262feace6d1f80e8295c1",
+    "limitations": "2f97e0176e19946841233d71bf48613069f655a29b83aa98f471efda38c0651e"
   },
   "testing:red-eclipse": {
-    "summary": "940297e9c6dfbfed54e869bad986c476ac9790006a346f9c09f169ce343ecf9d"
+    "summary": "940297e9c6dfbfed54e869bad986c476ac9790006a346f9c09f169ce343ecf9d",
+    "stack": "5510d2e13fa07d99aa46b3c588f0a97ecb7e0961f200e617fdd07bee29ecbb83",
+    "codeLicense": "3cde81f54988e6c1e2605458ea558e8aa60d3c87504026dfe442bb46810fa8cb",
+    "assetLicense": "db27969623503ee34e25bdf6395d2818b98f6f7f1ff880e56845391dae63034f",
+    "aiUseNote": "f58ddaf6014f35e3fc02e1460d0cdad4df7442e9966dcfb927bf270a55da1329",
+    "testTasks": "88a4e3ccaed0076b869e3337981828cd4ec3c433e7addb74fe7aa8398234771f",
+    "setup": "4afffa9b4b24704a665c28ccfa2b8906f3e099fa5e175614bfcf4e0d3967ab8b",
+    "limitations": "64101a809cdb7b05779057e91b0aa1bbc3a162d03afcd08d5a05d709e64f9f95"
   },
   "testing:zero-k": {
-    "summary": "e1bbdfc860a6871f221dd45400ddfed4afe81ac5bee1f93cd80e7fc14a54fdc4"
+    "summary": "e1bbdfc860a6871f221dd45400ddfed4afe81ac5bee1f93cd80e7fc14a54fdc4",
+    "stack": "f1ec1700b5ad32029f8c02ca958ed3c219b66d84f602f400130d78ec9cc1b227",
+    "codeLicense": "85b09e0efde5b3140ae0de3ffced752ebb0f7002279a0fa9488922e27cec98a8",
+    "assetLicense": "e0f79d3ffeb35225ce16a4c85498101b35db65481a26605dd99e010470c073fb",
+    "aiUseNote": "632636e5c7b2e4670dc75125262fac4b735533f35c7d60fd02739e15d85d24cf",
+    "testTasks": "89c61e0d7ee2f94f3b6052aea18422de4df86dfbd0f0caca2404a3eea7b33ebb",
+    "setup": "4805ce78b07f236a6611cefba1efb78e26edc9d2e59c45999611af86939337f4",
+    "limitations": "fd3d0f737e2879ac2187f12d1acfb9b29007459ad5bde32c199a8049f5b09f0e"
   },
   "testing:unity-boatattack": {
-    "summary": "70579afcd80c06ece644c3f79ce39db2b68df6d7b0809e6bb7ab71c9c1b58a86"
+    "summary": "70579afcd80c06ece644c3f79ce39db2b68df6d7b0809e6bb7ab71c9c1b58a86",
+    "stack": "cd215e887d9c7d5dd77bc3e0277f86ad41aa2d31461fe9bb8bfdb7a7c0269843",
+    "codeLicense": "f6c5b60419b6b25d468effd63e6736042a01b38269a18e22bdbf41d72201e4b9",
+    "assetLicense": "0e074eca36b5643d2186a3a5884b95a49ad06fe65fe3222d158ff46f22c80c01",
+    "aiUseNote": "da66d4687992670fd6442f1bc3bd65aefc67930a5e6abefde0c0e57b173f7273",
+    "testTasks": "88a9544330f09ec43d66bb5234b46a0dc305e54bcddf038a288aa75a919f3275",
+    "setup": "faf45d1583cc20ab47708fcacc6da84019b655a8360a4f55e8a88fd80b447cfa",
+    "limitations": "fa36f0d706cd3166b23410c9400b77d0c8403cdbaef1c44dae4275f9c644c66a"
   },
   "testing:unreal-lyra": {
-    "summary": "c8b0f24e02a45ea1bde7c09c65610f09c5a0f1677b5d8347cbfbc842323f49c1"
+    "summary": "c8b0f24e02a45ea1bde7c09c65610f09c5a0f1677b5d8347cbfbc842323f49c1",
+    "stack": "d34570df688a83b81fe41cfd4901d542664191518ddf0128f15afc32411b8eb0",
+    "codeLicense": "7f5ccb131115b1c1bf453fa126ea7135206cadbcbbe9961a21f1ac9971837510",
+    "assetLicense": "b87fafef5af5cd9607fcd7b00d25a169b2d859b404c165dd9e26bd1817bc8461",
+    "aiUseNote": "7957513a4a3b417db3499789d3f9af59882c9229a5ae31c63ef780116599d663",
+    "testTasks": "4e17a0f76b0b6d841f9e67bf274111b12aa6d46a2e9f58728268bef11615e29e",
+    "setup": "51422964d1930e3bad0b98488fbc53f2b1ed00f849d14b40dfbc2747a5277cc1",
+    "limitations": "c269e74e1bd291a258cbfd6faaca65b9a4d5b58f5f350165a05698500fe892a7"
   },
   "testing:minigrid": {
-    "summary": "f9d9e4f7b7b14ff0598bae89642994fe107064f99be7e18f7648e1a0caa092a4"
+    "summary": "f9d9e4f7b7b14ff0598bae89642994fe107064f99be7e18f7648e1a0caa092a4",
+    "stack": "6085d507340c1b016f32aec57ebc10ba5287add27cf32ed65e9b731b7017051d",
+    "codeLicense": "e13dc887de8ef981c360860ab00908eb5a84d5fd0f62d5ec9f3955e6318e9653",
+    "assetLicense": "ab4ac4d4ff5758574dcc4a3141b964e6a9cb22f1564af869a8ef9d618587e43e",
+    "aiUseNote": "6955d7e6420995f52fa78172ede582e59e590ee1e18fc2c0550b6ea1342e0c67",
+    "testTasks": "18b0715fdea1a733275c9fc1b37f4e52b2dcee7b1fd375bb60313c2744bcc2c1",
+    "setup": "cb24666c06fbc220319e34a60786ccdceea6dfc4b464a07037cb409239da92c8",
+    "limitations": "682a44d38f03b074b6962c6b6b0e80776143a709c2c111cd9c52b54e1611b189"
   },
   "testing:crafter": {
-    "summary": "4415fa22450305635e81da043940f3108d86ce489e09b34ed19f6c9567713117"
+    "summary": "4415fa22450305635e81da043940f3108d86ce489e09b34ed19f6c9567713117",
+    "stack": "23c7361db4b8b0b9fb7c8a0344a13a0008c29f60e3cefdc7933aaa8de6a50407",
+    "codeLicense": "fffe771e6b73dad4ff4fb4cf4f88d5438e9e2219f0f77de97763d6c9a94eaac0",
+    "assetLicense": "babbc1b0c05f5876019e851eedb3966d54f9176085b0150b8c4c967e633544df",
+    "aiUseNote": "74ddafe310c37193b4d4b87b5789dc8b97d75f0e35c2c230918720dd806c1625",
+    "testTasks": "6d341a71bcd2683fe89268c4f69b3508806ecfb4f8943a82b19f9a1977072f55",
+    "setup": "b00cff2c47b2ee809a63b82fb89d7415e0074e60e69bf8d7dbaed43717adaf5a",
+    "limitations": "67aff66c4c19d26a3ef1c16a29fb82070021b69cfa54b357215308e64c628246"
   },
   "testing:craftax": {
-    "summary": "b91e115e90e32a08de4a79c03d6a1ad99a1cad49fd98ae04210609f619c41b66"
+    "summary": "b91e115e90e32a08de4a79c03d6a1ad99a1cad49fd98ae04210609f619c41b66",
+    "stack": "22fae6d0c1806527f67be34654ccf66a0f8937919173dfe4ef68cbab4ad51c2e",
+    "codeLicense": "fffe771e6b73dad4ff4fb4cf4f88d5438e9e2219f0f77de97763d6c9a94eaac0",
+    "assetLicense": "90155b207fe27f35a792163e50bc8d7fa816a1197a26409dc747d0c52baf5727",
+    "aiUseNote": "a1860201532c94d982d08b4462eed28a4247e30d6eebbcc7f80eb1eb3184ad08",
+    "testTasks": "ffbcc844692668724c7cdf716526d08020218fe93030cdfb03e828395bfa6cc7",
+    "setup": "c94c1358ce28dadb31542c3f834bc3e9664800f22b0db79bb4e16e79757ce089",
+    "limitations": "1a0e4708096ff0053023cd9e29f2aac14fe62728615d863986ecbf06edd16787"
   },
   "testing:vizdoom": {
-    "summary": "7473cc4aaeec06510ddfd2f77c97a58c5f9ff0258f2991becb41bef72e297459"
+    "summary": "7473cc4aaeec06510ddfd2f77c97a58c5f9ff0258f2991becb41bef72e297459",
+    "stack": "e68783a9e3dc3c0359362b559b107b10143b1e4787e347f77cf66de58219de18",
+    "codeLicense": "cc9bb023600645ca10ec067ef96dd8000ae2d48b6c6ce8caebda0abb4b40bba7",
+    "assetLicense": "57716d27e8b7f4e20b41eb66fe113c96d7072c5c45f17baf8d9517f22c58006e",
+    "aiUseNote": "b2e0556a401a807fafd8d57aa0e0bc6f002183f94471b3ba1550443cee62d99f",
+    "testTasks": "6c4da82aa944bae271bb29638c6f9eeae7213eaaf6c6140815b5346c7018c4b2",
+    "setup": "b7b8eea3065a7c01976a1c54be41440e104531072002e7de5c81aee59c5b8aee",
+    "limitations": "4bfbb77835b14d1d4d9af2fe624f04dcde720ce8af7633a5a6f6cf66c82d9885"
   },
   "testing:nethack-learning-environment": {
-    "summary": "5bd717f21a9e799233ff6a7022740e3c03daa4e22199d23f6f63de7da51e395d"
+    "summary": "5bd717f21a9e799233ff6a7022740e3c03daa4e22199d23f6f63de7da51e395d",
+    "stack": "a5cba5595fa00352bc18ffd3c331ae0e7c331c68d63f495d579c0192469a4d5a",
+    "codeLicense": "33843eb4f98928869e33b6d95f946a68e915f90f3ab3f95731bd46da46791a99",
+    "assetLicense": "4285f48b656d5a5fdd37dd5ebb105d3920104a8df29ea483935bdb8ea3d62aee",
+    "aiUseNote": "040930ac75d1523a07678bb29ec35827ff94f527031604b1f177a3f84ddb007d",
+    "testTasks": "c14b15da02fc001e433e29ac9430fbabd84b82ac1df775cfc74bc859ef97c1e7",
+    "setup": "0058b801be8d7c1ae850a02db9a3b7053138d479660628eeabb85d8b5472ad2f",
+    "limitations": "58484979614ec5237dd5b294c392d7c4dd80e39e2bfc8585dfaf7d87fa63a721"
   },
   "testing:godot-rl-agents": {
-    "summary": "32a5a63f167eceaeef06c4a5cfddfdd4a395353de18257a07deff796aa41ec2e"
+    "summary": "32a5a63f167eceaeef06c4a5cfddfdd4a395353de18257a07deff796aa41ec2e",
+    "stack": "103f82916c7f73695a902ae1fca7866e3a34d3ff1dd5422ea4816029642aa88e",
+    "codeLicense": "8856e4ccafd37aa29b19c2b1e6c3b2c06297ed8933e4720518d311d155d18468",
+    "assetLicense": "fef2e191620ee4d24d433d018aaa6251fd487eddfe7a7c7384e0a93d88db3c28",
+    "aiUseNote": "981ce8c5fd4e0b56b12020a2ffad63f19ba1020e585aea124f99e41cf4a00b38",
+    "testTasks": "40d00c8a9a4101703dc8d674ba0ab729535dd70eb6887cb626ed23fdc1f15df4",
+    "setup": "01ce350d2c85e7853481f1f75a0c3abe16cf6738941294d5d6db345553904730",
+    "limitations": "355cc9131e7f592bf50fccebb5c65c9fcab13d029ff90fbdd0ced1e0f86a8cc9"
   },
   "testing:unity-ml-agents": {
-    "summary": "088104c4c528527a2c36a82bda9816d82d8030a79597752680fa6786492723ee"
+    "summary": "088104c4c528527a2c36a82bda9816d82d8030a79597752680fa6786492723ee",
+    "stack": "7e9dbd1eb15b999b0c62a97d9ed2098e768a44f07121ac75d9b0f0f55448f7bd",
+    "codeLicense": "b05ff1d894a71042df7a1492cf3140f9807a2da27c08b6e12bbee5bcb69e7e07",
+    "assetLicense": "903b0ac497eab9e81cf2efb76ab60c1e5a6170f123784d0782a041176236bcb4",
+    "aiUseNote": "06de7de2ef42f487e405d2f989980a8a2539063feb719d08c442a84f54c465d1",
+    "testTasks": "106b909a89a51f8049fd35f9d88d0155d1c10a35d0aafd99d75fff2c4db5da99",
+    "setup": "1fffabfb1641fe06922aba74848f85f6e6004563d5cf3e4c5f570e2e01df083a",
+    "limitations": "ee6279af63fe6831c9db6aec4e5eda1a72b74ef7f1456af8495b8b967e4543e6"
   },
   "testing:kenney": {
-    "summary": "16a837d5017f9c09d3fa3dd5c3029654a2a8dcee94ee52cb81d3d8c937c1e73a"
+    "summary": "16a837d5017f9c09d3fa3dd5c3029654a2a8dcee94ee52cb81d3d8c937c1e73a",
+    "stack": "00228db6e37f13e3a6eb04bb3f70cc08a6d1bd5ea3922b1497b176e5d2f39995",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "ee19aa2988a60b4f4c6c48875d466b593e7abeb03526b2ed445f7fe3609f7534",
+    "aiUseNote": "3ffa368cfe7b9f0aee17cfc98e762180d7aa0411c59120446d90a893405fb2d5",
+    "testTasks": "8f960de304d39ffb254b62c8c80561c41ce9d06e572230a1ea64ae982754eb02",
+    "setup": "b29ae020f7c8e417049070a4d40ae90237fec0e12b0925f066c7a5d6e36d5abc",
+    "limitations": "30eab93b68da89fd51b954f9297a865900d942640003129f8dc08ef25e157b91"
   },
   "testing:quaternius": {
-    "summary": "f69179925732907eb8d1132e42a7a8b4756c66bb278d060405009fce383e4816"
+    "summary": "f69179925732907eb8d1132e42a7a8b4756c66bb278d060405009fce383e4816",
+    "stack": "648fd1cc3c53d0e842a61ebc3b1e96e19c26c4e85737652d875341ffb4e81526",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "503c8e64559cf817aa0d54a873e8efe76d4bf89be03e769a3347eeb33eee8f44",
+    "aiUseNote": "87c2cae9d1e7c7904bc599a32719d823a4ca0353db4b650cf28c05a44589efe6",
+    "testTasks": "45503e2e8a8db7292d51ec2b8981ce173a706f1076f90f0b0d0fdd7612d297c1",
+    "setup": "4f42bfb6f52a4a3ecc61e78079e21cb04eafa47fbcbdb76a367f56a4c6d7af96",
+    "limitations": "04b72329f439daa8ff1389e6bd59d3f2899469508d4dc745204c500b872d97ae"
   },
   "testing:poly-haven": {
-    "summary": "88884ddd29b8f021fb52d52b2f8ae33b23707297d188ed7c910ef78182aeeaab"
+    "summary": "88884ddd29b8f021fb52d52b2f8ae33b23707297d188ed7c910ef78182aeeaab",
+    "stack": "692819af693296d9c61850ef39ae00b760742232136fbf8ae87ba310e51e4502",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "7d163065c6707a6c06417d247595dc6bc7103153804490742581968fda383bf8",
+    "aiUseNote": "b63fbbfd119b4707325c8f111c45788e5e161a5e7a0775e94ed12b5341760af8",
+    "testTasks": "25a89580ab80f2bceb8c7d234385917339b5444747ffb6b6cad7a2016646af6d",
+    "setup": "9e71a289849396d27f6e6bf7230c3ee9204d59fbb76b4c9dac959dea587366b5",
+    "limitations": "e1db1ea3c7835b7f15c2b9282f84dc2fb56f6cc0a3bcf145a08bfa53252a9e9c"
   },
   "testing:ambientcg": {
-    "summary": "81050d84ea38b54c3c373310a2fb8535b5d24d13bfde9fa00e3c4aa603df4468"
+    "summary": "81050d84ea38b54c3c373310a2fb8535b5d24d13bfde9fa00e3c4aa603df4468",
+    "stack": "faa9a6792419273f4a10cf973c8209418aa3e7be230ea46c980d9e7c30498cec",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "3383ac0185a77fb475c0d55c49516e8d8c4f16b5844abba361aa01aea3f3096c",
+    "aiUseNote": "07149e92b49e2613bc8f79852172bda6958daf70e857a7f3a6f8d222e643a292",
+    "testTasks": "3b8e3538e8ad47fd4223da12e076f7e5f91376bcc4add03da380730d5b6190e0",
+    "setup": "6b2011b2cfe1f652d9b3e0e09bea7b19cc572e2ef6d32768825143afb394f846",
+    "limitations": "b34ed3487ecdb0904fa5882b0a9bc5d2ad90d86ef9289794bc55c7932aad2b91"
   },
   "testing:open-game-art": {
-    "summary": "4ccc853e6d95ee2dee0e09e99d7b9449af78f04bb71b0843efd1681499309801"
+    "summary": "4ccc853e6d95ee2dee0e09e99d7b9449af78f04bb71b0843efd1681499309801",
+    "stack": "3dfea01df83c3422b42a08cdca1daa407e3e94b4b6131d3f15365113ac26cca0",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "1dee20eb501db96d3f250465d308e0d4bb22fc2ccda974c818af3bfdd738e0ec",
+    "aiUseNote": "d9fc3083585d6f4c62eb95e05deb02c408d16e0dd14854371d4e5cb043762855",
+    "testTasks": "0312658a3293b60b348b07baea280f68d85d08d7fd4991aed26aaaf887512685",
+    "setup": "1510f311ddc026886e9dd6ca203e1be5683713d9843286009c5a89b38f196c02",
+    "limitations": "680493997c4093883aa24d8916b70a2a62900bb457522c0cfab197c4b089bc41"
   },
   "testing:fab": {
-    "summary": "2fb003257d4b49e4f430cbfcf222ff4085b180f38181050c385320055cdd45cf"
+    "summary": "2fb003257d4b49e4f430cbfcf222ff4085b180f38181050c385320055cdd45cf",
+    "stack": "deb8f8e942de9be98e8ab1bfef02812a25e038b4d91834f3bd45b417ba93d212",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "6f8f575683dce215a167642d8bc6622a9348bf1b3fa38094349e3d4c8db78a28",
+    "aiUseNote": "176436e96a1be5f441b48de3a0ecc6b1f3b241f3f0e234e369fed736515109a1",
+    "testTasks": "154ab38be322093ae562cec9e019a7eee6281b2480b5d7f1dbb5360a60c49f4c",
+    "setup": "7447322b5723608bede234c9d6be1aaf2eeff7312293141c9c0ff4f1c2c0a70a",
+    "limitations": "d16b5d11e28927135c7b341c3f1410e22bff4766b3a0d1d231455ab4228eeb00"
   },
   "testing:unity-asset-store": {
-    "summary": "76910c5b929b50a41df1957fee774a34aab4cf444617c02518e7d77fbfc12181"
+    "summary": "76910c5b929b50a41df1957fee774a34aab4cf444617c02518e7d77fbfc12181",
+    "stack": "f6d56b0597f66084d3c7ab0af4b60037c54af152a7823049c259fb84780f464d",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "efd41b434ff031b20d019ba50ab519f4b30b8fc4145ad0c2dfe7c404068ce154",
+    "aiUseNote": "5fe6097fa52c107c2e85b8d5cd2cb9900b404ee1a852619b2a75766fcc2b577d",
+    "testTasks": "41250b569ebcab6f6d29b6a5183919948bb3d912dd778ff2b5398c375ed94ebe",
+    "setup": "b75bce9f3a687c2286eac1a1ed45b31dc98e9077ffc998a2ea441b637926a007",
+    "limitations": "27c1825c1bea8a04be87bd715bde9c566cfa692b5469e326c88c3ebcbf866135"
   },
   "testing:kenney-animated-characters": {
-    "summary": "93c599657a35898e3eed61739975f5d25fa4c0432feb4a7d5933678cf6214fcd"
+    "summary": "93c599657a35898e3eed61739975f5d25fa4c0432feb4a7d5933678cf6214fcd",
+    "stack": "eb5cb93946053b3e4b736f76b395fa62402adaf7abb3f4d9a89d79465857059e",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "1469b2aeab9a6698792b255c2ab5624d7730b54f3d2d0743d398d3b7dc551dd4",
+    "aiUseNote": "d8e34984f012aa93507d5195030ceb5240d2c1fefbde07819945e597c8be0863",
+    "testTasks": "6a19a00f0da01f7e1024c78000b68bf3d13cf132a704f29e32849a3808a4698c",
+    "setup": "79aecc30dacb1e2e9a966bddb6f4f9d54d436cd963920fd297d50c77de046566",
+    "limitations": "437ccd22f60860fad0275a57278f070e8d7ff8a3d5325389ea35b6cf8cc53062"
   },
   "testing:quaternius-ual": {
-    "summary": "4250003e2fed6227cbe45c2d720b6c94af9544a4ff3cd0308b8fb4f144d8a98c"
+    "summary": "4250003e2fed6227cbe45c2d720b6c94af9544a4ff3cd0308b8fb4f144d8a98c",
+    "stack": "3c9f73f5dc2402341f5df57fb02f40e0db0a9010e8eeeb80cdc4aa1b94a1994f",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "e0ba759171b2a9ab78aa76d00c7bc7beaf3038ed4ddef1d5e79662256e21d550",
+    "aiUseNote": "cad8f45acded1f7d54a412f96c186765825f7842cf30cdea32da0c1d9dc6f213",
+    "testTasks": "4af14e7efc03e32cc61eb477f55acf593c3349bdc05fcff93039332b16810bab",
+    "setup": "c8412942e0e23182a8ce8a26529ffa9f2d6f46ea63e497aef8486af0b835b384",
+    "limitations": "764952fdfeb82713bae86c0506d74943f50263f026491061096e341735942f8e"
   },
   "testing:100style": {
-    "summary": "6bc90f1a7e8f6e2f5e18932c97429367e1ac19735bcf243de5ae79d56aa087ee"
+    "summary": "6bc90f1a7e8f6e2f5e18932c97429367e1ac19735bcf243de5ae79d56aa087ee",
+    "stack": "b0d8fb93b7840006039fda5d4174ebe25fc72dea7b24b87d976c10a0ffb89dbe",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "b720eaf825d69734daeb3a0603095534e3bfe3a61769f8ff9a9e347873f9b795",
+    "aiUseNote": "5d5b31e5b67403ddc37f1c941e0a86a189f1c132e7df18539dd85a4cc09a29d2",
+    "testTasks": "daf4b372ea51bba5fd2129b63ecd4667f558d30debe0cc45435eef2dfe3e8bda",
+    "setup": "cca6dc6c6ce9254e038798023e1621022038b7383f964f75db09099d78bc5778",
+    "limitations": "4fe93a0c297b0ac07220929f139090e1509386b087bce565d3b5ff5a25ac1784"
   },
   "testing:cmu-mocap": {
-    "summary": "162988ee37560193ffe46657bd1e6e070b2e68dff15f9cd4ee23572c43d18462"
+    "summary": "162988ee37560193ffe46657bd1e6e070b2e68dff15f9cd4ee23572c43d18462",
+    "stack": "d2a9ed217cf81769803dce8e148596d8a7ba8b83f52c02b0b5bf680060b4cd48",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "471ce18dab91dabdb059478541d3892ff3525a7be54851d00724248baa78da4b",
+    "aiUseNote": "1f6a9aec647449ba0e010595390a82b8d0a8b4b079f867536e665597eaa10397",
+    "testTasks": "d1c27a5a23f18569a8485041fba3fa3b8c8f5903d68a26e00e6f2fbb63e48cf8",
+    "setup": "1390c2964a927f8c01a40778146c85cbb57d3d86632cdb05d91023e81b4f6945",
+    "limitations": "dfe17f67abe7a28ed8c8d9f6b66e56b92d7e11310d8c04253384a74910395f95"
   },
   "testing:lafan1": {
-    "summary": "a2dbfb171844421fbb7edc21b2fdb6d7c0182cb0f273a724239836ee433afea9"
+    "summary": "a2dbfb171844421fbb7edc21b2fdb6d7c0182cb0f273a724239836ee433afea9",
+    "stack": "0649bcdcd563611696d4964f999d930e67c6844fd4a5a1966963bae6623e1234",
+    "codeLicense": "3cd319512e22c04157af3f2b99de884898b3a3e024c0d68a5ba3c901520fd4f4",
+    "assetLicense": "fcf229c4f6b8e5018d28c16d0caee677aaa892bf35a4dcf4709188df9b9f752d",
+    "aiUseNote": "655959bc71d8de6194b1f1f03db6ad4f7d8f543752be4c962fa3c43964087652",
+    "testTasks": "a624121fbb4e24dab0e2ebd711b818e7465dcc249cca845ea0dd21d3245afca0",
+    "setup": "538ce9aa6a891a77997430396a35d15060eda8560127289bd3d570265b9509e5",
+    "limitations": "5bcbd5c3ddb6f7f23809a9f787563e0ee5b8f4c7c5e28c116d5cac58a0398555"
   },
   "testing:amass": {
-    "summary": "27a0f01693da0050d38837c4ef3a01a2e83c3adedd75c6f6b8e34ffd4b75c2ee"
+    "summary": "27a0f01693da0050d38837c4ef3a01a2e83c3adedd75c6f6b8e34ffd4b75c2ee",
+    "stack": "0305f1e9c3163bed5f8f96686135a140ab849768f4ebb1f6d21a51c5ab9a2d24",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "d287d37159f0d6af0dfff68b586fa6b34cc269064750d45ba93b1eac06fe76cf",
+    "aiUseNote": "f4b57a30a444aaffba27dd88513b8e819eae9061c3a0a07cf74cb829c045f767",
+    "testTasks": "5c2af884cb44ca92e637aa1f13c4a20b6f8943d275da330c25292449f073e621",
+    "setup": "9f48e2d097ca60bb96d8379618d503d332cf3354be4ad8e0728b0c461b530c22",
+    "limitations": "01cf3a4f24b846252b37ef4c5622df865724f24d6d0be1597ae68f4d2c5913c4"
   },
   "testing:smpl-body": {
-    "summary": "783b057a0c137e621e9293ac3a22f05efc1d07cb6c65dd1ada7fac798840985e"
+    "summary": "783b057a0c137e621e9293ac3a22f05efc1d07cb6c65dd1ada7fac798840985e",
+    "stack": "c77f803db88616bfeb96b149c6e2d130c63d6cc6eb22a6fcae2b1dd1345792d6",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "5aa7d219db32c9d0fe29c9400325268c0b96526760c6e67cb46052fca5c46e37",
+    "aiUseNote": "40a317ac9df814aacdc5e4816026e9ebb500d22e1e54fa8ac8860c7ead5d872f",
+    "testTasks": "ae074102b55a35b8802849d5dc178a50e055674e587b73c31398744bf3566946",
+    "setup": "f9facb65aad7daa563fe38211928c25002bb7d5916a299f3f5bc530d8f45fd2b",
+    "limitations": "4224c894553cc059ed5c00f2cb7c9eb9f05d030af841236e6c496b84e409970d"
   },
   "testing:smpl-model": {
-    "summary": "955a95ddbb62421be8a9848fc21cfbbda4e55759dee6c26336ed7a4e779647c6"
+    "summary": "955a95ddbb62421be8a9848fc21cfbbda4e55759dee6c26336ed7a4e779647c6",
+    "stack": "a48d3ba6aa83a1fefdf17af6df08ba26ed2037c71fad850e271ccf2c341aab59",
+    "codeLicense": "962b7757a48d27a47ff05e3281f3925756b67e450f1ed4a4e13f952bb628f638",
+    "assetLicense": "4d599cea3c4c6facbd00d9871fd1b2fb796beaa28da980a8c446a5ee2314c4f9",
+    "aiUseNote": "d08c4a539f3dae30c1868e287a7fd4132e64c569b2a92001460aadcea77307e9",
+    "testTasks": "ddc475f2f8a6105fee7a7348ab2adb0cdff83508544b23be7c11fe4cf3211f70",
+    "setup": "c53ff5cbed2b44133d79066433095f935dde4e460e134b7d648eb2a4b6c803c9",
+    "limitations": "cd98c1a0e5ee64ec07f802d09b79ca286a05713dd0e6675fb8d476e3fdfce251"
   },
   "testing:mixamo": {
-    "summary": "67d3fa8269d273f6b8a79d74024165f5c479858fa0344ab3bde5860f52341bec"
+    "summary": "67d3fa8269d273f6b8a79d74024165f5c479858fa0344ab3bde5860f52341bec",
+    "stack": "cdd5921bd4a48f56be57390286ef0ba3df02f4d9e1cb25c53fde1fefcbc88f08",
+    "codeLicense": "efdc8f1bef04e286df5fa40c922381877f45099903066bba89c9e47106e40a4b",
+    "assetLicense": "e601e87ccba218da3d1f568fa7b36551ad8fd368fa8ad768b11cc36953a6a5ff",
+    "aiUseNote": "ca97410e6bea31618bf2275e42fb5ad3a0eb996605eefe9d7585c644bb27d35c",
+    "testTasks": "4247c7eadddc11189f1f1f722a5e60a8617210491b672e51b3309b83f1d6031f",
+    "setup": "b688d300c8f8b245efa9ff1edb11579be4ecb6864727438de96ae93c2da2735c",
+    "limitations": "57f346736fd5a08cfbcdf378cd2cbc06013c66cceea99b68112c277266f762b0"
   },
   "example:jam-foursight": {
     "description": "25c5ace10b1afe450a622845513001aac365a5cf46de3ba21b26a2a5e8b5ea13"
@@ -5414,8 +5671,9 @@
   },
   "example:fable52-papertrails": {
     "title": "90d2adebe5013853d39576db882e0c715a38a0326c0c5f03f8779d3c4fecbaf9",
-    "description": "0dc1697288ef46b960ba38c7d7874cd49a9a62a9045557efb01858447181109c",
-    "aiUse": "95b9bef4c6c2f448c9101d02fd93e343d6aaf9959b0974c875334b72fe9c5094"
+    "description": "183e1a3a7de0cbce2428345b9b9e7c895a9f7b060f9aa8689e520f8189d33ace",
+    "aiUse": "95b9bef4c6c2f448c9101d02fd93e343d6aaf9959b0974c875334b72fe9c5094",
+    "steps": "a89f783e411efba9aeeb5373c9ad744e1018de81562684cdcc6285b5a6408292"
   },
   "example:fable52-fault-line-echoes": {
     "title": "7d597658a9a3625718bedbbe011eb0b64cf2f4ba9d694c44fd5562e33437fda0",
@@ -5444,13 +5702,15 @@
   },
   "example:fable52-mothlight": {
     "title": "1faa1c3fe7c057cd7546a08321627aea7610855a8d7b6c9b3ca400b8795a6e3a",
-    "description": "1ce09a38fea5e0a685e03c691350be2c43df44d3b23c8be475e7dc5db88d0baa",
-    "aiUse": "c04e4ce1689abdc2ebb345ece7f649377a20e2f5fe9d677b57da1a8d98400201"
+    "description": "3d06a736c214107b7c5974ba8112bf059e4ccdbb7099082cf2c16f34c2179df5",
+    "aiUse": "0576145dadca6f356e1b9d77f5876a5e82965832eb6a3449353ca970b79ca8b6",
+    "steps": "2cc67d062e0dc8826c6165d57c1da284be727d4b9005d756afb056673ed4be03"
   },
   "example:fable52-tidebell": {
     "title": "dfe7d737a71a1b1b40d175c0aadc04f686780907ae0e8dd075d2407a1136ab57",
     "description": "33b0f6128b257d0d992530550cb821fa90aa864399da936a21f644dadf9bffa7",
-    "aiUse": "7f4af95e7a507bab8a073cfa76c093e5174c0e26d710e5daeba6a12e362ac349"
+    "aiUse": "602c189ee850fe60c681e17a028ee8ef8c5bc01f600d043cac5f75973b876a4c",
+    "steps": "922a3df361f1c3befdd9c4d43c9e85bb37fd3d8f451792fd915e1df7e1a44a4b"
   },
   "example:fable52-qingyun-sword-flight": {
     "title": "c5e38725fa0ece1b1b9a2fe911c0ce5c1bb59e63b1d5164482495ae001498d7d",
@@ -5473,7 +5733,8 @@
   },
   "agent:unity-ai-official-mcp": {
     "title": "5554a6e757706124909691f81005bef15a7988ce8dd4287298a126d4eeab96a8",
-    "summary": "0b7d9252a1877159606eefdf6280ce886572387e59411fb530862c6c60fbf87c"
+    "summary": "b159db9038de90480f3dbaf930a0cc11ed18046734e28a78e45b718230780c2c",
+    "codeScope": "1ed4cd6fc6b267e3c0a727d9de3caa15d28de6d64f801402aff0ba8250f56747"
   },
   "agent:roblox-studio-official-mcp": {
     "title": "41121221c6b63660ca2b9a7a010dbc0b9656c1e0a7e49253f596a06ea9d2d3e5",
@@ -5560,33 +5821,1434 @@
     "summary": "8a55a57d46f9147ce1829f3f6aa68701a02c2fedf046618ebb859a95de34d73c"
   },
   "testing:bevy-official-examples": {
-    "summary": "b69db0b936f5c16c29000ae980c717009cac6826ab245fcd9755536634cff9f4"
+    "summary": "b69db0b936f5c16c29000ae980c717009cac6826ab245fcd9755536634cff9f4",
+    "stack": "531049e20e6e94a06deadfb628e87c486f49042d01c060e94541c457355dc779",
+    "codeLicense": "780693b650314d6f6f679a5c35b7acc84fbdc9ce5cd5cc272ca68da6d5b6d9b6",
+    "assetLicense": "6767d53efdca1cb456e0cf692ba9626ffa2fdbbd0adc412edc7de11b0aab300d",
+    "aiUseNote": "703281c3c66306ccf496c2e553e2568d5f569f8969aa8b482e52af611d74519d",
+    "testTasks": "6eb7f1706eea918dffa9e3894a80b0fae106d6d91f7e3337ec6ccd7f3489c904",
+    "setup": "70d5445e5a0b789dde6943ae0a4bddd4cd299fbd9fd809dc531d509c1b046cc0",
+    "limitations": "c5ad9991dd3e473a2b5f77439d499a730ce06293977b034d09ffdde11c42dea0"
   },
   "testing:arcade-learning-environment": {
-    "summary": "c0793cc97b79bea8eed85b2bf6e3eab97b953d33f2e898512e3b57f2257c918b"
+    "summary": "c0793cc97b79bea8eed85b2bf6e3eab97b953d33f2e898512e3b57f2257c918b",
+    "stack": "a0d586692faa0809e0897caabeaccec88a50d2e7813fba7bb376f7f047d0df3c",
+    "codeLicense": "eda15357c207eb87919e548ff848759d07590e38c477dd18b3f206df6c0c317c",
+    "assetLicense": "9944e7794e7331751910d304acc668378935485aed64bd9b083c3d72bb75fdf9",
+    "aiUseNote": "703b8e9591f1b6f4a09ca338d09177608e0a9f9acb43ab44f221f3726727314d",
+    "testTasks": "d1c58d85cb16e56abd82980b2da0a9dff077961740843976666c9d357374cb7d",
+    "setup": "b435448a6f207325d7edd88c26f60bd1b9c12e35192368acb742c991c22735f0",
+    "limitations": "714ff9f312b65c97ba389c6a35e28f158d16cbf7a8835d13cfa5320b648bdf71"
   },
   "testing:procgen-benchmark": {
-    "summary": "c036136cea658300c3e5a3c5305843c0effb42216a6e8cd777ea96891d53ebee"
+    "summary": "c036136cea658300c3e5a3c5305843c0effb42216a6e8cd777ea96891d53ebee",
+    "stack": "40c4a1e3649efeefb8b8c1ea11c054611fc342b05848d97209349e48b027c00b",
+    "codeLicense": "fffe771e6b73dad4ff4fb4cf4f88d5438e9e2219f0f77de97763d6c9a94eaac0",
+    "assetLicense": "32b63d223c1f3d0ff9cc960850f32ae2ef5a0788617af570f38ebd1e0b2722d0",
+    "aiUseNote": "1076cfe0838cc0bf37e35e8303a82eb5eead786a416422dc81f15fa56863a287",
+    "testTasks": "3956118e39508be9c1c74a414bdc1dff644d5679b23661e946cfb681399afc9d",
+    "setup": "e782fe980559756c037b90e6de41aa715a9f499e92f657295e14c4cd6a4308d3",
+    "limitations": "3c86e63db267726e64b49b3e9233891a19c7f1e10c62e9d0edfda53793132a67"
   },
   "testing:google-research-football": {
-    "summary": "3d1a6068c7a3b81606bb04e79daf8389bfcd188644ce02d2998ed8edd3bd69ba"
+    "summary": "3d1a6068c7a3b81606bb04e79daf8389bfcd188644ce02d2998ed8edd3bd69ba",
+    "stack": "4157d4b330c06eb2af996e51c68903a5a2fcd47ea55ecf57d3b01bb68491f23b",
+    "codeLicense": "fe38c32d919e07bac329a17c68f7aec6a7ca5b907c495aa5b99f2f1810929500",
+    "assetLicense": "3ce6d5d00fbf0dd9cfdaa2de4c5368807209f949a2513f338a7baeb70e16cf9e",
+    "aiUseNote": "17e266b99440c6ba0694d9a1f84f714dc572e2c81a2119dd5827a2afa42079dc",
+    "testTasks": "67ef5c5a3170efd845d33330226eb2ed081c105649f201df58e47355dc6a5baf",
+    "setup": "04644ef7a36bef80b332ba2c4999512cb99d1692b111d967120e227b593d7c8b",
+    "limitations": "2aa9aad0ca4a6205e04e36b59ffc719452d5ae160882f94aff9ea25cad815286"
   },
   "testing:overcooked-ai": {
-    "summary": "38f95231328e7d6258b458dac4b6e6f50b32e9dc378c01fd83672fd7dd83b6ba"
+    "summary": "38f95231328e7d6258b458dac4b6e6f50b32e9dc378c01fd83672fd7dd83b6ba",
+    "stack": "d241717a2487fe66e8d8b04cb09f0df54655202f122f6ebd653df662a6496d42",
+    "codeLicense": "fffe771e6b73dad4ff4fb4cf4f88d5438e9e2219f0f77de97763d6c9a94eaac0",
+    "assetLicense": "08d047e906b528f7c3351329a65944059f762301bdbf1c088b1fcec14d0b7080",
+    "aiUseNote": "abf64c1b4b8c363bd3a3fc565bbc93f08c6fe1009900c9a2aeb61fe388a7dbe5",
+    "testTasks": "1959aa37527283ba9d589af052c9a619f30864430a06df083f809096d549e781",
+    "setup": "dcf572affe891a70d64b92d507d87b396deac3fe7c022f19b417fa1a409b88fa",
+    "limitations": "cfc0d1cb546f7bc6ced9cbd0b74826ab30a8fb25e0c5fc7686e50ab60b7582a5"
   },
   "testing:mujoco-physics": {
-    "summary": "14046fdf70257d0bfd1356d00a33fe1028d6bf2fbe3b65fda673bc8448b9ad4e"
+    "summary": "14046fdf70257d0bfd1356d00a33fe1028d6bf2fbe3b65fda673bc8448b9ad4e",
+    "stack": "61344ad40a12c61b18b62458f509bbb6053e9058a26c6cb84aedaf3eca3c3b89",
+    "codeLicense": "fe38c32d919e07bac329a17c68f7aec6a7ca5b907c495aa5b99f2f1810929500",
+    "assetLicense": "ce20f1010afd8270932649a7bb8e25df437cff35a3d5b480fd554915e03ae402",
+    "aiUseNote": "d0e42acc1647297023eed554eb2538921c8644ad7dc0375a97002770da81bd60",
+    "testTasks": "00632c8213070e3314c5bded209591c256b3e953ec7991bf520f2de7198de425",
+    "setup": "14fbb3973a8a40a11508f16d3882afe0cc7d2fde93f33293367bd3d1632c3263",
+    "limitations": "122bd4b7f69262b6635f7006e6e866bf2276d647037b010d07940c3976f11930"
   },
   "testing:gymnasium-classic-control": {
-    "summary": "2bc37a5bf147ec2faf77ee601220936879c155a1751f184b38b93d9b6cc03d00"
+    "summary": "2bc37a5bf147ec2faf77ee601220936879c155a1751f184b38b93d9b6cc03d00",
+    "stack": "5979f4f89d7890cfb05f2cd78f23dd719628c84ce526c5d317b3c74701e58974",
+    "codeLicense": "fffe771e6b73dad4ff4fb4cf4f88d5438e9e2219f0f77de97763d6c9a94eaac0",
+    "assetLicense": "77120717306140453bc862687664c3582d68ca3c703727ce109a731d0ebdac3e",
+    "aiUseNote": "d0ecf08d5057225f918cd41afed675add6847aca8091880dba04f7e2de50a052",
+    "testTasks": "6cc6f88c52ab465a0bec4c73f3702295802bdb2e3f91e92a25b5e44b55f38bc3",
+    "setup": "fb4482548afe5f3a5ba4bbe22e429f3a053618acb6db84c273eadcd073203af7",
+    "limitations": "e05f9724a396200ec3ca0d842a7b3de7c7a357c238852f4376352842dfa94b3e"
   },
   "testing:khronos-gltf-sample-assets": {
-    "summary": "aa9851ea88a08f3a01417597ad97fd947faacbd6331b57a3db95c86e2928679a"
+    "summary": "aa9851ea88a08f3a01417597ad97fd947faacbd6331b57a3db95c86e2928679a",
+    "stack": "45db93d59b8a9f68ec0fae336d6dc3657c004d7d3c836dbf94d3684f87c17ca2",
+    "codeLicense": "56ed9eb0be6bcd671454fd00aa1dc03981be77a09ea139b6fbdb4a11ecb3b73a",
+    "assetLicense": "a207afa5b00f637851b9a8656a08597815902cb94af0fd5f2c12b29cf8725c95",
+    "aiUseNote": "5c8844b5725021ba3664b8ceaacd176466542f568153c5c6f27dab45a65aa617",
+    "testTasks": "c14e01e137b1a2ad6e9968b58eff27d90e8c5e62539f8865ba18e97b1cb08818",
+    "setup": "59d22c0f69bdbc7bb7617982edf1240cde987c43ee77482807b1f1966b361dac",
+    "limitations": "90fe8a8de55b152907516e60d3aac6be57ee937552dc21c0c92a80bb39a2b6e8"
   },
   "testing:khronos-gltf-asset-generator": {
-    "summary": "3a607ec570ac1e7d9c31c994f7d229be6f0d3353215b164464ddcc5e63469d30"
+    "summary": "3a607ec570ac1e7d9c31c994f7d229be6f0d3353215b164464ddcc5e63469d30",
+    "stack": "9fb0ba235edb66fba46724201c96c6b07903a922af94a72f1ff3c2f130885d7b",
+    "codeLicense": "ec06c03fcf0077ffda6067ab59662d91e42adbe4fd78daa5f30ad78d848872b3",
+    "assetLicense": "e637e0e61a2b91b28262b4e27fb93b4ab291aba36f3499fd7fc31f8d261bd589",
+    "aiUseNote": "cc552fb7c44ffff40e75edad725ff158d9ee7c83231e55cb9140d0f88fb827d4",
+    "testTasks": "effb3938d70d48e659dfb7d0d84a6596534567fcfa25bc2ade0867aded4a28d2",
+    "setup": "c9c0b6b87352b6f073b9cd489df4646fac25990185414aa0f238329a666464fa",
+    "limitations": "6ef69ea009503ff3bfa8d8bacebebdcefa2a4658c996de7373f7ae34ddf908b6"
   },
   "testing:sdl-gamecontrollerdb": {
-    "summary": "d0a86d0421490b2a4bdb77dd727661530611628477e7b1c6695162cf76558759"
+    "summary": "d0a86d0421490b2a4bdb77dd727661530611628477e7b1c6695162cf76558759",
+    "stack": "db3356c3531b543f6811b537d852f4e8c1a05e5cbf2fad667889d02896904ee4",
+    "codeLicense": "45ea27e6948dd84de3eb3d1a6c26153c398441a53039acc665874cd49bc3fc82",
+    "assetLicense": "d4a43afa27829c5e30062c7d18fa0c2a96521f700ec5029f43b4989a0b442581",
+    "aiUseNote": "3e8f336f8e14cbdad4264fc70c6d89aeb09ab1f3cfdd7741f4bafd74dda37c6f",
+    "testTasks": "8fbc43f5272358707ef66b8ddb72f9fc008b82c69426afb15a2919795842bcde",
+    "setup": "50e90609a42189088b859a7f6ae92683a5f194b461573a4b32927e4c0b04e4fa",
+    "limitations": "b3b9ddde44bc4cdd711df9ca6b9523058d7e06fbbaee765a34d7f52e421ec7ff"
+  },
+  "resource:gdevelop-ai-mcp": {
+    "summary": "833a96726de76ee298c1b290da319f6a234848cd5d7c37de71d07e4883076440",
+    "detail": "411d21d5159a5c520edcfd8414116e1d3cbac0882bfaa67959b24cafa5b53c57"
+  },
+  "resource:inworld-agent-runtime": {
+    "summary": "5bd3ce0491b5ad6ede976a277cd61db0df32ccbc4f48c536c0d6954adeeeafe5",
+    "detail": "a1d403237d7132be9aad15554aeee444409b06c37f5e20d7651a8e3a077e81c2"
+  },
+  "resource:mixamo": {
+    "summary": "4b4a2832e068cae119b9bffe810c39f4cf58a88573317cba9fff41fd6ceed935",
+    "detail": "ff44e5db1e5d5d3b795a1e0bf2a2edd796f5e32c16bdc33a3bc2c069e5fe02e0"
+  },
+  "agent:gdevelop-official-mcp-bridge": {
+    "title": "97f85b875e9048de7cf1de89c417447ba36a48695ec7b5cbab1a7ca549151715",
+    "engine": "492413cbd86002935f0e5420f049cb0676b0d5d4e2c5ada3161b3ca3dfe44830",
+    "summary": "29921b2858ad58a53b9feb444da734c41e847020d4ccdf4ffe3bd12e7e7911d3",
+    "codeScope": "56af7bf1232dc217c2ccb911fff237e1770a232f5f9a8385e5f42a6aac53fa38",
+    "limitations": "bb7a184441f41ee4aceb95a87183f0b380da4126b0ea5d413557f007f1a3c41d",
+    "publisher": "c0a7933803f4dc1816a1a480839f3e5cca2bdaf96156480dfbbe9e428b26a406"
+  },
+  "paper:paper-arxiv-2505-14357": {
+    "description": "21758aa67915b057ee50cc2e5143933dbf6d25d0011d0a8a4507ccae3c0f9041",
+    "classification": "0e8e8a449bf7c73413b75d4c8bb9254d41d54b4f6ed4ce045a7a704ce80eedec",
+    "topics": "d208e198254697d71e1b6a63a2fe3017e4c6471e1114e9af78cdf07fb0bf027d"
+  },
+  "paper:paper-arxiv-2611-24073": {
+    "description": "09061d3d46e578cb6552ba627b1da7517eac20a60cc2459fa77c72273021638e",
+    "classification": "60f961420d442d05c0018a91adb93fe7a6064c0423adc903640bb6827c42da6a",
+    "topics": "b4a151cdcb08964ed0f0a55fadbe505395e2fecabd5f0511816ddf7e849e03e0"
+  },
+  "paper:paper-arxiv-2611-17681": {
+    "description": "2dfff38119e6c544b068808306133753392df887a074b28529134ed18c3a6cb5",
+    "classification": "60f961420d442d05c0018a91adb93fe7a6064c0423adc903640bb6827c42da6a",
+    "topics": "204edf89d75f3fa6048c7e3fc92ecfd9f5b12cf02ea2aea7351b945f9889e8a7"
+  },
+  "paper:paper-arxiv-2611-24408": {
+    "description": "39dfb18fca18e72a31b7d6ba113f94f90f82fb44f585c0d9fe13d905f6a1121c",
+    "classification": "4a2d481dfb25c2184f3e564913db21c40322602bda2a166689f042149e1cc843",
+    "topics": "2a89b71fd56cf42cf74752fcd36480fd12923d88f515a0476c5f29699cad6ea9"
+  },
+  "paper:paper-arxiv-2609-02459": {
+    "topics": "b1e4e6439d0c8e013fa9e706f2577d181fc94271039f1c0fd59eec90fb67124b"
+  },
+  "paper:paper-arxiv-2609-25001": {
+    "topics": "b1e4e6439d0c8e013fa9e706f2577d181fc94271039f1c0fd59eec90fb67124b"
+  },
+  "paper:paper-arxiv-2609-31473": {
+    "topics": "b1e4e6439d0c8e013fa9e706f2577d181fc94271039f1c0fd59eec90fb67124b"
+  },
+  "repository-research:Humpalumps/Cadle": {
+    "summary": "5ca26514d3c896dce7904b4d11c97f8188892db14f10940d16119657164dbfa2",
+    "license_note": "901f839e519b2a7223e3ebbfe5fde4741bf5f6a403dcefa51beed077816bd935",
+    "ai_note": "f9618771761964c0b900b45aa85221e7deddd7f180adec0c352fec96f7e6d371"
+  },
+  "repository-research:levy-street/world-of-claudecraft": {
+    "summary": "dcdd92dde3ba30e5eb627685d32d6f90ac5d2f46fe9b38e03768cbf06b75e851",
+    "license_note": "5fcacc622999f56d6689e14b5d83a6457667d28f5fc4e09d87645b5658d37e0c",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:corosolto/client": {
+    "summary": "3bd2994fd02e843c0bba4ac8e0a6c04c1cbb01155b3528ab0661b4861a4d9184",
+    "license_note": "8ce65b2c8997a048409f112ff71be677ffe9097eadcec2c21e025cbe589c50b6",
+    "ai_note": "fc845bbda279d43baf4d9b35d86f8fd955e8cb6a64b5103efad5267695793f15"
+  },
+  "repository-research:Kevin-Liu-01/Claude-of-Tanks": {
+    "summary": "8105d0629e4933b1ec07688d1765128d8de105e6fd6d5b4dfd3de68eccf12024",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "fce34aa66af6b1e472521fbe7b43dde28afbe1e68471b999a062911058cdede0"
+  },
+  "repository-research:alexdevmotion/grand-theft-austerity-open-world": {
+    "summary": "d0426485002c8c4bac1c14d50934476d996306f2eb756284199bc9e230b346f6",
+    "license_note": "d1debc4ac27b77579c540f087b8e2c8230b8f94ae2d5f13b3b29759c4889e227",
+    "ai_note": "af123203bbf840b4a620a4d57294256e1c47dfd5128d10c0135d661210bec515"
+  },
+  "repository-research:Burry/mark-of-the-veil": {
+    "summary": "58cbcd9234f31346007c6c481f3fd650b9d8d576916a9c24f5dabe033316e3b8",
+    "license_note": "c75565269f9f5232d34243f642bfed78a7073eebda630ad45cac44a84b927efd",
+    "ai_note": "48882dd879bfe5240b80340c04b0ca0c25c6c2c27ebe020ba9fcc10fa0230e83"
+  },
+  "repository-research:vkopitsa/browser-shooter": {
+    "summary": "d3e93e2dcbd305ff9fc24d586d146099da6871f12d57e319e297f75ff3a23364",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4880002adc6bd33d9f98b95d34db279f7e7ab5e4d42e3e88e263673ad2b71153"
+  },
+  "repository-research:reicapivararbx/capyquake": {
+    "summary": "596186590d0abcb87fd7f41ceeea02847b73fb62dd7ea8c4e4ad14c1a696f1d2",
+    "license_note": "41db199ed9e55d72bde8459d305c9ff70316a7b8e95647731caeb78d5189e689",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Braffolk/fable5-world-demo": {
+    "summary": "8dddadb3db99d27a9334678e9fdc0eaaf559c6b5b94266a1326906c887e0ccb5",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "9ffe9b2d415cf194bf5f4d10fe8d27f56834b2055c91286044e3eba098880b71"
+  },
+  "repository-research:braedonsaunders/voidstrike": {
+    "summary": "66a678901d017123354c0cf75ddf8254f30dd726e7a91f7edc7deb3f27b2cff4",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:BarthPaleologue/CosmosJourneyer": {
+    "summary": "137b8761688d16d7fc2493d212b8a97198763b3cbcbf8a9a6288771cec347b32",
+    "license_note": "8ce65b2c8997a048409f112ff71be677ffe9097eadcec2c21e025cbe589c50b6",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:serejaris/dust-arena": {
+    "summary": "5f0fb1e2d66673ad8451e31fec8d45a702fdc1ba6563dd15bbf4abb8df0e9693",
+    "license_note": "5072905f5b91d215d1f60e4a4fc3629961024a693d70e0aaea16e5f978d082c3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:RealAbdurRehman/decay": {
+    "summary": "e7d3f408e4c060b65b6bec4fd64066037917dbecca37453883e718f451610a39",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:iamrichmack111/richmack-the-forest": {
+    "summary": "0ca9784c3756589e6b5f9d1e6de0d3f52d602ae0c2f2550e8721e58ca3102bb1",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:bbs220/project_block_shooter": {
+    "summary": "3eaf9a7ac9321756d72f63ce5bd213fb5882719c04a3ad2eae8ec55ddb1c2826",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:mohsenheydari/three-fps": {
+    "summary": "919d65289969bc39dcfe63e85bbfd869d558d03930dec0562456a697ff84fa4f",
+    "license_note": "d982a55d0ba74a92c43387ab000661de1c47e9ac676ebc48e798157aa468e125",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:tensorspace-ai/evolution-arena": {
+    "summary": "f8a9b92a991b4550e6af79d3154cfa02795bfeb240eb4f6a5681876a9d69a109",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:gianlucatruda/music-melee": {
+    "summary": "83948339dbcb68876914ed2a75022b71851e9f4abe40775416a54e04e7555516",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "bddf5fbd2cf082635eadacb41673a519219a03e26652cd73e86b3df318b92611"
+  },
+  "repository-research:danyparc/antigravity-evil-eyes": {
+    "summary": "8706d93a42196dc9f7ba32fd53a95e4c26763e64ce950b66c8cfef24e4a04c2f",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "a2cbc879cc635730415e1042eca9d7bd8c135496067497cfa927e3d035c8cb92"
+  },
+  "repository-research:Arnie016/flight-simulator-fable5": {
+    "summary": "c189b33cae6a32418314d461517682bea2effa18873472433eb916bd1a4a6b5a",
+    "license_note": "d003f10bbc274686e15fcd52ec50720c5127ddcb3976088d34bf89a25b8ad508",
+    "ai_note": "bc0fac7e827aace467eca825df4ade44729a220848743091b9155a91b9a80277"
+  },
+  "repository-research:imr4n4lif/bloodwave-fps-game": {
+    "summary": "3b51373e4506038a11ed37832e17a495a28b99cb4ed21b2d14b8f5b8adaa4b9a",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:profullstack/nightcell7": {
+    "summary": "1a8765d2c5b8c40102950dd6faef45f52e73a130e4a63ba4265a6405b9ed50d0",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:BunPrinceton/kings-field-game": {
+    "summary": "bbbe4392b04deeeb15dba4a41f8612683632c857eb6a6245adb0e2eb5d1d2d5d",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "5c9cac0046aae1b6922b75de45951d70066b713cd097580179baf4567be1d953"
+  },
+  "repository-research:Humpalumps/Aether": {
+    "summary": "613fd10e2e033bd0b0186b3df844bef12d537cea5ab0e60e07cb07c651b85109",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Moonfall-Lab/moonfall-ark": {
+    "summary": "4c6d0349cb6ece1c87d4a3acb53d10d88ba882a76865b899275c0e6de5094862",
+    "license_note": "5072905f5b91d215d1f60e4a4fc3629961024a693d70e0aaea16e5f978d082c3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Redblock-Online/redblock-client": {
+    "summary": "4d259646c94df05273fad5a11f7c31b738922fda53d6669b72ab0cf9081b3160",
+    "license_note": "d0924e31b59fdfcdcd6cbe4cfdfb8e70447ae4df4d4b5613c2ce2c2fc3a4477f",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:LBALab/lba2remake": {
+    "summary": "a53a9021ed390c2411ca48b2ec7907a3a2d77ac92a8efe611e9d3a0518244dc5",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:NikLever/THREEjs_RPG_Game": {
+    "summary": "36c44961b3b4194082242b3e3047d6fe9288a7525e78ac988761e0acf7147206",
+    "license_note": "3be47279eaaf36a285c65ec4e963f076769a19cb41a1dea8fbc0f15e02b1ba5d",
+    "ai_note": "f69bb9fea22cb62c16a029fd29f27944bcb11e1b7a89e083a62a9e15976aef23"
+  },
+  "repository-research:stickyfingies/grove": {
+    "summary": "f438c1b58f761ceffd5363ec7fef7d2c1d548fe366906a06c7420ffbcf6ee37b",
+    "license_note": "5c8f14afaa2958dcb2c7ce4e7af4d3b9d9aa5349102df175fc96fded0ef76ffc",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:cedric-h/lab": {
+    "summary": "dfb758d213a46786f4b169d6bfd78cde263be247cb9c9dde313b0d5077f1160b",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:kaetram/kaetram-open": {
+    "summary": "f5ff33fdc50daf812dddb0be064f447ffbb3392440139da74b0ec644285fea1e",
+    "license_note": "41f90a311e6b474e011288ebb20c9705795b6e2a37efda4d1f06b5a5541bd47a",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:hyperfy-xyz/hyperfy": {
+    "summary": "937dd38f85308404f74137254eee73d2f7e8035b0a3c95e1d5e930479d85ae51",
+    "license_note": "0d2c4a5b486784d3881276e8d80bb79dcda5b50b20bcd6b891d668fe237af7c4",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:PrismarineJS/prismarine-web-client": {
+    "summary": "ae3f994125489b5ad2a6b1827ada9e5a79dede673e9a0e4f57212dbfb9dc0bbb",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:LabyStudio/js-minecraft": {
+    "summary": "d260452ed7e2cf4174e239edef9754eca53f11bd67e015c8243bb3a9b2717766",
+    "license_note": "b2654525287a0d18da8727badf57f0df28cb5aeb61f21d12f26805b4712cddde",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:hexianWeb/Third-Person-MC": {
+    "summary": "2d59644461a5ab29d8f09d57d005dec939321150c72d3b89bc0e0827304467fd",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:justjavac/minecraft-web": {
+    "summary": "8e82988242dd0cf98383d28431b293c7dd5ec8dfc4d812926c0bdb5053aba84f",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "69abbaa5baf2357860df33850b4306946f09f599b5104210145279959cb75dda"
+  },
+  "repository-research:maxscharwath/toonks-game": {
+    "summary": "cab54360a2a76173c73b55fac378b9bbe087a9e30b2c03fd8378b61c3bc59d3f",
+    "license_note": "0990e19b27c1771997a32a483aa3e55198a9f4394038a6f7c0389eec24ee9560",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:ryancampbell/kart-royale": {
+    "summary": "7d3a38aa8ca74cdf2d9ff72a0ba96cbbfff008ad14bbdc888b9df485d204f78d",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "dc2208466fb477d54283395efa57a577ffdf0c4fc9548d9f1260b5a7e6dad7e8"
+  },
+  "repository-research:toddeTV/zlig": {
+    "summary": "bd9e37f3e7eb3b5a0d0ecabe0bce13ed9298c3f2d0d9861e3a808058cfe50ea6",
+    "license_note": "afe6d437caa1fbb1fc05ae1f2acf5bd6e1efe7fa28e03999345195f0c48a679a",
+    "ai_note": "7bcfcd6b2c0a029f549b70515c67658e16818ecaf2eddf545ae6ddcf21c4aa8a"
+  },
+  "repository-research:akarlsten/cuberun": {
+    "summary": "09bdd51b11d50b06371f28bb43bd06e07a86ab5d1e63fcd751ef996da72f2d36",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:coldi/r3f-game-demo": {
+    "summary": "9721e928d776ca996980f9b8275b1bd02d1a7feb617871a10b95f3e1f63ac757",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:filahf/r3f-spotify-game": {
+    "summary": "59600bb949c770930982baa753490be38ef8b89512a908dd5341853ebcdd3707",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:jonit-dev/vibe-coder-3d": {
+    "summary": "fa41b296167086a6995fd35b018baf39b3e0bda5324fb110a78b6edd3203a38e",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "ed1507110dd4ad89ff255f5ebe4a7c14db126748a163002296fa89d422b8008b"
+  },
+  "repository-research:iaruso/circuit-rush": {
+    "summary": "7d057cbbf7629e62fad134ed623acd720af20dac2fe457c406442ec10fee2b7e",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:fgarrec0397/granity": {
+    "summary": "19803422ab039c9b1619ed7654d6145eaab7884b68e4ab37ae86c2a74a6e4c85",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:JL978/3d-tic-tac-toe": {
+    "summary": "b701e438d77a4e97b50eb78bcae5c058911b7e0de1143a2b991e8fe901842146",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:prnthh/react-three-game": {
+    "summary": "7fc8e8bbf122314a2a5c4e674468f72e7c2dc234f7874e72efd74288eb0c5cf2",
+    "license_note": "afa1cf00cd68b671510304f6a5b7dc527f5f48b5d736c209f89e1966760aa02d",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:manan30/billiards": {
+    "summary": "6287ac573889b727fe79825f84554fe710a67d364da95b3f20981268ddaa21af",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:verekia/r3f-gamedev": {
+    "summary": "17a9e9429e94f02258cb954fd74008587025ec4c3903e34379b1da8a90746ce3",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:winsznx/bull-rush": {
+    "summary": "7dc1eb4762f92ce91f6175b048dc5087ab2e23712c204cd22402e045bb19f952",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:michaelkolesidis/beachy-beachy-ball": {
+    "summary": "0fef280977b373264b03e440f06346cbc7898233a212c6b0c8ba239fa4681c83",
+    "license_note": "702252eee60f6f12208c548e3124cef9394322199921f49d21bdc56aa59916e3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:EVEDensity/MineWorld": {
+    "summary": "3a99fd763ee6a97ecd8380a80207eb9f075711d2d159e7c73fbac31e93224591",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:akay25/TheAviator": {
+    "summary": "611a4fa6ccd24b63ced62fae940c8f88ab89ad69ccf89ef36cd487779237e29c",
+    "license_note": "423172af0b9c1338651198a56f627982ba435e8fbf0b3b4a317a117963de53f0",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:norio/vrm-game-starter": {
+    "summary": "014fed78046f71355d19ff28a8919a375864f7ac40a02eb2fc646055f679adf1",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:anshaneja5/skyline-run": {
+    "summary": "3face558f8ae3e4ed9af683b9a0748ebd8256c0e5d73a867d11fe493c4d520f9",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:esc5221/drive-game": {
+    "summary": "a06ba51246dbd5b2a161e3b033b85abe81b79d29b902964dab0f1c42400a55da",
+    "license_note": "3bca2b2aa75ea5c216e060f13ba8904cf54ae59591b29df4c23690de756ec4cb",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Eray114514/Deep-Space": {
+    "summary": "3e29ab59a1c0aeddf1f24555ffa5af33d0c806b709427955314e1fd026e8941f",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "8472a270fce2b9e4fe9685ab00cfdcd5b3a73451a28b519e4aaee11d69868ee1"
+  },
+  "repository-research:pranshuparmar/downhill-mayhem": {
+    "summary": "d47da8cedc2b16b0acbf28e460499b374eebc5749f143357780b61b0bf313da9",
+    "license_note": "0990e19b27c1771997a32a483aa3e55198a9f4394038a6f7c0389eec24ee9560",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Vheissu/emerald-bayou": {
+    "summary": "5abd4a8c99dd0a7aae810e8d2cc8bc2803a11f31214e7ac9057eca3e46c3fa09",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "f918c5b09d2bc5e7392b762ca422514a528086494d89aff6820aabfb2837e18b"
+  },
+  "repository-research:winchxyz/celadon": {
+    "summary": "a966f6818109cbc87e070c42bc6946e8e12f7111c1b90ddd62ca70fdaf2494f8",
+    "license_note": "c4e2c571797bab35df7a156b86e38283bd9ea6aeb5a483a492f0477f2765906b",
+    "ai_note": "2a6810cef123866150c74199852698287dc36c3627b59f7e573766198c0a40ca"
+  },
+  "repository-research:jonradoff/chessmata": {
+    "summary": "b42abeecb3cee209b7a9ebc13c4cd584b43d2d50b8c9d74a2146dfbb85947de6",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "63ef6505210dde6e7c38c9c8973024a56adbf864d2ad1bc9198905c03c5d4dca"
+  },
+  "repository-research:StarKnightt/Pixel-Quest": {
+    "summary": "343f103c4b6046101685454798dec9aab9bdbc23c29669f6b898feec645f287b",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:pshenok/datacenter-survival": {
+    "summary": "dd5d88eace6cb0b8de670fc730d404a3409dc0d9c34f270fcee7b5283366dfd3",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:laszlo-gilanyi/OldenEraExplorer": {
+    "summary": "a282f1603293beba579ed581a275af6c51ef6b572c7d544c1af1673fb3b71cb8",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Quincunx33/fastroads": {
+    "summary": "cc607f25403ae4258424a58ae6c483941e43a944b04a8fdeae4bec289b151168",
+    "license_note": "6627bca762d197bd99923de42fe9f0627eb72907674b6793d89d237da3181bf5",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:bridge-mind/tideline": {
+    "summary": "5ffbaef2bb423def466aa4435b7557259ab567aa3eb95913e1268808992dbf04",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:avihaymenahem/voltmarch": {
+    "summary": "3a51c5af5e94d908be7319052fda35345ce43e3a58edaa90883582afee501303",
+    "license_note": "e2067af5698f7b39d886cba7c7adc219adaff6dbcd56fc74338618f86866793c",
+    "ai_note": "b53f8e11d633beb939a0425c6559e451400575dc02c7b4731af38718a78c3a88"
+  },
+  "repository-research:emollick/monument-brutalist-city-builder": {
+    "summary": "19e744de33a4aa1a71ef818044fa333579c7a2208af6e6728b12e40024a4a165",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Noisemaker111/jgengine": {
+    "summary": "a0d3b4d56dbfe71884f7463f67832e026d62c606afa22d12d1956e808da25465",
+    "license_note": "0990e19b27c1771997a32a483aa3e55198a9f4394038a6f7c0389eec24ee9560",
+    "ai_note": "a74cddd025c60d21b770a187fa2ee1f04e55ec7a461cb261cd56130f18740b40"
+  },
+  "repository-research:baptistefalvet/NeedForTokens": {
+    "summary": "5386626e7005a6c4589ee03e698168203e84dd2a93cb3b0e9cec7fa6b42bc05f",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "d62a04f7417fbb57497e2534bc63c974ffdc99da9b68164256761021cc4ecf47"
+  },
+  "repository-research:wormholeportal/Makone": {
+    "summary": "705202fc73c43caa061c88c00b243ea2c324d372142cb3f74f3ae414a5e69d19",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "66d067b37023c0c3c5acb937f2ac278082c4e5cc28facc8eb4d349801ab21feb"
+  },
+  "repository-research:georgekobaidze/sunday-dev-drive": {
+    "summary": "09b7d4a485c1e3212853f3f4961d8023ff0f6cedc560ff82301fc1a497fcfd67",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:michaelkolesidis/fintech-world": {
+    "summary": "b9ca804e6cd6f8f099f39d524542f1cb4ae613b25ca0db0c62be7cea1c4641d2",
+    "license_note": "702252eee60f6f12208c548e3124cef9394322199921f49d21bdc56aa59916e3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Hack23/blacktrigram": {
+    "summary": "a3b0ea7d872049be54bc255b32351621024a991789155ceaa30a3b202cff942a",
+    "license_note": "0990e19b27c1771997a32a483aa3e55198a9f4394038a6f7c0389eec24ee9560",
+    "ai_note": "0a86f0b66a7bb297d2c45442db054d9c16897920f2d2983b2d5755d0450162a0"
+  },
+  "repository-research:GyuoMi/exidem": {
+    "summary": "189e94d3b4ad9f29fb6fe8efa30d6ef6dc2762e081977b67238b40c6cf7c0f20",
+    "license_note": "5abdd143bbd04ab1f27c8f8c8739c78113c7350092dcdc7406f71925ad5c6156",
+    "ai_note": "f69bb9fea22cb62c16a029fd29f27944bcb11e1b7a89e083a62a9e15976aef23"
+  },
+  "repository-research:leslieyip02/racing": {
+    "summary": "71d53085953b523230f5d424901d58f037e64fe9b84125fa1e325beefa84d94b",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:michaelkolesidis/zigzag": {
+    "summary": "afd0d75ac1874df462eeab285f0cd1513ed14b2dc30a33490b4fed353893ef28",
+    "license_note": "702252eee60f6f12208c548e3124cef9394322199921f49d21bdc56aa59916e3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:load1n9/caviar": {
+    "summary": "6926ceafe05d69589ba2a009ce5d54a98967a5f98515d7528522da52a451cdb9",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:kpreid/all-is-cubes": {
+    "summary": "4973800602f45697473bc0879a8a79c21947701a25033591730192fc58042357",
+    "license_note": "733313eb2c29d7f10af9e10bbec367d77a2c04b40a819e9ca4930fa7373a7166",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Refsa/pollus": {
+    "summary": "35951bdfb6ac2f7f6f7a9dba40eea8c8b64f20a781ac4fa10c7bfca7b44b02cd",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:snowfrogdev/nanojet": {
+    "summary": "d815340ec0c9a082dab93a90c6578ce4756297f957a85a3501e85ad2a4fd6b82",
+    "license_note": "3be47279eaaf36a285c65ec4e963f076769a19cb41a1dea8fbc0f15e02b1ba5d",
+    "ai_note": "f69bb9fea22cb62c16a029fd29f27944bcb11e1b7a89e083a62a9e15976aef23"
+  },
+  "repository-research:eliassjogreen/pioneer": {
+    "summary": "c298ca543cddc73b283f91ea85c7dbe6d57a54ffa2b216d7b87625370ae3745b",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:iErcann/enari-engine": {
+    "summary": "178242cf8f4a91099445767b27e29a1d7b1bc0506245788d5ddd5f95dba853db",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:haosong/3D-Online-FPS": {
+    "summary": "c335b154c8d32c4e841243fb5573ddc70647bc06892b2d27111a3e674c02a854",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Parking-Master/FPS": {
+    "summary": "07e21489d7c851957a388b0be6296e1ce1fe50df833625dcc3e916eb76635233",
+    "license_note": "e75f417a4ffb8484ef223588f29caf4e61b49b06fac8d98be19f01c9b9db579a",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:mrdoob/three-descent": {
+    "summary": "e09fd4effd82c841956060813ca03aa99bbb64a347f23dfc0928f562cbe8eb71",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "387ac72a27e9c3127bd59bd3bb10735c9ba933b391cfe7e3a91bfa84620ca3a7"
+  },
+  "repository-research:kamalesh404/multiplayer-fps-game": {
+    "summary": "dd1aee7826af671d7b62491ec29dbef4740d2501398c34b56b757304132b7871",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:mrdoob/three-doom": {
+    "summary": "f345b902ee095db79e46e231af4d9f7c34781f3b9b5cdbaf4418bb7508ab9a93",
+    "license_note": "709f4cdee099b222f13e3c83d3b03b6255f4efa95e625b9c43b50bc421e43f03",
+    "ai_note": "7e6f2958f8fb5cb72361f4bd90873822015238877869ed896b0572677a612375"
+  },
+  "repository-research:UstymUkhman/YetAnotherZombieHorror": {
+    "summary": "8b68d497ff0b0f73be70c0324b4b95648c4975df5c70e3e44f137bed13ebc319",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:kamalesh404/velocity.io": {
+    "summary": "7048acecc73a95763b8755ec9e57af8d84f37df7003000c1641a3f3b799af5ed",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:StarKnightt/operation-ironhold": {
+    "summary": "a3df71d7c6325e1f0d38641876229ef7ab52cb86f450487e9f3eb8c0a68d5df7",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "f5fd45f1fea2a8ebb0f14e04cc1ee94f233aea443c98468b1556bc9a42347e22"
+  },
+  "repository-research:vincenzo-afk/NIGHTFALL": {
+    "summary": "4844dad60b3249d02c2cb9f88dbda41b85c82a34dcaa1958bff8f6fed0156983",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:whitwhoa/open-browser-fps": {
+    "summary": "9d51f7c820dce8e9d30cf69d2f096b4846346eea67d80ab78dbecb283dc4d08e",
+    "license_note": "7cd768e8300f017435e48fe4d8c0a1b82ba164c0cb6265ea2d2eedd8cd079989",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:StarKnightt/cinder-ops": {
+    "summary": "0384cdad253c94edab681aabaa8abb9d9238fbb0e110c4f47247eeabadb53102",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:8tp/instagib-arena": {
+    "summary": "2f88631cfed6d3b3aa478d06418fb919359d8e937c4b18f55ce48d06373ebe1d",
+    "license_note": "da99f8ba5858ab4bb4f074011c118f62f97a746b7c58926597ba01c52aa1bb20",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:iaanzhao/vertex-fps": {
+    "summary": "07222d28de23f6e0acfb2aba0867f4360d85eb68c825b3ec7ab63e74868c17c6",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:comster/fps-threejs": {
+    "summary": "974423433b5d780f6c44303f20b8127d8e259f4a25fb0d0e55ac7d44f48b2335",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9e433fc6eff7dcafb9ba743174b1a29b5af4d02092c60de5bf6edd8bc7a06fb9"
+  },
+  "repository-research:Kurt-Hanel/mp-fps-game": {
+    "summary": "79014a1770a07586400365ab70313276371c6a4b1598a7328e6cb45b1c62af47",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:eskafu/zombie-fps": {
+    "summary": "5d944b48752d3e3afacf24eac1d02d2dd15d2d9445bd817c0520fa1995ac1e8e",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "5b799520b21eefecd6134de9b61ed13d4e0e09f58b891e292fbef35457b07f0a"
+  },
+  "repository-research:mmclqx/frontline-zero": {
+    "summary": "336ee34e9355f504f0e05a7842d3e171ee66f4f00a6769c1c3cea6edc05e75b6",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:heihuzicity-tech/pastel-nuketown-fps": {
+    "summary": "6842180a6c00ff1f786dd1d4aeba4c3166318482c9d10e161448ae41a94c1462",
+    "license_note": "5bb60bea70a51cb11fc05cfccee9377365d9976d62e994f17bfac98899acf132",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:stobieee-bit/FPScape": {
+    "summary": "6c445856f1ee5366e00dfd37d36d65ffd0f78b3ccd8c1579d13618726c88f274",
+    "license_note": "95fb50312974f4f0362b258c86b7d7bb1882cd0c96992ce23f83c2ddc732a423",
+    "ai_note": "f69bb9fea22cb62c16a029fd29f27944bcb11e1b7a89e083a62a9e15976aef23"
+  },
+  "repository-research:rizdigico/VoidStrike-FPS": {
+    "summary": "19ed7d49bd7fbc22476c689f63a00e21005f0f9fa5ebaac000c17c3d76792b77",
+    "license_note": "1e58ddbb05f00974ff9925cae63a4c02060e44ff9201fe9c0f9f13cd7feb7529",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:szefo94/VibeOnDuty": {
+    "summary": "354e2ab4a11f6f4b7c60e3ae98e06927b6c152bff0505060885bdf27649ae9cd",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "1e91f2b25abe821771588ac63a12fcbe1e92b2392febb9215a33f2769fde74dd"
+  },
+  "repository-research:TheFadGhost/operation-blackline": {
+    "summary": "82854b4261da845664247a07a6e1df985ec83ae24ee68b391fed1b346bb66fda",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "bca35eb9157e00578aac034c340c2ad2494062fad98a4216bb51af5840759dba"
+  },
+  "repository-research:DustinVII/the-outlands-game": {
+    "summary": "af2ff75e2a7a0666f1ab0b861552386f40399655a911c4e953ba32d52a30e3ab",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:hnprivv/Forge_FPS": {
+    "summary": "37c75d474893e406ddab2c9a4ac2fd41649b3b5edbbf48a76ce0286f041ab31d",
+    "license_note": "cd33e49e69bb299b0f6b340e85548bdca3f328a7668b8e1b7756314a43712d72",
+    "ai_note": "b79da7bbfd9304250d35272a107203dd2c1f0c3ffb5531690c2a15221fdc0c01"
+  },
+  "repository-research:tangkwok0104/cat-of-duty": {
+    "summary": "54692a3882c7088ae79546eb81bc285faf14997e8f3aba0d03bb4fae79480801",
+    "license_note": "bfc3d73333dc3b200547f4c9a9d74e1cad54e422ecd4cf11359140589848c571",
+    "ai_note": "794ade5caf03c00137b97101587d6993becd6981d9e75d07f2f1e415cd1c33df"
+  },
+  "repository-research:whatgoodarewords/gungame": {
+    "summary": "8e9615a3f982abe074cf5a72bd2759b447aeba697ecfd03c4824d66648a72dde",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "95b366a7c255ab8418a3ba9afbcb9a928138c2175b4339f8a2eadac345ad472e"
+  },
+  "repository-research:dong-quan-tran/phaserift": {
+    "summary": "7a90c984ce8de34f38e8012789b0c70446033ddc162abeb72cdb2a1a2ed85fc9",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:krishsoni15/DEADSIGNAL": {
+    "summary": "443ad6d1374dfa597e04a56498679b794fb10f758b2219f3b6e10eae70d92b16",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Alwin936/Three.Js-FPS-Game---Vibe-Coded-w-Codex": {
+    "summary": "876e65ec284e4208c3447af35ac0dce080133dc9fc169839ce7981d48abd7be6",
+    "license_note": "3be47279eaaf36a285c65ec4e963f076769a19cb41a1dea8fbc0f15e02b1ba5d",
+    "ai_note": "2a86695ca12175e5f5f48cc9f739756e73c41b8a2c3059a05aee193284177a80"
+  },
+  "repository-research:luongnv89/codex-of-duty": {
+    "summary": "34de45c44c38a392321e90cbde2f2a4c6b481c8bb2512c3632460a222a10b7ce",
+    "license_note": "d3009a8162ee849a86eabea91055b8bb7d1450dc6338a71ab23c2f36e17b5875",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:TiagoSilvaPereira/simple-3d-fps": {
+    "summary": "b4b6fe1eac45efd90228c2d56dbb10a93242255adabc740bb5a29083094218a8",
+    "license_note": "3c93e2d53352bd28c5cffa4c5e5b97123db85bc3e0e8023cbe376592e5df6646",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:KylerCondran/Fate": {
+    "summary": "a6a362de5b7c9cac3335da8564fe920b9a52e2a2b47bb496fe6fd1aa506d5006",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "18309a15c4c4b0199b160f0b5b2271ec4e3128608e8ae645b61df743aabd4fc4"
+  },
+  "repository-research:zlatnaspirala/magic-three": {
+    "summary": "6b54bdd352cccc44f749430300725d65147fedc29cc3336da2bce424c77066be",
+    "license_note": "7cd768e8300f017435e48fe4d8c0a1b82ba164c0cb6265ea2d2eedd8cd079989",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:ZundaAI-Lab/prism-rift-vanguard": {
+    "summary": "f4efafee5c1ae538483c4971e6b8012a2ad1aa22da481ea37dd52e55906f57aa",
+    "license_note": "76c622d8a84609f473524ee658f98dccc2e65ff6c1a73f8134f185e77347455b",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Footprintarts/ThreeJS_FPS_2.0": {
+    "summary": "0fc7394e6b225107aa685262219eb9bbf9a9f646b4355749097261ae6f1da898",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:LeoOpenBotDevelopment/Three.js-3D-FPS-Game": {
+    "summary": "5e4cbc814e87036caa4808409adb52bc7c8e402d1683d91637d51f3d4d8ba599",
+    "license_note": "a4da6dd52e3ea1daad7736257823778fe3d9e8654084d9fd6ceea90feb0c6969",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:codepankajpy/SolFrag": {
+    "summary": "474a4d84635346e11dd186927ad3a6ab7af30fd1ca457e1b09a4fae69bede0b5",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:n1md7/three-boilerplate": {
+    "summary": "90a38824a0fae1afcb25f603ef4ce596ec6a2eaf022b5d0d7144b4a8d0c8513a",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:ThanosRestas/Theasis": {
+    "summary": "8255982a55ca5631e8f0c42180dd6a9a6eaf0db38ed0dd0b7c9922016711d22a",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:csarkosh/html5-fps": {
+    "summary": "e110baf4de2865c33960b7bf37d09616acd6408539cea95f09555655d3767dee",
+    "license_note": "5072905f5b91d215d1f60e4a4fc3629961024a693d70e0aaea16e5f978d082c3",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:timetocode/nengi-babylon-3d-shooter": {
+    "summary": "8d394c7394ff73fa7472a26a00cc0430e7a0ee203c955257b969e42e25e3d354",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:RolandCsibrei/babylon-lite-dude-particle-shooter": {
+    "summary": "12d265fd5d2111607d47d28a9848fe3df04d88c0baa93130256a6664fbf1fb87",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:akhawatrahTW/cs1.6": {
+    "summary": "64e82f11339140ea9037e34ae5f272bc47fdbf1020024024d58e8ee8b845fcb6",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:alexdevmotion/grand-theft-austerity": {
+    "summary": "aa0e760375870a47e838b2f6ab41f9d94c7c6e11234562192da97f5c70a542ec",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "6b2fd14d4eed3c19bf0acccf82a3e098e71456da248abedc4c426a6747769ffd"
+  },
+  "repository-research:cbascom1/ClaudeCodeMetroidvaniaGame": {
+    "summary": "e4419571b84dca67e2728bd4dc136704fceace17975b8b2ceeed33803ff61fe4",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "62b2a8a0ff567e1dd495b0a4ccc77802f46a2aac910ea52260a18b7bb641dc94"
+  },
+  "repository-research:lawrab/the-pile": {
+    "summary": "65c72b7c781c81f5f865d0fff7aee4696b52412091e45aeaa459fba92a35547c",
+    "license_note": "51c4cd699f85ebe6419804b67b2438d078fceb6e054e1b34cb6a63ef3495cfb8",
+    "ai_note": "cfb5a1b407a40886724108e265d67178de840b428a010238c74901e94a96df5f"
+  },
+  "repository-research:noweh/mobius-chess": {
+    "summary": "3c53e6814d8dabd4536d187d1876c1ba13b2dc60d76f672e40af7a7b80649cec",
+    "license_note": "8b501d618cb9ad0b7e9a23d98f9411298bd63e1062541ea80072ed0dd2e5eb21",
+    "ai_note": "c7129ff830107e0547179f0a7016a0258720cceb7fedb8deea5d327826f695f0"
+  },
+  "repository-research:darupong/vite-endless-runner-game": {
+    "summary": "3194a77c97b5346b4ec1730be68967953a3dab9f3d488d55985b0d7826499369",
+    "license_note": "3be47279eaaf36a285c65ec4e963f076769a19cb41a1dea8fbc0f15e02b1ba5d",
+    "ai_note": "784b81d04440b6c02ecb73ad2b39ad8d0684dd3cd34ce270f12a5fd4ad79a7a4"
+  },
+  "repository-research:az9713/pirate-adventure": {
+    "summary": "0aa85218466abd810a72d413c95860310df60a3e9c5558c1eecaeadf215ed390",
+    "license_note": "a3c051857e5cbd1e1871d3c7f30329fb9c80cb104976f1ce64bb2c31301c9e66",
+    "ai_note": "3f2a46cfdc4e64bbc8bb8e065445f8c136b0c37410bf624b5739927f2ca1a043"
+  },
+  "repository-research:Uzzoper/vibecraft": {
+    "summary": "a23df6a95ec4f5482f5051012ba7f9c108549a403ae42fb6b249173c40377a9f",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "f60f6df82c7a42cc0724d288256fd47fe61cf2f3dd438a84fafc628b5fafa699"
+  },
+  "repository-research:Susanzzzzzzz/AICraft": {
+    "summary": "df88a45880034a0898c3c5ada94d0292e4d3aeb522f17bd640c34f2ea3fb3f84",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "44e9a20e6a4f5536b7b301e8e9f108e0422cfe70e7b25e10be89c74c8a11170d"
+  },
+  "repository-research:pahorema/murmur": {
+    "summary": "794f898c83f879c8216ce792bfa8874c1195aa82b0a651708ac384801a50befc",
+    "license_note": "5072905f5b91d215d1f60e4a4fc3629961024a693d70e0aaea16e5f978d082c3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:sentifold/generals-rts-threejs-port": {
+    "summary": "ecd65b5e9ef204d9f830eb18e124630743d1c221ab4c0090b8ca9d940f5d135b",
+    "license_note": "7bc287f825e3c24cdaf44ccc4c8852afa82f8bcbbf917fad183528041b15cc31",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:romanticamaj/promptasy": {
+    "summary": "4026656a9640812f4175e91f16321435dfb36aa88ca7bb87c0faec15751ab066",
+    "license_note": "8c68541c9f036e28aef5e73e615f9ba9b8633eda7f9d65d8916b2c157c8a053d",
+    "ai_note": "d1960fbf933659a8e21d219fcb6ec05750436f989cdfee351a3d601be65d4790"
+  },
+  "repository-research:yunit00/game-corovans": {
+    "summary": "ae8c67da710596635af441bad74bcabb036ef0a7034dcbc9d4326e1398fef08f",
+    "license_note": "305784de15226c50d2f0c0bac0519683dd9dbffff9d15834cc2490ebedf96210",
+    "ai_note": "5c1ec669966f6cc56ef84caff3fbb0e912aee20519eaa8021f862c0d90fe5574"
+  },
+  "repository-research:evanhgs/billard-anglais": {
+    "summary": "877cb65322c20e8e67ec10b46fe2663d7c81f261039a913cb7fedfc411a4a66b",
+    "license_note": "3be47279eaaf36a285c65ec4e963f076769a19cb41a1dea8fbc0f15e02b1ba5d",
+    "ai_note": "34fb6b7a9a8087f520a10955d9b2ab5ffe1e3512de375ca22d32021072ebfaba"
+  },
+  "repository-research:alvarosabu/tres-breakout": {
+    "summary": "e42cc230cb3d279b8c88ca7689d472e1c6d18b478b243e6c8d814b6bacd8951c",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "67a8a7356b38653ecb28fdecadfe724d92ded9a8b35d363b26573799f5a4d54e"
+  },
+  "repository-research:gcoche-bit/synthcrew-mcp-game": {
+    "summary": "a45535edb32202f44a2357dd71d42ca61fe57f5d2c08b638678667c6eee28961",
+    "license_note": "9736c5482f45d9cac1ba5caf3e3dd240ba469e7ca9223b78033b8311e16cee89",
+    "ai_note": "61262b68c8c881490c3533f2d599d23aba1417fb0697f3350fb26120a0bf7c54"
+  },
+  "repository-research:majidmanzarpour/threejs-game-skills": {
+    "summary": "2f386be9a12550beeaa43c3781707c8676dbc4ccc57884603cb6c60d998388a7",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:gamedev-skills/awesome-gamedev-agent-skills": {
+    "summary": "2f475ce81c2fce27829925c0f7462f7a8d91384632566966a6c6367b189a44de",
+    "license_note": "702fc7a5ab4988f0563ad74cb0e2152cb3c1480ac6513077100f7df8530538ab",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:buyun00/Seed-GameDev-Harness": {
+    "summary": "2dc13859a65b2fcc854492892eed7ab135f886bdf1c5ad9fe4d1f352cce5c4b5",
+    "license_note": "00455c0ea7ae2efafef5026e66300a990e867a0f8275bd59ca687a5dddaae1e0",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:Donchitos/Claude-Code-Game-Studios": {
+    "summary": "0680107ae9aaeac32483aa01719b0123d39533dd4f11b12175af700f062b05d8",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:bullish0x/GameStudio": {
+    "summary": "c00892031577c809f3c23e3f2bc6cfdb9203d55a722257b7ceb0eb188ba459e0",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:PlayableIntelligence/game-creator": {
+    "summary": "7842db06cb65b89b2ac0b501e3f8be978bec45c0a05d0f37ad3204dea47a9368",
+    "license_note": "fd810fe9e55167797630bdd73043a7ef26c593167d4b503dec5e68fc1fac3df5",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:heagandev/threejs-agent-starter": {
+    "summary": "811de47b6e29e096f7405f96bd98e1678a3f1eb8cf737edabda60913a9ad9f32",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "d44748ae6b50c18ea71f85ca143c72aa4a3f190d07d326fb70322c39b3499bad"
+  },
+  "repository-research:0x0funky/agent-game-forge": {
+    "summary": "a797475b5ad00c2bd9dd59367dc095189d9a14cee2febdd6feaa3162e204be57",
+    "license_note": "702fc7a5ab4988f0563ad74cb0e2152cb3c1480ac6513077100f7df8530538ab",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:frabcd/codex-ai-game-studio": {
+    "summary": "2e14a6470c540798f619c948e712b905b9517fc47f0366c3379394822cc947e5",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:Sstobo/Claude-Code-Game-Master": {
+    "summary": "1d75d32129cfc85a1c3c7ff70cf4d4acae98875140bc07c68bc5e0d0373ae00e",
+    "license_note": "2773badcad5b0c9f9099f8c58e1a9ee1a9dcf61d016b681ffe2983a75983d23c",
+    "ai_note": "30ba96f8581f9d96ec1e1fee2a16cb00a1d55754cdda40d7a4abe6184e06ed17"
+  },
+  "repository-research:htdt/godogen": {
+    "summary": "cf9efae28721f7e2f9e562b56a4add245fef8d8f338bdcd092fda07abe121ae0",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:gamekit-agent/gamekit-cli": {
+    "summary": "0b8ba3a8252d1dca93c85e010db31b2c420c9cb6b7ee62119928a748ec71a348",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:RandallLiuXin/GodotMaker": {
+    "summary": "aa27c64c571d425558b7b51fe79216739622500849428c01d59e1e3b457f2556",
+    "license_note": "34e47165a464ba567186069460c6b651852616c22565108c940dc65af4f3abfd",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:IdoCohen560/claude-unity-game-studio": {
+    "summary": "9bf5b6901237630c58a593107052d078c53f46bcbe2132c42baf6903b5dcf659",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:HermeticOrmus/claude-code-game-development": {
+    "summary": "a248c73c3f1e8e883f777adb2d26221d28d636034568e4f5f971d593241adf91",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:joemonster/claude-game-studio": {
+    "summary": "95518d9e1c33dbdf22ab9929a81f905031907980bb9105b7e8a3e4e97862f40f",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:Shellishack/3d-web-game-dev-skills": {
+    "summary": "46d9d77ebe178ea0bb54dd25199a579adfe000d7e36496e5705eb9542aba66d5",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:LeanEntropy/threejs-phaser-game-skills": {
+    "summary": "a9c00aa69c75d737aec43b57ae496a5b97130e23ea6c1f82a50243d0b8194aee",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:markjeromecruz/threejs-claude-starter": {
+    "summary": "676f95dcdc0bf62a922d423d434308544b5f2fbd9a7630d0b0883843b68af6ac",
+    "license_note": "6bb5fdbc683a269fc5731858e74b12bf4f5f24ef498c5068ffcc76b72c3dcab5",
+    "ai_note": "9a9b4744852afb49cb4e0c4ae9cf1bf6b491f4a87572a6a14e1f569a826fc55e"
+  },
+  "repository-research:MRCalderon3D/everything-game-dev-code": {
+    "summary": "4fd50a9c0ba4b31eb131fce3586afaf165a263ca233b576f213aa3349873d664",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "4bf7ba078207ca6e58f4b688d8469844b79ddda892dde99e0b5cde6ea5ad08f1"
+  },
+  "repository-research:akolaarthurali/everything-claude-code-CLAUDE-CODE-GAME-ENHANCER-2": {
+    "summary": "ab04470dcf8acd3aa26485c969d6e9c6c7a3fa9e7c8d4f1afbb87e531011e1cc",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "2069ad95412320ef087d2251f832449d6fa8b50367d06d0dd95e9d75a48af2da"
+  },
+  "repository-research:mrdoob/three.js": {
+    "summary": "07a4ab2df624410c5005e1d7d11511ae5f1fa564f7615e6ff0efc3286ef07f10",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:BabylonJS/Babylon.js": {
+    "summary": "d8d52c50860232c4ce8279b8935453c4021822593f1d73ea58c2c5584e29bca5",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:playcanvas/engine": {
+    "summary": "42fc5b1c1d9253bc84b090ace5735b693ecec8b2f6d935593cc56572a3915e25",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:pmndrs/react-three-fiber": {
+    "summary": "88c761369410b2fb0e7dfcf0758f1b90036105c71f1b834b3f3dc7f9556a2c92",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:pmndrs/drei": {
+    "summary": "aaa166b950180cda0a8126b2ec40bd60bddc41de512dbd873baac64008ac7be6",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:enable3d/enable3d": {
+    "summary": "e2690067ffcaa6007c661757b906182034e256327460e5d62adff3773400d86c",
+    "license_note": "310c7648358962bba6dd3de28f4fec675a829713e395d2688d4766712e06d45c",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:pmndrs/react-three-rapier": {
+    "summary": "e8fda37bfe91d0c3000b0f57b9628d1e5e39b12edc3c4a0b6bbb303fa31a64fa",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:dimforge/rapier.js": {
+    "summary": "e670862093ccd743d788b5d545ca103ca857b73adb89aff6516f843c1e44c972",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:pmndrs/cannon-es": {
+    "summary": "d6f1da63b293c4bd2665d27fa1482e50ed4f973ba13eb0bcec0673800a3c3d80",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:kripken/ammo.js": {
+    "summary": "0e70d3af65d38c0798c814018d1b2726aea5a7a516c31956674866ee8329f735",
+    "license_note": "6ef1997d947af189c5b73ba822dd42e8f2f80e71f50f1a6e98b23c57407ff5e8",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:vanruesc/postprocessing": {
+    "summary": "6cbc360b415f60a4d20df8e6734a2950b659c14fdcf26544d39fdb808654e09c",
+    "license_note": "60f3a8fea57281375c131fd48a596c1d3f323481c46e70e9a0df9ed1fcfb62c7",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:gkjohnson/three-mesh-bvh": {
+    "summary": "97702e1f9107f9de393418cf087f78c2f2997c56f0f8de3d7ffcf8ffb05f30ab",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Mugen87/yuka": {
+    "summary": "02eab5cdb3f34e5f6aa8862b5a38810a92c8e1aee5e43847179484f5e7241496",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:ecsyjs/ecsy": {
+    "summary": "ca31ae1f8b6d36c62d99f58b933b2013322631225f82c06c805d226138fb485d",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:NateTheGreatt/bitECS": {
+    "summary": "469ebec5d3765ae3888625d0480a1cf528cf8bc75da583e8b15994df4301ecaa",
+    "license_note": "20e776549df0e2cc7bc8c0844a51b23fbc0314842485f61f49089ec056482f66",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:pmndrs/miniplex": {
+    "summary": "c0603cc644460362dd03e4aa002d899fd6d71bef94b5bcbca2aba8e6b7d902e6",
+    "license_note": "3ad31c6475980b85f1c38cdb156bfa59f15339f0f109b64e2c8fffdd27995008",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Yomotsu/camera-controls": {
+    "summary": "e50071d4b587babd4ba5f77fd40781c8144f146b2311a9885980e6d5e9ecef7c",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:pmndrs/three-stdlib": {
+    "summary": "07d7fa0d4031d2f012027deb915441157a87b5845596a7e900ca0b0026a08c89",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:jrouwe/JoltPhysics.js": {
+    "summary": "088337c56817b741fb493e58bbeca278d8f397d1173d9b0267ed0ad59e8d12ef",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:colyseus/colyseus": {
+    "summary": "bba24cf21b375a1ec8e5aa35ab79de1f4b7e7fbc84c79241d91dc5c4caf3053d",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:geckosio/geckos.io": {
+    "summary": "cb75f40e64c113511f77a39d90073824357e0830756d938cfa31d60b3cba1ddf",
+    "license_note": "0f1d09cc88ddfdcadfb3a2e3531c36a449c62ab44a06f4f064dc313bdac7cb72",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:nengi/nengi": {
+    "summary": "d9a1918aa97b9996f68044046fbfc0d8286901afaa80b38be840ac2fff90f723",
+    "license_note": "2fb8d36e6fce1bf048e85fc57fc9563860fc0c1008c08b3b4a037adb97763a2a",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:lance-gg/lance": {
+    "summary": "98e88cc06c6084b83d949e50b7d463f0a130b731f40ad82412f8e5b9dc09ec5a",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:networked-aframe/networked-aframe": {
+    "summary": "343d8a9edc3a12b3a6d4910bb05fbee52559278defbffa99b5e75852ff1e9449",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:ZyFou/ProceduralTerrains": {
+    "summary": "05d5ee8636ce9fa26bfcdfb68af6154402230cbf541c043e9f8fb2387a045c0f",
+    "license_note": "aa245d32aa43883247fd395dcf992e226ee07ba8190f221009f4cc5bb5b1a1ee",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:IceCreamYou/THREE.Terrain": {
+    "summary": "88f0b0e7c5bb2c62bdd54926d619fbe3626257ab08026647f24300b2627e3927",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "90f7a269792aab6740ff34c6e09cc19eb01e8a164caea71cf46eb157f0132818"
+  },
+  "repository-research:MavonEngine/Core": {
+    "summary": "06e86d1b5abad88c714fcf73e1d171627cbb0a8e8c68071ff5008da7fcbfb2f3",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:hyperfy-xyz/hyperfy-ref": {
+    "summary": "0a828731045a67e401f456a93fc563bdfbe4ea4bd04728818290fdc1f85f23e8",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:hyperfy-io/hyperfy-recipes": {
+    "summary": "3186e23d10ac6a2faba0af8b6f3c6bf5b2ae47f931bf76685d4c5f0d95c7e6ef",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:tcm390/eliza-3d-hyperfy-starter": {
+    "summary": "75373962c24656f7c95127c2c7f38307d6602e9b39eba945677c534da655b62c",
+    "license_note": "ff30c0d59aa6a910139e815973e8fb12ecee249f044de1b4d9a0024af4e76b77",
+    "ai_note": "a4c9a1990c4cc8e18fe21cb1022b6d935dfa99c7694199010ece28539f406d27"
+  },
+  "repository-research:HowieDuhzit/Hyperfy-Tools": {
+    "summary": "b68d5482ea09397cafce0911033efa0e44382f72a969fbbd082d0525253849d9",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:BKcore/HexGL": {
+    "summary": "6f33a62a41e168b06d0caff337abb3209dd1e61e655325bb5123feeb84a0a0cd",
+    "license_note": "8f209a6362d3ccb318586122d985132dd7d23ec194fa12e92befadb068f8136e",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:CodeArtemis/TriggerRally": {
+    "summary": "7974cbd553870d8b1c0f4a1cc519e09908fa9fbfb10521cef2155d0f92c22507",
+    "license_note": "b8ed6048e89ea223c20eb5fc3e136516a76b84dc3cecd6db6ec8dfc844d6f362",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:kripken/BananaBread": {
+    "summary": "e636e4899e32e9484af9aa76e684745871cad59b162ce485d9e315d5edd883cf",
+    "license_note": "1becac79e93f3555110a21f5efb158088ca468e0c7b5590e1bac440d83df81d2",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:cfoust/sour": {
+    "summary": "a5e828bc61d945b7d2d48165550b1dc8324dd8173e4580672546bb4dd51e4985",
+    "license_note": "ef79c1eb61b6331e64876182cb0d7af2376d8b3e1e7bd90754f2b8b259fd1a9e",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:phoboslab/q1k3": {
+    "summary": "830c6a208404701a0eaf792bceab0ce1b064b7adc10cff425f679fe771ca63f8",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Triang3l/WebQuake": {
+    "summary": "8befebd79599cbd7c9cbf3711b2baba7e8996e7ee388021533d1d94924c127f6",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:turol/webquake2": {
+    "summary": "3a024e8685d0eb6303ee404617b499e1823c3fce2085aa64d5f4baf8519d84c7",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:lrusso/Quake3": {
+    "summary": "feccfee37d462ed3449c64c9a2875f702e3c253c2ea84a525a776d4e51a4f870",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:swift502/Sketchbook": {
+    "summary": "60d59554c5fa1b23a8e54a6941a73e1ac77d0bdc21fb5559a8a237f8800fd456",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:threejs-games/threejs-games.github.io": {
+    "summary": "f6e3f261c0dfecb5cb60f53ecf3667e1070413ba36e6d203c3e372b425150332",
+    "license_note": "888908bc1c9db5ab339ab6a411755c56b283d611e2f0af6fb65285be8f703b2d",
+    "ai_note": "9554495995856fdb26c38fc40d3fe30b0f4709d5ba08bc4bedb2f8ce03a0caa8"
+  },
+  "repository-research:Humpalumps/world-of-claudecraft": {
+    "summary": "56f754e6d223e41e1a5b8137be97a9f0051bdb47f62f2306199238e6991db556",
+    "license_note": "211077d1c847de8ed7d5030fb913e788d72b107ed28d9236f434299f32cd7928",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:MarshalX/world-of-claudecraft-addons": {
+    "summary": "7da0d428a1d0838557e3afc9a09e22fe38f412e2e9a2fc7cc561b514d97075d0",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:yoefun/world-of-claudecraft-rs": {
+    "summary": "18279ec920fc2a54ef5116906bd543ce6af649b193beafe50e714c58b9e5adf1",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:u2/world-of-claudecraft-mcp": {
+    "summary": "317291f61ee7b2c359e4d57599c86d5ecb2838001cc0c2ba58bf26188e0e70ba",
+    "license_note": "12b95538c491568007885b9f393ca5933af4b4618bc1d58ff8b29e49f52a62de",
+    "ai_note": "30ba96f8581f9d96ec1e1fee2a16cb00a1d55754cdda40d7a4abe6184e06ed17"
+  },
+  "repository-research:remontsuri/world-of-claudecraft-agent": {
+    "summary": "bcc78ccb5873f60c4e458cad044d772b5229d67067d30100cf76edf6638a5684",
+    "license_note": "5072905f5b91d215d1f60e4a4fc3629961024a693d70e0aaea16e5f978d082c3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:wrkrdev/world-of-claudecraft-wrkr-demo": {
+    "summary": "ee6c2dc80de65e8e387e460d6d95178e9efe0590b279f04610bbee2a3ef3855c",
+    "license_note": "5072905f5b91d215d1f60e4a4fc3629961024a693d70e0aaea16e5f978d082c3",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:slonce70/world-of-claudecraft-claude-bot": {
+    "summary": "56ddbc3ec20a3ffff9e928eb8131c30cf024180034a0dbf187b2d95fdb4a58a7",
+    "license_note": "d37abc4433fe3a819e45cde2128d4c355da0cc3b3abcbc63d92e2490a3213599",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:michelpereira/awesome-open-source-games": {
+    "summary": "80607a65bd8d883d825651636e0f5da6c7d337c768571241fb59d7125fa032d7",
+    "license_note": "cdfc0bd1ba7352d3e77006244cd6dbe9b4781e0506f7bdd4c53bc11dddea45fd",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:leereilly/games": {
+    "summary": "30fe280b89e7c97cdd458ed9d88d3a3da888ae0cfaeadc71e5c7dbc881bbba0e",
+    "license_note": "67c0b67cb3533bf25a54b9d5ea2b1b05cb736b289d2231b52713d648dc1a79ed",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:Symbitic/awesome-babylonjs": {
+    "summary": "3813a9c59666b2015c1fc3f656bccbe4553a902e0aefeb77f437e23e59939154",
+    "license_note": "e219a0fab32ace54cdd17bc1e4868c38cd15ab321dc8a0e11e7848a03877cf41",
+    "ai_note": "6b9f8f45638f2f4ae0bcbc99a0a6ca0de694989d68e2971e74de3cbc08a7a5c7"
+  },
+  "repository-research:genex-games/genex-desktop": {
+    "summary": "e350661ac23595c40382364b9eeb0d804b8267981cb791ba5428cd5d242ed5e4",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:mrzh7/scam-with-your-friends-web": {
+    "summary": "8dea5d756b2c176da71e6f845172489bbf666c9e3aeafe329d465e1aec010c50",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:MineDojo/Voyager": {
+    "summary": "a9a518fa54cd0ce771efe1f2ed651e7620196f3280b171ee67e68d6cc34fe5e8",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "a316cb9e06d68497104a32e4192a6e325e3de83990cb15a949b6409beb829bbe"
+  },
+  "repository-research:BAAI-Agents/Cradle": {
+    "summary": "6ddbdd5971c282abe743be62c002051351426dca03a2116aed6f38e71bb62255",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "a316cb9e06d68497104a32e4192a6e325e3de83990cb15a949b6409beb829bbe"
+  },
+  "repository-research:eloialonso/diamond": {
+    "summary": "39f94176ba6fa547296011a28283d9b3d9a8e57f0650d0721cd62b14c19c7ca5",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "a316cb9e06d68497104a32e4192a6e325e3de83990cb15a949b6409beb829bbe"
+  },
+  "repository-research:solaris-wm/solaris": {
+    "summary": "9491c035cec25cab441bd84fc86c6de484ec930135058b2641421debdaf0b3c0",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "a316cb9e06d68497104a32e4192a6e325e3de83990cb15a949b6409beb829bbe"
+  },
+  "repository-research:WenyiWU0111/RSIGame": {
+    "summary": "5e4b8696229d45bd9bd6965cab0dfcaf7b4158e44061b7b7eda3979bcb5d91c5",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "a316cb9e06d68497104a32e4192a6e325e3de83990cb15a949b6409beb829bbe"
+  },
+  "repository-research:jefferysha0627/agent-office-3d": {
+    "summary": "6599ce67531d10a491d57004fa49e0744460a26fc9998a98d7f0f510ea0b78e4",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:Jimntu/GameDirector_code": {
+    "summary": "abea463f1dc51c0385216d1d20c38b1f6932206409b2d79bb8f5be1e191a6447",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "a316cb9e06d68497104a32e4192a6e325e3de83990cb15a949b6409beb829bbe"
+  },
+  "repository-research:melonjs/melonJS": {
+    "summary": "bbafd6aee9d3513cf138ee4d9f6c04ff683b16bdb1dba49d15d9e856db997187",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:esengine/estella": {
+    "summary": "bf61a07efcca64bd89f51b44c9aded991d0aa6f0cee22094cb1a446191cfe79e",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:soonfx-engine/core": {
+    "summary": "49dd34dc5d84a2b00344dcabc017950539e9475482051856f10abeb881ad709f",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:luckyyyyy/miu2d": {
+    "summary": "7218df94a1783902cdd9ea1796743cc1f40343f49e2e1386f99080515f7940fe",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:majidmanzarpour/vibe-coding-starter-pack-3d-multiplayer": {
+    "summary": "ba30263feb58225f46efac3dd4f1ea97cb31dfcf8e6a9254440ca238b8a11f94",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:Jamesun921/cam-run": {
+    "summary": "ad85dd622bff2f02e19ae37f3a35d68756561bd9eeed4533c75d1d94df6708fb",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:freeciv/freeciv-web": {
+    "summary": "1cf8ce5c76d25a479c4e2840a04ad4342126680bc010aac40652fdbfa8fbb364",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:wellingfeng/UltraGameStudio": {
+    "summary": "b74d60968b295cce923102a99db53c5b64cb91451829bfff5c1d5d6c8962dbf4",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:yc-software/minecraft-agent-harness": {
+    "summary": "f985eaced5b77ef1a0ea7022bb2b1aa7f19fba5fbc3554066809420816dda9aa",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:JamesIV4/nethack-3d": {
+    "summary": "cf485fb5f46ccfbd3df3c80e4775cc9b670e7b3b324aa4e745aee551226c96d7",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:dammafra/drysland": {
+    "summary": "e55c446a32209b4d510f7eeac478a67616648d1b192c468bf762b45d930fd113",
+    "license_note": "da99f8ba5858ab4bb4f074011c118f62f97a746b7c58926597ba01c52aa1bb20",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:OpenWebGAL/WebGAL": {
+    "summary": "ea11670c959e31cb020b6e6d2317d60222742b6290edd3a9619c646f37848e0d",
+    "license_note": "20e776549df0e2cc7bc8c0844a51b23fbc0314842485f61f49089ec056482f66",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:ill-inc/biomes-game": {
+    "summary": "3119f06f952a88152b07ec7395414c3cf5bd0019341b29e572e1b936c058b987",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:excaliburjs/Excalibur": {
+    "summary": "3597148e11ebce3858677f66fc5a7b135c878dcd8251593193fe9f36bd5637d1",
+    "license_note": "d0d40c81729d21cdcee7be5332552127acbd32e418c6f7be101dcd265d207df5",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:tentone/nunuStudio": {
+    "summary": "d07eaf66b036b2d0d6860e3318c5b296af6301ffb8f7ba122faa70ba7ff8d812",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:eva-engine/eva.js": {
+    "summary": "a521c1d697c2e00509abeda70c467729228634fd7c1386a9187a610c12cd28ef",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:EvanBacon/Expo-Crossy-Road": {
+    "summary": "62a1b3998d4c471356659c0f33354a1cf006e4a9943c6bf45de5a1f0b369e7f9",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:EvanBacon/pillar-valley": {
+    "summary": "3670267e9a78fb55e78421e802c08bc0bec440833a05a91b424e6269e4373a53",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:MattSurabian/DuckHunt-JS": {
+    "summary": "6de49a29225b2348f82c9d68314991b024be7285ded477b243c1741b6edac02f",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:Priler/dino3d": {
+    "summary": "8d8af284e84bcb1bfaecb636bda027ca34a125cfd4c9c216da23813412641277",
+    "license_note": "7cd768e8300f017435e48fe4d8c0a1b82ba164c0cb6265ea2d2eedd8cd079989",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:Megabyteceer/thing-editor": {
+    "summary": "bdf272b4f15cd5de804c482a6316672240b7b90c60b13e90bed0fdad2048d186",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:axaq/traviso.js": {
+    "summary": "1a620f06753eb8a1f48f45840b1567bc094d06f5b987713163dd2d1f0073848b",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:acatovic/ai-game-studio": {
+    "summary": "49e24bd09792f7c0f16fa3a3ac0e1c5f501d86ee725c3e3e26f7d0e7bb703cec",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:piqnt/stage.js": {
+    "summary": "8fbf38ed6bcabe995616a3375ea7390517ba713cfe799d860187f5539f8085e5",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:ad044/lainTSX": {
+    "summary": "9fc73df75618fc36a130b3abadd2438aa6768958d145a0397250d50e29bae286",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:yomotsu/meshwalk": {
+    "summary": "feabdeb51ccfcafdb97e4078d4354c8042d7649c9fb9ab93489ed70fe5c7169f",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:Jahrome907/minecraft-agent-skills": {
+    "summary": "2d84ee75e96272077954af3238d662659d00c4d7cb18bec14feb65dc4e4e3057",
+    "license_note": "47be7c69ebcf070dac1f928612feed23a8ad6e8496a3856abd516351b0e72688",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:rmalde/minecraft-agent": {
+    "summary": "8fea53f327d4d1624894edc3a44e8d2a26ba29108a65eee39575707dea84354c",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:patch-gg/trompe": {
+    "summary": "0c738a9537d9b25c30906201a73738d08d2da6fc80f38f77f4a6e1681e56c9be",
+    "license_note": "b91e5c9b8a0deb87fa94a1bb71cea5ac254a04da8e6259564c8804662cc3d590",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:iErcann/NotBlox": {
+    "summary": "06215b8f0607608e460fe4d1d99399d142ae14185279e2bf9580997ca0edf344",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:IceCreamYou/Nemesis": {
+    "summary": "91034b53839266123a8f0c5cc7f6e4f16abe70b6448d2a75cc3a30f8274598f4",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "repository-research:MageStudio/Mage": {
+    "summary": "f2d5dcaca7840ff9a509eba1e0a1bb53a28ba2f5077b77215e3e991fceea888d",
+    "license_note": "59efd7ca55f86467996346eeb82c5772930af3a09827d0e3f44799c8f0c3a7d0",
+    "ai_note": "8136c886fc0321ac08ed0c6a4183febb6f8a29c3310b08c4c2f3cfdba24e83c3"
+  },
+  "resource:game-ci": {
+    "summary": "fa46de4893e525f6b98eda47f5ab669485735680b293571464c07bf13e07fcdb",
+    "detail": "072a18269700ea9697f529d9d3cbdf82c69842a0e504c3608a17fbb9c7d2f6ee"
+  },
+  "resource:gdunit4": {
+    "summary": "40fec267e2cd9466dfa26998e8c6b7ad83152fcd8b2fc1d931c678de9ccc0c5c",
+    "detail": "58b5b808d7d46d761c625a56abeba854869048c9709fa9565f76f902f89024b9"
+  },
+  "resource:unreal-insights": {
+    "summary": "f8a6ccdcf8ed4d84b9758d779d2a39ff676578c673f191ce26ed529e50601a77",
+    "detail": "31da2dda9d63693604a9d0da3cf87024d914e62688fc120cf793e904dbce3b55"
   }
 }

@@ -1,6 +1,8 @@
 # Coding-agent game interfaces: source evidence
 
-Check permissions, dependencies, reset behavior, and result verification before connecting a coding agent to a game. Each note points to the relevant implementation at a specific revision.
+Your Godot test runner prints “All 0 tests passed” after an edit. Start with the [Godot Forge test parser](#godot-forge-code-quality) below. If your checkout uses that implementation, compare the raw process exit status and test output with the list of tests you expected to run. For a boundary check, run a known passing test and a known failing test in the same project. Record an empty or unrecognized run as unverified.
+
+Find your exact bridge before using any of these notes. Two tools called Godot Forge appear below, one for editor and runtime operations and one for code feedback. Match the repository and revision to your checkout, then check whether the operation needs a running game, writes project files, or starts another engine process.
 
 ## codex-official-browser-game-workflow
 

@@ -1,8 +1,14 @@
 # AI for 2D and 3D game development
 
-Explore systems for generating game rules, constructing playable projects, editing scenes, and evaluating the results. The sections below distinguish their outputs and the engine feedback each workflow uses.
+A request to improve a level can mean changing its rules, moving an encounter, repairing a scene or replacing artwork. Those jobs need different outputs and different feedback. Use this guide to decide which part an AI system can take on while the team keeps control of the playable project.
 
-For playable projects and their source code, see [Game examples](../cadle-repositories.md).
+For playable projects and their source code, see [Game examples](../tutorials-and-demos.md).
+
+For a level already being built, replace “make it more interesting” with a bounded edit: keep the entrance, exit and mandatory combat route; revise one optional reward room so that taking the detour costs time or risk. Give the agent the current room graph, movement limits, required connections and the objects it may edit. A designer can then reject a beautiful room that breaks the return route without arguing about an overall quality score.
+
+This division of work has a useful production precedent. Sébastien Bénard's [Dead Cells account](https://deepnight.net/tutorial/the-level-design-of-dead-cells-a-hybrid-approach/) describes fixed world progression, handmade rooms with specific purposes and biome graphs that constrain assembly. Borrow the authoring boundary: decide what must remain recognizable and playable before handing variation to a generator. The published method does not require an LLM.
+
+On review, separate three decisions. First, did the edit preserve the agreed connections and movement rules? Second, does the reward or encounter serve its intended purpose from the player's view? Third, is the changed scene actually present in the consuming project? Route a broken jump to collision/controller diagnosis, a pointless detour to level design, and an unchanged delivered scene to the editing/import path. The systems below supply different parts of that work; a successful search or attractive render is not the same deliverable as an accepted level revision.
 
 ## Categories and evidence
 

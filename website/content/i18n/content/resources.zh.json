@@ -61,7 +61,7 @@
   },
   "resource:unity-mcp-skill": {
     "summary": "MCP for Unity 的操作指南：先检查编辑器状态，再执行、等待编译与域重载，最后核验结果。",
-    "detail": "以资源查询为起点组织场景操作，继续编辑前检查编译、域重载、工具就绪状态及阻塞原因。脚本修改后检查控制台与截图。它提供 MCP for Unity 的操作流程；具体示例和参数取决于桥接、Unity、UI 与输入系统版本。"
+    "detail": "以资源查询为起点组织场景操作，继续编辑前检查编译、域重载、工具就绪状态及阻塞原因。脚本修改后检查控制台与截图。它提供 MCP for Unity 的操作流程；具体示例和参数取决于桥接、Unity、UI 与输入系统版本。GameMap 查阅了指南来源，未在此处安装或测试它。"
   },
   "resource:godot-mcp": {
     "summary": "支持启动 Godot、运行项目、读取日志及基础场景操作的社区 MCP 服务。",
@@ -80,7 +80,7 @@
     "detail": "适合检查浏览器游戏的菜单、HUD、启动流程、键盘输入和截图。默认使用无障碍树，坐标鼠标工具需要可选 vision 能力；两者都不会自动暴露 Canvas 或 WebGL 内部状态，可能需要游戏调试接口。README 提醒该服务不是安全边界，browser_run_code_unsafe 可在服务进程中执行任意 JavaScript。独立的 Playwright CLI 仓库另提供 CLI + Skills 流程。"
   },
   "resource:godot-engine": {
-    "summary": "通过场景、节点、资源和脚本组织项目的开源 2D / 3D 游戏引擎。",
+    "summary": "以场景、玩法脚本和界面组织可运行项目的开源 2D / 3D 游戏引擎。",
     "detail": "官方资料覆盖 GDScript、C#、场景和资源 API，可帮助代理把脚本改动连接到实际运行的场景。固定引擎版本并使用对应文档，stable 与开发分支不能混用。"
   },
   "resource:godot-command-line": {
@@ -100,7 +100,7 @@
     "detail": "覆盖移动、瞄准、投射物、敌人生成和失败状态，可用于学习完整核心循环。教程最初使用 Godot 4.1，已更新到 4.6；排错说明包含 grounded / floating 模式与敌人数量上限。代码采用 MIT，美术资产采用 CC BY-NC-SA 4.0，复用时需分别确认条件。"
   },
   "resource:unity-engine": {
-    "summary": "Unity 官方手册，覆盖项目、编辑器、脚本、渲染、物理、资产导入与发布。",
+    "summary": "通过编辑器、C# 脚本、渲染、物理与资产流程构建 2D / 3D 项目的游戏引擎。",
     "detail": "提供具体的 C#、编辑器项目约束，以及 2D / 3D 工作流和版本化包参考。固定 Editor、渲染管线和 Package Manager 的版本组合；仅凭 Unity 名称无法判断 API 或材质兼容性。"
   },
   "resource:unity-test-framework": {
@@ -116,7 +116,7 @@
     "detail": "用测试场景复现失去地面接触、幽灵碰撞、射线检测和地面吸附，为代理提供物理行为的因果解释。教程使用 Unity 2019.2.14f1 与 ProBuilder；应用到其他项目时需适配算法、API、输入和工程配置。"
   },
   "resource:unreal-engine": {
-    "summary": "Epic 官方 UE 文档，覆盖 C++、Blueprint、渲染、动画、物理与打包。",
+    "summary": "使用 C++、蓝图、渲染、动画、物理与打包流程创建交互项目的游戏引擎。",
     "detail": "为 UE 项目和资产系统提供权威参考，官方示例展示复杂玩法架构。访问 GitHub 引擎源码需要关联 Epic 与 GitHub 账户并完成授权；Epic 还为许可用户提供 Perforce 路径。能获取源码不等于采用开源许可。"
   },
   "resource:unreal-automation-tests": {
@@ -160,7 +160,7 @@
     "detail": "连接 Blender 资产制作与游戏运行时，帮助排查材质、网格和动画转换问题。插件发布分支应匹配 Blender 版本，main 可能面向尚未发布的版本。仓库 CI 会验证导出并比较导入导出往返结果；格式合法的文件仍可能在目标引擎呈现不同效果，需检查实际导入。"
   },
   "resource:phaser": {
-    "summary": "浏览器 2D 游戏框架，官方入门教程覆盖资产、场景、动画、输入和碰撞。",
+    "summary": "使用场景、动画、输入与碰撞系统构建 2D 浏览器游戏的 JavaScript 框架。",
     "detail": "适合围绕 preload / create / update 快速搭建可在浏览器验证的核心循环。教程中的静态 Arcade Physics 对象缩放后，需要刷新碰撞体。场景可见后仍要检查输入、重启与生命周期。"
   },
   "resource:phaser-examples": {
@@ -439,5 +439,29 @@
   "resource:marble": {
     "summary": "生成可持续导航的 3D 场景，支持 splat 与网格导出。",
     "detail": "Marble 支持多模态世界创建，可导出 Gaussian splat、视觉网格和用于近似物理的碰撞网格，并沿相机路径渲染视频。相比纯视频续帧，它提供可交给下游引擎的空间资产，角色行为、任务逻辑与游戏循环仍需开发。所检查网页指南说明碰撞网格导出包含在 Standard 方案中，高质量带纹理 GLB 需要 Pro。"
+  },
+  "resource:gdevelop-ai-mcp": {
+    "summary": "支持 2D 与 3D 的可视化游戏引擎，内置 AI 助手，并提供连接编程代理的官方 MCP 接口。",
+    "detail": "将功能需求转成可编辑的场景、对象、行为与事件逻辑，再预览游戏，或让代理运行玩法测试。GDevelop 也可导出 Web、移动端与桌面游戏。MCP 连接要求桌面编辑器在同一台电脑上保持运行；事件生成与资产搜索使用在线服务，需要登录。在编辑器中检查并保存改动后，再执行导出。"
+  },
+  "resource:inworld-agent-runtime": {
+    "summary": "提供 Unity 与 Unreal SDK 的 AI 编排工具包，用于语音角色、记忆与对话式 NPC。",
+    "detail": "在运行时图中组合语音识别、语言模型、语音合成与角色知识，再把角色模板连接到 Unity 或 Unreal 场景。旧版 Character Studio 已退役，相关流程现由 Portal 与 Runtime SDK 承接。SDK 详细指南目前需要登录。按项目配置模型服务与角色逻辑，并在目标游戏中测量对话延迟、检查角色行为。"
+  },
+  "resource:mixamo": {
+    "summary": "为人形角色自动绑定骨骼，并将动作库中的动画适配到模型，接入游戏资产制作流程。",
+    "detail": "上传干净的角色网格，设置人形骨架并选择动作片段，再下载带骨骼的角色与动画，接入引擎资产管线。自动绑定与动画库面向双足人形角色；特殊比例或额外肢体可能导致失败。需要 Adobe ID，官方常见问题说明不向国家代码为中国的账户提供服务。Mixamo 仅保留最后使用的角色，需将结果保存在本地。"
+  },
+  "resource:game-ci": {
+    "summary": "由社区维护的 Unity CI 构建与测试自动化工具，提供可复用的 GitHub Actions 和容器工作流。",
+    "detail": "从仓库运行 Unity 的 Edit mode 和 Play mode 测试，归档报告，并构建指定目标平台的 Player。固定 Action、完整编辑器版本、运行器操作系统与目标工具链。Unity 激活和 CI 凭据需另行配置。已核对的 unity-builder 6.0.0 和 unity-test-runner 4.4.0 都转交 game-ci/cli 执行，而文档示例仍标作 v4。复制旧工作流前先对照发布说明。两个 Action 仓库都声明 MIT 许可，该许可不包含 Unity Editor 使用权或托管运行器资源。GameCI 是与 Unity Technologies 无隶属关系的社区项目。"
+  },
+  "resource:gdunit4": {
+    "summary": "面向 GDScript、C# 与场景的 Godot 测试框架，提供断言、测试替身、场景输入驱动及 CI 报告。",
+    "detail": "为玩法规则或场景编写测试套件，通过 Scene Runner 驱动输入，并保留编辑器或命令行运行产生的断言与报告。已核对的 6.2.3 版本采用 MIT 许可。其 6.2.x 兼容表列出 Godot 4.5 至 4.7.1，而 Godot 4.3/4.4 项目应使用较早的 5.x 分支。安装前先匹配框架与 Godot 的确切版本。C# 测试还需按专门文档配置 .NET。场景断言只能检查已编写的条件，目标构建的画面、操作和游戏手感仍需实际检查。"
+  },
+  "resource:unreal-insights": {
+    "summary": "Epic 为 Unreal Engine 提供的跟踪采集与分析套件，用于排查帧耗时、内存、网络和资产加载。",
+    "detail": "录制有代表性的游戏或编辑器会话，保存 .utrace 文件及引擎版本、构建配置和启用的跟踪通道，再检查相应的时序、内存或加载轨道。本次核对的 Epic 文档标注为 Unreal Engine 5.9。Insights 随二进制引擎安装包提供，也可通过 UnrealInsights 构建目标自行编译。跟踪配置与可用流程取决于引擎构建和操作系统。引擎使用与源码访问遵循 Unreal Engine EULA，而非宽松开源许可。跟踪结果记录的是该次会话中的工作。只有在负载与硬件可比时，才适合判断耗时变化是否属于回归。"
   }
 }

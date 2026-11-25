@@ -1,6 +1,16 @@
 # Evaluating agents that create games
 
-Choose an evaluation around what the agent needs to produce: a playable project, a correct modification, a delivered build, or a diagnosed defect. The studies below use different tasks and success criteria; use the [reproduction reference](benchmarks.md) to locate the artifacts needed for each.
+Suppose you want an agent to change a tower-defense game's upgrade prices without breaking wave progression. Before borrowing a paper's success rate, check what its agent could edit, observe and control, and how the result was accepted. The studies below cover different jobs; the [reproduction reference](benchmarks.md) identifies their available artifacts.
+
+## Choose a verdict and preserve every run
+
+The community [Claude tower-defense project](https://github.com/mdkess/claude-game/blob/8b02fe3de81755536d8cb7376fc47db093a8ae00/README.md) provides a useful example: its headless simulator exercises game logic separately from rendering. Your coding agent would modify the source; the simulator's player is a strategy function. It receives game state, upgrade costs and metrics, chooses an upgrade, and the runner checks affordability before purchasing. That interface gives it direct state access rather than a player's view of the shop.
+
+Read the verdict just as closely. In the [simulator implementation](https://github.com/mdkess/claude-game/blob/8b02fe3de81755536d8cb7376fc47db093a8ae00/src/simulator/Simulator.ts), `success: true` follows an exception-free run even when the tower was destroyed. Survival time, final wave and purchase history carry the gameplay outcome. Using that Boolean as a win rate would answer the wrong question.
+
+For the price-change task, keep the player strategy, starting upgrades, wave fixtures and simulation budget fixed. Have the developer-owned checks verify the charged price, remaining gold and continued wave progression; keep those checks outside the agent's edit scope. Then buy the upgrade through the browser UI to check the displayed price and interaction. Preserve the baseline and modified results, failed launches and retries. Longer survival helps assess this economy under the tested strategy; shop readability needs observation of the rendered game.
+
+This task calls for a development evaluation with preservation checks, such as the SWE-Game protocol discussed below. A gameplay-agent result may help choose a test player, while a defect-localization result addresses finding a fault. Neither substitutes for checking the submitted modification.
 
 ## 1. OpenGameEval: stateful development and exploration
 
